@@ -1,45 +1,45 @@
 """
-A2 问题 A —— 工具层（交付物 D2a），person 1 负责
-8 个工具 = 8 个"开柜子取数据"的小函数。全部完成。
+A2 Problem A — the tool layer (deliverable D2(a)), owned by person 1.
+8 tools = 8 small "open-the-drawer" functions. All complete.
 """
 import json
 import os
 
-# ---- 数据位置（改成你自己的路径）----
+# ---- data location (change to your own path) ----
 DATA_DIR = r"C:\Users\86178\Desktop\NTU-school materials\6201\Assignments\A2\A2_reference_data_extracted\A2_reference_data\data_A"
 
 def _load(path: str):
-    """读一个 JSON 文件，返回 Python 数据。"""
+    """Read one JSON file and return its Python data."""
     with open(os.path.join(DATA_DIR, path), encoding="utf-8") as f:
         return json.load(f)
 
-# ---- 把 8 个柜子的文件读进来，转成"按 key 索引的字典"（= 抄到手边，方便查）----
+# ---- load the 8 "drawers" into key-indexed dicts (copied to hand for fast lookup) ----
 CLAIMS     = {c["claim_id"]: c for c in _load("claims.json")}
 MEMBERS    = {m["member_id"]: m for m in _load("members.json")}
 POLICIES   = {p["policy_id"]: p for p in _load("policies.json")}
 HOSPITALS  = {h["hospital_id"]: h for h in _load("hospitals.json")}
 PROCEDURES = {p["code"]: p for p in _load("procedures.json")}
 
-# 预授权：用 (member_id, procedure_code) 两个键一起查
+# pre-authorisation: looked up by the (member_id, procedure_code) pair
 PREAUTHS = {(p["member_id"], p["procedure_code"]): p
             for p in _load("preauthorisations.json")}
 
-# 所需材料：一个项目可能要求多份材料
+# required documents: one procedure may require several documents
 REQUIRED_DOCS = {}
 for r in _load("required_documents.json"):
     REQUIRED_DOCS.setdefault(r["procedure_code"], []).append(r["document"])
 
-# 已决理赔：查重需要遍历比对，保持 list
+# decided claims: duplicate detection needs a full scan, keep as a list
 DECIDED_CLAIMS = _load("decided_claims.json")
 
 
-# ==================== 工具 1：查理赔单（入口）====================
+# ==================== tool 1: read the claim (entry point) ====================
 def get_claim(claim_id: str) -> str:
-    """WHAT    按单号取一张理赔单，返回它的身份 + 结构
-    INPUT    claim_id，如 "CLM-8842"
+    """WHAT    fetch one claim by id; return its identity + structure
+    INPUT    claim_id, e.g. "CLM-8842"
     RETURNS  member_id / hospital_id / date_of_service / narrative / documents / lines
-    FAILS    单号不存在 -> "ERROR: no claim ..."
-    WHY      入口：后面所有查询都要靠它给出的 member_id、hospital_id、code 往下走
+    FAILS    unknown id -> "ERROR: no claim ..."
+    WHY      the entry point: every later query needs the member_id / hospital_id / codes it returns
     """
     c = CLAIMS.get(claim_id)
     if not c:
@@ -48,18 +48,19 @@ def get_claim(claim_id: str) -> str:
             f"member_id={c['member_id']} "
             f"hospital_id={c['hospital_id']} "
             f"date_of_service={c['date_of_service']} "
-            f"narrative={c['narrative']!r} "      # !r 保证自由文本不破坏格式
+            f"narrative={c['narrative']!r} "      # !r keeps free text from breaking the format
             f"documents={c['documents']} "
             f"lines={c['lines']}")
 
 
-# ==================== 工具 2：查会员 ====================
+# ==================== tool 2: look up a member ====================
 def lookup_member(member_id: str) -> str:
-    """WHAT    查一个会员，只返回影响决策的字段：他的保单号
-    INPUT    member_id，如 "M-2214"
+    """WHAT    look up a member; return only the decision-relevant field: their policy_id
+    INPUT    member_id, e.g. "M-2214"
     RETURNS  member_id / policy_id
-    FAILS    会员不存在 -> "ERROR: no member ..."
-    WHY      会员行的 name、join_date 不参与决策，故意不返回（省 token + 避免误导）
+    FAILS    unknown member -> "ERROR: no member ..."
+    WHY      the member row's name / join_date do not affect the decision, so they are
+             deliberately not returned (fewer tokens + no misleading information)
     """
     m = MEMBERS.get(member_id)
     if not m:
@@ -67,14 +68,15 @@ def lookup_member(member_id: str) -> str:
     return f"member_id={m['member_id']} policy_id={m['policy_id']}"
 
 
-# ==================== 工具 3：查保单 ====================
+# ==================== tool 3: look up a policy ====================
 def lookup_policy(policy_id: str) -> str:
-    """WHAT    查一张保单，返回判定赔付所需的所有条款
-    INPUT    policy_id，如 "POL-3310"
-    RETURNS  status / 起止日 / annual_limit / used_to_date / exclusions
-    FAILS    保单不存在 -> "ERROR: no policy ..."
-    WHY      赔付要看：保单是否 active、日期是否在保障期内、额度够不够、是否被排除。
-             注意：剩余额度 = annual_limit - used_to_date，要模型自己算。
+    """WHAT    look up a policy; return every term the decision needs
+    INPUT    policy_id, e.g. "POL-3310"
+    RETURNS  status / start_date / end_date / annual_limit / used_to_date / exclusions
+    FAILS    unknown policy -> "ERROR: no policy ..."
+    WHY      a claim needs: active status, service date inside the cover period,
+             enough headroom, and not excluded. Note: headroom = annual_limit - used_to_date,
+             the model computes that itself.
     """
     p = POLICIES.get(policy_id)
     if not p:
@@ -88,13 +90,13 @@ def lookup_policy(policy_id: str) -> str:
             f"exclusions={p['exclusions']}")
 
 
-# ==================== 工具 4：查医院 ====================
+# ==================== tool 4: hospital network status ====================
 def get_hospital_status(hospital_id: str) -> str:
-    """WHAT    查一家医院在不在理赔网络内
-    INPUT    hospital_id，如 "H-114"
-    RETURNS  hospital_id / panel（true=网络内，false=网络外）
-    FAILS    医院不存在 -> "ERROR: no hospital ..."
-    WHY      panel=false 会改变赔付结果，必须查。
+    """WHAT    check whether a hospital is in the claims network
+    INPUT    hospital_id, e.g. "H-114"
+    RETURNS  hospital_id / panel (true = in-network, false = out-of-network)
+    FAILS    unknown hospital -> "ERROR: no hospital ..."
+    WHY      panel=false changes the outcome, so it must be checked.
     """
     h = HOSPITALS.get(hospital_id)
     if not h:
@@ -102,14 +104,14 @@ def get_hospital_status(hospital_id: str) -> str:
     return f"hospital_id={h['hospital_id']} panel={h['panel']}"
 
 
-# ==================== 工具 5：查治疗项目 ====================
+# ==================== tool 5: check a procedure ====================
 def check_procedure(code: str) -> str:
-    """WHAT    查一个治疗项目是什么、要不要预授权
-    INPUT    code，如 "62480"
+    """WHAT    check what a procedure is and whether it needs pre-authorisation
+    INPUT    code, e.g. "62480"
     RETURNS  code / description / requires_preauth
-    FAILS    项目码不存在 -> "ERROR: no procedure ..."
-    WHY      requires_preauth 是"分支开关"：true 就要去查预授权，false 不用。
-             这正是"不同的理赔单，要查的步数不一样"的原因。
+    FAILS    unknown code -> "ERROR: no procedure ..."
+    WHY      requires_preauth is the "branch switch": true -> go check the pre-auth, false -> skip.
+             This is exactly why different claims need a different number of steps.
     """
     p = PROCEDURES.get(code)
     if not p:
@@ -119,14 +121,14 @@ def check_procedure(code: str) -> str:
             f"requires_preauth={p['requires_preauth']}")
 
 
-# ==================== 工具 6：查预授权 ====================
+# ==================== tool 6: check a pre-authorisation ====================
 def get_preauthorisation(member_id: str, procedure_code: str) -> str:
-    """WHAT    查"某会员对某项目"有没有预授权，以及它的有效期
-    INPUT    member_id + procedure_code（两个都要对上）
+    """WHAT    check whether "this member for this procedure" has a pre-auth, and its validity window
+    INPUT    member_id + procedure_code (both must match)
     RETURNS  preauth_id / valid_from / valid_to
-    FAILS    没查到 -> "ERROR: no preauthorisation ..."
-    WHY      预授权属于"某个人 + 某个项目"的组合，缺一不可。
-             关键：只看"有没有"不够，还要看 valid_to 过期没过期（过期 = 没有）。
+    FAILS    no match -> "ERROR: no preauthorisation ..."
+    WHY      a pre-auth belongs to the "person + procedure" combination, not either alone.
+             Key: "exists" is not enough — a valid_to that has passed counts as no pre-auth.
     """
     pa = PREAUTHS.get((member_id, procedure_code))
     if not pa:
@@ -138,14 +140,14 @@ def get_preauthorisation(member_id: str, procedure_code: str) -> str:
             f"valid_to={pa['valid_to']}")
 
 
-# ==================== 工具 7：查所需材料 ====================
+# ==================== tool 7: check required documents ====================
 def check_documents(procedure_code: str) -> str:
-    """WHAT    查某个治疗项目需要附哪些材料
-    INPUT    procedure_code，如 "45378"
-    RETURNS  该项目要求提交的材料清单
-    FAILS    该项目没特殊材料要求 -> "no documents required ..."
-    WHY      材料缺失 = 向客户"索取"，不是"拒赔"。工具只负责告诉"需要什么"，
-             由模型去对比理赔单实际附了什么、缺不缺。
+    """WHAT    check which documents a procedure requires
+    INPUT    procedure_code, e.g. "45378"
+    RETURNS  the list of documents required for that procedure
+    FAILS    no special requirement -> "no documents required ..."
+    WHY      a missing document is an "ask" to the customer, not a refuse. The tool only
+             reports what is needed; the model compares it against what the claim attached.
     """
     docs = REQUIRED_DOCS.get(procedure_code)
     if not docs:
@@ -153,13 +155,13 @@ def check_documents(procedure_code: str) -> str:
     return f"procedure_code={procedure_code} required_documents={docs}"
 
 
-# ==================== 工具 8：查重复理赔 ====================
+# ==================== tool 8: duplicate check ====================
 def check_duplicate(claim_id: str) -> str:
-    """WHAT    查这张理赔单是不是"已经判过的一次就诊"又重交了一遍
-    INPUT    claim_id，如 "CLM-8933"
-    RETURNS  是重复 -> 之前的单号 + 当时的决定；不是 -> "no duplicate"
-    WHY      重复不是看 claim_id（重交会有新 id），而是看四个事实是否全对上：
-             同会员 + 同医院 + 同就诊日期 + 同样的 lines。缺一个都不算重复。
+    """WHAT    check whether this claim re-submits a visit that was already decided
+    INPUT    claim_id, e.g. "CLM-8933"
+    RETURNS  if duplicate -> the earlier claim id + its decision; else -> "no duplicate"
+    WHY      a duplicate is not the same claim_id (a resubmission gets a new id) — it is
+             four matching facts: same member + same hospital + same service date + same lines.
     """
     c = CLAIMS.get(claim_id)
     if not c:
@@ -174,8 +176,8 @@ def check_duplicate(claim_id: str) -> str:
     return f"no duplicate found for {claim_id}"
 
 
-# ==================== 工具注册表 ====================
-# 模型说"调用 get_claim"，代码就拿这个名字来这里找对应的函数。
+# ==================== tool registry ====================
+# The model says "call get_claim"; the code looks the name up here to find the function.
 TOOLS = {
     "get_claim": get_claim,
     "lookup_member": lookup_member,
@@ -189,25 +191,25 @@ TOOLS = {
 
 
 if __name__ == "__main__":
-    # 自测：跑 8 个工具，挑了几个"有代表性"的输入，看输出对不对
-    print("--- 工具 1~4 ---")
+    # self-test: run the 8 tools with a few representative inputs and check the outputs
+    print("--- tools 1-4 ---")
     print(get_claim("CLM-8842"))
     print(lookup_member("M-2214"))
     print(lookup_policy("POL-3310"))
     print(get_hospital_status("H-114"))
 
-    print("\n--- 工具 5 check_procedure ---")
-    print(check_procedure("62480"))   # 腰椎：需要预授权
-    print(check_procedure("47120"))   # 阑尾：不需要
+    print("\n--- tool 5 check_procedure ---")
+    print(check_procedure("62480"))   # lumbar: needs pre-auth
+    print(check_procedure("47120"))   # appendix: does not
 
-    print("\n--- 工具 6 get_preauthorisation ---")
-    print(get_preauthorisation("M-2214", "62480"))   # 有效期内
-    print(get_preauthorisation("M-6118", "29881"))   # 已过期的那个（CLM-8894）
+    print("\n--- tool 6 get_preauthorisation ---")
+    print(get_preauthorisation("M-2214", "62480"))   # within validity window
+    print(get_preauthorisation("M-6118", "29881"))   # the expired one (CLM-8894)
 
-    print("\n--- 工具 7 check_documents ---")
-    print(check_documents("45378"))   # 肠镜：需要 itemised_bill
-    print(check_documents("47120"))   # 阑尾：无特殊要求
+    print("\n--- tool 7 check_documents ---")
+    print(check_documents("45378"))   # colonoscopy: needs itemised_bill
+    print(check_documents("47120"))   # appendix: no special requirement
 
-    print("\n--- 工具 8 check_duplicate ---")
-    print(check_duplicate("CLM-8933"))   # 应该是重复（对照 CLM-8710）
-    print(check_duplicate("CLM-8842"))   # 应该不是重复
+    print("\n--- tool 8 check_duplicate ---")
+    print(check_duplicate("CLM-8933"))   # should be a duplicate (vs CLM-8710)
+    print(check_duplicate("CLM-8842"))   # should not be a duplicate

@@ -1,20 +1,21 @@
 """
-A2 问题 A —— 理赔版 ReAct Agent（交付物 D1），person 1 负责
-= 提示词(SYSTEM) + 循环(run_agent) + 真模型(call_model) + 8 个工具(来自 tools.py)
+A2 Problem A — claims ReAct agent (deliverable D1), owned by person 1.
+= prompt (SYSTEM) + loop (run_agent) + live model (call_model) + 8 tools (from tools.py)
 
-把老师的循环骨架(parse_action / run_agent 的 6 阶段)抄过来，
-内容(提示词/工具/任务)换成保险理赔版，再让真模型跑一次。
+The loop skeleton (parse_action / the 6 stages of run_agent) is taken from Class 4's
+notebook; the content (prompt / tools / task) is rewritten for insurance claims and run
+once against a real model.
 """
 import json
 import os
 import re
 import urllib.request
 
-# ---- 从 tools.py 拿我们写好的 8 个工具 ----
+# ---- the 8 tools we wrote in tools.py ----
 from tools import TOOLS
 
 
-# ---- 本地读 .env（.env 不进 git，key 只存在你自己电脑上）----
+# ---- load .env locally (.env is not committed; the key lives only on this machine) ----
 def _load_env():
     env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
     if os.path.exists(env_path):
@@ -27,13 +28,13 @@ def _load_env():
 
 _load_env()
 
-# ---- OpenRouter 配置（key 从环境变量读，不再硬编码在代码里）----
+# ---- OpenRouter config (key read from the environment, never hardcoded) ----
 API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 MODEL = "deepseek/deepseek-v3.2"
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 
-# ==================== 8 个工具的"说明书"，贴进提示词 ====================
+# ==================== the "manual" for the 8 tools, pasted into the prompt ====================
 TOOL_SPEC = """
 get_claim(claim_id: str) -> claim header: member_id, hospital_id, date_of_service, narrative, documents, lines
 lookup_member(member_id: str) -> member_id, policy_id
@@ -46,7 +47,7 @@ check_duplicate(claim_id: str) -> duplicate of an earlier decided claim, or "no 
 """.strip()
 
 
-# ==================== 提示词：角色 + 规则 + 工具 + 输出格式 ====================
+# ==================== prompt: role + rules + tools + output format ====================
 SYSTEM = f"""You are a health-insurance claims assistant. Your job is the FIRST RESPONSE to a claim: for each procedure line on the claim, decide one of three outcomes:
   - approve
   - refuse  (always cite the rule id)
@@ -96,13 +97,13 @@ TASK = ("Process claim CLM-8842. For each procedure line give a decision "
         "Cite preauthorisation ids and rule ids where relevant.")
 
 
-# ==================== 真模型调用（OpenRouter） ====================
+# ==================== live model call (OpenRouter) ====================
 def call_model(prompt: str) -> str:
-    """把整段 transcript 发给真模型，拿回它下一步的文本(Thought/Action 或 Thought/Final)。"""
+    """Send the whole transcript to the real model; return its next text (Thought/Action or Thought/Final)."""
     payload = json.dumps({
         "model": MODEL,
         "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0,       # 0 = 尽量确定，格式更稳
+        "temperature": 0,       # 0 = as deterministic as possible, more stable format
         "max_tokens": 2000,
     }).encode("utf-8")
     req = urllib.request.Request(
@@ -120,9 +121,9 @@ def call_model(prompt: str) -> str:
     return content, usage
 
 
-# ==================== 解析 Action（抄老师的，一行不改） ====================
+# ==================== parse a single Action (from Class 4, kept verbatim) ====================
 def parse_action(step: str):
-    """从 'Action: 工具名(参数="值")' 里抽出工具名和参数。"""
+    """Pull the tool name and arguments out of 'Action: name(arg="value")'."""
     m = re.search(r"^Action:\s*(\w+)\((.*)\)\s*$", step, flags=re.M | re.S)
     if not m:
         return None, {}
@@ -136,10 +137,11 @@ def parse_action(step: str):
 
 
 def parse_actions(step: str):
-    """一轮里解析出所有的 Action，返回 [(工具名, 参数字典), ...]。
+    """Parse every Action in one turn; return a list of (tool_name, kwargs_dict).
 
-    D2(c) 需要：允许模型一轮发多个互不依赖的工具调用。用 finditer 把每个
-    "Action: name(...)" 都找出来（参数里没有括号，用 [^()]* 安全地停在一对括号内）。
+    Needed for D2(c): the model may emit several independent tool calls in one reply.
+    finditer grabs each "Action: name(...)"; [^()]* stops safely inside one pair of
+    parentheses (none of our arguments contain nested parentheses).
     """
     actions = []
     for m in re.finditer(r"Action:\s*(\w+)\(([^()]*)\)", step):
@@ -153,11 +155,11 @@ def parse_actions(step: str):
     return actions
 
 
-# ==================== ReAct 循环（D2(c) 版：一轮可执行多个 Action） ====================
+# ==================== ReAct loop (D2(c) version: several Actions per turn) ====================
 def run_agent(task: str, max_turns: int = 25, parallel: bool = True):
     header = SYSTEM
     if not parallel:
-        # 串行基线：强制一次一个工具，用来和并行版对比 turns / tokens / cost
+        # sequential baseline: force one tool per reply, to compare against the parallel version
         header += ("\n\nMODE: strictly SEQUENTIAL — output EXACTLY ONE Action per "
                    "reply. Never more than one.")
 
@@ -167,7 +169,7 @@ def run_agent(task: str, max_turns: int = 25, parallel: bool = True):
     total_completion = 0
 
     for turn in range(1, max_turns + 1):
-        # ① ASK —— 唯一碰模型的一步，同时累计 token 用量
+        # ① ASK — the only step that touches the model; accumulate token usage
         step, usage = call_model(transcript)
         total_prompt += usage.get("prompt_tokens", 0)
         total_completion += usage.get("completion_tokens", 0)
@@ -175,10 +177,10 @@ def run_agent(task: str, max_turns: int = 25, parallel: bool = True):
         print(f"\n── turn {turn} " + "─" * 46)
         print("   " + step.strip().replace("\n", "\n   "))
 
-        # ② PARSE —— 一轮里可能有好几个 Action
+        # ② PARSE — a turn may contain several Actions
         actions = parse_actions(step)
 
-        # ③ STOP? —— 没有 Action 且出现 Final 才算结束
+        # ③ STOP? — done only when there is no Action and a Final is present
         if not actions:
             if "Final:" in step:
                 final = step.split("Final:", 1)[1].strip()
@@ -191,7 +193,7 @@ def run_agent(task: str, max_turns: int = 25, parallel: bool = True):
             transcript += step + "\nObservation: " + obs + "\n"
             continue
 
-        # ④ ACT —— 把所有 Action 一起执行，每个结果单独标号喂回去
+        # ④ ACT — execute all Actions together, number each observation when feeding back
         obs_lines = []
         for i, (name, kwargs) in enumerate(actions, 1):
             if name in TOOLS:
@@ -206,7 +208,7 @@ def run_agent(task: str, max_turns: int = 25, parallel: bool = True):
 
         print(f"   Observation:\n   " + obs.replace("\n", "\n   "))
 
-        # ⑤ APPEND —— 模型这步 + 所有观察结果粘回 transcript，下一轮重发
+        # ⑤ APPEND — the model's step + all observations are glued back and re-sent next turn
         transcript += step + "\nObservation:\n" + obs + "\n"
     else:
         print(f"\n   ⛔ STEP CAP: {max_turns} turns without a Final")
