@@ -2,7 +2,7 @@
 A2 Problem A — claims ReAct agent (deliverable D1), owned by person 1.
 = prompt (SYSTEM) + loop (run_agent) + live model (call_model) + 8 tools (from tools.py)
 
-The loop skeleton (parse_action / the 6 stages of run_agent) is taken from Class 4's
+The loop skeleton (the 6 stages of run_agent) is taken from Class 4's
 notebook; the content (prompt / tools / task) is rewritten for insurance claims and run
 once against a real model.
 """
@@ -139,21 +139,6 @@ def call_model(prompt: str) -> str:
     content = data["choices"][0]["message"]["content"]
     usage = data.get("usage", {})
     return content, usage
-
-
-# ==================== parse a single Action (from Class 4, kept verbatim) ====================
-def parse_action(step: str):
-    """Pull the tool name and arguments out of 'Action: name(arg="value")'."""
-    m = re.search(r"^Action:\s*(\w+)\((.*)\)\s*$", step, flags=re.M | re.S)
-    if not m:
-        return None, {}
-    name, argstr = m.group(1), m.group(2)
-    kwargs = {}
-    for k, v in re.findall(r'(\w+)\s*=\s*"([^"]*)"', argstr):
-        kwargs[k] = v
-    for k, v in re.findall(r'(\w+)\s*=\s*(True|False)', argstr):
-        kwargs[k] = (v == "True")
-    return name, kwargs
 
 
 def parse_actions(step: str):
