@@ -25,7 +25,7 @@ One-line rule: **A and B may run in parallel iff neither needs the other's outpu
 | **Output tokens** | 947 | 1,667 | +76% |
 | **Total tokens** | 19,283 | 7,505 | **−61%** |
 | **Cost (USD)** | $0.0041 | $0.0017 | **−58%** |
-| **Answer** | 47120 approve / 62480 approve (PA-5521) / 31255 refuse (EX-14) | same | **unchanged ✅** |
+| **Answer** | approve_in_principle — 47120/62480 approved (62480: PA-5521), 31255 refused (EX-14) | same | **unchanged ✅** |
 
 Cost is priced at deepseek-v3.2's OpenRouter rates — **$0.2088/M input, $0.3096/M output** (checked 28 Aug 2026, the same price class as the Class 5 cheap tier):
 
