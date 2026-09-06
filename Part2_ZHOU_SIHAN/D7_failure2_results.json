@@ -1,0 +1,28 @@
+{
+  "failure": "tool-interface: expired pre-auth treated as valid",
+  "deletion": "remove v2 status field / date_of_service check (fall back to v1)",
+  "why_not_loop_or_prompt": "A prompt saying 'check the dates carefully' still leaves the error possible; a loop cap does not change a wrong observation shape. Putting validity in the tool return makes the bad class impossible.",
+  "aligned_with": "Part2_LU_XINZE D2b v1/v2 get_preauthorisation",
+  "broken": {
+    "version": "v1",
+    "observation": "preauth_id=PA-5640 member_id=M-6118 procedure_code=29881 valid_from=2026-01-01 valid_to=2026-08-31",
+    "decision": "approve_in_principle",
+    "correct": "request_document",
+    "pass": false
+  },
+  "working": {
+    "version": "v2",
+    "observation": "status=expired_before_service valid_on_service_date=False",
+    "decision": "request_document",
+    "correct": "request_document",
+    "pass": true
+  },
+  "restored": {
+    "version": "v2",
+    "observation": "status=expired_before_service valid_on_service_date=False",
+    "decision": "request_document",
+    "correct": "request_document",
+    "pass": true
+  },
+  "restore_matches_working": true
+}

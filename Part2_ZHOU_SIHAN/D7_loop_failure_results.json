@@ -1,0 +1,78 @@
+{
+  "failure": "loop-control: repeated get_claim",
+  "deletion": "enable_dedup=False",
+  "broken": {
+    "enable_dedup": false,
+    "stopped_by": "step_cap",
+    "turns": 9,
+    "tokens_in": 20800,
+    "tokens_out": 640,
+    "cost_usd": 0.002336,
+    "unique_calls": 8,
+    "observations_tail": [
+      "claim_id=CLM-8842 member_id=M-2214 hospital_id=H-114 lines=[3]",
+      "claim_id=CLM-8842 member_id=M-2214 hospital_id=H-114 lines=[3]",
+      "STEP_CAP: run stopped after 8 turns (attempted turn 9)"
+    ],
+    "snapshot": {
+      "turns": 9,
+      "tokens_in": 20800,
+      "tokens_out": 640,
+      "cost_usd": 0.002336,
+      "stop_reason": "STEP_CAP: run stopped after 8 turns (attempted turn 9)",
+      "autonomy": "confirm",
+      "step_cap": 8,
+      "budget_ceiling_usd": 0.05,
+      "calls": 8
+    }
+  },
+  "working": {
+    "enable_dedup": true,
+    "stopped_by": "dedup",
+    "turns": 2,
+    "tokens_in": 1200,
+    "tokens_out": 80,
+    "cost_usd": 0.000152,
+    "unique_calls": 1,
+    "observations_tail": [
+      "claim_id=CLM-8842 member_id=M-2214 hospital_id=H-114 lines=[3]",
+      "BLOCKED: action de-duplication \u2014 get_claim{'claim_id': 'CLM-8842'} already executed this run"
+    ],
+    "snapshot": {
+      "turns": 2,
+      "tokens_in": 1200,
+      "tokens_out": 80,
+      "cost_usd": 0.000152,
+      "stop_reason": null,
+      "autonomy": "confirm",
+      "step_cap": 8,
+      "budget_ceiling_usd": 0.05,
+      "calls": 1
+    }
+  },
+  "restored": {
+    "enable_dedup": true,
+    "stopped_by": "dedup",
+    "turns": 2,
+    "tokens_in": 1200,
+    "tokens_out": 80,
+    "cost_usd": 0.000152,
+    "unique_calls": 1,
+    "observations_tail": [
+      "claim_id=CLM-8842 member_id=M-2214 hospital_id=H-114 lines=[3]",
+      "BLOCKED: action de-duplication \u2014 get_claim{'claim_id': 'CLM-8842'} already executed this run"
+    ],
+    "snapshot": {
+      "turns": 2,
+      "tokens_in": 1200,
+      "tokens_out": 80,
+      "cost_usd": 0.000152,
+      "stop_reason": null,
+      "autonomy": "confirm",
+      "step_cap": 8,
+      "budget_ceiling_usd": 0.05,
+      "calls": 1
+    }
+  },
+  "restore_matches_working": true
+}
