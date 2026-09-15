@@ -1,0 +1,13 @@
+{
+  "artifact": "output/pdf/PE6201_A2_Group-6_Implementation_Guide_ZH.pdf",
+  "sha256": "78ade378f2f237856a895722764655f70dee5855ac4dadc7597cbec93350097c",
+  "pages": 33,
+  "chapters": 25,
+  "source_appendices": 6,
+  "contents_links": 25,
+  "bookmarks": 33,
+  "minimum_page_text_characters": 697,
+  "source_characters": 25977,
+  "visual_review": "passed: all 33 rendered pages reviewed; no clipping, overlap or missing Chinese glyphs",
+  "experiment_changes": false
+}

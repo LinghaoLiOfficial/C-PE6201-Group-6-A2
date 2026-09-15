@@ -54,6 +54,8 @@ See `docs/SUBMISSION_STATUS.md` for human recording, collective self-appraisal, 
 - `docs/FAILURE_EXPERIMENTS.md`: controlled removals and full turn distributions.
 - `docs/DEMO_EN.md` / `docs/DEMO_ZH.md`: six-speaker recording scripts.
 - `docs/CODE_GUIDE_ZH.md`: Chinese code explanation.
+- `output/pdf/PE6201_A2_Group-6_Implementation_Guide_ZH.pdf`: supplementary 33-page Chinese handbook connecting D0–D7 requirements to code changes, validation evidence and English report wording; includes a clickable contents page and six source appendices.
+- `docs/IMPLEMENTATION_WALKTHROUGH_ZH.md` / `docs/IMPLEMENTATION_SOURCE_INDEX_ZH.md`: editable handbook and generated source excerpts. Rebuild with `python3 scripts/build_walkthrough_zh.py` (ReportLab and the Chinese font configured in the script are required).
 
 `python3 scripts/replay_judgements.py` checks/replays archived independent verdicts without network access. `python3 scripts/build_analysis.py` regenerates numeric tables from saved results. PDF/figure generation additionally requires `requirements-authoring.txt`; run `python3 scripts/build_report.py` after installing those optional dependencies.
 
