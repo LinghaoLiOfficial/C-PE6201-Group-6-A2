@@ -49,6 +49,8 @@ See `docs/SUBMISSION_STATUS.md` for human recording, collective self-appraisal, 
 
 ## Read the final deliverables
 
+- `output/pdf/PE6201_A2_Group-6_Rebuild_Manual_ZH.pdf`: the primary Chinese reconstruction manual, with 40 ordered steps, teacher page/cell references, member before/after comparisons, exact edit locations, writing tasks, commands and complete source/data appendices. It distinguishes teacher inputs, member work, new files, generated outputs and still-pending course requirements.
+- `docs/REBUILD_A2_STEP_BY_STEP_ZH.md`: generated editable text; author the steps in `docs/rebuild_manual/steps_zh.json` and supplementary instructions in `docs/rebuild_manual/supplements_zh.md`, then run `python3 scripts/build_rebuild_manual_zh.py`. Reference excerpts are bundled so rebuilding does not require temporary extraction files.
 - `output/pdf/PE6201_A2_Group-6_Report.pdf`: four-page English report, 1,552 prose words.
 - `docs/RESULTS.md`: final code and assessed pass rates, costs, sensitivity and uncertainty.
 - `docs/FAILURE_EXPERIMENTS.md`: controlled removals and full turn distributions.

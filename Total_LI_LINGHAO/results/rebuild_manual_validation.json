@@ -1,0 +1,13 @@
+{
+  "pdf": "output/pdf/PE6201_A2_Group-6_Rebuild_Manual_ZH.pdf",
+  "pages": 123,
+  "steps": 40,
+  "full_python_files": 20,
+  "source_hashes_checked": true,
+  "step_destinations_checked": true,
+  "link_annotations": 164,
+  "visual_review": "All initial 122 pages reviewed in rendered montages; revised supplementary pages 49\u201350 inspected individually; unchanged later content shifted one page. No clipping or overlap observed.",
+  "fresh_directory_reproduction": "results/rebuild_manual_reproduction.json",
+  "live_calls_for_document": 0,
+  "sha256": "e0a832fead7e397250f1540ed195c61a569ba1c5338b1063f6d469c785505408"
+}

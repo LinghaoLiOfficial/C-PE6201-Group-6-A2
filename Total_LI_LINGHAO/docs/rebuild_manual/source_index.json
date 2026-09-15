@@ -1,0 +1,182 @@
+{
+  "reference_commit": "47e1212",
+  "steps": {
+    "step-1": 7,
+    "step-2": 8,
+    "step-3": 9,
+    "step-4": 10,
+    "step-5": 11,
+    "step-6": 12,
+    "step-7": 13,
+    "step-8": 14,
+    "step-9": 15,
+    "step-10": 16,
+    "step-11": 17,
+    "step-12": 18,
+    "step-13": 19,
+    "step-14": 20,
+    "step-15": 21,
+    "step-16": 22,
+    "step-17": 23,
+    "step-18": 24,
+    "step-19": 25,
+    "step-20": 26,
+    "step-21": 27,
+    "step-22": 28,
+    "step-23": 29,
+    "step-24": 30,
+    "step-25": 31,
+    "step-26": 32,
+    "step-27": 33,
+    "step-28": 34,
+    "step-29": 35,
+    "step-30": 36,
+    "step-31": 37,
+    "step-32": 38,
+    "step-33": 39,
+    "step-34": 40,
+    "step-35": 41,
+    "step-36": 42,
+    "step-37": 43,
+    "step-38": 44,
+    "step-39": 45,
+    "step-40": 46
+  },
+  "sources": [
+    {
+      "path": "claim_agent/__init__.py",
+      "sha256": "0ece01759590b70a6c47be2d21d216a54ee6fdaf701b857ec940e7934fe179a6",
+      "lines": 1,
+      "classification": "N"
+    },
+    {
+      "path": "claim_agent/tools.py",
+      "sha256": "0f5adc513403b67abf6eda0ca51201d19492a43006004d03e74907b6ebad0250",
+      "lines": 358,
+      "classification": "N"
+    },
+    {
+      "path": "claim_agent/agent.py",
+      "sha256": "bd0dde962665dfe8834613a1b0a4474ab9519198b53b565dcd78513179a7d465",
+      "lines": 156,
+      "classification": "N"
+    },
+    {
+      "path": "claim_agent/backends.py",
+      "sha256": "f577150e198a14c2201581010bfbef248cf1de57e5848d198c1145ca27409c56",
+      "lines": 71,
+      "classification": "N"
+    },
+    {
+      "path": "claim_agent/harness.py",
+      "sha256": "ca4d86dfae4598e9857032b57e5910cb50c002dba4e1014c3d46485cab236c5b",
+      "lines": 57,
+      "classification": "N"
+    },
+    {
+      "path": "run_eval.py",
+      "sha256": "c25e1da3ed2cce8025dd0288d1418728d522abc207dca647bf08cff5d9881f20",
+      "lines": 25,
+      "classification": "N"
+    },
+    {
+      "path": "tests/test_tools.py",
+      "sha256": "583942864c5607309520721cc1d8d0dcb4de28481166dd02fb7f6409646fa740",
+      "lines": 102,
+      "classification": "N"
+    },
+    {
+      "path": "tests/test_loop.py",
+      "sha256": "f9b4ef92f8065ebd1bc8378842b06790d380ad5860f55ce0650b199144a5891d",
+      "lines": 38,
+      "classification": "N"
+    },
+    {
+      "path": "tests/test_guardrails.py",
+      "sha256": "ef834611ce5ce528a2dfd6bc7f26973ddda4ac118906c2fa5ce3a8b5a2848da5",
+      "lines": 55,
+      "classification": "N"
+    },
+    {
+      "path": "tests/test_d7.py",
+      "sha256": "721f240ba80429ba0f20103de4d175ec15310967a1b33ef03cbd5551d268a3d9",
+      "lines": 33,
+      "classification": "N"
+    },
+    {
+      "path": "scripts/check_guardrail_variants.py",
+      "sha256": "0065331ed627a27e04e43880485dfdb95893fa917f289ecd7ca407e2c466e056",
+      "lines": 24,
+      "classification": "N"
+    },
+    {
+      "path": "scripts/reproduce.py",
+      "sha256": "e5d82afc4aa0d132d07dc1e3f05e7e1148bc8e62795413fd7d40e2020334f676",
+      "lines": 22,
+      "classification": "N"
+    },
+    {
+      "path": "scripts/run_live.py",
+      "sha256": "4ad5203a45366ca6052443ceac3944d69fb07f0d5d0c60705fba0de2c66fe16f",
+      "lines": 62,
+      "classification": "N"
+    },
+    {
+      "path": "scripts/run_judgement.py",
+      "sha256": "2cee2021924320d4a6e4daf671c3bb895b89b8b9f291efa6d2d7b8c5fed879c0",
+      "lines": 43,
+      "classification": "N"
+    },
+    {
+      "path": "scripts/replay_judgements.py",
+      "sha256": "77c6ca1ce3a5778aa4a5d0a3d262f1d524ab134103c6b86b0549625fe564dc93",
+      "lines": 13,
+      "classification": "N"
+    },
+    {
+      "path": "scripts/build_analysis.py",
+      "sha256": "d68e5c8cbccad9900833d639486f2634904925f63926abbed45b311b14101ee4",
+      "lines": 77,
+      "classification": "N"
+    },
+    {
+      "path": "scripts/reconcile_spend.py",
+      "sha256": "bdfe6afed406f5c03c0f2a268eea42ca68c6946a621a5782448ee2f9c3b3e434",
+      "lines": 18,
+      "classification": "N"
+    },
+    {
+      "path": "scripts/verify_package.py",
+      "sha256": "0b549e5414e92c5b32a2212c2bfee234cf4b5b1515c9da3068d171712e6a2cfd",
+      "lines": 34,
+      "classification": "N"
+    },
+    {
+      "path": "scripts/build_report.py",
+      "sha256": "a07af758971baff5fb2f1ff9b426dc92f3d42396a92156b352870b24dfbea17c",
+      "lines": 81,
+      "classification": "N"
+    },
+    {
+      "path": "scripts/package_submission.py",
+      "sha256": "498bc29cc307d5a54586dcb93108e731e535794c4bfe1ccbf6ffb66aebf05b60",
+      "lines": 31,
+      "classification": "N"
+    },
+    {
+      "path": "A2_reference_data/expected_outcomes_A.json",
+      "sha256": "e1ad7d4a8fcad49a9a2ef1fd5a1b8c15f42dd785ca781235eabe9f826dcb7f73",
+      "classification": "T→N"
+    },
+    {
+      "path": "A2_reference_data/expected_details_A.json",
+      "sha256": "ea3556f15041a5e2e17910da835405fcfb5418252a7c29a89f221bedf4d422f9",
+      "classification": "N"
+    },
+    {
+      "path": "A2_reference_data/case_provenance_A.json",
+      "sha256": "2f604b6c24adcd5f39e52ca05de5615a16f29a1f3a5b1ed770c99a8bee72a647",
+      "classification": "N"
+    }
+  ]
+}
