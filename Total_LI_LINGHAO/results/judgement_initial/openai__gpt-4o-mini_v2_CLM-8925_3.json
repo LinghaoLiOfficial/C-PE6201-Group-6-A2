@@ -1,7 +1,0 @@
-{
-  "source": "openai__gpt-4o-mini_v2_CLM-8925_3.json",
-  "case_id": "CLM-8925",
-  "pass": false,
-  "status": "code_failed_not_judged",
-  "cost_usd": 0
-}

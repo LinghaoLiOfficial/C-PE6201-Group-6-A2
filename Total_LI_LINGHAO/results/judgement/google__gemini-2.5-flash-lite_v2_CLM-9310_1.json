@@ -1,7 +1,0 @@
-{
-  "source": "google__gemini-2.5-flash-lite_v2_CLM-9310_1.json",
-  "case_id": "CLM-9310",
-  "pass": false,
-  "status": "code_failed_not_judged",
-  "cost_usd": 0
-}

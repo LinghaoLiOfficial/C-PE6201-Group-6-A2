@@ -1,3 +1,0 @@
-# Optional report/figure generation only. Evaluated agent runtime is stdlib-only.
-reportlab>=4.0
-matplotlib>=3.8

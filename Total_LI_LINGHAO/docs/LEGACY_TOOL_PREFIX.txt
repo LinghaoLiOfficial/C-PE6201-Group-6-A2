@@ -1,8 +1,0 @@
-get_claim(claim_id: str) -> claim header: member_id, hospital_id, date_of_service, narrative, documents, lines
-lookup_member(member_id: str) -> member_id, policy_id
-lookup_policy(policy_id: str) -> status, start_date, end_date, annual_limit, used_to_date, exclusions
-get_hospital_status(hospital_id: str) -> hospital_id, panel (true=in-network)
-check_procedure(code: str) -> code, description, requires_preauth
-get_preauthorisation(member_id: str, procedure_code: str) -> preauth_id, valid_from, valid_to
-check_documents(procedure_code: str) -> required_documents (list)
-check_duplicate(claim_id: str) -> duplicate of an earlier decided claim, or "no duplicate found"
