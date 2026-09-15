@@ -12,7 +12,9 @@ parallel-vs-sequential comparison (**D2(c)**).
 | `tools.py` | D2(a) | The 8 tools (get_claim, lookup_member, lookup_policy, get_hospital_status, check_procedure, get_preauthorisation, check_documents, check_duplicate) |
 | `D2a_tool_scoring.md` | D2(a) | The 8 tools scored against the three Class-4 questions, plus two honest reflections |
 | `D2c_parallel_comparison.md` | D2(c) | Parallel vs sequential tool calls, with the cost model |
-| `D4_evaluation_cases_draft.md` | D4 | The 15 shipped cases mapped + 6 new cases I drafted (hand this to the D4 owner) |
+| `cases_CHEN_MINGSONG/fixtures_CHEN_MINGSONG.json` | D4 | 5 new cases (CLM-16001..16005): claim rows for the evaluation set |
+| `cases_CHEN_MINGSONG/labels_CHEN_MINGSONG.json` | D4 | 5 answer labels (4 ACT + 1 negative), independently derived from Appendix A |
+| `cases_CHEN_MINGSONG/design_CHEN_MINGSONG.md` | D4 | Per-case failure hypothesis, routing rule, derivation and grading evidence |
 
 ## The three outcomes (Problem A)
 

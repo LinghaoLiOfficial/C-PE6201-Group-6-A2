@@ -1,0 +1,64 @@
+[
+  {
+    "case_id": "CLM-16001",
+    "expected_decision": "approve_in_principle",
+    "family": "multiple_exclusions",
+    "must_record": [
+      "a disposition for all 3 lines (99213, 31255, 15823)",
+      "31255 refused under EX-14 cosmetic dermatology",
+      "15823 refused under EX-14 cosmetic dermatology",
+      "99213 approved",
+      "approved_total 180",
+      "refused_total 550"
+    ],
+    "note": "Two distinct excluded lines in one claim. Neither excluded line escalates the claim; both are refused in the same decision, leaving only the consultation approved."
+  },
+  {
+    "case_id": "CLM-16002",
+    "expected_decision": "approve_in_principle",
+    "family": "preauth_and_document_complete",
+    "must_record": [
+      "PA-5702 cited for line 27447",
+      "validity 2026-07-01 to 2026-12-31 covers date of service 2026-09-18",
+      "discharge_summary present for line 27447",
+      "approved_total 8200"
+    ],
+    "note": "A pre-authorisation-required procedure whose required document is also present. The agent must cite the valid pre-authorisation and approve without requesting anything already supplied."
+  },
+  {
+    "case_id": "CLM-16003",
+    "expected_decision": "approve_in_principle",
+    "family": "required_document_present",
+    "must_record": [
+      "itemised_bill present for line 45378",
+      "approved_total 1100",
+      "NOT a duplicate: CLM-8726 has the same member and procedure 45378 but a different hospital and date"
+    ],
+    "note": "Controlled opposite of the shipped CLM-8901 (same procedure 45378, document absent). Here the required itemised bill is attached, so the correct outcome is approval, not a document request."
+  },
+  {
+    "case_id": "CLM-16004",
+    "expected_decision": "approve_in_principle",
+    "family": "second_exclusion_code",
+    "must_record": [
+      "a disposition for all 3 lines (99213, 70553, 15823)",
+      "15823 refused under EX-14 cosmetic dermatology",
+      "99213 and 70553 approved",
+      "approved_total 800",
+      "refused_total 250"
+    ],
+    "note": "Forces refusal of the second cosmetic-exclusion code 15823, which is never refused in the shipped 15 (shipped refusals only show 31255). An agent that hardcodes the exclusion list to 31255 alone will wrongly approve this line."
+  },
+  {
+    "case_id": "CLM-16005",
+    "expected_decision": "request_document",
+    "missing": "discharge summary for line 27447",
+    "family": "required_document_absent",
+    "must_record": [
+      "the missing document named: discharge summary",
+      "the line it belongs to: 27447",
+      "PA-5702 found and valid, so the request is for the document, not the authorisation"
+    ],
+    "note": "Everything else is valid: active policy, pre-authorisation PA-5702 covers the service date, hospital on panel, no duplicate. The only missing item is the required discharge summary for the pre-authorised knee replacement."
+  }
+]

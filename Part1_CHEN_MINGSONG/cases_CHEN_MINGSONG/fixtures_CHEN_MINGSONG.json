@@ -1,0 +1,70 @@
+{
+  "EXTRA_CLAIMS": [
+    {
+      "claim_id": "CLM-16001",
+      "member_id": "M-2214",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-09-17",
+      "narrative": "I came in for a consultation and had two small cosmetic procedures done at the same time.",
+      "documents": ["itemised_bill"],
+      "lines": [
+        { "code": "99213", "amount": 180 },
+        { "code": "31255", "amount": 300 },
+        { "code": "15823", "amount": 250 }
+      ]
+    },
+    {
+      "claim_id": "CLM-16002",
+      "member_id": "M-5502",
+      "hospital_id": "H-207",
+      "date_of_service": "2026-09-18",
+      "narrative": "Knee replacement that was pre-approved. I sent all the paperwork in advance.",
+      "documents": ["itemised_bill", "discharge_summary"],
+      "lines": [
+        { "code": "27447", "amount": 8200 }
+      ]
+    },
+    {
+      "claim_id": "CLM-16003",
+      "member_id": "M-5502",
+      "hospital_id": "H-207",
+      "date_of_service": "2026-09-22",
+      "narrative": "Colonoscopy done at the clinic. I have attached the bill.",
+      "documents": ["itemised_bill"],
+      "lines": [
+        { "code": "45378", "amount": 1100 }
+      ]
+    },
+    {
+      "claim_id": "CLM-16004",
+      "member_id": "M-2214",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-09-20",
+      "narrative": "Eyelid surgery to improve appearance, with a routine consultation and a head scan.",
+      "documents": ["itemised_bill"],
+      "lines": [
+        { "code": "99213", "amount": 180 },
+        { "code": "70553", "amount": 620 },
+        { "code": "15823", "amount": 250 }
+      ]
+    },
+    {
+      "claim_id": "CLM-16005",
+      "member_id": "M-5502",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-09-19",
+      "narrative": "Knee replacement, planned in advance.",
+      "documents": ["itemised_bill"],
+      "lines": [
+        { "code": "27447", "amount": 8600 }
+      ]
+    }
+  ],
+  "EXTRA_MEMBERS": [],
+  "EXTRA_POLICIES": [],
+  "EXTRA_PREAUTHORISATIONS": [],
+  "EXTRA_DECIDED": [],
+  "EXTRA_HOSPITALS": [],
+  "EXTRA_PROCEDURES": [],
+  "EXTRA_REQUIRED_DOCS": {}
+}
