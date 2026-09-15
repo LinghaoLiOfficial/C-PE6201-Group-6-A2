@@ -1,0 +1,79 @@
+{
+  "EXTRA_CLAIMS": [
+    {
+      "claim_id": "CLM-16101",
+      "member_id": "M-16101",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-09-10",
+      "narrative": "Planned lumbar spinal fusion performed on the first day covered by the approval.",
+      "documents": ["itemised_bill", "discharge_summary"],
+      "lines": [{"code": "62480", "amount": 2400}]
+    },
+    {
+      "claim_id": "CLM-16102",
+      "member_id": "M-16102",
+      "hospital_id": "H-207",
+      "date_of_service": "2026-09-12",
+      "narrative": "Knee arthroscopy performed on the final day covered by the approval.",
+      "documents": ["itemised_bill", "discharge_summary"],
+      "lines": [{"code": "29881", "amount": 1950}]
+    },
+    {
+      "claim_id": "CLM-16103",
+      "member_id": "M-16103",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-10-05",
+      "narrative": "Planned total knee replacement with approval and discharge records attached.",
+      "documents": ["itemised_bill", "discharge_summary"],
+      "lines": [{"code": "27447", "amount": 7800}]
+    },
+    {
+      "claim_id": "CLM-16104",
+      "member_id": "M-16104",
+      "hospital_id": "H-207",
+      "date_of_service": "2026-09-18",
+      "narrative": "Lumbar fusion and knee replacement during one admission, followed by a metabolic panel.",
+      "documents": ["itemised_bill", "discharge_summary"],
+      "lines": [
+        {"code": "62480", "amount": 2200},
+        {"code": "27447", "amount": 6500},
+        {"code": "80053", "amount": 85}
+      ]
+    },
+    {
+      "claim_id": "CLM-16105",
+      "member_id": "M-16105",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-09-20",
+      "narrative": "Knee arthroscopy. An approval was issued earlier, before the treatment date.",
+      "documents": ["itemised_bill", "discharge_summary"],
+      "lines": [{"code": "29881", "amount": 1800}]
+    }
+  ],
+  "EXTRA_MEMBERS": [
+    {"member_id": "M-16101", "name": "Case Member 16101", "policy_id": "POL-16101", "join_date": "2025-01-15"},
+    {"member_id": "M-16102", "name": "Case Member 16102", "policy_id": "POL-16102", "join_date": "2025-02-10"},
+    {"member_id": "M-16103", "name": "Case Member 16103", "policy_id": "POL-16103", "join_date": "2025-03-12"},
+    {"member_id": "M-16104", "name": "Case Member 16104", "policy_id": "POL-16104", "join_date": "2025-04-18"},
+    {"member_id": "M-16105", "name": "Case Member 16105", "policy_id": "POL-16105", "join_date": "2025-05-20"}
+  ],
+  "EXTRA_POLICIES": [
+    {"policy_id": "POL-16101", "product": "Shield Plus", "status": "active", "start_date": "2026-01-01", "end_date": "2026-12-31", "annual_limit": 12000, "used_to_date": 1000, "exclusions": []},
+    {"policy_id": "POL-16102", "product": "Shield Plus", "status": "active", "start_date": "2026-01-01", "end_date": "2026-12-31", "annual_limit": 12000, "used_to_date": 1000, "exclusions": []},
+    {"policy_id": "POL-16103", "product": "Shield Plus", "status": "active", "start_date": "2026-01-01", "end_date": "2026-12-31", "annual_limit": 12000, "used_to_date": 1000, "exclusions": []},
+    {"policy_id": "POL-16104", "product": "Shield Plus", "status": "active", "start_date": "2026-01-01", "end_date": "2026-12-31", "annual_limit": 12000, "used_to_date": 1000, "exclusions": []},
+    {"policy_id": "POL-16105", "product": "Shield Plus", "status": "active", "start_date": "2026-01-01", "end_date": "2026-12-31", "annual_limit": 12000, "used_to_date": 1000, "exclusions": []}
+  ],
+  "EXTRA_PREAUTHORISATIONS": [
+    {"preauth_id": "PA-16101", "member_id": "M-16101", "procedure_code": "62480", "valid_from": "2026-09-10", "valid_to": "2026-10-10"},
+    {"preauth_id": "PA-16102", "member_id": "M-16102", "procedure_code": "29881", "valid_from": "2026-08-01", "valid_to": "2026-09-12"},
+    {"preauth_id": "PA-16103", "member_id": "M-16103", "procedure_code": "27447", "valid_from": "2026-09-01", "valid_to": "2026-11-30"},
+    {"preauth_id": "PA-16104", "member_id": "M-16104", "procedure_code": "62480", "valid_from": "2026-09-01", "valid_to": "2026-10-31"},
+    {"preauth_id": "PA-16105", "member_id": "M-16104", "procedure_code": "27447", "valid_from": "2026-08-15", "valid_to": "2026-09-30"},
+    {"preauth_id": "PA-16106", "member_id": "M-16105", "procedure_code": "29881", "valid_from": "2026-06-01", "valid_to": "2026-08-31"}
+  ],
+  "EXTRA_DECIDED": [],
+  "EXTRA_HOSPITALS": [],
+  "EXTRA_PROCEDURES": [],
+  "EXTRA_REQUIRED_DOCS": {}
+}

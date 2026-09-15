@@ -1,0 +1,65 @@
+[
+  {
+    "case_id": "CLM-16101",
+    "expected_decision": "approve_in_principle",
+    "family": "preauth_valid_from_boundary",
+    "must_record": [
+      "line 62480 covered with PA-16101",
+      "PA-16101 valid from 2026-09-10 to 2026-10-10 and valid on the service date",
+      "approved_total 2400",
+      "refused_total 0"
+    ],
+    "note": "The service date equals valid_from. The authorisation window is inclusive, so the line resolves and the claim remains ACT."
+  },
+  {
+    "case_id": "CLM-16102",
+    "expected_decision": "approve_in_principle",
+    "family": "preauth_valid_to_boundary",
+    "must_record": [
+      "line 29881 covered with PA-16102",
+      "PA-16102 valid through 2026-09-12 and valid on the service date",
+      "approved_total 1950",
+      "refused_total 0"
+    ],
+    "note": "The service date equals valid_to. The authorisation remains valid through that date."
+  },
+  {
+    "case_id": "CLM-16103",
+    "expected_decision": "approve_in_principle",
+    "family": "preauth_valid_different_code",
+    "must_record": [
+      "line 27447 covered with PA-16103",
+      "discharge_summary present for line 27447",
+      "approved_total 7800",
+      "refused_total 0"
+    ],
+    "note": "Tests the total knee replacement code, its valid authorisation, and its named document requirement without competing triggers."
+  },
+  {
+    "case_id": "CLM-16104",
+    "expected_decision": "approve_in_principle",
+    "family": "mixed_preauth_line_requirements",
+    "must_record": [
+      "a disposition for all 3 lines",
+      "PA-16104 cited for line 62480",
+      "PA-16105 cited for line 27447",
+      "line 80053 covered without pre-authorisation",
+      "approved_total 8785",
+      "refused_total 0"
+    ],
+    "note": "Two lines require separate valid authorisations while one line does not. The agent must follow each line's own requirement."
+  },
+  {
+    "case_id": "CLM-16105",
+    "expected_decision": "request_document",
+    "missing": "current pre-authorisation for line 29881, valid on 2026-09-20",
+    "family": "preauth_expired",
+    "must_record": [
+      "PA-16106 found",
+      "its validity ended 2026-08-31",
+      "that PA-16106 does not authorise line 29881 on 2026-09-20",
+      "request a current pre-authorisation for line 29881"
+    ],
+    "note": "The policy, limit, documents, hospital and duplicate checks are otherwise valid. The expired authorisation is the only request trigger."
+  }
+]
