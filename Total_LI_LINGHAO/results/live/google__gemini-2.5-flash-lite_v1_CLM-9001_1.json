@@ -1,0 +1,810 @@
+{
+  "case_id": "CLM-9001",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9001"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1496,
+        "output": 28,
+        "cost": 0.0001608,
+        "provider_usage": {
+          "prompt_tokens": 1496,
+          "completion_tokens": 28,
+          "total_tokens": 1524,
+          "cost": 0.0001608,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001608,
+            "upstream_inference_prompt_cost": 0.0001496,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454397-DCO9Rxbi8WXDrm4xXAxb",
+        "object": "chat.completion",
+        "created": 1789454397,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_claim\", \"arguments\": {\"claim_id\": \"CLM-9001\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1496,
+          "completion_tokens": 28,
+          "total_tokens": 1524,
+          "cost": 0.0001608,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001608,
+            "upstream_inference_prompt_cost": 0.0001496,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "member_id": "M-3390",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-09-20",
+          "narrative": "Emergency appendix removal.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 600.01
+            }
+          ],
+          "claim_id": "CLM-9001",
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9001"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1674,
+        "output": 28,
+        "cost": 0.0001786,
+        "provider_usage": {
+          "prompt_tokens": 1674,
+          "completion_tokens": 28,
+          "total_tokens": 1702,
+          "cost": 0.0001786,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001786,
+            "upstream_inference_prompt_cost": 0.0001674,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454398-HD1bZJ8x2MGes7jMrJAe",
+        "object": "chat.completion",
+        "created": 1789454398,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"lookup_policy\", \"arguments\": {\"claim_id\": \"CLM-9001\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1674,
+          "completion_tokens": 28,
+          "total_tokens": 1702,
+          "cost": 0.0001786,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001786,
+            "upstream_inference_prompt_cost": 0.0001674,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-4102",
+          "product": "Shield Basic",
+          "status": "active",
+          "start_date": "2026-01-01",
+          "end_date": "2026-12-31",
+          "annual_limit": 6000,
+          "used_to_date": 5400,
+          "exclusions": [
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 600.0,
+          "claim_total": 600.01,
+          "policy_trigger": "annual_limit_exceeded"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9001",
+              "decision": "escalate",
+              "reason": "The annual limit for the policy has been exceeded.",
+              "evidence": [
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0,
+              "escalate_to": "human claims assessor",
+              "trigger": "annual_limit_exceeded"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1855,
+        "output": 88,
+        "cost": 0.0002207,
+        "provider_usage": {
+          "prompt_tokens": 1855,
+          "completion_tokens": 88,
+          "total_tokens": 1943,
+          "cost": 0.0002207,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002207,
+            "upstream_inference_prompt_cost": 0.0001855,
+            "upstream_inference_completions_cost": 3.52e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454399-6Pokuy2o2lVTldYr97e3",
+        "object": "chat.completion",
+        "created": 1789454399,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9001\",\"decision\":\"escalate\",\"reason\":\"The annual limit for the policy has been exceeded.\",\"evidence\":[\"obs-2\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":0,\"escalate_to\":\"human claims assessor\",\"trigger\":\"annual_limit_exceeded\"}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1855,
+          "completion_tokens": 88,
+          "total_tokens": 1943,
+          "cost": 0.0002207,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002207,
+            "upstream_inference_prompt_cost": 0.0001855,
+            "upstream_inference_completions_cost": 3.52e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: missing_evidence: get_claim"
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9001",
+            "code": "47120"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1999,
+        "output": 38,
+        "cost": 3.924e-05,
+        "provider_usage": {
+          "prompt_tokens": 1999,
+          "completion_tokens": 38,
+          "total_tokens": 2037,
+          "cost": 3.924e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1954,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 3.924e-05,
+            "upstream_inference_prompt_cost": 2.404e-05,
+            "upstream_inference_completions_cost": 1.52e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454403-mdLGI6vpQBZz4eMK7NrV",
+        "object": "chat.completion",
+        "created": 1789454403,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-9001\", \"code\": \"47120\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1999,
+          "completion_tokens": 38,
+          "total_tokens": 2037,
+          "cost": 3.924e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1954,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 3.924e-05,
+            "upstream_inference_prompt_cost": 2.404e-05,
+            "upstream_inference_completions_cost": 1.52e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "47120",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9001"
+          }
+        }
+      ],
+      "usage": {
+        "input": 2121,
+        "output": 30,
+        "cost": 0.0002241,
+        "provider_usage": {
+          "prompt_tokens": 2121,
+          "completion_tokens": 30,
+          "total_tokens": 2151,
+          "cost": 0.0002241,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002241,
+            "upstream_inference_prompt_cost": 0.0002121,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454404-vSOHDhVp8LTgIJNL5p4l",
+        "object": "chat.completion",
+        "created": 1789454404,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-9001\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2121,
+          "completion_tokens": 30,
+          "total_tokens": 2151,
+          "cost": 0.0002241,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002241,
+            "upstream_inference_prompt_cost": 0.0002121,
+            "upstream_inference_completions_cost": 1.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 6,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9001",
+              "decision": "escalate",
+              "reason": "The annual limit for the policy has been exceeded. No individual coverage pricing was performed because the total already exceeded the remaining limit.",
+              "evidence": [
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0.0,
+              "refused_total": 0.0,
+              "escalate_to": "human claims assessor",
+              "trigger": "annual_limit_exceeded"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2216,
+        "output": 107,
+        "cost": 8.782e-05,
+        "provider_usage": {
+          "prompt_tokens": 2216,
+          "completion_tokens": 107,
+          "total_tokens": 2323,
+          "cost": 8.782e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1962,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 8.782e-05,
+            "upstream_inference_prompt_cost": 4.502e-05,
+            "upstream_inference_completions_cost": 4.28e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454408-6LyZ0QG6HUqB01gDkBbE",
+        "object": "chat.completion",
+        "created": 1789454408,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9001\",\"decision\":\"escalate\",\"reason\":\"The annual limit for the policy has been exceeded. No individual coverage pricing was performed because the total already exceeded the remaining limit.\",\"evidence\":[\"obs-2\"],\"lines\":[],\"missing\":[],\"approved_total\":0.0,\"refused_total\":0.0,\"escalate_to\":\"human claims assessor\",\"trigger\":\"annual_limit_exceeded\"}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2216,
+          "completion_tokens": 107,
+          "total_tokens": 2323,
+          "cost": 8.782e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1962,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 8.782e-05,
+            "upstream_inference_prompt_cost": 4.502e-05,
+            "upstream_inference_completions_cost": 4.28e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: missing_evidence: get_claim"
+    },
+    {
+      "turn": 7,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9001",
+              "decision": "escalate",
+              "reason": "The annual limit for the policy has been exceeded. No individual coverage pricing was performed because the total already exceeded the remaining limit.",
+              "evidence": [
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0.0,
+              "refused_total": 0.0,
+              "escalate_to": "human claims assessor",
+              "trigger": "annual_limit_exceeded"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2380,
+        "output": 128,
+        "cost": 0.00011208,
+        "provider_usage": {
+          "prompt_tokens": 2380,
+          "completion_tokens": 128,
+          "total_tokens": 2508,
+          "cost": 0.00011208,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1968,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00011208,
+            "upstream_inference_prompt_cost": 6.088e-05,
+            "upstream_inference_completions_cost": 5.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454409-tDXyChDjYuwQoaky2llZ",
+        "object": "chat.completion",
+        "created": 1789454409,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"issue_decision_letter\", \"arguments\": {\"decision\": {\"case_id\": \"CLM-9001\", \"decision\": \"escalate\", \"reason\": \"The annual limit for the policy has been exceeded. No individual coverage pricing was performed because the total already exceeded the remaining limit.\", \"evidence\": [\"obs-2\"], \"lines\": [], \"missing\": [], \"approved_total\": 0.0, \"refused_total\": 0.0, \"escalate_to\": \"human claims assessor\", \"trigger\": \"annual_limit_exceeded\"}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2380,
+          "completion_tokens": 128,
+          "total_tokens": 2508,
+          "cost": 0.00011208,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1968,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00011208,
+            "upstream_inference_prompt_cost": 6.088e-05,
+            "upstream_inference_completions_cost": 5.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: repeated action blocked"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9001"
+      },
+      "result": {
+        "member_id": "M-3390",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-09-20",
+        "narrative": "Emergency appendix removal.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 600.01
+          }
+        ],
+        "claim_id": "CLM-9001",
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9001"
+      },
+      "result": {
+        "policy_id": "POL-4102",
+        "product": "Shield Basic",
+        "status": "active",
+        "start_date": "2026-01-01",
+        "end_date": "2026-12-31",
+        "annual_limit": 6000,
+        "used_to_date": 5400,
+        "exclusions": [
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 600.0,
+        "claim_total": 600.01,
+        "policy_trigger": "annual_limit_exceeded"
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9001",
+        "code": "47120"
+      },
+      "result": {
+        "code": "47120",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9001"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    }
+  ],
+  "turns": 7,
+  "tokens_in": 13741,
+  "tokens_out": 447,
+  "cost_usd": 0.00102334,
+  "stop": "duplicate_action",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 13.0092,
+  "variant": "v1",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "google/gemini-2.5-flash-lite",
+  "trial": 1,
+  "negative": true,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: duplicate_action"
+    ],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

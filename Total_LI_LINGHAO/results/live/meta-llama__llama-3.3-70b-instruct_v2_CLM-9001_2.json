@@ -1,0 +1,495 @@
+{
+  "case_id": "CLM-9001",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9001"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1395,
+        "output": 20,
+        "cost": 0.00064575,
+        "provider_usage": {
+          "prompt_tokens": 1395,
+          "completion_tokens": 20,
+          "total_tokens": 1415,
+          "cost": 0.00064575,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00064575,
+            "upstream_inference_prompt_cost": 0.00062775,
+            "upstream_inference_completions_cost": 1.8e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454093-jZ12iU5ghOLf7045CwSD",
+        "object": "chat.completion",
+        "created": 1789454093,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "SambaNova",
+        "system_fingerprint": "fastcoe",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9001\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1395,
+          "completion_tokens": 20,
+          "total_tokens": 1415,
+          "cost": 0.00064575,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00064575,
+            "upstream_inference_prompt_cost": 0.00062775,
+            "upstream_inference_completions_cost": 1.8e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "member_id": "M-3390",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-09-20",
+          "narrative": "Emergency appendix removal.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 600.01
+            }
+          ],
+          "claim_id": "CLM-9001",
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9001"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1547,
+        "output": 20,
+        "cost": 0.00071415,
+        "provider_usage": {
+          "prompt_tokens": 1547,
+          "completion_tokens": 20,
+          "total_tokens": 1567,
+          "cost": 0.00071415,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00071415,
+            "upstream_inference_prompt_cost": 0.00069615,
+            "upstream_inference_completions_cost": 1.8e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454095-VmYR8YOppc5ujTNLPXQb",
+        "object": "chat.completion",
+        "created": 1789454095,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "SambaNova",
+        "system_fingerprint": "fastcoe",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9001\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1547,
+          "completion_tokens": 20,
+          "total_tokens": 1567,
+          "cost": 0.00071415,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00071415,
+            "upstream_inference_prompt_cost": 0.00069615,
+            "upstream_inference_completions_cost": 1.8e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-4102",
+          "product": "Shield Basic",
+          "status": "active",
+          "start_date": "2026-01-01",
+          "end_date": "2026-12-31",
+          "annual_limit": 6000,
+          "used_to_date": 5400,
+          "exclusions": [
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 600.0,
+          "claim_total": 600.01,
+          "policy_trigger": "annual_limit_exceeded"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9001",
+              "decision": "escalate",
+              "reason": "Annual limit exceeded. The claim total of 600.01 exceeds the remaining limit of 600.0. No individual coverage pricing was performed because the total already exceeded the remaining limit.",
+              "evidence": [
+                "obs-1",
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 600.01,
+              "trigger": "annual_limit_exceeded",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1636,
+        "output": 115,
+        "cost": 0.0002004,
+        "provider_usage": {
+          "prompt_tokens": 1636,
+          "completion_tokens": 115,
+          "total_tokens": 1751,
+          "cost": 0.0002004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002004,
+            "upstream_inference_prompt_cost": 0.0001636,
+            "upstream_inference_completions_cost": 3.68e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454096-dGrJk6PuQt5mr71Wxb01",
+        "object": "chat.completion",
+        "created": 1789454097,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9001\",\"decision\":\"escalate\",\"reason\":\"Annual limit exceeded. The claim total of 600.01 exceeds the remaining limit of 600.0. No individual coverage pricing was performed because the total already exceeded the remaining limit.\",\"evidence\":[\"obs-1\",\"obs-2\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":600.01,\"trigger\":\"annual_limit_exceeded\",\"escalate_to\":\"human claims assessor\"}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1636,
+          "completion_tokens": 115,
+          "total_tokens": 1751,
+          "cost": 0.0002004,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002004,
+            "upstream_inference_prompt_cost": 0.0001636,
+            "upstream_inference_completions_cost": 3.68e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: incorrect_totals"
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9001",
+              "decision": "escalate",
+              "reason": "Annual limit exceeded. The claim total of 600.01 exceeds the remaining limit of 600.0. No individual coverage pricing was performed because the total already exceeded the remaining limit.",
+              "evidence": [
+                "obs-1",
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 600.01,
+              "trigger": "annual_limit_exceeded",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1821,
+        "output": 115,
+        "cost": 0.00031732,
+        "provider_usage": {
+          "prompt_tokens": 1821,
+          "completion_tokens": 115,
+          "total_tokens": 1936,
+          "cost": 0.00031732,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031732,
+            "upstream_inference_prompt_cost": 0.00025982,
+            "upstream_inference_completions_cost": 5.75e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454119-vfxEzc2kSHfHDqh4yLVF",
+        "object": "chat.completion",
+        "created": 1789454119,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "Parasail",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9001\",\"decision\":\"escalate\",\"reason\":\"Annual limit exceeded. The claim total of 600.01 exceeds the remaining limit of 600.0. No individual coverage pricing was performed because the total already exceeded the remaining limit.\",\"evidence\":[\"obs-1\",\"obs-2\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":600.01,\"trigger\":\"annual_limit_exceeded\",\"escalate_to\":\"human claims assessor\"}}}] }",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1821,
+          "completion_tokens": 115,
+          "total_tokens": 1936,
+          "cost": 0.00031732,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00031732,
+            "upstream_inference_prompt_cost": 0.00025982,
+            "upstream_inference_completions_cost": 5.75e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: repeated action blocked"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9001"
+      },
+      "result": {
+        "member_id": "M-3390",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-09-20",
+        "narrative": "Emergency appendix removal.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 600.01
+          }
+        ],
+        "claim_id": "CLM-9001",
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9001"
+      },
+      "result": {
+        "policy_id": "POL-4102",
+        "product": "Shield Basic",
+        "status": "active",
+        "start_date": "2026-01-01",
+        "end_date": "2026-12-31",
+        "annual_limit": 6000,
+        "used_to_date": 5400,
+        "exclusions": [
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 600.0,
+        "claim_total": 600.01,
+        "policy_trigger": "annual_limit_exceeded"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6399,
+  "tokens_out": 270,
+  "cost_usd": 0.0018776199999999998,
+  "stop": "duplicate_action",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 27.7814,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "trial": 2,
+  "negative": true,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: duplicate_action"
+    ],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

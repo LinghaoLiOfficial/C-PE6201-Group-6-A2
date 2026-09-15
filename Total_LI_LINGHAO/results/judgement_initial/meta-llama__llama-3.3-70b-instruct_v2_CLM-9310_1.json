@@ -1,0 +1,56 @@
+{
+  "source": "meta-llama__llama-3.3-70b-instruct_v2_CLM-9310_1.json",
+  "case_id": "CLM-9310",
+  "judge": "anthropic/claude-haiku-4.5",
+  "status": "judged",
+  "pass": true,
+  "reason": "Record meets all must_record requirements. Approved total of 1800 is explicitly stated and supported by: (1) claim line obs-1 showing code 29881 amount 1800; (2) policy obs-2 confirming Shield Plus active with 15000 remaining; (3) coverage obs-3 confirming code 29881 not excluded; (4) preauthorisation obs-5 identifying valid PA-9901-VALID with validity window 2026-08-01 to 2026-10-31 covering service date 2026-09-10; (5) line-level record showing status 'covered' with preauth PA-9901-VALID. No exclusions, no duplicates, no missing documents. Decision hash confirms integrity.",
+  "missing_requirements": [],
+  "cost_usd": 0.002569,
+  "raw": {
+    "id": "gen-1789453026-38ia7P0eReaLgHeYYj1l",
+    "object": "chat.completion",
+    "created": 1789453026,
+    "model": "anthropic/claude-haiku-4.5",
+    "provider": "Amazon Bedrock",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "```json\n{\n  \"pass\": true,\n  \"reason\": \"Record meets all must_record requirements. Approved total of 1800 is explicitly stated and supported by: (1) claim line obs-1 showing code 29881 amount 1800; (2) policy obs-2 confirming Shield Plus active with 15000 remaining; (3) coverage obs-3 confirming code 29881 not excluded; (4) preauthorisation obs-5 identifying valid PA-9901-VALID with validity window 2026-08-01 to 2026-10-31 covering service date 2026-09-10; (5) line-level record showing status 'covered' with preauth PA-9901-VALID. No exclusions, no duplicates, no missing documents. Decision hash confirms integrity.\",\n  \"missing_requirements\": []\n}\n```",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1549,
+      "completion_tokens": 204,
+      "total_tokens": 1753,
+      "cost": 0.002569,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.002569,
+        "upstream_inference_prompt_cost": 0.001549,
+        "upstream_inference_completions_cost": 0.00102
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

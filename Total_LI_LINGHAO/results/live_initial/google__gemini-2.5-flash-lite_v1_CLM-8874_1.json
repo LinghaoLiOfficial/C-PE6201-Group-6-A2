@@ -1,0 +1,611 @@
+{
+  "case_id": "CLM-8874",
+  "record": {
+    "case_id": "CLM-8874",
+    "decision": "approve_in_principle",
+    "reason": "The claim is approved as the service is covered by the policy and no pre-authorisation or further documents are required. The hospital is not on the panel, but this does not affect coverage.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "70553",
+        "amount": 620,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 620.0,
+    "refused_total": 0.0,
+    "turns": 4,
+    "tokens_in": 6577,
+    "tokens_out": 286,
+    "cost_usd": 0.0007721000000000001,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:19:36.512519+00:00",
+    "decision_hash": "545da959276331720975bae755a3459707568c816f5782e7346a053e80fae3c6"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8874"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1404,
+        "output": 28,
+        "cost": 0.0001516,
+        "provider_usage": {
+          "prompt_tokens": 1404,
+          "completion_tokens": 28,
+          "total_tokens": 1432,
+          "cost": 0.0001516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001516,
+            "upstream_inference_prompt_cost": 0.0001404,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453172-Ta9XzKmfpXYG0AupV3pa",
+        "object": "chat.completion",
+        "created": 1789453172,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_claim\", \"arguments\": {\"claim_id\": \"CLM-8874\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1404,
+          "completion_tokens": 28,
+          "total_tokens": 1432,
+          "cost": 0.0001516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001516,
+            "upstream_inference_prompt_cost": 0.0001404,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8874",
+          "member_id": "M-2214",
+          "hospital_id": "H-330",
+          "date_of_service": "2026-09-06",
+          "narrative": "Went to Bayfront because it was nearest. Paid myself.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "70553",
+              "amount": 620
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8874"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1559,
+        "output": 28,
+        "cost": 0.0001671,
+        "provider_usage": {
+          "prompt_tokens": 1559,
+          "completion_tokens": 28,
+          "total_tokens": 1587,
+          "cost": 0.0001671,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001671,
+            "upstream_inference_prompt_cost": 0.0001559,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453173-iDOZ6K9JJKbUFgp4YzOo",
+        "object": "chat.completion",
+        "created": 1789453173,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"lookup_policy\", \"arguments\": {\"claim_id\": \"CLM-8874\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1559,
+          "completion_tokens": 28,
+          "total_tokens": 1587,
+          "cost": 0.0001671,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001671,
+            "upstream_inference_prompt_cost": 0.0001559,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 620.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8874",
+            "code": "70553"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8874"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1730,
+        "output": 65,
+        "cost": 0.000199,
+        "provider_usage": {
+          "prompt_tokens": 1730,
+          "completion_tokens": 65,
+          "total_tokens": 1795,
+          "cost": 0.000199,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000199,
+            "upstream_inference_prompt_cost": 0.000173,
+            "upstream_inference_completions_cost": 2.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453174-8uE9ayBABGYRHADUfYDX",
+        "object": "chat.completion",
+        "created": 1789453174,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8874\", \"code\": \"70553\"}}, {\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-8874\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1730,
+          "completion_tokens": 65,
+          "total_tokens": 1795,
+          "cost": 0.000199,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000199,
+            "upstream_inference_prompt_cost": 0.000173,
+            "upstream_inference_completions_cost": 2.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "70553",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-330",
+          "name": "Bayfront Specialist",
+          "panel": false,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8874",
+              "decision": "approve_in_principle",
+              "reason": "The claim is approved as the service is covered by the policy and no pre-authorisation or further documents are required. The hospital is not on the panel, but this does not affect coverage.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "70553",
+                  "amount": 620,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 620.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1884,
+        "output": 165,
+        "cost": 0.0002544,
+        "provider_usage": {
+          "prompt_tokens": 1884,
+          "completion_tokens": 165,
+          "total_tokens": 2049,
+          "cost": 0.0002544,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002544,
+            "upstream_inference_prompt_cost": 0.0001884,
+            "upstream_inference_completions_cost": 6.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453175-loex8J7pel9agwmyAr3z",
+        "object": "chat.completion",
+        "created": 1789453175,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"issue_decision_letter\", \"arguments\": {\"decision\": {\"case_id\": \"CLM-8874\", \"decision\": \"approve_in_principle\", \"reason\": \"The claim is approved as the service is covered by the policy and no pre-authorisation or further documents are required. The hospital is not on the panel, but this does not affect coverage.\", \"evidence\": [\"obs-1\", \"obs-2\", \"obs-3\", \"obs-4\"], \"lines\": [{\"code\": \"70553\", \"amount\": 620, \"status\": \"covered\"}], \"missing\": [], \"approved_total\": 620.0, \"refused_total\": 0.0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1884,
+          "completion_tokens": 165,
+          "total_tokens": 2049,
+          "cost": 0.0002544,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002544,
+            "upstream_inference_prompt_cost": 0.0001884,
+            "upstream_inference_completions_cost": 6.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8874",
+          "decision": "approve_in_principle",
+          "decision_hash": "545da959276331720975bae755a3459707568c816f5782e7346a053e80fae3c6"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8874"
+      },
+      "result": {
+        "claim_id": "CLM-8874",
+        "member_id": "M-2214",
+        "hospital_id": "H-330",
+        "date_of_service": "2026-09-06",
+        "narrative": "Went to Bayfront because it was nearest. Paid myself.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "70553",
+            "amount": 620
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8874"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 620.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8874",
+        "code": "70553"
+      },
+      "result": {
+        "code": "70553",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8874"
+      },
+      "result": {
+        "hospital_id": "H-330",
+        "name": "Bayfront Specialist",
+        "panel": false,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8874",
+          "decision": "approve_in_principle",
+          "reason": "The claim is approved as the service is covered by the policy and no pre-authorisation or further documents are required. The hospital is not on the panel, but this does not affect coverage.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "70553",
+              "amount": 620,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 620.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8874",
+        "decision": "approve_in_principle",
+        "decision_hash": "545da959276331720975bae755a3459707568c816f5782e7346a053e80fae3c6"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6577,
+  "tokens_out": 286,
+  "cost_usd": 0.0007721000000000001,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 4.3497,
+  "variant": "v1",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "google/gemini-2.5-flash-lite",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

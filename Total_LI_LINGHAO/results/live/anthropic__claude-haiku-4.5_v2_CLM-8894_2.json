@@ -1,0 +1,752 @@
+{
+  "case_id": "CLM-8894",
+  "record": {
+    "case_id": "CLM-8894",
+    "decision": "request_document",
+    "reason": "Code 29881 (knee arthroscopy) requires valid preauthorisation. Candidate PA-5640 expired 2026-05-31, before service date 2026-09-09. No valid preauthorisation on file for the service date. Member narrative references earlier approval but no current valid preauth exists.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5"
+    ],
+    "lines": [
+      {
+        "code": "29881",
+        "amount": 1950.0,
+        "status": "unresolved"
+      }
+    ],
+    "missing": [
+      {
+        "code": "29881",
+        "document": "preauthorisation",
+        "date": "2026-09-09"
+      }
+    ],
+    "approved_total": 0.0,
+    "refused_total": 0.0,
+    "turns": 5,
+    "tokens_in": 9343,
+    "tokens_out": 813,
+    "cost_usd": 0.013408,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:38:29.973009+00:00",
+    "decision_hash": "486142556c24bd96d6bafeda964780e42b634f98cd93735057811c82d82bb54d"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1512,
+        "output": 59,
+        "cost": 0.001807,
+        "provider_usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454297-X782LHKy2qofEfbAZ16P",
+        "object": "chat.completion",
+        "created": 1789454297,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8894\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8894",
+          "member_id": "M-6118",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-09-09",
+          "narrative": "Knee arthroscopy. I got approval for this earlier in the year.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "29881",
+              "amount": 1950
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1689,
+        "output": 59,
+        "cost": 0.001984,
+        "provider_usage": {
+          "prompt_tokens": 1689,
+          "completion_tokens": 59,
+          "total_tokens": 1748,
+          "cost": 0.001984,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001984,
+            "upstream_inference_prompt_cost": 0.001689,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454298-cgfJvPeluUNqqNcv8g90",
+        "object": "chat.completion",
+        "created": 1789454298,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8894\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1689,
+          "completion_tokens": 59,
+          "total_tokens": 1748,
+          "cost": 0.001984,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001984,
+            "upstream_inference_prompt_cost": 0.001689,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-7220",
+          "product": "Shield Basic",
+          "status": "active",
+          "start_date": "2026-02-01",
+          "end_date": "2027-01-31",
+          "annual_limit": 8000,
+          "used_to_date": 1200,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 6800.0,
+          "claim_total": 1950.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8894",
+            "code": "29881"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1851,
+        "output": 311,
+        "cost": 0.003406,
+        "provider_usage": {
+          "prompt_tokens": 1851,
+          "completion_tokens": 311,
+          "total_tokens": 2162,
+          "cost": 0.003406,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003406,
+            "upstream_inference_prompt_cost": 0.001851,
+            "upstream_inference_completions_cost": 0.001555
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454300-CHh91Aaz0KUibca3BU8G",
+        "object": "chat.completion",
+        "created": 1789454300,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim step by step.\n\n**Analysis of observations:**\n\n1. **get_claim (obs-1)**: Claim CLM-8894 for knee arthroscopy (code 29881), amount $1,950. No duplicates, no instruction detected. Documents provided: itemised_bill, discharge_summary.\n\n2. **lookup_policy (obs-2)**: Policy POL-7220 is active, dates 2026-02-01 to 2027-01-31 (service date 2026-09-09 is within policy). Annual limit $8,000, used $1,200, remaining $6,800. Claim total $1,950 fits within remaining. No policy_trigger.\n\n**Next steps:**\n- Check coverage for code 29881\n- Get hospital status for H-207\n- Get preauthorisation if required\n- Then issue decision\n\n```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"check_coverage\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8894\",\n        \"code\": \"29881\"\n      }\n    },\n    {\n      \"tool\": \"get_hospital_status\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8894\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1851,
+          "completion_tokens": 311,
+          "total_tokens": 2162,
+          "cost": 0.003406,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003406,
+            "upstream_inference_prompt_cost": 0.001851,
+            "upstream_inference_completions_cost": 0.001555
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "29881",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-8894",
+            "code": "29881"
+          }
+        }
+      ],
+      "usage": {
+        "input": 2059,
+        "output": 70,
+        "cost": 0.002409,
+        "provider_usage": {
+          "prompt_tokens": 2059,
+          "completion_tokens": 70,
+          "total_tokens": 2129,
+          "cost": 0.002409,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002409,
+            "upstream_inference_prompt_cost": 0.002059,
+            "upstream_inference_completions_cost": 0.00035
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454304-ghfMgTm5NZbEdR1yXyns",
+        "object": "chat.completion",
+        "created": 1789454304,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_preauthorisation\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8894\",\n        \"code\": \"29881\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2059,
+          "completion_tokens": 70,
+          "total_tokens": 2129,
+          "cost": 0.002409,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002409,
+            "upstream_inference_prompt_cost": 0.002059,
+            "upstream_inference_completions_cost": 0.00035
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "29881",
+          "candidates": [
+            {
+              "preauth_id": "PA-5640",
+              "member_id": "M-6118",
+              "procedure_code": "29881",
+              "valid_from": "2026-03-01",
+              "valid_to": "2026-05-31",
+              "status": "expired_before_service"
+            }
+          ],
+          "valid": null,
+          "status": "no_valid_candidate"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8894",
+              "decision": "request_document",
+              "reason": "Code 29881 (knee arthroscopy) requires valid preauthorisation. Candidate PA-5640 expired 2026-05-31, before service date 2026-09-09. No valid preauthorisation on file for the service date. Member narrative references earlier approval but no current valid preauth exists.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5"
+              ],
+              "lines": [
+                {
+                  "code": "29881",
+                  "amount": 1950.0,
+                  "status": "unresolved"
+                }
+              ],
+              "missing": [
+                {
+                  "code": "29881",
+                  "document": "preauthorisation",
+                  "date": "2026-09-09"
+                }
+              ],
+              "approved_total": 0.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2232,
+        "output": 314,
+        "cost": 0.003802,
+        "provider_usage": {
+          "prompt_tokens": 2232,
+          "completion_tokens": 314,
+          "total_tokens": 2546,
+          "cost": 0.003802,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003802,
+            "upstream_inference_prompt_cost": 0.002232,
+            "upstream_inference_completions_cost": 0.00157
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454306-RgDpljnoublSKPhWyxMs",
+        "object": "chat.completion",
+        "created": 1789454306,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-8894\",\n          \"decision\": \"request_document\",\n          \"reason\": \"Code 29881 (knee arthroscopy) requires valid preauthorisation. Candidate PA-5640 expired 2026-05-31, before service date 2026-09-09. No valid preauthorisation on file for the service date. Member narrative references earlier approval but no current valid preauth exists.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\",\n            \"obs-3\",\n            \"obs-4\",\n            \"obs-5\"\n          ],\n          \"lines\": [\n            {\n              \"code\": \"29881\",\n              \"amount\": 1950.00,\n              \"status\": \"unresolved\"\n            }\n          ],\n          \"missing\": [\n            {\n              \"code\": \"29881\",\n              \"document\": \"preauthorisation\",\n              \"date\": \"2026-09-09\"\n            }\n          ],\n          \"approved_total\": 0.00,\n          \"refused_total\": 0.00\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2232,
+          "completion_tokens": 314,
+          "total_tokens": 2546,
+          "cost": 0.003802,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003802,
+            "upstream_inference_prompt_cost": 0.002232,
+            "upstream_inference_completions_cost": 0.00157
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8894",
+          "decision": "request_document",
+          "decision_hash": "486142556c24bd96d6bafeda964780e42b634f98cd93735057811c82d82bb54d"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8894"
+      },
+      "result": {
+        "claim_id": "CLM-8894",
+        "member_id": "M-6118",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-09-09",
+        "narrative": "Knee arthroscopy. I got approval for this earlier in the year.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "29881",
+            "amount": 1950
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8894"
+      },
+      "result": {
+        "policy_id": "POL-7220",
+        "product": "Shield Basic",
+        "status": "active",
+        "start_date": "2026-02-01",
+        "end_date": "2027-01-31",
+        "annual_limit": 8000,
+        "used_to_date": 1200,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 6800.0,
+        "claim_total": 1950.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8894",
+        "code": "29881"
+      },
+      "result": {
+        "code": "29881",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8894"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-8894",
+        "code": "29881"
+      },
+      "result": {
+        "code": "29881",
+        "candidates": [
+          {
+            "preauth_id": "PA-5640",
+            "member_id": "M-6118",
+            "procedure_code": "29881",
+            "valid_from": "2026-03-01",
+            "valid_to": "2026-05-31",
+            "status": "expired_before_service"
+          }
+        ],
+        "valid": null,
+        "status": "no_valid_candidate"
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8894",
+          "decision": "request_document",
+          "reason": "Code 29881 (knee arthroscopy) requires valid preauthorisation. Candidate PA-5640 expired 2026-05-31, before service date 2026-09-09. No valid preauthorisation on file for the service date. Member narrative references earlier approval but no current valid preauth exists.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5"
+          ],
+          "lines": [
+            {
+              "code": "29881",
+              "amount": 1950.0,
+              "status": "unresolved"
+            }
+          ],
+          "missing": [
+            {
+              "code": "29881",
+              "document": "preauthorisation",
+              "date": "2026-09-09"
+            }
+          ],
+          "approved_total": 0.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8894",
+        "decision": "request_document",
+        "decision_hash": "486142556c24bd96d6bafeda964780e42b634f98cd93735057811c82d82bb54d"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 9343,
+  "tokens_out": 813,
+  "cost_usd": 0.013408,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 12.8282,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 2,
+  "negative": true,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

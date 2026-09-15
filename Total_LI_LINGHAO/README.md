@@ -46,3 +46,15 @@ This resumes an existing identical-version experiment, skipping completed trials
 This is a fixture evaluation of fixed insurer rules. Injection detection covers named test families and is not a general prompt-injection solution. The code validates structured proposals but free-text reasons need independent judgement. A workflow could implement these rules; the hand-written agent is the assignment's required architecture.
 
 See `docs/SUBMISSION_STATUS.md` for human recording, collective self-appraisal, public publication and NTULearn status. A generated script is not a recorded demonstration.
+
+## Read the final deliverables
+
+- `output/pdf/PE6201_A2_Group-6_Report.pdf`: four-page English report, 1,552 prose words.
+- `docs/RESULTS.md`: final code and assessed pass rates, costs, sensitivity and uncertainty.
+- `docs/FAILURE_EXPERIMENTS.md`: controlled removals and full turn distributions.
+- `docs/DEMO_EN.md` / `docs/DEMO_ZH.md`: six-speaker recording scripts.
+- `docs/CODE_GUIDE_ZH.md`: Chinese code explanation.
+
+`python3 scripts/replay_judgements.py` checks/replays archived independent verdicts without network access. `python3 scripts/build_analysis.py` regenerates numeric tables from saved results. PDF/figure generation additionally requires `requirements-authoring.txt`; run `python3 scripts/build_report.py` after installing those optional dependencies.
+
+The final battery was repeated in full after evidence-led changes. `results/live_initial` preserves the original full experiment; final results are only `results/live`. Total account-delta spending, including both batteries, pilots and judges, is approximately US$2.41; the exact reconciliation is archived. The final Haiku assessed result is 64/64 on this fixture set, with finite-sample and production limitations explicitly stated.

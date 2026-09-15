@@ -1,0 +1,555 @@
+{
+  "case_id": "CLM-8910",
+  "record": {
+    "case_id": "CLM-8910",
+    "decision": "escalate",
+    "reason": "Policy status is lapsed. Service date 2026-09-11 falls outside policy period (2025-04-01 to 2026-03-31). Claim cannot be processed under an inactive policy.",
+    "evidence": [
+      "obs-1",
+      "obs-2"
+    ],
+    "lines": [],
+    "missing": [],
+    "approved_total": 0,
+    "refused_total": 0,
+    "trigger": "policy_lapsed",
+    "escalate_to": "human claims assessor",
+    "turns": 4,
+    "tokens_in": 7094,
+    "tokens_out": 521,
+    "cost_usd": 0.009699000000000001,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:38:35.832790+00:00",
+    "decision_hash": "e1535c31b8c15d94feeb3b2da4ed7e4492b177e501b00b96be49641efbfa1f45"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8910"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1512,
+        "output": 59,
+        "cost": 0.001807,
+        "provider_usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454309-MwkwagDu0156b3SUNJ6O",
+        "object": "chat.completion",
+        "created": 1789454309,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8910\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8910",
+          "member_id": "M-4471",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-11",
+          "narrative": "Emergency appendix operation.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1600
+            },
+            {
+              "code": "80053",
+              "amount": 90
+            },
+            {
+              "code": "99213",
+              "amount": 150
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8910"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1704,
+        "output": 59,
+        "cost": 0.001999,
+        "provider_usage": {
+          "prompt_tokens": 1704,
+          "completion_tokens": 59,
+          "total_tokens": 1763,
+          "cost": 0.001999,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001999,
+            "upstream_inference_prompt_cost": 0.001704,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454310-NnGHVTyjkHiaMD2XmMel",
+        "object": "chat.completion",
+        "created": 1789454310,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8910\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1704,
+          "completion_tokens": 59,
+          "total_tokens": 1763,
+          "cost": 0.001999,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001999,
+            "upstream_inference_prompt_cost": 0.001704,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-5588",
+          "product": "Shield Plus",
+          "status": "lapsed",
+          "start_date": "2025-04-01",
+          "end_date": "2026-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 900,
+          "exclusions": [],
+          "remaining": 11100.0,
+          "claim_total": 1840.0,
+          "policy_trigger": "policy_lapsed"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8910",
+              "decision": "escalate",
+              "reason": "Policy status is lapsed. Service date 2026-09-11 falls outside policy period (2025-04-01 to 2026-03-31). Claim cannot be processed under an inactive policy.",
+              "evidence": [
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0,
+              "trigger": "policy_lapsed",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1848,
+        "output": 199,
+        "cost": 0.002843,
+        "provider_usage": {
+          "prompt_tokens": 1848,
+          "completion_tokens": 199,
+          "total_tokens": 2047,
+          "cost": 0.002843,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002843,
+            "upstream_inference_prompt_cost": 0.001848,
+            "upstream_inference_completions_cost": 0.000995
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454311-HuOXiCeYYYXVRma2f6Ts",
+        "object": "chat.completion",
+        "created": 1789454311,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-8910\",\n          \"decision\": \"escalate\",\n          \"reason\": \"Policy status is lapsed. Service date 2026-09-11 falls outside policy period (2025-04-01 to 2026-03-31). Claim cannot be processed under an inactive policy.\",\n          \"evidence\": [\"obs-2\"],\n          \"lines\": [],\n          \"missing\": [],\n          \"approved_total\": 0,\n          \"refused_total\": 0,\n          \"trigger\": \"policy_lapsed\",\n          \"escalate_to\": \"human claims assessor\"\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1848,
+          "completion_tokens": 199,
+          "total_tokens": 2047,
+          "cost": 0.002843,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002843,
+            "upstream_inference_prompt_cost": 0.001848,
+            "upstream_inference_completions_cost": 0.000995
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: missing_evidence: get_claim"
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8910",
+              "decision": "escalate",
+              "reason": "Policy status is lapsed. Service date 2026-09-11 falls outside policy period (2025-04-01 to 2026-03-31). Claim cannot be processed under an inactive policy.",
+              "evidence": [
+                "obs-1",
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0,
+              "trigger": "policy_lapsed",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2030,
+        "output": 204,
+        "cost": 0.00305,
+        "provider_usage": {
+          "prompt_tokens": 2030,
+          "completion_tokens": 204,
+          "total_tokens": 2234,
+          "cost": 0.00305,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00305,
+            "upstream_inference_prompt_cost": 0.00203,
+            "upstream_inference_completions_cost": 0.00102
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454314-GT8iSjiAnfTZu3aBdNUs",
+        "object": "chat.completion",
+        "created": 1789454314,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-8910\",\n          \"decision\": \"escalate\",\n          \"reason\": \"Policy status is lapsed. Service date 2026-09-11 falls outside policy period (2025-04-01 to 2026-03-31). Claim cannot be processed under an inactive policy.\",\n          \"evidence\": [\"obs-1\", \"obs-2\"],\n          \"lines\": [],\n          \"missing\": [],\n          \"approved_total\": 0,\n          \"refused_total\": 0,\n          \"trigger\": \"policy_lapsed\",\n          \"escalate_to\": \"human claims assessor\"\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2030,
+          "completion_tokens": 204,
+          "total_tokens": 2234,
+          "cost": 0.00305,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00305,
+            "upstream_inference_prompt_cost": 0.00203,
+            "upstream_inference_completions_cost": 0.00102
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8910",
+          "decision": "escalate",
+          "decision_hash": "e1535c31b8c15d94feeb3b2da4ed7e4492b177e501b00b96be49641efbfa1f45"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8910"
+      },
+      "result": {
+        "claim_id": "CLM-8910",
+        "member_id": "M-4471",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-11",
+        "narrative": "Emergency appendix operation.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 1600
+          },
+          {
+            "code": "80053",
+            "amount": 90
+          },
+          {
+            "code": "99213",
+            "amount": 150
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8910"
+      },
+      "result": {
+        "policy_id": "POL-5588",
+        "product": "Shield Plus",
+        "status": "lapsed",
+        "start_date": "2025-04-01",
+        "end_date": "2026-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 900,
+        "exclusions": [],
+        "remaining": 11100.0,
+        "claim_total": 1840.0,
+        "policy_trigger": "policy_lapsed"
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8910",
+          "decision": "escalate",
+          "reason": "Policy status is lapsed. Service date 2026-09-11 falls outside policy period (2025-04-01 to 2026-03-31). Claim cannot be processed under an inactive policy.",
+          "evidence": [
+            "obs-1",
+            "obs-2"
+          ],
+          "lines": [],
+          "missing": [],
+          "approved_total": 0,
+          "refused_total": 0,
+          "trigger": "policy_lapsed",
+          "escalate_to": "human claims assessor"
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8910",
+        "decision": "escalate",
+        "decision_hash": "e1535c31b8c15d94feeb3b2da4ed7e4492b177e501b00b96be49641efbfa1f45"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 7094,
+  "tokens_out": 521,
+  "cost_usd": 0.009699000000000001,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 6.9246,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 3,
+  "negative": true,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

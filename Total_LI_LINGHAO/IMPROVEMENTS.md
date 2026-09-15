@@ -38,3 +38,7 @@ Offline 64/64 means deterministic plumbing and the scripted policy agree with in
 ## I21: judgement instrument calibration
 
 The first independent judge conflated original billed line amounts with executing per-line coverage pricing in CLM-8925. The complete trace shows the early exit by absence of check_coverage. We preserved results/judgement_initial, clarified that term in the instrument, and rejudged the entire selected subset. Results/judgement contains the calibrated instrument and evaluated input. No agent output or answer key was changed, and no failed item was selectively rerun. This is evaluator calibration, not improved agent accuracy.
+
+## I22: evidence-led final revision
+
+The first complete live battery and judgement revealed a weak early-exit explanation and non-actionable validation errors that encouraged identical retries. The final revision states that annual-limit cases did not execute coverage pricing, enumerates exact escalation triggers, identifies completed calls, and explains rejected field contracts without supplying a repaired business answer. Core schema/decision checks remain unchanged. The entire battery is rerun after this change; results/live_initial remains available for comparison. Improvements are assessed from all trials, not selected examples.

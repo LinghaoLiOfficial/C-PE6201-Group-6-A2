@@ -1,0 +1,40 @@
+{
+  "starting_usage_usd": 0.020913589,
+  "ending_usage_usd": 2.432328745,
+  "account_delta_usd": 2.411415156,
+  "remaining_usd": 7.5676712550000005,
+  "returned_usage_total_usd": 2.4114152978,
+  "unreconciled_usd": -1.4180000018626515e-07,
+  "cap_usd": 9.979086411,
+  "experiments": [
+    {
+      "experiment": "judgement",
+      "returned_cost_usd": 0.09929930000000002
+    },
+    {
+      "experiment": "judgement_initial",
+      "returned_cost_usd": 0.08960949999999998
+    },
+    {
+      "experiment": "pilot_initial",
+      "returned_cost_usd": 0.0160543192
+    },
+    {
+      "experiment": "live_initial",
+      "returned_cost_usd": 1.02332380545
+    },
+    {
+      "experiment": "live",
+      "returned_cost_usd": 1.03248965995
+    },
+    {
+      "experiment": "pilot",
+      "returned_cost_usd": 0.058451813200000015
+    },
+    {
+      "experiment": "judgement_round1",
+      "returned_cost_usd": 0.09218689999999999
+    }
+  ],
+  "note": "Account delta may include delayed charges or other use of the shared key; no unsupported attribution of any discrepancy. Failed requests may omit usage. All figures are USD."
+}

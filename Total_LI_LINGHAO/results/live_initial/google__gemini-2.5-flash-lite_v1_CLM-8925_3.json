@@ -1,0 +1,535 @@
+{
+  "case_id": "CLM-8925",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8925"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1404,
+        "output": 28,
+        "cost": 0.0001516,
+        "provider_usage": {
+          "prompt_tokens": 1404,
+          "completion_tokens": 28,
+          "total_tokens": 1432,
+          "cost": 0.0001516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001516,
+            "upstream_inference_prompt_cost": 0.0001404,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453194-tKoyRRweYXdsZXpDPsXo",
+        "object": "chat.completion",
+        "created": 1789453194,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_claim\", \"arguments\": {\"claim_id\": \"CLM-8925\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1404,
+          "completion_tokens": 28,
+          "total_tokens": 1432,
+          "cost": 0.0001516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001516,
+            "upstream_inference_prompt_cost": 0.0001404,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8925",
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-12",
+          "narrative": "Knee replacement, plus the appendix operation and a scan.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "27447",
+              "amount": 9800
+            },
+            {
+              "code": "47120",
+              "amount": 1400
+            },
+            {
+              "code": "70553",
+              "amount": 200
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8925"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1602,
+        "output": 28,
+        "cost": 0.0001714,
+        "provider_usage": {
+          "prompt_tokens": 1602,
+          "completion_tokens": 28,
+          "total_tokens": 1630,
+          "cost": 0.0001714,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001714,
+            "upstream_inference_prompt_cost": 0.0001602,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453195-JS39GaGjBIGntnz9Cwo0",
+        "object": "chat.completion",
+        "created": 1789453195,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"lookup_policy\", \"arguments\": {\"claim_id\": \"CLM-8925\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1602,
+          "completion_tokens": 28,
+          "total_tokens": 1630,
+          "cost": 0.0001714,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001714,
+            "upstream_inference_prompt_cost": 0.0001602,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 11400.0,
+          "policy_trigger": "annual_limit_exceeded"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8925",
+              "decision": "escalate",
+              "reason": "Policy annual limit exceeded. Policy remaining: 9200.0. Claim total: 11400.0. Policy trigger: annual_limit_exceeded.",
+              "evidence": [
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1781,
+        "output": 115,
+        "cost": 0.0002241,
+        "provider_usage": {
+          "prompt_tokens": 1781,
+          "completion_tokens": 115,
+          "total_tokens": 1896,
+          "cost": 0.0002241,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002241,
+            "upstream_inference_prompt_cost": 0.0001781,
+            "upstream_inference_completions_cost": 4.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453196-B1QQGHbUZMdFmVjjn1Az",
+        "object": "chat.completion",
+        "created": 1789453196,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"issue_decision_letter\", \"arguments\": {\"decision\": {\"case_id\": \"CLM-8925\", \"decision\": \"escalate\", \"reason\": \"Policy annual limit exceeded. Policy remaining: 9200.0. Claim total: 11400.0. Policy trigger: annual_limit_exceeded.\", \"evidence\": [\"obs-2\"], \"lines\": [], \"missing\": [], \"approved_total\": 0, \"refused_total\": 0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1781,
+          "completion_tokens": 115,
+          "total_tokens": 1896,
+          "cost": 0.0002241,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002241,
+            "upstream_inference_prompt_cost": 0.0001781,
+            "upstream_inference_completions_cost": 4.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: missing_evidence: get_claim"
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8925"
+          }
+        },
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8925"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8925",
+            "code": "27447"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8925",
+            "code": "47120"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8925",
+            "code": "70553"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8925"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1930,
+        "output": 185,
+        "cost": 0.000267,
+        "provider_usage": {
+          "prompt_tokens": 1930,
+          "completion_tokens": 185,
+          "total_tokens": 2115,
+          "cost": 0.000267,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000267,
+            "upstream_inference_prompt_cost": 0.000193,
+            "upstream_inference_completions_cost": 7.4e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453197-BrmuL6VX7cJOpE3n4yCm",
+        "object": "chat.completion",
+        "created": 1789453197,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_claim\", \"arguments\": {\"claim_id\": \"CLM-8925\"}}, {\"tool\": \"lookup_policy\", \"arguments\": {\"claim_id\": \"CLM-8925\"}}, {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8925\", \"code\": \"27447\"}}, {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8925\", \"code\": \"47120\"}}, {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8925\", \"code\": \"70553\"}}, {\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-8925\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1930,
+          "completion_tokens": 185,
+          "total_tokens": 2115,
+          "cost": 0.000267,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000267,
+            "upstream_inference_prompt_cost": 0.000193,
+            "upstream_inference_completions_cost": 7.4e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: repeated action blocked"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8925"
+      },
+      "result": {
+        "claim_id": "CLM-8925",
+        "member_id": "M-2214",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-12",
+        "narrative": "Knee replacement, plus the appendix operation and a scan.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "27447",
+            "amount": 9800
+          },
+          {
+            "code": "47120",
+            "amount": 1400
+          },
+          {
+            "code": "70553",
+            "amount": 200
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8925"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 11400.0,
+        "policy_trigger": "annual_limit_exceeded"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6717,
+  "tokens_out": 356,
+  "cost_usd": 0.0008141,
+  "stop": "duplicate_action",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 4.5979,
+  "variant": "v1",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "google/gemini-2.5-flash-lite",
+  "trial": 3,
+  "negative": true,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: duplicate_action"
+    ],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

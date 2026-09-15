@@ -1,0 +1,936 @@
+{
+  "case_id": "CLM-8960",
+  "record": {
+    "case_id": "CLM-8960",
+    "decision": "approve_in_principle",
+    "reason": "All lines are covered under the active policy with no missing documents required for processing.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5",
+      "obs-6",
+      "obs-7"
+    ],
+    "lines": [
+      {
+        "code": "99213",
+        "amount": 180,
+        "status": "covered"
+      },
+      {
+        "code": "80053",
+        "amount": 90,
+        "status": "covered"
+      },
+      {
+        "code": "70553",
+        "amount": 620,
+        "status": "covered"
+      },
+      {
+        "code": "45378",
+        "amount": 1100,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 1990.0,
+    "refused_total": 0,
+    "turns": 6,
+    "tokens_in": 10019,
+    "tokens_out": 349,
+    "cost_usd": 0.00114585,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:10:15.607217+00:00",
+    "decision_hash": "26f9568576ab33354144b1c96c56b6e58060b802176051698f87a1bb90734d53"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8960"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1272,
+        "output": 22,
+        "cost": 0.0001176,
+        "provider_usage": {
+          "prompt_tokens": 1272,
+          "completion_tokens": 22,
+          "total_tokens": 1294,
+          "cost": 0.0001176,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001176,
+            "upstream_inference_prompt_cost": 0.0001044,
+            "upstream_inference_completions_cost": 1.32e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452607-O2b1lMHL6JAB5KUft5u0",
+        "object": "chat.completion",
+        "created": 1789452607,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-8960\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1272,
+          "completion_tokens": 22,
+          "total_tokens": 1294,
+          "cost": 0.0001176,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001176,
+            "upstream_inference_prompt_cost": 0.0001044,
+            "upstream_inference_completions_cost": 1.32e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8960",
+          "member_id": "M-5502",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-15",
+          "narrative": "Several tests and a consultation over two days.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 180
+            },
+            {
+              "code": "80053",
+              "amount": 90
+            },
+            {
+              "code": "70553",
+              "amount": 620
+            },
+            {
+              "code": "45378",
+              "amount": 1100
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8960"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1442,
+        "output": 21,
+        "cost": 0.0001425,
+        "provider_usage": {
+          "prompt_tokens": 1442,
+          "completion_tokens": 21,
+          "total_tokens": 1463,
+          "cost": 0.0001425,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001425,
+            "upstream_inference_prompt_cost": 0.0001299,
+            "upstream_inference_completions_cost": 1.26e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452609-SjTGSS1JjVWk53TDc3ES",
+        "object": "chat.completion",
+        "created": 1789452609,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_0bf9805b5a",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-8960\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1442,
+          "completion_tokens": 21,
+          "total_tokens": 1463,
+          "cost": 0.0001425,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001425,
+            "upstream_inference_prompt_cost": 0.0001299,
+            "upstream_inference_completions_cost": 1.26e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 1990.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8960",
+            "code": "99213"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8960",
+            "code": "80053"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8960",
+            "code": "70553"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8960",
+            "code": "45378"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1543,
+        "output": 96,
+        "cost": 0.00020265,
+        "provider_usage": {
+          "prompt_tokens": 1543,
+          "completion_tokens": 96,
+          "total_tokens": 1639,
+          "cost": 0.00020265,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00020265,
+            "upstream_inference_prompt_cost": 0.00014505,
+            "upstream_inference_completions_cost": 5.76e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452610-LaTsMA3rGuEiWb7BBCSq",
+        "object": "chat.completion",
+        "created": 1789452610,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_0bf9805b5a",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-8960\",\"code\":\"99213\"}},{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-8960\",\"code\":\"80053\"}},{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-8960\",\"code\":\"70553\"}},{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-8960\",\"code\":\"45378\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1543,
+          "completion_tokens": 96,
+          "total_tokens": 1639,
+          "cost": 0.00020265,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00020265,
+            "upstream_inference_prompt_cost": 0.00014505,
+            "upstream_inference_completions_cost": 5.76e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "99213",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "80053",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "70553",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "45378",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [
+            "itemised_bill"
+          ],
+          "missing_documents": []
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-8960",
+            "code": "45378"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1855,
+        "output": 29,
+        "cost": 0.00020925,
+        "provider_usage": {
+          "prompt_tokens": 1855,
+          "completion_tokens": 29,
+          "total_tokens": 1884,
+          "cost": 0.00020925,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00020925,
+            "upstream_inference_prompt_cost": 0.00019185,
+            "upstream_inference_completions_cost": 1.74e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452611-VTnUcTzQ4bZQNGMw0jzH",
+        "object": "chat.completion",
+        "created": 1789452611,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_f70554c601",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_preauthorisation\",\"arguments\":{\"claim_id\":\"CLM-8960\",\"code\":\"45378\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1855,
+          "completion_tokens": 29,
+          "total_tokens": 1884,
+          "cost": 0.00020925,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00020925,
+            "upstream_inference_prompt_cost": 0.00019185,
+            "upstream_inference_completions_cost": 1.74e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: preauth_not_required"
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8960"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1922,
+        "output": 23,
+        "cost": 0.0002157,
+        "provider_usage": {
+          "prompt_tokens": 1922,
+          "completion_tokens": 23,
+          "total_tokens": 1945,
+          "cost": 0.0002157,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002157,
+            "upstream_inference_prompt_cost": 0.0002019,
+            "upstream_inference_completions_cost": 1.38e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452612-H9TbxK1f07oS5YljSCG7",
+        "object": "chat.completion",
+        "created": 1789452612,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_0bf9805b5a",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-8960\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1922,
+          "completion_tokens": 23,
+          "total_tokens": 1945,
+          "cost": 0.0002157,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002157,
+            "upstream_inference_prompt_cost": 0.0002019,
+            "upstream_inference_completions_cost": 1.38e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 6,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8960",
+              "decision": "approve_in_principle",
+              "reason": "All lines are covered under the active policy with no missing documents required for processing.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5",
+                "obs-6",
+                "obs-7"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180,
+                  "status": "covered"
+                },
+                {
+                  "code": "80053",
+                  "amount": 90,
+                  "status": "covered"
+                },
+                {
+                  "code": "70553",
+                  "amount": 620,
+                  "status": "covered"
+                },
+                {
+                  "code": "45378",
+                  "amount": 1100,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 1990.0,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1985,
+        "output": 158,
+        "cost": 0.00025815,
+        "provider_usage": {
+          "prompt_tokens": 1985,
+          "completion_tokens": 158,
+          "total_tokens": 2143,
+          "cost": 0.00025815,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1792,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00025815,
+            "upstream_inference_prompt_cost": 0.00016335,
+            "upstream_inference_completions_cost": 9.48e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452614-a6eZvbD6gG1v4A5bBCXG",
+        "object": "chat.completion",
+        "created": 1789452614,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_0bf9805b5a",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8960\",\"decision\":\"approve_in_principle\",\"reason\":\"All lines are covered under the active policy with no missing documents required for processing.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\",\"obs-5\",\"obs-6\",\"obs-7\"],\"lines\":[{\"code\":\"99213\",\"amount\":180,\"status\":\"covered\"},{\"code\":\"80053\",\"amount\":90,\"status\":\"covered\"},{\"code\":\"70553\",\"amount\":620,\"status\":\"covered\"},{\"code\":\"45378\",\"amount\":1100,\"status\":\"covered\"}],\"missing\":[],\"approved_total\":1990.00,\"refused_total\":0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1985,
+          "completion_tokens": 158,
+          "total_tokens": 2143,
+          "cost": 0.00025815,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1792,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00025815,
+            "upstream_inference_prompt_cost": 0.00016335,
+            "upstream_inference_completions_cost": 9.48e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8960",
+          "decision": "approve_in_principle",
+          "decision_hash": "26f9568576ab33354144b1c96c56b6e58060b802176051698f87a1bb90734d53"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8960"
+      },
+      "result": {
+        "claim_id": "CLM-8960",
+        "member_id": "M-5502",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-15",
+        "narrative": "Several tests and a consultation over two days.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "99213",
+            "amount": 180
+          },
+          {
+            "code": "80053",
+            "amount": 90
+          },
+          {
+            "code": "70553",
+            "amount": 620
+          },
+          {
+            "code": "45378",
+            "amount": 1100
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8960"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 1990.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8960",
+        "code": "99213"
+      },
+      "result": {
+        "code": "99213",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8960",
+        "code": "80053"
+      },
+      "result": {
+        "code": "80053",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8960",
+        "code": "70553"
+      },
+      "result": {
+        "code": "70553",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8960",
+        "code": "45378"
+      },
+      "result": {
+        "code": "45378",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [
+          "itemised_bill"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-7",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8960"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-8",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8960",
+          "decision": "approve_in_principle",
+          "reason": "All lines are covered under the active policy with no missing documents required for processing.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5",
+            "obs-6",
+            "obs-7"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 180,
+              "status": "covered"
+            },
+            {
+              "code": "80053",
+              "amount": 90,
+              "status": "covered"
+            },
+            {
+              "code": "70553",
+              "amount": 620,
+              "status": "covered"
+            },
+            {
+              "code": "45378",
+              "amount": 1100,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 1990.0,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8960",
+        "decision": "approve_in_principle",
+        "decision_hash": "26f9568576ab33354144b1c96c56b6e58060b802176051698f87a1bb90734d53"
+      }
+    }
+  ],
+  "turns": 6,
+  "tokens_in": 10019,
+  "tokens_out": 349,
+  "cost_usd": 0.00114585,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 8.0961,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "openai/gpt-4o-mini",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

@@ -1,0 +1,611 @@
+{
+  "case_id": "CLM-8874",
+  "record": {
+    "case_id": "CLM-8874",
+    "decision": "approve_in_principle",
+    "reason": "The claim is for code 70553, which is not excluded under the policy. The service was provided at Bayfront Specialist (H-330), which is not a panel hospital, but non-panel status alone does not trigger escalation. No preauthorisation is required for this code, and all required documents (itemised_bill) are present. The claim amount of 620.00 is within the remaining annual limit of 9200.00. No duplicates or policy triggers were found.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "70553",
+        "amount": 620,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 620,
+    "refused_total": 0,
+    "turns": 4,
+    "tokens_in": 6038,
+    "tokens_out": 299,
+    "cost_usd": 0.0005816284999999999,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:13:55.827705+00:00",
+    "decision_hash": "393583804c4645d7b2d2a57c30eeb88d7064bbfe3605393d0c10656dcc51151e"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8874"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1276,
+        "output": 23,
+        "cost": 0.0001345,
+        "provider_usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452818-XxcgCf73uwXLqa9XmeMd",
+        "object": "chat.completion",
+        "created": 1789452818,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-8874\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8874",
+          "member_id": "M-2214",
+          "hospital_id": "H-330",
+          "date_of_service": "2026-09-06",
+          "narrative": "Went to Bayfront because it was nearest. Paid myself.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "70553",
+              "amount": 620
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8874"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1426,
+        "output": 23,
+        "cost": 0.0001495,
+        "provider_usage": {
+          "prompt_tokens": 1426,
+          "completion_tokens": 23,
+          "total_tokens": 1449,
+          "cost": 0.0001495,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1200,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001495,
+            "upstream_inference_prompt_cost": 0.0001426,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452820-mf1mP6xMgzvpVXMEz5oc",
+        "object": "chat.completion",
+        "created": 1789452820,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-8874\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1426,
+          "completion_tokens": 23,
+          "total_tokens": 1449,
+          "cost": 0.0001495,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1200,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001495,
+            "upstream_inference_prompt_cost": 0.0001426,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 620.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8874",
+            "code": "70553"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8874"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1593,
+        "output": 52,
+        "cost": 0.0001749,
+        "provider_usage": {
+          "prompt_tokens": 1593,
+          "completion_tokens": 52,
+          "total_tokens": 1645,
+          "cost": 0.0001749,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001749,
+            "upstream_inference_prompt_cost": 0.0001593,
+            "upstream_inference_completions_cost": 1.56e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452827-ZqclBXANn7jMSWrTJTrX",
+        "object": "chat.completion",
+        "created": 1789452827,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-8874\",\"code\":\"70553\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-8874\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1593,
+          "completion_tokens": 52,
+          "total_tokens": 1645,
+          "cost": 0.0001749,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001749,
+            "upstream_inference_prompt_cost": 0.0001593,
+            "upstream_inference_completions_cost": 1.56e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "70553",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-330",
+          "name": "Bayfront Specialist",
+          "panel": false,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8874",
+              "decision": "approve_in_principle",
+              "reason": "The claim is for code 70553, which is not excluded under the policy. The service was provided at Bayfront Specialist (H-330), which is not a panel hospital, but non-panel status alone does not trigger escalation. No preauthorisation is required for this code, and all required documents (itemised_bill) are present. The claim amount of 620.00 is within the remaining annual limit of 9200.00. No duplicates or policy triggers were found.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "70553",
+                  "amount": 620,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 620,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1743,
+        "output": 201,
+        "cost": 0.0001227285,
+        "provider_usage": {
+          "prompt_tokens": 1743,
+          "completion_tokens": 201,
+          "total_tokens": 1944,
+          "cost": 0.0001227285,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001227285,
+            "upstream_inference_prompt_cost": 8.392545e-05,
+            "upstream_inference_completions_cost": 3.880305e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452830-nTBsrERSR0RKtIhti7Vz",
+        "object": "chat.completion",
+        "created": 1789452830,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8874\",\"decision\":\"approve_in_principle\",\"reason\":\"The claim is for code 70553, which is not excluded under the policy. The service was provided at Bayfront Specialist (H-330), which is not a panel hospital, but non-panel status alone does not trigger escalation. No preauthorisation is required for this code, and all required documents (itemised_bill) are present. The claim amount of 620.00 is within the remaining annual limit of 9200.00. No duplicates or policy triggers were found.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\"],\"lines\":[{\"code\":\"70553\",\"amount\":620,\"status\":\"covered\"}],\"missing\":[],\"approved_total\":620,\"refused_total\":0}}}] }",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1743,
+          "completion_tokens": 201,
+          "total_tokens": 1944,
+          "cost": 0.0001227285,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001227285,
+            "upstream_inference_prompt_cost": 8.392545e-05,
+            "upstream_inference_completions_cost": 3.880305e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8874",
+          "decision": "approve_in_principle",
+          "decision_hash": "393583804c4645d7b2d2a57c30eeb88d7064bbfe3605393d0c10656dcc51151e"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8874"
+      },
+      "result": {
+        "claim_id": "CLM-8874",
+        "member_id": "M-2214",
+        "hospital_id": "H-330",
+        "date_of_service": "2026-09-06",
+        "narrative": "Went to Bayfront because it was nearest. Paid myself.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "70553",
+            "amount": 620
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8874"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 620.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8874",
+        "code": "70553"
+      },
+      "result": {
+        "code": "70553",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8874"
+      },
+      "result": {
+        "hospital_id": "H-330",
+        "name": "Bayfront Specialist",
+        "panel": false,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8874",
+          "decision": "approve_in_principle",
+          "reason": "The claim is for code 70553, which is not excluded under the policy. The service was provided at Bayfront Specialist (H-330), which is not a panel hospital, but non-panel status alone does not trigger escalation. No preauthorisation is required for this code, and all required documents (itemised_bill) are present. The claim amount of 620.00 is within the remaining annual limit of 9200.00. No duplicates or policy triggers were found.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "70553",
+              "amount": 620,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 620,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8874",
+        "decision": "approve_in_principle",
+        "decision_hash": "393583804c4645d7b2d2a57c30eeb88d7064bbfe3605393d0c10656dcc51151e"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6038,
+  "tokens_out": 299,
+  "cost_usd": 0.0005816284999999999,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 17.0637,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

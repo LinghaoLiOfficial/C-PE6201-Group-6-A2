@@ -1,0 +1,365 @@
+{
+  "assumptions": {
+    "volume": 8000,
+    "failure_usd": 7.6,
+    "hourly_usd": 38,
+    "minutes": 12,
+    "fixed_monthly_usd": 80,
+    "fixed_breakdown": {
+      "storage": 5,
+      "infrastructure": 10,
+      "monitoring": 10,
+      "evaluation_refresh": 5,
+      "maintenance": 50
+    },
+    "fixed_status": "illustrative operating assumption, not incurred course spending",
+    "production_mix": "evaluation trial-weighted mix; not asserted representative of production",
+    "baseline": "uncached list-price input/output, reasoning output included in API completion usage",
+    "success_definition": "code pass plus judgement pass on designated subset; legitimate escalation is a success",
+    "monthly_user_limit_usd": 10,
+    "monthly_user_limit_scope": "US$10 provider key lifetime cap is stricter than US$10 in any month; no top-ups; not a production deployment"
+  },
+  "models": [
+    {
+      "model": "google/gemini-2.5-flash-lite",
+      "variant": "v2",
+      "trials": 64,
+      "passing": 43,
+      "pass_rate": 0.671875,
+      "negative_trials": 36,
+      "negative_passing": 18,
+      "median_turns": 5.0,
+      "worst_turns": 7,
+      "step_cap_hits": 0,
+      "tokens_in": 625526,
+      "tokens_out": 22830,
+      "cost_usd": 0.06762154999999999,
+      "code_passing": 43,
+      "code_pass_rate": 0.671875,
+      "runs_with_missing_request_usage": 0,
+      "variable_usd": 0.001120071875,
+      "fallback_usd": 2.49375,
+      "cost_per_task_usd": 2.494870071875,
+      "fixed_monthly_usd": 80,
+      "monthly_usd": 20038.960574999997,
+      "pass_rate_wilson95": [
+        0.5499887622745426,
+        0.7742960423291224
+      ],
+      "sensitivity": [
+        {
+          "success_rate": 0.571875,
+          "cost_per_task_usd": 3.2548700718749997
+        },
+        {
+          "success_rate": 0.671875,
+          "cost_per_task_usd": 2.494870071875
+        },
+        {
+          "success_rate": 0.771875,
+          "cost_per_task_usd": 1.734870071875
+        }
+      ],
+      "implied_step_reliability": 0.9235442236040177
+    },
+    {
+      "model": "openai/gpt-4o-mini",
+      "variant": "v2",
+      "trials": 64,
+      "passing": 26,
+      "pass_rate": 0.40625,
+      "negative_trials": 36,
+      "negative_passing": 4,
+      "median_turns": 4.0,
+      "worst_turns": 7,
+      "step_cap_hits": 0,
+      "tokens_in": 526496,
+      "tokens_out": 18578,
+      "cost_usd": 0.0612828,
+      "code_passing": 26,
+      "code_pass_rate": 0.40625,
+      "runs_with_missing_request_usage": 0,
+      "variable_usd": 0.00140814375,
+      "fallback_usd": 4.5125,
+      "cost_per_task_usd": 4.51390814375,
+      "fixed_monthly_usd": 80,
+      "monthly_usd": 36191.26515,
+      "pass_rate_wilson95": [
+        0.29456724435258885,
+        0.528550134954503
+      ],
+      "sensitivity": [
+        {
+          "success_rate": 0.30625,
+          "cost_per_task_usd": 5.27390814375
+        },
+        {
+          "success_rate": 0.40625,
+          "cost_per_task_usd": 4.51390814375
+        },
+        {
+          "success_rate": 0.50625,
+          "cost_per_task_usd": 3.75390814375
+        }
+      ],
+      "implied_step_reliability": 0.798359216893685
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "variant": "v2",
+      "trials": 64,
+      "passing": 48,
+      "pass_rate": 0.75,
+      "negative_trials": 36,
+      "negative_passing": 22,
+      "median_turns": 4.0,
+      "worst_turns": 7,
+      "step_cap_hits": 0,
+      "tokens_in": 475648,
+      "tokens_out": 16314,
+      "cost_usd": 0.07818211899999998,
+      "code_passing": 51,
+      "code_pass_rate": 0.796875,
+      "runs_with_missing_request_usage": 0,
+      "variable_usd": 0.00082477,
+      "fallback_usd": 1.9,
+      "cost_per_task_usd": 1.9008247699999998,
+      "fixed_monthly_usd": 80,
+      "monthly_usd": 15286.598159999998,
+      "pass_rate_wilson95": [
+        0.6318349082561628,
+        0.8398520802582591
+      ],
+      "sensitivity": [
+        {
+          "success_rate": 0.65,
+          "cost_per_task_usd": 2.6608247699999996
+        },
+        {
+          "success_rate": 0.75,
+          "cost_per_task_usd": 1.9008247699999998
+        },
+        {
+          "success_rate": 0.85,
+          "cost_per_task_usd": 1.14082477
+        }
+      ],
+      "implied_step_reliability": 0.9306048591020996
+    },
+    {
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "variant": "v2",
+      "trials": 64,
+      "passing": 40,
+      "pass_rate": 0.625,
+      "negative_trials": 36,
+      "negative_passing": 17,
+      "median_turns": 5.0,
+      "worst_turns": 7,
+      "step_cap_hits": 0,
+      "tokens_in": 551715,
+      "tokens_out": 22597,
+      "cost_usd": 0.050207110949999995,
+      "code_passing": 40,
+      "code_pass_rate": 0.625,
+      "runs_with_missing_request_usage": 1,
+      "variable_usd": 0.0004832410640625,
+      "fallback_usd": 2.8499999999999996,
+      "cost_per_task_usd": 2.850483241064062,
+      "fixed_monthly_usd": 80,
+      "monthly_usd": 22883.865928512496,
+      "pass_rate_wilson95": [
+        0.5025015331382642,
+        0.7333419611189468
+      ],
+      "sensitivity": [
+        {
+          "success_rate": 0.525,
+          "cost_per_task_usd": 3.6104832410640624
+        },
+        {
+          "success_rate": 0.625,
+          "cost_per_task_usd": 2.850483241064062
+        },
+        {
+          "success_rate": 0.725,
+          "cost_per_task_usd": 2.0904832410640624
+        }
+      ],
+      "implied_step_reliability": 0.9102821015130401
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "variant": "v2",
+      "trials": 64,
+      "passing": 64,
+      "pass_rate": 1.0,
+      "negative_trials": 36,
+      "negative_passing": 36,
+      "median_turns": 4.0,
+      "worst_turns": 6,
+      "step_cap_hits": 0,
+      "tokens_in": 488280,
+      "tokens_out": 43973,
+      "cost_usd": 0.7081449999999997,
+      "code_passing": 64,
+      "code_pass_rate": 1.0,
+      "runs_with_missing_request_usage": 0,
+      "variable_usd": 0.011064765625,
+      "fallback_usd": 0.0,
+      "cost_per_task_usd": 0.011064765625,
+      "fixed_monthly_usd": 80,
+      "monthly_usd": 168.518125,
+      "pass_rate_wilson95": [
+        0.9433739770288436,
+        1
+      ],
+      "sensitivity": [
+        {
+          "success_rate": 0.9,
+          "cost_per_task_usd": 0.7710647656249998
+        },
+        {
+          "success_rate": 1,
+          "cost_per_task_usd": 0.011064765625
+        },
+        {
+          "success_rate": 1,
+          "cost_per_task_usd": 0.011064765625
+        }
+      ],
+      "implied_step_reliability": 1.0
+    },
+    {
+      "model": "google/gemini-2.5-flash-lite",
+      "variant": "v1",
+      "trials": 64,
+      "passing": 40,
+      "pass_rate": 0.625,
+      "negative_trials": 36,
+      "negative_passing": 15,
+      "median_turns": 5.0,
+      "worst_turns": 7,
+      "step_cap_hits": 0,
+      "tokens_in": 622986,
+      "tokens_out": 22917,
+      "cost_usd": 0.06705107999999999,
+      "code_passing": 40,
+      "code_pass_rate": 0.625,
+      "runs_with_missing_request_usage": 0,
+      "variable_usd": 0.001116646875,
+      "fallback_usd": 2.8499999999999996,
+      "cost_per_task_usd": 2.8511166468749995,
+      "fixed_monthly_usd": 80,
+      "monthly_usd": 22888.933174999995,
+      "pass_rate_wilson95": [
+        0.5025015331382642,
+        0.7333419611189468
+      ],
+      "sensitivity": [
+        {
+          "success_rate": 0.525,
+          "cost_per_task_usd": 3.611116646875
+        },
+        {
+          "success_rate": 0.625,
+          "cost_per_task_usd": 2.8511166468749995
+        },
+        {
+          "success_rate": 0.725,
+          "cost_per_task_usd": 2.0911166468749998
+        }
+      ],
+      "implied_step_reliability": 0.9102821015130401
+    }
+  ],
+  "recommended": "anthropic/claude-haiku-4.5",
+  "cheapest_token_model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "expensive_token_model": "anthropic/claude-haiku-4.5",
+  "cheap_break_even_success": 0.9986076941367188,
+  "cheap_actual_success": 0.625,
+  "levers": {
+    "tool_prefix_before_estimated_tokens": 170,
+    "tool_prefix_after_estimated_tokens": 514,
+    "tool_prefix_measurement": "char/4 estimates of Chen original TOOL_SPEC actually inserted in prompt versus final six complete descriptors; not a controlled live ablation",
+    "sequential": {
+      "trials": 64,
+      "passing": 64,
+      "pass_rate": 1.0,
+      "negative_trials": 36,
+      "negative_passing": 36,
+      "median_turns": 5.0,
+      "worst_turns": 9,
+      "step_cap_hits": 0,
+      "tokens_in": 506789,
+      "tokens_out": 15745,
+      "cost_usd": 0.0569769
+    },
+    "parallel": {
+      "trials": 64,
+      "passing": 64,
+      "pass_rate": 1.0,
+      "negative_trials": 36,
+      "negative_passing": 36,
+      "median_turns": 4.0,
+      "worst_turns": 5,
+      "step_cap_hits": 0,
+      "tokens_in": 395961,
+      "tokens_out": 15744,
+      "cost_usd": 0.04589370000000003
+    },
+    "input_reduction_fraction": 0.21868667236265982,
+    "preauth_observation_v1_mean_estimated_tokens": 137.6,
+    "preauth_observation_v2_mean_estimated_tokens": 82.4
+  },
+  "judgement": [
+    {
+      "model": "google/gemini-2.5-flash-lite",
+      "variant": "v2",
+      "designated_trials": 12,
+      "judged": 5,
+      "combined_passing": 5,
+      "pending": 0
+    },
+    {
+      "model": "openai/gpt-4o-mini",
+      "variant": "v2",
+      "designated_trials": 12,
+      "judged": 5,
+      "combined_passing": 5,
+      "pending": 0
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "variant": "v2",
+      "designated_trials": 12,
+      "judged": 7,
+      "combined_passing": 4,
+      "pending": 0
+    },
+    {
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "variant": "v2",
+      "designated_trials": 12,
+      "judged": 6,
+      "combined_passing": 6,
+      "pending": 0
+    },
+    {
+      "model": "anthropic/claude-haiku-4.5",
+      "variant": "v2",
+      "designated_trials": 12,
+      "judged": 12,
+      "combined_passing": 12,
+      "pending": 0
+    },
+    {
+      "model": "google/gemini-2.5-flash-lite",
+      "variant": "v1",
+      "designated_trials": 12,
+      "judged": 5,
+      "combined_passing": 5,
+      "pending": 0
+    }
+  ]
+}

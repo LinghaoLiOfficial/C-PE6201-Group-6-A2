@@ -1,0 +1,879 @@
+{
+  "case_id": "CLM-8842",
+  "record": {
+    "case_id": "CLM-8842",
+    "decision": "approve_in_principle",
+    "reason": "All required documents are present and preauthorisation is valid for code 62480",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5",
+      "obs-6",
+      "obs-7"
+    ],
+    "lines": [
+      {
+        "code": "47120",
+        "amount": 1400.0,
+        "status": "covered"
+      },
+      {
+        "code": "62480",
+        "amount": 780.0,
+        "status": "covered",
+        "preauth": "PA-5521"
+      },
+      {
+        "code": "31255",
+        "amount": 300.0,
+        "status": "not_covered",
+        "exclusion": "EX-14 cosmetic dermatology"
+      }
+    ],
+    "missing": [],
+    "approved_total": 2180.0,
+    "refused_total": 300.0,
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:04:51.827088+00:00",
+    "decision_hash": "eb3344f760813d25cdcb030cdffbd107a604280d86aaf94c4b5d469ae9bcbf27",
+    "turns": 5,
+    "tokens_in": 7839,
+    "tokens_out": 333,
+    "cost_usd": 0.001308316
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8842"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1186,
+        "output": 26,
+        "cost": 0.000406076,
+        "provider_usage": {
+          "prompt_tokens": 1186,
+          "completion_tokens": 26,
+          "total_tokens": 1212,
+          "cost": 0.000406076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000406076,
+            "upstream_inference_prompt_cost": 0.000347498,
+            "upstream_inference_completions_cost": 5.8578e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452276-WbUuwPi9zJ4NNYSlGSw4",
+        "object": "chat.completion",
+        "created": 1789452276,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "Cloudflare",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_claim\", \"arguments\": {\"claim_id\": \"CLM-8842\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1186,
+          "completion_tokens": 26,
+          "total_tokens": 1212,
+          "cost": 0.000406076,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000406076,
+            "upstream_inference_prompt_cost": 0.000347498,
+            "upstream_inference_completions_cost": 5.8578e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8842",
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-02",
+          "narrative": "Admitted for appendix removal. Surgeon also treated a back problem and did a skin procedure while I was in.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1400
+            },
+            {
+              "code": "62480",
+              "amount": 780
+            },
+            {
+              "code": "31255",
+              "amount": 300
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8842"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1361,
+        "output": 21,
+        "cost": 0.00028152,
+        "provider_usage": {
+          "prompt_tokens": 1361,
+          "completion_tokens": 21,
+          "total_tokens": 1382,
+          "cost": 0.00028152,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 16,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00028152,
+            "upstream_inference_prompt_cost": 0.0002706,
+            "upstream_inference_completions_cost": 1.092e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452278-5JmecmFus1PsNJL2Sw2g",
+        "object": "chat.completion",
+        "created": 1789452278,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "AkashML",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-8842\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1361,
+          "completion_tokens": 21,
+          "total_tokens": 1382,
+          "cost": 0.00028152,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 16,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00028152,
+            "upstream_inference_prompt_cost": 0.0002706,
+            "upstream_inference_completions_cost": 1.092e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 2480.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8842"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8842",
+            "code": "47120"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8842",
+            "code": "62480"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8842",
+            "code": "31255"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1503,
+        "output": 89,
+        "cost": 0.00017878,
+        "provider_usage": {
+          "prompt_tokens": 1503,
+          "completion_tokens": 89,
+          "total_tokens": 1592,
+          "cost": 0.00017878,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00017878,
+            "upstream_inference_prompt_cost": 0.0001503,
+            "upstream_inference_completions_cost": 2.848e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452279-EsBo1IqPM6NJ1h4HRTB7",
+        "object": "chat.completion",
+        "created": 1789452279,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-8842\"}},{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-8842\",\"code\":\"47120\"}},{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-8842\",\"code\":\"62480\"}},{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-8842\",\"code\":\"31255\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1503,
+          "completion_tokens": 89,
+          "total_tokens": 1592,
+          "cost": 0.00017878,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00017878,
+            "upstream_inference_prompt_cost": 0.0001503,
+            "upstream_inference_completions_cost": 2.848e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        },
+        {
+          "code": "47120",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "62480",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [
+            "discharge_summary"
+          ],
+          "missing_documents": []
+        },
+        {
+          "code": "31255",
+          "excluded": true,
+          "exclusion": "EX-14 cosmetic dermatology",
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-8842",
+            "code": "62480"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1805,
+        "output": 28,
+        "cost": 0.00018946,
+        "provider_usage": {
+          "prompt_tokens": 1805,
+          "completion_tokens": 28,
+          "total_tokens": 1833,
+          "cost": 0.00018946,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00018946,
+            "upstream_inference_prompt_cost": 0.0001805,
+            "upstream_inference_completions_cost": 8.96e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452283-Sdwxemd3pPmWrI0s3KEf",
+        "object": "chat.completion",
+        "created": 1789452283,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_preauthorisation\",\"arguments\":{\"claim_id\":\"CLM-8842\",\"code\":\"62480\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1805,
+          "completion_tokens": 28,
+          "total_tokens": 1833,
+          "cost": 0.00018946,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00018946,
+            "upstream_inference_prompt_cost": 0.0001805,
+            "upstream_inference_completions_cost": 8.96e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "candidates": [
+            {
+              "preauth_id": "PA-5521",
+              "member_id": "M-2214",
+              "procedure_code": "62480",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8842",
+              "decision": "approve_in_principle",
+              "reason": "All required documents are present and preauthorisation is valid for code 62480",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5",
+                "obs-6",
+                "obs-7"
+              ],
+              "lines": [
+                {
+                  "code": "47120",
+                  "amount": 1400.0,
+                  "status": "covered"
+                },
+                {
+                  "code": "62480",
+                  "amount": 780.0,
+                  "status": "covered",
+                  "preauth": "PA-5521"
+                },
+                {
+                  "code": "31255",
+                  "amount": 300.0,
+                  "status": "not_covered",
+                  "exclusion": "EX-14 cosmetic dermatology"
+                }
+              ],
+              "missing": [],
+              "approved_total": 2180.0,
+              "refused_total": 300.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1984,
+        "output": 169,
+        "cost": 0.00025248,
+        "provider_usage": {
+          "prompt_tokens": 1984,
+          "completion_tokens": 169,
+          "total_tokens": 2153,
+          "cost": 0.00025248,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00025248,
+            "upstream_inference_prompt_cost": 0.0001984,
+            "upstream_inference_completions_cost": 5.408e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452284-Pq0vGCbC9y2WG223diow",
+        "object": "chat.completion",
+        "created": 1789452284,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8842\",\"decision\":\"approve_in_principle\",\"reason\":\"All required documents are present and preauthorisation is valid for code 62480\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\",\"obs-5\",\"obs-6\",\"obs-7\"],\"lines\":[{\"code\":\"47120\",\"amount\":1400.0,\"status\":\"covered\"},{\"code\":\"62480\",\"amount\":780.0,\"status\":\"covered\",\"preauth\":\"PA-5521\"},{\"code\":\"31255\",\"amount\":300.0,\"status\":\"not_covered\",\"exclusion\":\"EX-14 cosmetic dermatology\"}],\"missing\":[],\"approved_total\":2180.0,\"refused_total\":300.0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1984,
+          "completion_tokens": 169,
+          "total_tokens": 2153,
+          "cost": 0.00025248,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00025248,
+            "upstream_inference_prompt_cost": 0.0001984,
+            "upstream_inference_completions_cost": 5.408e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8842",
+          "decision": "approve_in_principle",
+          "decision_hash": "eb3344f760813d25cdcb030cdffbd107a604280d86aaf94c4b5d469ae9bcbf27"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8842"
+      },
+      "result": {
+        "claim_id": "CLM-8842",
+        "member_id": "M-2214",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-02",
+        "narrative": "Admitted for appendix removal. Surgeon also treated a back problem and did a skin procedure while I was in.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 1400
+          },
+          {
+            "code": "62480",
+            "amount": 780
+          },
+          {
+            "code": "31255",
+            "amount": 300
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8842"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 2480.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8842"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8842",
+        "code": "47120"
+      },
+      "result": {
+        "code": "47120",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8842",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [
+          "discharge_summary"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8842",
+        "code": "31255"
+      },
+      "result": {
+        "code": "31255",
+        "excluded": true,
+        "exclusion": "EX-14 cosmetic dermatology",
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-7",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-8842",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "candidates": [
+          {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          }
+        ],
+        "valid": {
+          "preauth_id": "PA-5521",
+          "member_id": "M-2214",
+          "procedure_code": "62480",
+          "valid_from": "2026-08-01",
+          "valid_to": "2026-10-31",
+          "status": "valid"
+        },
+        "status": "valid"
+      }
+    },
+    {
+      "id": "obs-8",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8842",
+          "decision": "approve_in_principle",
+          "reason": "All required documents are present and preauthorisation is valid for code 62480",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5",
+            "obs-6",
+            "obs-7"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1400.0,
+              "status": "covered"
+            },
+            {
+              "code": "62480",
+              "amount": 780.0,
+              "status": "covered",
+              "preauth": "PA-5521"
+            },
+            {
+              "code": "31255",
+              "amount": 300.0,
+              "status": "not_covered",
+              "exclusion": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "missing": [],
+          "approved_total": 2180.0,
+          "refused_total": 300.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8842",
+        "decision": "approve_in_principle",
+        "decision_hash": "eb3344f760813d25cdcb030cdffbd107a604280d86aaf94c4b5d469ae9bcbf27"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 7839,
+  "tokens_out": 333,
+  "cost_usd": 0.001308316,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 15.5932,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "278c7c6eb1bfef2c1f70574389a1c1b7fe0d5b86ced524ff48b595c71c255472",
+  "operator": "simulated"
+}

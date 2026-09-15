@@ -1,0 +1,827 @@
+{
+  "case_id": "CLM-9306",
+  "record": {
+    "case_id": "CLM-9306",
+    "decision": "approve_in_principle",
+    "reason": "All services are covered by the policy and within the annual limit. The hospital is on the panel. All required documents are present.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5",
+      "obs-6",
+      "obs-7",
+      "obs-8"
+    ],
+    "lines": [
+      {
+        "code": "99213",
+        "amount": 100,
+        "status": "covered"
+      },
+      {
+        "code": "80053",
+        "amount": 80,
+        "status": "covered"
+      },
+      {
+        "code": "70553",
+        "amount": 600,
+        "status": "covered"
+      },
+      {
+        "code": "45378",
+        "amount": 1000,
+        "status": "covered"
+      },
+      {
+        "code": "47120",
+        "amount": 1400,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 3180.0,
+    "refused_total": 0.0,
+    "turns": 4,
+    "tokens_in": 7750,
+    "tokens_out": 531,
+    "cost_usd": 0.0009874,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:40:16.855459+00:00",
+    "decision_hash": "396e7fcce4c120bc258132aafe0b378f243c6cbb6d7df44aae3069ddeff62023"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9306"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1496,
+        "output": 28,
+        "cost": 0.0001608,
+        "provider_usage": {
+          "prompt_tokens": 1496,
+          "completion_tokens": 28,
+          "total_tokens": 1524,
+          "cost": 0.0001608,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001608,
+            "upstream_inference_prompt_cost": 0.0001496,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454412-VX38tG3b89pjeBCsd9Ui",
+        "object": "chat.completion",
+        "created": 1789454412,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_claim\", \"arguments\": {\"claim_id\": \"CLM-9306\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1496,
+          "completion_tokens": 28,
+          "total_tokens": 1524,
+          "cost": 0.0001608,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001608,
+            "upstream_inference_prompt_cost": 0.0001496,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9306",
+          "member_id": "M-5502",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-10-02",
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 100
+            },
+            {
+              "code": "80053",
+              "amount": 80
+            },
+            {
+              "code": "70553",
+              "amount": 600
+            },
+            {
+              "code": "45378",
+              "amount": 1000
+            },
+            {
+              "code": "47120",
+              "amount": 1400
+            }
+          ],
+          "narrative": "Several investigations and treatment during admission.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9306"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1747,
+        "output": 28,
+        "cost": 0.0001859,
+        "provider_usage": {
+          "prompt_tokens": 1747,
+          "completion_tokens": 28,
+          "total_tokens": 1775,
+          "cost": 0.0001859,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001859,
+            "upstream_inference_prompt_cost": 0.0001747,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454413-RjFsSDRnkc1UOsf6KYZA",
+        "object": "chat.completion",
+        "created": 1789454413,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"lookup_policy\", \"arguments\": {\"claim_id\": \"CLM-9306\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1747,
+          "completion_tokens": 28,
+          "total_tokens": 1775,
+          "cost": 0.0001859,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001859,
+            "upstream_inference_prompt_cost": 0.0001747,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 3180.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9306",
+            "code": "99213"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9306",
+            "code": "80053"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9306",
+            "code": "70553"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9306",
+            "code": "45378"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9306",
+            "code": "47120"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9306"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1901,
+        "output": 205,
+        "cost": 0.0002721,
+        "provider_usage": {
+          "prompt_tokens": 1901,
+          "completion_tokens": 205,
+          "total_tokens": 2106,
+          "cost": 0.0002721,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002721,
+            "upstream_inference_prompt_cost": 0.0001901,
+            "upstream_inference_completions_cost": 8.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454414-OuQgvju073sLag0Us5Ok",
+        "object": "chat.completion",
+        "created": 1789454414,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-9306\", \"code\": \"99213\"}}, {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-9306\", \"code\": \"80053\"}}, {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-9306\", \"code\": \"70553\"}}, {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-9306\", \"code\": \"45378\"}}, {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-9306\", \"code\": \"47120\"}}, {\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-9306\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1901,
+          "completion_tokens": 205,
+          "total_tokens": 2106,
+          "cost": 0.0002721,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002721,
+            "upstream_inference_prompt_cost": 0.0001901,
+            "upstream_inference_completions_cost": 8.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "99213",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "80053",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "70553",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "45378",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [
+            "itemised_bill"
+          ],
+          "missing_documents": []
+        },
+        {
+          "code": "47120",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9306",
+              "decision": "approve_in_principle",
+              "reason": "All services are covered by the policy and within the annual limit. The hospital is on the panel. All required documents are present.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5",
+                "obs-6",
+                "obs-7",
+                "obs-8"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 100,
+                  "status": "covered"
+                },
+                {
+                  "code": "80053",
+                  "amount": 80,
+                  "status": "covered"
+                },
+                {
+                  "code": "70553",
+                  "amount": 600,
+                  "status": "covered"
+                },
+                {
+                  "code": "45378",
+                  "amount": 1000,
+                  "status": "covered"
+                },
+                {
+                  "code": "47120",
+                  "amount": 1400,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 3180.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2606,
+        "output": 270,
+        "cost": 0.0003686,
+        "provider_usage": {
+          "prompt_tokens": 2606,
+          "completion_tokens": 270,
+          "total_tokens": 2876,
+          "cost": 0.0003686,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0003686,
+            "upstream_inference_prompt_cost": 0.0002606,
+            "upstream_inference_completions_cost": 0.000108
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454415-DqalhCt1PsohjRzsElmj",
+        "object": "chat.completion",
+        "created": 1789454415,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"issue_decision_letter\", \"arguments\": {\"decision\": {\"case_id\": \"CLM-9306\", \"decision\": \"approve_in_principle\", \"reason\": \"All services are covered by the policy and within the annual limit. The hospital is on the panel. All required documents are present.\", \"evidence\": [\"obs-1\", \"obs-2\", \"obs-3\", \"obs-4\", \"obs-5\", \"obs-6\", \"obs-7\", \"obs-8\"], \"lines\": [{\"code\": \"99213\", \"amount\": 100, \"status\": \"covered\"}, {\"code\": \"80053\", \"amount\": 80, \"status\": \"covered\"}, {\"code\": \"70553\", \"amount\": 600, \"status\": \"covered\"}, {\"code\": \"45378\", \"amount\": 1000, \"status\": \"covered\"}, {\"code\": \"47120\", \"amount\": 1400, \"status\": \"covered\"}], \"missing\": [], \"approved_total\": 3180.0, \"refused_total\": 0.0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2606,
+          "completion_tokens": 270,
+          "total_tokens": 2876,
+          "cost": 0.0003686,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0003686,
+            "upstream_inference_prompt_cost": 0.0002606,
+            "upstream_inference_completions_cost": 0.000108
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9306",
+          "decision": "approve_in_principle",
+          "decision_hash": "396e7fcce4c120bc258132aafe0b378f243c6cbb6d7df44aae3069ddeff62023"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9306"
+      },
+      "result": {
+        "claim_id": "CLM-9306",
+        "member_id": "M-5502",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-10-02",
+        "lines": [
+          {
+            "code": "99213",
+            "amount": 100
+          },
+          {
+            "code": "80053",
+            "amount": 80
+          },
+          {
+            "code": "70553",
+            "amount": 600
+          },
+          {
+            "code": "45378",
+            "amount": 1000
+          },
+          {
+            "code": "47120",
+            "amount": 1400
+          }
+        ],
+        "narrative": "Several investigations and treatment during admission.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9306"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 3180.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9306",
+        "code": "99213"
+      },
+      "result": {
+        "code": "99213",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9306",
+        "code": "80053"
+      },
+      "result": {
+        "code": "80053",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9306",
+        "code": "70553"
+      },
+      "result": {
+        "code": "70553",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9306",
+        "code": "45378"
+      },
+      "result": {
+        "code": "45378",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [
+          "itemised_bill"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-7",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9306",
+        "code": "47120"
+      },
+      "result": {
+        "code": "47120",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-8",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9306"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-9",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9306",
+          "decision": "approve_in_principle",
+          "reason": "All services are covered by the policy and within the annual limit. The hospital is on the panel. All required documents are present.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5",
+            "obs-6",
+            "obs-7",
+            "obs-8"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 100,
+              "status": "covered"
+            },
+            {
+              "code": "80053",
+              "amount": 80,
+              "status": "covered"
+            },
+            {
+              "code": "70553",
+              "amount": 600,
+              "status": "covered"
+            },
+            {
+              "code": "45378",
+              "amount": 1000,
+              "status": "covered"
+            },
+            {
+              "code": "47120",
+              "amount": 1400,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 3180.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9306",
+        "decision": "approve_in_principle",
+        "decision_hash": "396e7fcce4c120bc258132aafe0b378f243c6cbb6d7df44aae3069ddeff62023"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 7750,
+  "tokens_out": 531,
+  "cost_usd": 0.0009874,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 4.6024,
+  "variant": "v1",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "google/gemini-2.5-flash-lite",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

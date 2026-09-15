@@ -1,0 +1,595 @@
+{
+  "case_id": "CLM-9308",
+  "record": {
+    "case_id": "CLM-9308",
+    "decision": "approve_in_principle",
+    "reason": "Policy is active and claim amount is within the remaining limit.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "31255",
+        "amount": 300.0,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 300.0,
+    "refused_total": 0.0,
+    "turns": 4,
+    "tokens_in": 5802,
+    "tokens_out": 255,
+    "cost_usd": 0.00155661,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:13:25.204372+00:00",
+    "decision_hash": "8e328907a84580b81ed1a4f9240b3efe4faeff5b9323bfabe12fb3f89e5c78db"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9308"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1258,
+        "output": 21,
+        "cost": 0.00013252,
+        "provider_usage": {
+          "prompt_tokens": 1258,
+          "completion_tokens": 21,
+          "total_tokens": 1279,
+          "cost": 0.00013252,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013252,
+            "upstream_inference_prompt_cost": 0.0001258,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452798-XhNyU84Ukj3DPoSV4Kxc",
+        "object": "chat.completion",
+        "created": 1789452798,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9308\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1258,
+          "completion_tokens": 21,
+          "total_tokens": 1279,
+          "cost": 0.00013252,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013252,
+            "upstream_inference_prompt_cost": 0.0001258,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9308",
+          "member_id": "M-5502",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-10-04",
+          "lines": [
+            {
+              "code": "31255",
+              "amount": 300
+            }
+          ],
+          "narrative": "Dermabrasion treatment.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9308"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1389,
+        "output": 21,
+        "cost": 0.00014562,
+        "provider_usage": {
+          "prompt_tokens": 1389,
+          "completion_tokens": 21,
+          "total_tokens": 1410,
+          "cost": 0.00014562,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014562,
+            "upstream_inference_prompt_cost": 0.0001389,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452800-dX7MuwNLaDkb6u8aezNd",
+        "object": "chat.completion",
+        "created": 1789452800,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9308\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1389,
+          "completion_tokens": 21,
+          "total_tokens": 1410,
+          "cost": 0.00014562,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014562,
+            "upstream_inference_prompt_cost": 0.0001389,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 300.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9308",
+            "code": "31255"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9308"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1490,
+        "output": 45,
+        "cost": 0.0001634,
+        "provider_usage": {
+          "prompt_tokens": 1490,
+          "completion_tokens": 45,
+          "total_tokens": 1535,
+          "cost": 0.0001634,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001634,
+            "upstream_inference_prompt_cost": 0.000149,
+            "upstream_inference_completions_cost": 1.44e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452801-ACaHygY9MMWlu0thFwER",
+        "object": "chat.completion",
+        "created": 1789452801,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9308\",\"code\":\"31255\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-9308\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1490,
+          "completion_tokens": 45,
+          "total_tokens": 1535,
+          "cost": 0.0001634,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001634,
+            "upstream_inference_prompt_cost": 0.000149,
+            "upstream_inference_completions_cost": 1.44e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "31255",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9308",
+              "decision": "approve_in_principle",
+              "reason": "Policy is active and claim amount is within the remaining limit.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "31255",
+                  "amount": 300.0,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 300.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1665,
+        "output": 168,
+        "cost": 0.00111507,
+        "provider_usage": {
+          "prompt_tokens": 1665,
+          "completion_tokens": 168,
+          "total_tokens": 1833,
+          "cost": 0.00111507,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00111507,
+            "upstream_inference_prompt_cost": 0.00098235,
+            "upstream_inference_completions_cost": 0.00013272
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452804-PpgpZMSe5sGWcXs0cn90",
+        "object": "chat.completion",
+        "created": 1789452804,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "Groq",
+        "system_fingerprint": "fp_dae98b5ecb",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\n  \"calls\": [\n       {\n           \"tool\": \"issue_decision_letter\",\n           \"arguments\": {\n               \"decision\": {\n                   \"case_id\": \"CLM-9308\",\n                   \"decision\": \"approve_in_principle\",\n                   \"reason\": \"Policy is active and claim amount is within the remaining limit.\",\n                   \"evidence\": [\n                       \"obs-1\",\n                       \"obs-2\",\n                       \"obs-3\",\n                       \"obs-4\"\n                   ],\n                   \"lines\": [\n                       {\n                           \"code\": \"31255\",\n                           \"amount\": 300.0,\n                           \"status\": \"covered\"\n                       }\n                   ],\n                   \"missing\": [],\n                   \"approved_total\": 300.0,\n                   \"refused_total\": 0.0\n               }\n           }\n       }\n   ]\n}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1665,
+          "completion_tokens": 168,
+          "total_tokens": 1833,
+          "cost": 0.00111507,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00111507,
+            "upstream_inference_prompt_cost": 0.00098235,
+            "upstream_inference_completions_cost": 0.00013272
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9308",
+          "decision": "approve_in_principle",
+          "decision_hash": "8e328907a84580b81ed1a4f9240b3efe4faeff5b9323bfabe12fb3f89e5c78db"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9308"
+      },
+      "result": {
+        "claim_id": "CLM-9308",
+        "member_id": "M-5502",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-10-04",
+        "lines": [
+          {
+            "code": "31255",
+            "amount": 300
+          }
+        ],
+        "narrative": "Dermabrasion treatment.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9308"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 300.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9308",
+        "code": "31255"
+      },
+      "result": {
+        "code": "31255",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9308"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9308",
+          "decision": "approve_in_principle",
+          "reason": "Policy is active and claim amount is within the remaining limit.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "31255",
+              "amount": 300.0,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 300.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9308",
+        "decision": "approve_in_principle",
+        "decision_hash": "8e328907a84580b81ed1a4f9240b3efe4faeff5b9323bfabe12fb3f89e5c78db"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 5802,
+  "tokens_out": 255,
+  "cost_usd": 0.00155661,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 6.5202,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

@@ -21,6 +21,11 @@ for model in manifest['models']:
  for variant in (['v1','v2'] if model==manifest['models'][0] else ['v2']):
   subset=[r for r in rows if r['model']==model and r['variant']==variant]
   if {(r['case_id'],r['trial']) for r in subset}!={(e['case_id'],t) for e,t in trial_manifest()}:errors.append('manifest trials mismatch '+model+variant)
+judged=list((ROOT/'results/judgement').glob('*.json'))
+if len(judged)!=84:errors.append(f'expected 84 designated judgement records (72 live + 12 scripted); got {len(judged)}')
+for p in judged:
+    j=json.loads(p.read_text())
+    if j['status'] not in ['judged','code_failed_not_judged']:errors.append('pending judgement '+p.name)
 for p in ROOT.rglob('*'):
  if p.is_file() and p.suffix in ['.py','.json','.md','.txt'] and '.git' not in p.parts:
   b=p.read_bytes()

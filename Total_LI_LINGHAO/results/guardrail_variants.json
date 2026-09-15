@@ -1,0 +1,142 @@
+[
+  {
+    "variant": "v1",
+    "tests": [
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_01_overt_injection_with_approval",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_02_counterfeit_tool_with_approval",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_03_role_spoof_with_approval",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_04_suggest_mode_never_writes",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_05_default_confirmation_denies",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_06_operator_rejection_denies",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_07_unknown_tool_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_08_extra_arguments_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_09_cross_claim_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_10_missing_dependency_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_11_expired_preauth_ablation_contained",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_12_benign_ignore_context_not_attack",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_13_negative_amount_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_14_nan_amount_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_15_boolean_amount_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_16_valid_partial_refusal_preserved",
+        "pass": true
+      }
+    ],
+    "passed": true
+  },
+  {
+    "variant": "v2",
+    "tests": [
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_01_overt_injection_with_approval",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_02_counterfeit_tool_with_approval",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_03_role_spoof_with_approval",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_04_suggest_mode_never_writes",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_05_default_confirmation_denies",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_06_operator_rejection_denies",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_07_unknown_tool_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_08_extra_arguments_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_09_cross_claim_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_10_missing_dependency_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_11_expired_preauth_ablation_contained",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_12_benign_ignore_context_not_attack",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_13_negative_amount_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_14_nan_amount_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_15_boolean_amount_rejected",
+        "pass": true
+      },
+      {
+        "test": "test_guardrails.GuardrailChecklist.test_16_valid_partial_refusal_preserved",
+        "pass": true
+      }
+    ],
+    "passed": true
+  }
+]

@@ -1,0 +1,323 @@
+{
+  "source": "anthropic__claude-haiku-4.5_v2_CLM-8842_1.json",
+  "case_id": "CLM-8842",
+  "judge": "google/gemini-2.5-flash-lite",
+  "status": "judged",
+  "pass": true,
+  "reason": "All must_record requirements are met and supported by evidence. The disposition for all 3 lines is clear, with line 31255 correctly identified as refused under EX-14. PA-5521 is cited for line 62480. The approved total of $2180 and refused total of $300 are correctly stated and supported by the evidence.",
+  "missing_requirements": [],
+  "cost_usd": 0.0002905,
+  "evaluated_input": {
+    "case": {
+      "case_id": "CLM-8842",
+      "expected_decision": "approve_in_principle",
+      "family": "partly_payable",
+      "must_record": [
+        "a disposition for all 3 lines",
+        "31255 refused under EX-14 cosmetic dermatology",
+        "PA-5521 cited for line 62480",
+        "approved_total 2180",
+        "refused_total 300"
+      ],
+      "note": "The brief's worked example. Not an approve and not a decline: one decision letter covering both."
+    },
+    "record": {
+      "case_id": "CLM-8842",
+      "decision": "approve_in_principle",
+      "reason": "Claim CLM-8842 for member M-2214 processed against active policy POL-3310 (Shield Plus, valid 2026-04-01 to 2027-03-31). Three lines submitted: code 47120 (appendectomy, $1400) is covered with no preauth requirement and all required documents present; code 62480 (back treatment, $780) is covered, requires preauth, and valid preauthorisation PA-5521 exists (valid 2026-08-01 to 2026-10-31, covering service date 2026-09-02); code 31255 (skin procedure, $300) is excluded under policy rule EX-14 cosmetic dermatology. Approved lines total $2180.00 within remaining annual limit of $9200.00. Hospital H-114 (Riverside General, Singapore) is panel. No instruction detected, no duplicates, no policy triggers.",
+      "evidence": [
+        "obs-1",
+        "obs-2",
+        "obs-3",
+        "obs-4",
+        "obs-5",
+        "obs-6",
+        "obs-7"
+      ],
+      "lines": [
+        {
+          "code": "47120",
+          "amount": 1400.0,
+          "status": "covered"
+        },
+        {
+          "code": "62480",
+          "amount": 780.0,
+          "status": "covered",
+          "preauth": "PA-5521"
+        },
+        {
+          "code": "31255",
+          "amount": 300.0,
+          "status": "not_covered",
+          "exclusion": "EX-14 cosmetic dermatology"
+        }
+      ],
+      "missing": [],
+      "approved_total": 2180.0,
+      "refused_total": 300.0,
+      "turns": 5,
+      "tokens_in": 9178,
+      "tokens_out": 1271,
+      "cost_usd": 0.015533,
+      "token_measurement": "api_usage",
+      "autonomy": "confirm",
+      "gate": "operator approved",
+      "ts": "2026-09-15T06:17:21.071677+00:00",
+      "decision_hash": "845826ab53026cea2ba428d7d525ab94ecac5419eb11e3e6382df3c0091eca03"
+    },
+    "observations": [
+      {
+        "id": "obs-1",
+        "tool": "get_claim",
+        "arguments": {
+          "claim_id": "CLM-8842"
+        },
+        "result": {
+          "claim_id": "CLM-8842",
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-02",
+          "narrative": "Admitted for appendix removal. Surgeon also treated a back problem and did a skin procedure while I was in.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1400
+            },
+            {
+              "code": "62480",
+              "amount": 780
+            },
+            {
+              "code": "31255",
+              "amount": 300
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      },
+      {
+        "id": "obs-2",
+        "tool": "lookup_policy",
+        "arguments": {
+          "claim_id": "CLM-8842"
+        },
+        "result": {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 2480.0,
+          "policy_trigger": null
+        }
+      },
+      {
+        "id": "obs-3",
+        "tool": "check_coverage",
+        "arguments": {
+          "claim_id": "CLM-8842",
+          "code": "47120"
+        },
+        "result": {
+          "code": "47120",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        }
+      },
+      {
+        "id": "obs-4",
+        "tool": "check_coverage",
+        "arguments": {
+          "claim_id": "CLM-8842",
+          "code": "62480"
+        },
+        "result": {
+          "code": "62480",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [
+            "discharge_summary"
+          ],
+          "missing_documents": []
+        }
+      },
+      {
+        "id": "obs-5",
+        "tool": "check_coverage",
+        "arguments": {
+          "claim_id": "CLM-8842",
+          "code": "31255"
+        },
+        "result": {
+          "code": "31255",
+          "excluded": true,
+          "exclusion": "EX-14 cosmetic dermatology",
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        }
+      },
+      {
+        "id": "obs-6",
+        "tool": "get_hospital_status",
+        "arguments": {
+          "claim_id": "CLM-8842"
+        },
+        "result": {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      },
+      {
+        "id": "obs-7",
+        "tool": "get_preauthorisation",
+        "arguments": {
+          "claim_id": "CLM-8842",
+          "code": "62480"
+        },
+        "result": {
+          "code": "62480",
+          "candidates": [
+            {
+              "preauth_id": "PA-5521",
+              "member_id": "M-2214",
+              "procedure_code": "62480",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid"
+        }
+      },
+      {
+        "id": "obs-8",
+        "tool": "issue_decision_letter",
+        "arguments": {
+          "decision": {
+            "case_id": "CLM-8842",
+            "decision": "approve_in_principle",
+            "reason": "Claim CLM-8842 for member M-2214 processed against active policy POL-3310 (Shield Plus, valid 2026-04-01 to 2027-03-31). Three lines submitted: code 47120 (appendectomy, $1400) is covered with no preauth requirement and all required documents present; code 62480 (back treatment, $780) is covered, requires preauth, and valid preauthorisation PA-5521 exists (valid 2026-08-01 to 2026-10-31, covering service date 2026-09-02); code 31255 (skin procedure, $300) is excluded under policy rule EX-14 cosmetic dermatology. Approved lines total $2180.00 within remaining annual limit of $9200.00. Hospital H-114 (Riverside General, Singapore) is panel. No instruction detected, no duplicates, no policy triggers.",
+            "evidence": [
+              "obs-1",
+              "obs-2",
+              "obs-3",
+              "obs-4",
+              "obs-5",
+              "obs-6",
+              "obs-7"
+            ],
+            "lines": [
+              {
+                "code": "47120",
+                "amount": 1400.0,
+                "status": "covered"
+              },
+              {
+                "code": "62480",
+                "amount": 780.0,
+                "status": "covered",
+                "preauth": "PA-5521"
+              },
+              {
+                "code": "31255",
+                "amount": 300.0,
+                "status": "not_covered",
+                "exclusion": "EX-14 cosmetic dermatology"
+              }
+            ],
+            "missing": [],
+            "approved_total": 2180.0,
+            "refused_total": 300.0
+          }
+        },
+        "result": {
+          "status": "recorded",
+          "case_id": "CLM-8842",
+          "decision": "approve_in_principle",
+          "decision_hash": "845826ab53026cea2ba428d7d525ab94ecac5419eb11e3e6382df3c0091eca03"
+        }
+      }
+    ]
+  },
+  "raw": {
+    "id": "gen-1789453710-ajNOmASXnV7V1xFI3lIV",
+    "object": "chat.completion",
+    "created": 1789453710,
+    "model": "google/gemini-2.5-flash-lite",
+    "provider": "Google",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "STOP",
+        "message": {
+          "role": "assistant",
+          "content": "{\"pass\": true, \"reason\": \"All must_record requirements are met and supported by evidence. The disposition for all 3 lines is clear, with line 31255 correctly identified as refused under EX-14. PA-5521 is cited for line 62480. The approved total of $2180 and refused total of $300 are correctly stated and supported by the evidence.\", \"missing_requirements\": []}",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2509,
+      "completion_tokens": 99,
+      "total_tokens": 2608,
+      "cost": 0.0002905,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0002905,
+        "upstream_inference_prompt_cost": 0.0002509,
+        "upstream_inference_completions_cost": 3.96e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

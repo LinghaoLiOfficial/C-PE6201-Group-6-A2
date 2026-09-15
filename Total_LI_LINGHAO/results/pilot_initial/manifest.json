@@ -1,0 +1,52 @@
+{
+  "code_data_sha256": "278c7c6eb1bfef2c1f70574389a1c1b7fe0d5b86ced524ff48b595c71c255472",
+  "models": [
+    "google/gemini-2.5-flash-lite",
+    "openai/gpt-4o-mini",
+    "meta-llama/llama-3.3-70b-instruct",
+    "qwen/qwen3-30b-a3b-instruct-2507",
+    "anthropic/claude-haiku-4.5"
+  ],
+  "trials_per_configuration": 64,
+  "configurations": 6,
+  "shared_key": true,
+  "cap_usd": 9.979086411,
+  "date": "2026-09-15",
+  "operator": "simulated evaluation approval; not a human decision",
+  "prices": {
+    "google/gemini-2.5-flash-lite": {
+      "prompt": "0.0000001",
+      "completion": "0.0000004",
+      "image": "0.0000001",
+      "audio": "0.0000003",
+      "input_audio_cache": "0.00000003",
+      "web_search": "0.014",
+      "internal_reasoning": "0.0000004",
+      "input_cache_read": "0.00000001",
+      "input_cache_write": "0.0000000833333333333333"
+    },
+    "openai/gpt-4o-mini": {
+      "prompt": "0.00000015",
+      "completion": "0.0000006",
+      "input_cache_read": "0.000000075"
+    },
+    "meta-llama/llama-3.3-70b-instruct": {
+      "prompt": "0.0000001",
+      "completion": "0.00000032"
+    },
+    "qwen/qwen3-30b-a3b-instruct-2507": {
+      "prompt": "0.00000004815",
+      "completion": "0.00000019305"
+    },
+    "anthropic/claude-haiku-4.5": {
+      "prompt": "0.000001",
+      "completion": "0.000005",
+      "web_search": "0.01",
+      "input_cache_read": "0.0000001",
+      "input_cache_write": "0.00000125",
+      "input_cache_write_1h": "0.000002"
+    }
+  },
+  "temperature": 0,
+  "max_output_tokens": 2200
+}

@@ -1,0 +1,615 @@
+{
+  "case_id": "CLM-8901",
+  "record": {
+    "case_id": "CLM-8901",
+    "decision": "request_document",
+    "reason": "Code 45378 (Colonoscopy) is covered under policy POL-6001 (Shield Plus, active 2026-06-01 to 2027-05-31) with sufficient remaining annual limit (15000.00). However, the required itemised_bill document is missing and must be provided before approval can be issued.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "45378",
+        "amount": 1150.0,
+        "status": "unresolved"
+      }
+    ],
+    "missing": [
+      {
+        "code": "45378",
+        "document": "itemised_bill",
+        "date": "2026-09-10"
+      }
+    ],
+    "approved_total": 0.0,
+    "refused_total": 0.0,
+    "turns": 4,
+    "tokens_in": 7019,
+    "tokens_out": 541,
+    "cost_usd": 0.009724,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:38:34.279755+00:00",
+    "decision_hash": "2a7e9c951a78a1159076c248c462980077ce02144387fd7d98ed1a74772728df"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8901"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1512,
+        "output": 59,
+        "cost": 0.001807,
+        "provider_usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454307-WerY6hksBuIcOtTaBOkS",
+        "object": "chat.completion",
+        "created": 1789454307,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8901\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8901",
+          "member_id": "M-5502",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-10",
+          "narrative": "Colonoscopy, day procedure.",
+          "documents": [],
+          "lines": [
+            {
+              "code": "45378",
+              "amount": 1150
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8901"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1671,
+        "output": 59,
+        "cost": 0.001966,
+        "provider_usage": {
+          "prompt_tokens": 1671,
+          "completion_tokens": 59,
+          "total_tokens": 1730,
+          "cost": 0.001966,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001966,
+            "upstream_inference_prompt_cost": 0.001671,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454308-saI8zFZtuKxo1TV0DXTT",
+        "object": "chat.completion",
+        "created": 1789454308,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8901\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1671,
+          "completion_tokens": 59,
+          "total_tokens": 1730,
+          "cost": 0.001966,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001966,
+            "upstream_inference_prompt_cost": 0.001671,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 1150.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8901",
+            "code": "45378"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8901"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1809,
+        "output": 109,
+        "cost": 0.002354,
+        "provider_usage": {
+          "prompt_tokens": 1809,
+          "completion_tokens": 109,
+          "total_tokens": 1918,
+          "cost": 0.002354,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002354,
+            "upstream_inference_prompt_cost": 0.001809,
+            "upstream_inference_completions_cost": 0.000545
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454309-9AjDSwRQ7ApWwsU9F7x8",
+        "object": "chat.completion",
+        "created": 1789454309,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"check_coverage\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8901\",\n        \"code\": \"45378\"\n      }\n    },\n    {\n      \"tool\": \"get_hospital_status\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8901\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1809,
+          "completion_tokens": 109,
+          "total_tokens": 1918,
+          "cost": 0.002354,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002354,
+            "upstream_inference_prompt_cost": 0.001809,
+            "upstream_inference_completions_cost": 0.000545
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "45378",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [
+            "itemised_bill"
+          ],
+          "missing_documents": [
+            "itemised_bill"
+          ]
+        },
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8901",
+              "decision": "request_document",
+              "reason": "Code 45378 (Colonoscopy) is covered under policy POL-6001 (Shield Plus, active 2026-06-01 to 2027-05-31) with sufficient remaining annual limit (15000.00). However, the required itemised_bill document is missing and must be provided before approval can be issued.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "45378",
+                  "amount": 1150.0,
+                  "status": "unresolved"
+                }
+              ],
+              "missing": [
+                {
+                  "code": "45378",
+                  "document": "itemised_bill",
+                  "date": "2026-09-10"
+                }
+              ],
+              "approved_total": 0.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2027,
+        "output": 314,
+        "cost": 0.003597,
+        "provider_usage": {
+          "prompt_tokens": 2027,
+          "completion_tokens": 314,
+          "total_tokens": 2341,
+          "cost": 0.003597,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003597,
+            "upstream_inference_prompt_cost": 0.002027,
+            "upstream_inference_completions_cost": 0.00157
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454311-BD1vOQjIkIwxyxUH97mD",
+        "object": "chat.completion",
+        "created": 1789454311,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-8901\",\n          \"decision\": \"request_document\",\n          \"reason\": \"Code 45378 (Colonoscopy) is covered under policy POL-6001 (Shield Plus, active 2026-06-01 to 2027-05-31) with sufficient remaining annual limit (15000.00). However, the required itemised_bill document is missing and must be provided before approval can be issued.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\",\n            \"obs-3\",\n            \"obs-4\"\n          ],\n          \"lines\": [\n            {\n              \"code\": \"45378\",\n              \"amount\": 1150.00,\n              \"status\": \"unresolved\"\n            }\n          ],\n          \"missing\": [\n            {\n              \"code\": \"45378\",\n              \"document\": \"itemised_bill\",\n              \"date\": \"2026-09-10\"\n            }\n          ],\n          \"approved_total\": 0.00,\n          \"refused_total\": 0.00\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2027,
+          "completion_tokens": 314,
+          "total_tokens": 2341,
+          "cost": 0.003597,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003597,
+            "upstream_inference_prompt_cost": 0.002027,
+            "upstream_inference_completions_cost": 0.00157
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8901",
+          "decision": "request_document",
+          "decision_hash": "2a7e9c951a78a1159076c248c462980077ce02144387fd7d98ed1a74772728df"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8901"
+      },
+      "result": {
+        "claim_id": "CLM-8901",
+        "member_id": "M-5502",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-10",
+        "narrative": "Colonoscopy, day procedure.",
+        "documents": [],
+        "lines": [
+          {
+            "code": "45378",
+            "amount": 1150
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8901"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 1150.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8901",
+        "code": "45378"
+      },
+      "result": {
+        "code": "45378",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [
+          "itemised_bill"
+        ],
+        "missing_documents": [
+          "itemised_bill"
+        ]
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8901"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8901",
+          "decision": "request_document",
+          "reason": "Code 45378 (Colonoscopy) is covered under policy POL-6001 (Shield Plus, active 2026-06-01 to 2027-05-31) with sufficient remaining annual limit (15000.00). However, the required itemised_bill document is missing and must be provided before approval can be issued.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "45378",
+              "amount": 1150.0,
+              "status": "unresolved"
+            }
+          ],
+          "missing": [
+            {
+              "code": "45378",
+              "document": "itemised_bill",
+              "date": "2026-09-10"
+            }
+          ],
+          "approved_total": 0.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8901",
+        "decision": "request_document",
+        "decision_hash": "2a7e9c951a78a1159076c248c462980077ce02144387fd7d98ed1a74772728df"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 7019,
+  "tokens_out": 541,
+  "cost_usd": 0.009724,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 7.4468,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 3,
+  "negative": true,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

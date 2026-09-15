@@ -1,0 +1,935 @@
+{
+  "case_id": "CLM-9310",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9310"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1496,
+        "output": 28,
+        "cost": 0.0001608,
+        "provider_usage": {
+          "prompt_tokens": 1496,
+          "completion_tokens": 28,
+          "total_tokens": 1524,
+          "cost": 0.0001608,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001608,
+            "upstream_inference_prompt_cost": 0.0001496,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454413-mxB55piUsjGNx0IC6hmu",
+        "object": "chat.completion",
+        "created": 1789454413,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_claim\", \"arguments\": {\"claim_id\": \"CLM-9310\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1496,
+          "completion_tokens": 28,
+          "total_tokens": 1524,
+          "cost": 0.0001608,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001608,
+            "upstream_inference_prompt_cost": 0.0001496,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9310",
+          "member_id": "M-9901",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-09-10",
+          "lines": [
+            {
+              "code": "29881",
+              "amount": 1800
+            }
+          ],
+          "narrative": "Planned arthroscopy with renewed approval.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9310"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1675,
+        "output": 28,
+        "cost": 0.0001787,
+        "provider_usage": {
+          "prompt_tokens": 1675,
+          "completion_tokens": 28,
+          "total_tokens": 1703,
+          "cost": 0.0001787,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001787,
+            "upstream_inference_prompt_cost": 0.0001675,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454414-Vzfi39OMUTpSJfWgfrY4",
+        "object": "chat.completion",
+        "created": 1789454414,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"lookup_policy\", \"arguments\": {\"claim_id\": \"CLM-9310\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1675,
+          "completion_tokens": 28,
+          "total_tokens": 1703,
+          "cost": 0.0001787,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001787,
+            "upstream_inference_prompt_cost": 0.0001675,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 1800.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9310",
+            "code": "29881"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1829,
+        "output": 38,
+        "cost": 0.0001981,
+        "provider_usage": {
+          "prompt_tokens": 1829,
+          "completion_tokens": 38,
+          "total_tokens": 1867,
+          "cost": 0.0001981,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001981,
+            "upstream_inference_prompt_cost": 0.0001829,
+            "upstream_inference_completions_cost": 1.52e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454415-gGboM5axpuqLK1SrkEwq",
+        "object": "chat.completion",
+        "created": 1789454415,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-9310\", \"code\": \"29881\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1829,
+          "completion_tokens": 38,
+          "total_tokens": 1867,
+          "cost": 0.0001981,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001981,
+            "upstream_inference_prompt_cost": 0.0001829,
+            "upstream_inference_completions_cost": 1.52e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "29881",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [],
+          "missing_documents": []
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9310"
+          }
+        },
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-9310",
+            "code": "29881"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1950,
+        "output": 67,
+        "cost": 0.0002218,
+        "provider_usage": {
+          "prompt_tokens": 1950,
+          "completion_tokens": 67,
+          "total_tokens": 2017,
+          "cost": 0.0002218,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002218,
+            "upstream_inference_prompt_cost": 0.000195,
+            "upstream_inference_completions_cost": 2.68e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454416-WNDOCnK0aK6kkbVVa6ZQ",
+        "object": "chat.completion",
+        "created": 1789454416,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-9310\"}}, {\"tool\": \"get_preauthorisation\", \"arguments\": {\"claim_id\": \"CLM-9310\", \"code\": \"29881\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1950,
+          "completion_tokens": 67,
+          "total_tokens": 2017,
+          "cost": 0.0002218,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002218,
+            "upstream_inference_prompt_cost": 0.000195,
+            "upstream_inference_completions_cost": 2.68e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        },
+        {
+          "code": "29881",
+          "candidates": [
+            {
+              "preauth_id": "PA-9901-OLD",
+              "member_id": "M-9901",
+              "procedure_code": "29881",
+              "valid_from": "2026-06-01",
+              "valid_to": "2026-07-31",
+              "status": "expired_before_service"
+            },
+            {
+              "preauth_id": "PA-9901-FUTURE",
+              "member_id": "M-9901",
+              "procedure_code": "29881",
+              "valid_from": "2026-11-01",
+              "valid_to": "2026-12-31",
+              "status": "not_yet_valid"
+            },
+            {
+              "preauth_id": "PA-9901-VALID",
+              "member_id": "M-9901",
+              "procedure_code": "29881",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-9901-VALID",
+            "member_id": "M-9901",
+            "procedure_code": "29881",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid",
+          "explanation": "These are all matching authorisation records. Existence alone does not establish applicability. Compare valid_from and valid_to inclusively against date_of_service 2026-09-10; use a valid candidate only."
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9310",
+              "decision": "request_document",
+              "reason": "Pre-authorisation is required for code 29881, and the only valid pre-authorisation candidate PA-9901-VALID has expired. The service date was 2026-09-10, and the valid pre-authorisation was valid from 2026-08-01 to 2026-10-31. The claim requires a valid pre-authorisation for coverage.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5"
+              ],
+              "lines": [
+                {
+                  "code": "29881",
+                  "amount": 1800,
+                  "status": "unresolved"
+                }
+              ],
+              "missing": [
+                {
+                  "code": "29881",
+                  "document": "preauthorisation",
+                  "date": "2026-09-10"
+                }
+              ],
+              "approved_total": 0.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2538,
+        "output": 258,
+        "cost": 0.000357,
+        "provider_usage": {
+          "prompt_tokens": 2538,
+          "completion_tokens": 258,
+          "total_tokens": 2796,
+          "cost": 0.000357,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000357,
+            "upstream_inference_prompt_cost": 0.0002538,
+            "upstream_inference_completions_cost": 0.0001032
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454417-7jKoDJvThz1ddQF6zebs",
+        "object": "chat.completion",
+        "created": 1789454417,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"issue_decision_letter\", \"arguments\": {\"decision\": {\"case_id\": \"CLM-9310\", \"decision\": \"request_document\", \"reason\": \"Pre-authorisation is required for code 29881, and the only valid pre-authorisation candidate PA-9901-VALID has expired. The service date was 2026-09-10, and the valid pre-authorisation was valid from 2026-08-01 to 2026-10-31. The claim requires a valid pre-authorisation for coverage.\", \"evidence\": [\"obs-1\", \"obs-2\", \"obs-3\", \"obs-4\", \"obs-5\"], \"lines\": [{\"code\": \"29881\", \"amount\": 1800, \"status\": \"unresolved\"}], \"missing\": [{\"code\": \"29881\", \"document\": \"preauthorisation\", \"date\": \"2026-09-10\"}], \"approved_total\": 0.0, \"refused_total\": 0.0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2538,
+          "completion_tokens": 258,
+          "total_tokens": 2796,
+          "cost": 0.000357,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000357,
+            "upstream_inference_prompt_cost": 0.0002538,
+            "upstream_inference_completions_cost": 0.0001032
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: incorrect_missing_items: each item requires code, document and service date; use document=preauthorisation for authorisation requests; exclude documents for excluded lines"
+    },
+    {
+      "turn": 6,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9310",
+              "decision": "request_document",
+              "reason": "Pre-authorisation is required for code 29881. The valid pre-authorisation candidate PA-9901-VALID was active from 2026-08-01 to 2026-10-31. The service date was 2026-09-10. The claim requires a valid pre-authorisation for coverage.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5"
+              ],
+              "lines": [
+                {
+                  "code": "29881",
+                  "amount": 1800,
+                  "status": "unresolved"
+                }
+              ],
+              "missing": [
+                {
+                  "code": "29881",
+                  "document": "preauthorisation",
+                  "date": "2026-09-10"
+                }
+              ],
+              "approved_total": 0.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2854,
+        "output": 246,
+        "cost": 0.0003838,
+        "provider_usage": {
+          "prompt_tokens": 2854,
+          "completion_tokens": 246,
+          "total_tokens": 3100,
+          "cost": 0.0003838,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0003838,
+            "upstream_inference_prompt_cost": 0.0002854,
+            "upstream_inference_completions_cost": 9.84e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454419-NtmB6HjCZMRx330GMIyH",
+        "object": "chat.completion",
+        "created": 1789454419,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"issue_decision_letter\", \"arguments\": {\"decision\": {\"case_id\": \"CLM-9310\", \"decision\": \"request_document\", \"reason\": \"Pre-authorisation is required for code 29881. The valid pre-authorisation candidate PA-9901-VALID was active from 2026-08-01 to 2026-10-31. The service date was 2026-09-10. The claim requires a valid pre-authorisation for coverage.\", \"evidence\": [\"obs-1\", \"obs-2\", \"obs-3\", \"obs-4\", \"obs-5\"], \"lines\": [{\"code\": \"29881\", \"amount\": 1800, \"status\": \"unresolved\"}], \"missing\": [{\"code\": \"29881\", \"document\": \"preauthorisation\", \"date\": \"2026-09-10\"}], \"approved_total\": 0.0, \"refused_total\": 0.0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2854,
+          "completion_tokens": 246,
+          "total_tokens": 3100,
+          "cost": 0.0003838,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0003838,
+            "upstream_inference_prompt_cost": 0.0002854,
+            "upstream_inference_completions_cost": 9.84e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: incorrect_missing_items: each item requires code, document and service date; use document=preauthorisation for authorisation requests; exclude documents for excluded lines"
+    },
+    {
+      "turn": 7,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9310",
+              "decision": "request_document",
+              "reason": "Pre-authorisation is required for code 29881. The valid pre-authorisation candidate PA-9901-VALID was active from 2026-08-01 to 2026-10-31. The service date was 2026-09-10. The claim requires a valid pre-authorisation for coverage.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5"
+              ],
+              "lines": [
+                {
+                  "code": "29881",
+                  "amount": 1800,
+                  "status": "unresolved"
+                }
+              ],
+              "missing": [
+                {
+                  "code": "29881",
+                  "document": "preauthorisation",
+                  "date": "2026-09-10"
+                }
+              ],
+              "approved_total": 0.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 3159,
+        "output": 246,
+        "cost": 0.0004143,
+        "provider_usage": {
+          "prompt_tokens": 3159,
+          "completion_tokens": 246,
+          "total_tokens": 3405,
+          "cost": 0.0004143,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0004143,
+            "upstream_inference_prompt_cost": 0.0003159,
+            "upstream_inference_completions_cost": 9.84e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454420-rLG7URTleBEhxyvJcT0d",
+        "object": "chat.completion",
+        "created": 1789454420,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"issue_decision_letter\", \"arguments\": {\"decision\": {\"case_id\": \"CLM-9310\", \"decision\": \"request_document\", \"reason\": \"Pre-authorisation is required for code 29881. The valid pre-authorisation candidate PA-9901-VALID was active from 2026-08-01 to 2026-10-31. The service date was 2026-09-10. The claim requires a valid pre-authorisation for coverage.\", \"evidence\": [\"obs-1\", \"obs-2\", \"obs-3\", \"obs-4\", \"obs-5\"], \"lines\": [{\"code\": \"29881\", \"amount\": 1800, \"status\": \"unresolved\"}], \"missing\": [{\"code\": \"29881\", \"document\": \"preauthorisation\", \"date\": \"2026-09-10\"}], \"approved_total\": 0.0, \"refused_total\": 0.0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 3159,
+          "completion_tokens": 246,
+          "total_tokens": 3405,
+          "cost": 0.0004143,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0004143,
+            "upstream_inference_prompt_cost": 0.0003159,
+            "upstream_inference_completions_cost": 9.84e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: repeated action blocked"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9310"
+      },
+      "result": {
+        "claim_id": "CLM-9310",
+        "member_id": "M-9901",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-09-10",
+        "lines": [
+          {
+            "code": "29881",
+            "amount": 1800
+          }
+        ],
+        "narrative": "Planned arthroscopy with renewed approval.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9310"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 1800.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9310",
+        "code": "29881"
+      },
+      "result": {
+        "code": "29881",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9310"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-9310",
+        "code": "29881"
+      },
+      "result": {
+        "code": "29881",
+        "candidates": [
+          {
+            "preauth_id": "PA-9901-OLD",
+            "member_id": "M-9901",
+            "procedure_code": "29881",
+            "valid_from": "2026-06-01",
+            "valid_to": "2026-07-31",
+            "status": "expired_before_service"
+          },
+          {
+            "preauth_id": "PA-9901-FUTURE",
+            "member_id": "M-9901",
+            "procedure_code": "29881",
+            "valid_from": "2026-11-01",
+            "valid_to": "2026-12-31",
+            "status": "not_yet_valid"
+          },
+          {
+            "preauth_id": "PA-9901-VALID",
+            "member_id": "M-9901",
+            "procedure_code": "29881",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          }
+        ],
+        "valid": {
+          "preauth_id": "PA-9901-VALID",
+          "member_id": "M-9901",
+          "procedure_code": "29881",
+          "valid_from": "2026-08-01",
+          "valid_to": "2026-10-31",
+          "status": "valid"
+        },
+        "status": "valid",
+        "explanation": "These are all matching authorisation records. Existence alone does not establish applicability. Compare valid_from and valid_to inclusively against date_of_service 2026-09-10; use a valid candidate only."
+      }
+    }
+  ],
+  "turns": 7,
+  "tokens_in": 15501,
+  "tokens_out": 911,
+  "cost_usd": 0.0019145000000000002,
+  "stop": "duplicate_action",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 8.2847,
+  "variant": "v1",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "google/gemini-2.5-flash-lite",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: duplicate_action"
+    ],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

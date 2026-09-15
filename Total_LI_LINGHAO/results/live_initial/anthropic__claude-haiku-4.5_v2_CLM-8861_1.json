@@ -1,0 +1,802 @@
+{
+  "case_id": "CLM-8861",
+  "record": {
+    "case_id": "CLM-8861",
+    "decision": "approve_in_principle",
+    "reason": "Both claim lines are covered under active policy POL-6001 (Shield Plus). Code 27447 (knee replacement, $8,200) requires preauthorisation and has valid preauth PA-5702 (valid 2026-07-01 to 2026-12-31, covering service date 2026-09-05); discharge summary is present. Code 80053 (lab work, $90) requires no preauth and has no missing documents. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. Claim total $8,290 is within remaining annual limit of $15,000. No policy triggers, duplicates, or instruction detection.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5",
+      "obs-6"
+    ],
+    "lines": [
+      {
+        "code": "27447",
+        "amount": 8200.0,
+        "status": "covered",
+        "preauth": "PA-5702"
+      },
+      {
+        "code": "80053",
+        "amount": 90.0,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 8290.0,
+    "refused_total": 0.0,
+    "turns": 5,
+    "tokens_in": 8737,
+    "tokens_out": 1003,
+    "cost_usd": 0.013751999999999999,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:17:26.731136+00:00",
+    "decision_hash": "a440dfa7350977893d8024a98532ec49b1286b923daf47290a9c961579648770"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8861"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1420,
+        "output": 59,
+        "cost": 0.001715,
+        "provider_usage": {
+          "prompt_tokens": 1420,
+          "completion_tokens": 59,
+          "total_tokens": 1479,
+          "cost": 0.001715,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001715,
+            "upstream_inference_prompt_cost": 0.00142,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453033-xHtaatI37RbSyMYQo75j",
+        "object": "chat.completion",
+        "created": 1789453033,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8861\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1420,
+          "completion_tokens": 59,
+          "total_tokens": 1479,
+          "cost": 0.001715,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001715,
+            "upstream_inference_prompt_cost": 0.00142,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8861",
+          "member_id": "M-5502",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-09-05",
+          "narrative": "Knee replacement, planned months ago.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "27447",
+              "amount": 8200
+            },
+            {
+              "code": "80053",
+              "amount": 90
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8861"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1578,
+        "output": 118,
+        "cost": 0.002168,
+        "provider_usage": {
+          "prompt_tokens": 1578,
+          "completion_tokens": 118,
+          "total_tokens": 1696,
+          "cost": 0.002168,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002168,
+            "upstream_inference_prompt_cost": 0.001578,
+            "upstream_inference_completions_cost": 0.00059
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453035-GJYfE2UGV0jUcVsQmiqv",
+        "object": "chat.completion",
+        "created": 1789453035,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim step by step using the ReAct agent approach.\n\n**Turn 1: Retrieve policy and check for triggers**\n\nI have the claim data. Now I need to look up the policy to check for any policy_trigger and understand coverage eligibility.\n\n```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8861\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1578,
+          "completion_tokens": 118,
+          "total_tokens": 1696,
+          "cost": 0.002168,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002168,
+            "upstream_inference_prompt_cost": 0.001578,
+            "upstream_inference_completions_cost": 0.00059
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 8290.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8861",
+            "code": "27447"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8861",
+            "code": "80053"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8861"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1690,
+        "output": 351,
+        "cost": 0.003445,
+        "provider_usage": {
+          "prompt_tokens": 1690,
+          "completion_tokens": 351,
+          "total_tokens": 2041,
+          "cost": 0.003445,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003445,
+            "upstream_inference_prompt_cost": 0.00169,
+            "upstream_inference_completions_cost": 0.001755
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453037-4D9wcbHAqJpKWjQ1rbtQ",
+        "object": "chat.completion",
+        "created": 1789453037,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim systematically using the provided observations and tools.\n\n**Analysis of provided observations:**\n\n1. **obs-1 (get_claim)**: Claim CLM-8861 for member M-5502 at hospital H-207, service date 2026-09-05. Two lines: code 27447 ($8,200) and code 80053 ($90). No duplicates, no instruction detected.\n\n2. **obs-2 (lookup_policy)**: Policy POL-6001 (Shield Plus) is active, covers 2026-06-01 to 2027-05-31, annual limit $15,000, $0 used to date, $15,000 remaining. No policy_trigger. Claim total $8,290 is within remaining balance.\n\n**Next steps required:**\n- Check coverage for each unique code (27447, 80053)\n- Get hospital status for H-207\n- Determine preauthorisation requirements\n- Issue decision letter\n\nLet me proceed with coverage checks and hospital status:\n\n```json\n{\n  \"calls\": [\n    {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8861\", \"code\": \"27447\"}},\n    {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8861\", \"code\": \"80053\"}},\n    {\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-8861\"}}\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1690,
+          "completion_tokens": 351,
+          "total_tokens": 2041,
+          "cost": 0.003445,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003445,
+            "upstream_inference_prompt_cost": 0.00169,
+            "upstream_inference_completions_cost": 0.001755
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "27447",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [
+            "discharge_summary"
+          ],
+          "missing_documents": []
+        },
+        {
+          "code": "80053",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-8861",
+            "code": "27447"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1927,
+        "output": 70,
+        "cost": 0.002277,
+        "provider_usage": {
+          "prompt_tokens": 1927,
+          "completion_tokens": 70,
+          "total_tokens": 1997,
+          "cost": 0.002277,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002277,
+            "upstream_inference_prompt_cost": 0.001927,
+            "upstream_inference_completions_cost": 0.00035
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453040-SyEcyID9kwQLmahXQKge",
+        "object": "chat.completion",
+        "created": 1789453040,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_preauthorisation\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8861\",\n        \"code\": \"27447\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1927,
+          "completion_tokens": 70,
+          "total_tokens": 1997,
+          "cost": 0.002277,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002277,
+            "upstream_inference_prompt_cost": 0.001927,
+            "upstream_inference_completions_cost": 0.00035
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "27447",
+          "candidates": [
+            {
+              "preauth_id": "PA-5702",
+              "member_id": "M-5502",
+              "procedure_code": "27447",
+              "valid_from": "2026-07-01",
+              "valid_to": "2026-12-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-5702",
+            "member_id": "M-5502",
+            "procedure_code": "27447",
+            "valid_from": "2026-07-01",
+            "valid_to": "2026-12-31",
+            "status": "valid"
+          },
+          "status": "valid"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8861",
+              "decision": "approve_in_principle",
+              "reason": "Both claim lines are covered under active policy POL-6001 (Shield Plus). Code 27447 (knee replacement, $8,200) requires preauthorisation and has valid preauth PA-5702 (valid 2026-07-01 to 2026-12-31, covering service date 2026-09-05); discharge summary is present. Code 80053 (lab work, $90) requires no preauth and has no missing documents. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. Claim total $8,290 is within remaining annual limit of $15,000. No policy triggers, duplicates, or instruction detection.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5",
+                "obs-6"
+              ],
+              "lines": [
+                {
+                  "code": "27447",
+                  "amount": 8200.0,
+                  "status": "covered",
+                  "preauth": "PA-5702"
+                },
+                {
+                  "code": "80053",
+                  "amount": 90.0,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 8290.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2122,
+        "output": 405,
+        "cost": 0.004147,
+        "provider_usage": {
+          "prompt_tokens": 2122,
+          "completion_tokens": 405,
+          "total_tokens": 2527,
+          "cost": 0.004147,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.004147,
+            "upstream_inference_prompt_cost": 0.002122,
+            "upstream_inference_completions_cost": 0.002025
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453042-1WCoKdWXTY4vZ6ZN73ch",
+        "object": "chat.completion",
+        "created": 1789453042,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-8861\",\n          \"decision\": \"approve_in_principle\",\n          \"reason\": \"Both claim lines are covered under active policy POL-6001 (Shield Plus). Code 27447 (knee replacement, $8,200) requires preauthorisation and has valid preauth PA-5702 (valid 2026-07-01 to 2026-12-31, covering service date 2026-09-05); discharge summary is present. Code 80053 (lab work, $90) requires no preauth and has no missing documents. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. Claim total $8,290 is within remaining annual limit of $15,000. No policy triggers, duplicates, or instruction detection.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\",\n            \"obs-3\",\n            \"obs-4\",\n            \"obs-5\",\n            \"obs-6\"\n          ],\n          \"lines\": [\n            {\n              \"code\": \"27447\",\n              \"amount\": 8200.00,\n              \"status\": \"covered\",\n              \"preauth\": \"PA-5702\"\n            },\n            {\n              \"code\": \"80053\",\n              \"amount\": 90.00,\n              \"status\": \"covered\"\n            }\n          ],\n          \"missing\": [],\n          \"approved_total\": 8290.00,\n          \"refused_total\": 0.00\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2122,
+          "completion_tokens": 405,
+          "total_tokens": 2527,
+          "cost": 0.004147,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.004147,
+            "upstream_inference_prompt_cost": 0.002122,
+            "upstream_inference_completions_cost": 0.002025
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8861",
+          "decision": "approve_in_principle",
+          "decision_hash": "a440dfa7350977893d8024a98532ec49b1286b923daf47290a9c961579648770"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8861"
+      },
+      "result": {
+        "claim_id": "CLM-8861",
+        "member_id": "M-5502",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-09-05",
+        "narrative": "Knee replacement, planned months ago.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "27447",
+            "amount": 8200
+          },
+          {
+            "code": "80053",
+            "amount": 90
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8861"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 8290.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8861",
+        "code": "27447"
+      },
+      "result": {
+        "code": "27447",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [
+          "discharge_summary"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8861",
+        "code": "80053"
+      },
+      "result": {
+        "code": "80053",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8861"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-8861",
+        "code": "27447"
+      },
+      "result": {
+        "code": "27447",
+        "candidates": [
+          {
+            "preauth_id": "PA-5702",
+            "member_id": "M-5502",
+            "procedure_code": "27447",
+            "valid_from": "2026-07-01",
+            "valid_to": "2026-12-31",
+            "status": "valid"
+          }
+        ],
+        "valid": {
+          "preauth_id": "PA-5702",
+          "member_id": "M-5502",
+          "procedure_code": "27447",
+          "valid_from": "2026-07-01",
+          "valid_to": "2026-12-31",
+          "status": "valid"
+        },
+        "status": "valid"
+      }
+    },
+    {
+      "id": "obs-7",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8861",
+          "decision": "approve_in_principle",
+          "reason": "Both claim lines are covered under active policy POL-6001 (Shield Plus). Code 27447 (knee replacement, $8,200) requires preauthorisation and has valid preauth PA-5702 (valid 2026-07-01 to 2026-12-31, covering service date 2026-09-05); discharge summary is present. Code 80053 (lab work, $90) requires no preauth and has no missing documents. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. Claim total $8,290 is within remaining annual limit of $15,000. No policy triggers, duplicates, or instruction detection.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5",
+            "obs-6"
+          ],
+          "lines": [
+            {
+              "code": "27447",
+              "amount": 8200.0,
+              "status": "covered",
+              "preauth": "PA-5702"
+            },
+            {
+              "code": "80053",
+              "amount": 90.0,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 8290.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8861",
+        "decision": "approve_in_principle",
+        "decision_hash": "a440dfa7350977893d8024a98532ec49b1286b923daf47290a9c961579648770"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 8737,
+  "tokens_out": 1003,
+  "cost_usd": 0.013751999999999999,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 13.4705,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

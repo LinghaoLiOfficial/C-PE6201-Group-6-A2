@@ -1,0 +1,400 @@
+{
+  "case_id": "CLM-9001",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9001"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1276,
+        "output": 23,
+        "cost": 0.0001345,
+        "provider_usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452955-VlMGUqH8r8gVQPX8XKgd",
+        "object": "chat.completion",
+        "created": 1789452955,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9001\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "member_id": "M-3390",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-09-20",
+          "narrative": "Emergency appendix removal.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 600.01
+            }
+          ],
+          "claim_id": "CLM-9001",
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9001"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1425,
+        "output": 23,
+        "cost": 7.30539e-05,
+        "provider_usage": {
+          "prompt_tokens": 1425,
+          "completion_tokens": 23,
+          "total_tokens": 1448,
+          "cost": 7.30539e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1207,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.30539e-05,
+            "upstream_inference_prompt_cost": 6.861375e-05,
+            "upstream_inference_completions_cost": 4.44015e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452956-xug8SktEScRAhu270hsu",
+        "object": "chat.completion",
+        "created": 1789452956,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9001\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1425,
+          "completion_tokens": 23,
+          "total_tokens": 1448,
+          "cost": 7.30539e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1207,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.30539e-05,
+            "upstream_inference_prompt_cost": 6.861375e-05,
+            "upstream_inference_completions_cost": 4.44015e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-4102",
+          "product": "Shield Basic",
+          "status": "active",
+          "start_date": "2026-01-01",
+          "end_date": "2026-12-31",
+          "annual_limit": 6000,
+          "used_to_date": 5400,
+          "exclusions": [
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 600.0,
+          "claim_total": 600.01,
+          "policy_trigger": "annual_limit_exceeded"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9001"
+          }
+        },
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9001"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9001",
+            "code": "47120"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9001"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1573,
+        "output": 90,
+        "cost": 9.311445e-05,
+        "provider_usage": {
+          "prompt_tokens": 1573,
+          "completion_tokens": 90,
+          "total_tokens": 1663,
+          "cost": 9.311445e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1572,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.311445e-05,
+            "upstream_inference_prompt_cost": 7.573995e-05,
+            "upstream_inference_completions_cost": 1.73745e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452957-yQCRqkf1wdNcL6RnGTzC",
+        "object": "chat.completion",
+        "created": 1789452957,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9001\"}},{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9001\"}},{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9001\",\"code\":\"47120\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-9001\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1573,
+          "completion_tokens": 90,
+          "total_tokens": 1663,
+          "cost": 9.311445e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1572,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.311445e-05,
+            "upstream_inference_prompt_cost": 7.573995e-05,
+            "upstream_inference_completions_cost": 1.73745e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: repeated action blocked"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9001"
+      },
+      "result": {
+        "member_id": "M-3390",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-09-20",
+        "narrative": "Emergency appendix removal.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 600.01
+          }
+        ],
+        "claim_id": "CLM-9001",
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9001"
+      },
+      "result": {
+        "policy_id": "POL-4102",
+        "product": "Shield Basic",
+        "status": "active",
+        "start_date": "2026-01-01",
+        "end_date": "2026-12-31",
+        "annual_limit": 6000,
+        "used_to_date": 5400,
+        "exclusions": [
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 600.0,
+        "claim_total": 600.01,
+        "policy_trigger": "annual_limit_exceeded"
+      }
+    }
+  ],
+  "turns": 3,
+  "tokens_in": 4274,
+  "tokens_out": 136,
+  "cost_usd": 0.00030066835,
+  "stop": "duplicate_action",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 5.7144,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "trial": 3,
+  "negative": true,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: duplicate_action"
+    ],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

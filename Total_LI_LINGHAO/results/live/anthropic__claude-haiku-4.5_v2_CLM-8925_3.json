@@ -1,0 +1,474 @@
+{
+  "case_id": "CLM-8925",
+  "record": {
+    "case_id": "CLM-8925",
+    "decision": "escalate",
+    "reason": "Policy annual limit exceeded. Claim total is 11400.00 (codes 27447: 9800.00, 47120: 1400.00, 70553: 200.00). Policy remaining limit is 9200.00 after 2800.00 used to date against annual limit of 12000.00. No individual coverage pricing performed because total claim amount already exceeds remaining limit. Escalation required for human assessment.",
+    "evidence": [
+      "obs-1",
+      "obs-2"
+    ],
+    "lines": [],
+    "missing": [],
+    "approved_total": 0.0,
+    "refused_total": 0.0,
+    "trigger": "annual_limit_exceeded",
+    "escalate_to": "human claims assessor",
+    "turns": 3,
+    "tokens_in": 5129,
+    "tokens_out": 387,
+    "cost_usd": 0.007064,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:38:40.761346+00:00",
+    "decision_hash": "285fb9a9204c6a5bd79d0aefe683f022227b3fcfbe8dfaea0e3ed29c71f929f4"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8925"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1512,
+        "output": 59,
+        "cost": 0.001807,
+        "provider_usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454314-bKp9S0ycjUV7xjapBaDj",
+        "object": "chat.completion",
+        "created": 1789454314,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8925\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8925",
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-12",
+          "narrative": "Knee replacement, plus the appendix operation and a scan.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "27447",
+              "amount": 9800
+            },
+            {
+              "code": "47120",
+              "amount": 1400
+            },
+            {
+              "code": "70553",
+              "amount": 200
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8925"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1713,
+        "output": 59,
+        "cost": 0.002008,
+        "provider_usage": {
+          "prompt_tokens": 1713,
+          "completion_tokens": 59,
+          "total_tokens": 1772,
+          "cost": 0.002008,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002008,
+            "upstream_inference_prompt_cost": 0.001713,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454316-HwFaZ262CdfXV9U7rIMB",
+        "object": "chat.completion",
+        "created": 1789454316,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8925\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1713,
+          "completion_tokens": 59,
+          "total_tokens": 1772,
+          "cost": 0.002008,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002008,
+            "upstream_inference_prompt_cost": 0.001713,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 11400.0,
+          "policy_trigger": "annual_limit_exceeded"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8925",
+              "decision": "escalate",
+              "reason": "Policy annual limit exceeded. Claim total is 11400.00 (codes 27447: 9800.00, 47120: 1400.00, 70553: 200.00). Policy remaining limit is 9200.00 after 2800.00 used to date against annual limit of 12000.00. No individual coverage pricing performed because total claim amount already exceeds remaining limit. Escalation required for human assessment.",
+              "evidence": [
+                "obs-1",
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0.0,
+              "refused_total": 0.0,
+              "trigger": "annual_limit_exceeded",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1904,
+        "output": 269,
+        "cost": 0.003249,
+        "provider_usage": {
+          "prompt_tokens": 1904,
+          "completion_tokens": 269,
+          "total_tokens": 2173,
+          "cost": 0.003249,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003249,
+            "upstream_inference_prompt_cost": 0.001904,
+            "upstream_inference_completions_cost": 0.001345
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454317-aZ3e4MPZ2GQNY72DxPdV",
+        "object": "chat.completion",
+        "created": 1789454317,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-8925\",\n          \"decision\": \"escalate\",\n          \"reason\": \"Policy annual limit exceeded. Claim total is 11400.00 (codes 27447: 9800.00, 47120: 1400.00, 70553: 200.00). Policy remaining limit is 9200.00 after 2800.00 used to date against annual limit of 12000.00. No individual coverage pricing performed because total claim amount already exceeds remaining limit. Escalation required for human assessment.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\"\n          ],\n          \"lines\": [],\n          \"missing\": [],\n          \"approved_total\": 0.00,\n          \"refused_total\": 0.00,\n          \"trigger\": \"annual_limit_exceeded\",\n          \"escalate_to\": \"human claims assessor\"\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1904,
+          "completion_tokens": 269,
+          "total_tokens": 2173,
+          "cost": 0.003249,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003249,
+            "upstream_inference_prompt_cost": 0.001904,
+            "upstream_inference_completions_cost": 0.001345
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8925",
+          "decision": "escalate",
+          "decision_hash": "285fb9a9204c6a5bd79d0aefe683f022227b3fcfbe8dfaea0e3ed29c71f929f4"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8925"
+      },
+      "result": {
+        "claim_id": "CLM-8925",
+        "member_id": "M-2214",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-12",
+        "narrative": "Knee replacement, plus the appendix operation and a scan.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "27447",
+            "amount": 9800
+          },
+          {
+            "code": "47120",
+            "amount": 1400
+          },
+          {
+            "code": "70553",
+            "amount": 200
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8925"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 11400.0,
+        "policy_trigger": "annual_limit_exceeded"
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8925",
+          "decision": "escalate",
+          "reason": "Policy annual limit exceeded. Claim total is 11400.00 (codes 27447: 9800.00, 47120: 1400.00, 70553: 200.00). Policy remaining limit is 9200.00 after 2800.00 used to date against annual limit of 12000.00. No individual coverage pricing performed because total claim amount already exceeds remaining limit. Escalation required for human assessment.",
+          "evidence": [
+            "obs-1",
+            "obs-2"
+          ],
+          "lines": [],
+          "missing": [],
+          "approved_total": 0.0,
+          "refused_total": 0.0,
+          "trigger": "annual_limit_exceeded",
+          "escalate_to": "human claims assessor"
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8925",
+        "decision": "escalate",
+        "decision_hash": "285fb9a9204c6a5bd79d0aefe683f022227b3fcfbe8dfaea0e3ed29c71f929f4"
+      }
+    }
+  ],
+  "turns": 3,
+  "tokens_in": 5129,
+  "tokens_out": 387,
+  "cost_usd": 0.007064,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 6.1435,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 3,
+  "negative": true,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

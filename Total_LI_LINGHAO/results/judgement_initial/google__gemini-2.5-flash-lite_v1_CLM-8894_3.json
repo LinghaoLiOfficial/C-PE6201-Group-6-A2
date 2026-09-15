@@ -1,0 +1,56 @@
+{
+  "source": "google__gemini-2.5-flash-lite_v1_CLM-8894_3.json",
+  "case_id": "CLM-8894",
+  "judge": "anthropic/claude-haiku-4.5",
+  "status": "judged",
+  "pass": true,
+  "reason": "Record fully satisfies must_record requirements. PA-5640 is identified in obs-5 result; its validity period (2026-03-01 to 2026-05-31) is explicitly stated; the expiration before service date (2026-09-09) is documented in the status field 'expired_before_service' and directly cited in the reason; the causal link\u2014that expiration is why it does not authorise the claim\u2014is clearly articulated in both the reason and obs-5's explanation ('Existence alone does not establish applicability').",
+  "missing_requirements": [],
+  "cost_usd": 0.002323,
+  "raw": {
+    "id": "gen-1789453291-D0jz5FFAFB9QXyRjfBEj",
+    "object": "chat.completion",
+    "created": 1789453291,
+    "model": "anthropic/claude-haiku-4.5",
+    "provider": "Amazon Bedrock",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "```json\n{\n  \"pass\": true,\n  \"reason\": \"Record fully satisfies must_record requirements. PA-5640 is identified in obs-5 result; its validity period (2026-03-01 to 2026-05-31) is explicitly stated; the expiration before service date (2026-09-09) is documented in the status field 'expired_before_service' and directly cited in the reason; the causal link\u2014that expiration is why it does not authorise the claim\u2014is clearly articulated in both the reason and obs-5's explanation ('Existence alone does not establish applicability').\",\n  \"missing_requirements\": []\n}\n```",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1538,
+      "completion_tokens": 157,
+      "total_tokens": 1695,
+      "cost": 0.002323,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.002323,
+        "upstream_inference_prompt_cost": 0.001538,
+        "upstream_inference_completions_cost": 0.000785
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

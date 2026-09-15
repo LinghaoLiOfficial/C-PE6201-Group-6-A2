@@ -1,0 +1,22 @@
+{
+  "checks": [
+    {
+      "command": "scripts/reproduce.py",
+      "exit_code": 0
+    },
+    {
+      "command": "scripts/replay_judgements.py",
+      "exit_code": 0
+    },
+    {
+      "command": "scripts/verify_package.py",
+      "exit_code": 0
+    },
+    {
+      "command": "scripts/build_analysis.py",
+      "exit_code": 0
+    }
+  ],
+  "all_passed": true,
+  "archive": "PE6201_A2_Group-6.zip"
+}

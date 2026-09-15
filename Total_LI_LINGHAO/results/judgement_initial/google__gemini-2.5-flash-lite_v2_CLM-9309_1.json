@@ -1,0 +1,56 @@
+{
+  "source": "google__gemini-2.5-flash-lite_v2_CLM-9309_1.json",
+  "case_id": "CLM-9309",
+  "judge": "anthropic/claude-haiku-4.5",
+  "status": "judged",
+  "pass": true,
+  "reason": "Record meets all must_record requirements. The approved_total of 130 is explicitly stated in the record and supported by obs-1 (line item code 99213, amount 130) and obs-2 (policy active, claim_total 130). The decision 'approve_in_principle' is justified by cited observations: policy active status (obs-2), service date 2026-10-05 within policy period 2026-06-01 to 2027-05-31 (obs-2), procedure code 99213 not excluded and not requiring pre-auth (obs-3), and no missing documents (obs-3). No duplicate issues identified (obs-1 shows duplicate: null). Reason text directly references the supporting evidence chain.",
+  "missing_requirements": [],
+  "cost_usd": 0.002188,
+  "raw": {
+    "id": "gen-1789453032-Id1XkG0cGLU5k4ix8Pe9",
+    "object": "chat.completion",
+    "created": 1789453032,
+    "model": "anthropic/claude-haiku-4.5",
+    "provider": "Amazon Bedrock",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "```json\n{\n  \"pass\": true,\n  \"reason\": \"Record meets all must_record requirements. The approved_total of 130 is explicitly stated in the record and supported by obs-1 (line item code 99213, amount 130) and obs-2 (policy active, claim_total 130). The decision 'approve_in_principle' is justified by cited observations: policy active status (obs-2), service date 2026-10-05 within policy period 2026-06-01 to 2027-05-31 (obs-2), procedure code 99213 not excluded and not requiring pre-auth (obs-3), and no missing documents (obs-3). No duplicate issues identified (obs-1 shows duplicate: null). Reason text directly references the supporting evidence chain.\",\n  \"missing_requirements\": []\n}\n```",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1193,
+      "completion_tokens": 199,
+      "total_tokens": 1392,
+      "cost": 0.002188,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.002188,
+        "upstream_inference_prompt_cost": 0.001193,
+        "upstream_inference_completions_cost": 0.000995
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

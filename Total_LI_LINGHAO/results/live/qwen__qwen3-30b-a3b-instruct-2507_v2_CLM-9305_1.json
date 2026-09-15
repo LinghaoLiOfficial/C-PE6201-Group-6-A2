@@ -1,0 +1,682 @@
+{
+  "case_id": "CLM-9305",
+  "record": {
+    "case_id": "CLM-9305",
+    "decision": "approve_in_principle",
+    "reason": "The claim is for code 47120, which is covered under the active policy (POL-6001) with no exclusions, no preauthorisation required, and the hospital (Riverside General, H-114) is in the panel. The service date (2026-08-20) falls within the policy period (2026-06-01 to 2027-05-31), and the annual limit has not been exceeded. All required documents (itemised_bill, discharge_summary) are present.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "47120",
+        "amount": 1500,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 1500,
+    "refused_total": 0,
+    "turns": 5,
+    "tokens_in": 8408,
+    "tokens_out": 349,
+    "cost_usd": 0.0007648472,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:37:59.102544+00:00",
+    "decision_hash": "b0b2474be1036774591805a70dc126d3dfe9f02346b313e869ee0a2ae1af679a"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9305"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1359,
+        "output": 22,
+        "cost": 0.00018811,
+        "provider_usage": {
+          "prompt_tokens": 1359,
+          "completion_tokens": 22,
+          "total_tokens": 1381,
+          "cost": 0.00018811,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00018811,
+            "upstream_inference_prompt_cost": 0.00017667,
+            "upstream_inference_completions_cost": 1.144e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454268-rrM7PVG4GvIlwo9TqNpS",
+        "object": "chat.completion",
+        "created": 1789454268,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Alibaba",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9305\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1359,
+          "completion_tokens": 22,
+          "total_tokens": 1381,
+          "cost": 0.00018811,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00018811,
+            "upstream_inference_prompt_cost": 0.00017667,
+            "upstream_inference_completions_cost": 1.144e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9305",
+          "member_id": "M-5502",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-08-20",
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1500
+            }
+          ],
+          "narrative": "Appendix treatment during August.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9305"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1529,
+        "output": 23,
+        "cost": 0.0001598,
+        "provider_usage": {
+          "prompt_tokens": 1529,
+          "completion_tokens": 23,
+          "total_tokens": 1552,
+          "cost": 0.0001598,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1296,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001598,
+            "upstream_inference_prompt_cost": 0.0001529,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454268-LyPj1xsegIGxROI1FXlO",
+        "object": "chat.completion",
+        "created": 1789454268,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9305\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1529,
+          "completion_tokens": 23,
+          "total_tokens": 1552,
+          "cost": 0.0001598,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1296,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001598,
+            "upstream_inference_prompt_cost": 0.0001529,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 1500.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9305",
+            "code": "47120"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9305"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1676,
+        "output": 52,
+        "cost": 0.0001832,
+        "provider_usage": {
+          "prompt_tokens": 1676,
+          "completion_tokens": 52,
+          "total_tokens": 1728,
+          "cost": 0.0001832,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1296,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001832,
+            "upstream_inference_prompt_cost": 0.0001676,
+            "upstream_inference_completions_cost": 1.56e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454270-zImrpiajaFSEW2raVN4T",
+        "object": "chat.completion",
+        "created": 1789454270,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9305\",\"code\":\"47120\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-9305\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1676,
+          "completion_tokens": 52,
+          "total_tokens": 1728,
+          "cost": 0.0001832,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1296,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001832,
+            "upstream_inference_prompt_cost": 0.0001676,
+            "upstream_inference_completions_cost": 1.56e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "47120",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-9305",
+            "code": "47120"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1887,
+        "output": 33,
+        "cost": 9.72297e-05,
+        "provider_usage": {
+          "prompt_tokens": 1887,
+          "completion_tokens": 33,
+          "total_tokens": 1920,
+          "cost": 9.72297e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1306,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.72297e-05,
+            "upstream_inference_prompt_cost": 9.085905e-05,
+            "upstream_inference_completions_cost": 6.37065e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454273-ptVljtapkhbk3EyQXWPn",
+        "object": "chat.completion",
+        "created": 1789454273,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_preauthorisation\",\"arguments\":{\"claim_id\":\"CLM-9305\",\"code\":\"47120\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1887,
+          "completion_tokens": 33,
+          "total_tokens": 1920,
+          "cost": 9.72297e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1306,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.72297e-05,
+            "upstream_inference_prompt_cost": 9.085905e-05,
+            "upstream_inference_completions_cost": 6.37065e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: preauth_not_required"
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9305",
+              "decision": "approve_in_principle",
+              "reason": "The claim is for code 47120, which is covered under the active policy (POL-6001) with no exclusions, no preauthorisation required, and the hospital (Riverside General, H-114) is in the panel. The service date (2026-08-20) falls within the policy period (2026-06-01 to 2027-05-31), and the annual limit has not been exceeded. All required documents (itemised_bill, discharge_summary) are present.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "47120",
+                  "amount": 1500,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 1500,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1957,
+        "output": 219,
+        "cost": 0.0001365075,
+        "provider_usage": {
+          "prompt_tokens": 1957,
+          "completion_tokens": 219,
+          "total_tokens": 2176,
+          "cost": 0.0001365075,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1880,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001365075,
+            "upstream_inference_prompt_cost": 9.422955e-05,
+            "upstream_inference_completions_cost": 4.227795e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454275-U9Mxj21t81uz62tHcBBi",
+        "object": "chat.completion",
+        "created": 1789454275,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9305\",\"decision\":\"approve_in_principle\",\"reason\":\"The claim is for code 47120, which is covered under the active policy (POL-6001) with no exclusions, no preauthorisation required, and the hospital (Riverside General, H-114) is in the panel. The service date (2026-08-20) falls within the policy period (2026-06-01 to 2027-05-31), and the annual limit has not been exceeded. All required documents (itemised_bill, discharge_summary) are present.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\"],\"lines\":[{\"code\":\"47120\",\"amount\":1500,\"status\":\"covered\"}],\"missing\":[],\"approved_total\":1500,\"refused_total\":0}}}] }",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1957,
+          "completion_tokens": 219,
+          "total_tokens": 2176,
+          "cost": 0.0001365075,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1880,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001365075,
+            "upstream_inference_prompt_cost": 9.422955e-05,
+            "upstream_inference_completions_cost": 4.227795e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9305",
+          "decision": "approve_in_principle",
+          "decision_hash": "b0b2474be1036774591805a70dc126d3dfe9f02346b313e869ee0a2ae1af679a"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9305"
+      },
+      "result": {
+        "claim_id": "CLM-9305",
+        "member_id": "M-5502",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-08-20",
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 1500
+          }
+        ],
+        "narrative": "Appendix treatment during August.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9305"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 1500.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9305",
+        "code": "47120"
+      },
+      "result": {
+        "code": "47120",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9305"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9305",
+          "decision": "approve_in_principle",
+          "reason": "The claim is for code 47120, which is covered under the active policy (POL-6001) with no exclusions, no preauthorisation required, and the hospital (Riverside General, H-114) is in the panel. The service date (2026-08-20) falls within the policy period (2026-06-01 to 2027-05-31), and the annual limit has not been exceeded. All required documents (itemised_bill, discharge_summary) are present.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1500,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 1500,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9305",
+        "decision": "approve_in_principle",
+        "decision_hash": "b0b2474be1036774591805a70dc126d3dfe9f02346b313e869ee0a2ae1af679a"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 8408,
+  "tokens_out": 349,
+  "cost_usd": 0.0007648472,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 11.1757,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

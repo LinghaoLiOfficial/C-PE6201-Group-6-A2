@@ -1,0 +1,768 @@
+{
+  "case_id": "CLM-8960",
+  "record": {
+    "case_id": "CLM-8960",
+    "decision": "approve_in_principle",
+    "reason": "All four service lines are covered under active policy POL-6001 (Shield Plus, active 2026-06-01 to 2027-05-31). No preauthorisation required for any code. Code 45378 requires itemised_bill, which is present in claim documents. Claim total 1990.00 is within remaining annual limit of 15000.00. Hospital H-114 (Riverside General, SG) is panel. No exclusions, no missing documents, no policy triggers.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5",
+      "obs-6",
+      "obs-7"
+    ],
+    "lines": [
+      {
+        "code": "99213",
+        "amount": 180.0,
+        "status": "covered"
+      },
+      {
+        "code": "80053",
+        "amount": 90.0,
+        "status": "covered"
+      },
+      {
+        "code": "70553",
+        "amount": 620.0,
+        "status": "covered"
+      },
+      {
+        "code": "45378",
+        "amount": 1100.0,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 1990.0,
+    "refused_total": 0.0,
+    "turns": 4,
+    "tokens_in": 7488,
+    "tokens_out": 762,
+    "cost_usd": 0.011297999999999999,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:38:52.577470+00:00",
+    "decision_hash": "c8bf738871cd801cf742e02b87f704cdb6d986b5036d8018fa7613bf054b89ca"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8960"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1512,
+        "output": 59,
+        "cost": 0.001807,
+        "provider_usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454323-8GcKYvwTyWbmoZQjJMRZ",
+        "object": "chat.completion",
+        "created": 1789454323,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8960\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8960",
+          "member_id": "M-5502",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-15",
+          "narrative": "Several tests and a consultation over two days.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 180
+            },
+            {
+              "code": "80053",
+              "amount": 90
+            },
+            {
+              "code": "70553",
+              "amount": 620
+            },
+            {
+              "code": "45378",
+              "amount": 1100
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8960"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1716,
+        "output": 59,
+        "cost": 0.002011,
+        "provider_usage": {
+          "prompt_tokens": 1716,
+          "completion_tokens": 59,
+          "total_tokens": 1775,
+          "cost": 0.002011,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002011,
+            "upstream_inference_prompt_cost": 0.001716,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454325-3v1M9IePl3zO61ja5jjT",
+        "object": "chat.completion",
+        "created": 1789454325,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8960\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1716,
+          "completion_tokens": 59,
+          "total_tokens": 1775,
+          "cost": 0.002011,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002011,
+            "upstream_inference_prompt_cost": 0.001716,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 1990.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8960",
+            "code": "99213"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8960",
+            "code": "80053"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8960",
+            "code": "70553"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8960",
+            "code": "45378"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8960"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1854,
+        "output": 213,
+        "cost": 0.002919,
+        "provider_usage": {
+          "prompt_tokens": 1854,
+          "completion_tokens": 213,
+          "total_tokens": 2067,
+          "cost": 0.002919,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002919,
+            "upstream_inference_prompt_cost": 0.001854,
+            "upstream_inference_completions_cost": 0.001065
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454326-pO6MIDavKaXhnXeoc3vj",
+        "object": "chat.completion",
+        "created": 1789454326,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim systematically. I have the claim and policy data. Now I need to check coverage for each unique line code and get hospital status.\n\n```json\n{\n  \"calls\": [\n    {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8960\", \"code\": \"99213\"}},\n    {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8960\", \"code\": \"80053\"}},\n    {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8960\", \"code\": \"70553\"}},\n    {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8960\", \"code\": \"45378\"}},\n    {\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-8960\"}}\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1854,
+          "completion_tokens": 213,
+          "total_tokens": 2067,
+          "cost": 0.002919,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002919,
+            "upstream_inference_prompt_cost": 0.001854,
+            "upstream_inference_completions_cost": 0.001065
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "99213",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "80053",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "70553",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "45378",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [
+            "itemised_bill"
+          ],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8960",
+              "decision": "approve_in_principle",
+              "reason": "All four service lines are covered under active policy POL-6001 (Shield Plus, active 2026-06-01 to 2027-05-31). No preauthorisation required for any code. Code 45378 requires itemised_bill, which is present in claim documents. Claim total 1990.00 is within remaining annual limit of 15000.00. Hospital H-114 (Riverside General, SG) is panel. No exclusions, no missing documents, no policy triggers.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5",
+                "obs-6",
+                "obs-7"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180.0,
+                  "status": "covered"
+                },
+                {
+                  "code": "80053",
+                  "amount": 90.0,
+                  "status": "covered"
+                },
+                {
+                  "code": "70553",
+                  "amount": 620.0,
+                  "status": "covered"
+                },
+                {
+                  "code": "45378",
+                  "amount": 1100.0,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 1990.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2406,
+        "output": 431,
+        "cost": 0.004561,
+        "provider_usage": {
+          "prompt_tokens": 2406,
+          "completion_tokens": 431,
+          "total_tokens": 2837,
+          "cost": 0.004561,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.004561,
+            "upstream_inference_prompt_cost": 0.002406,
+            "upstream_inference_completions_cost": 0.002155
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454328-CfAAOpgtnxWPa6LGpZRQ",
+        "object": "chat.completion",
+        "created": 1789454328,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-8960\",\n          \"decision\": \"approve_in_principle\",\n          \"reason\": \"All four service lines are covered under active policy POL-6001 (Shield Plus, active 2026-06-01 to 2027-05-31). No preauthorisation required for any code. Code 45378 requires itemised_bill, which is present in claim documents. Claim total 1990.00 is within remaining annual limit of 15000.00. Hospital H-114 (Riverside General, SG) is panel. No exclusions, no missing documents, no policy triggers.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\",\n            \"obs-3\",\n            \"obs-4\",\n            \"obs-5\",\n            \"obs-6\",\n            \"obs-7\"\n          ],\n          \"lines\": [\n            {\n              \"code\": \"99213\",\n              \"amount\": 180.00,\n              \"status\": \"covered\"\n            },\n            {\n              \"code\": \"80053\",\n              \"amount\": 90.00,\n              \"status\": \"covered\"\n            },\n            {\n              \"code\": \"70553\",\n              \"amount\": 620.00,\n              \"status\": \"covered\"\n            },\n            {\n              \"code\": \"45378\",\n              \"amount\": 1100.00,\n              \"status\": \"covered\"\n            }\n          ],\n          \"missing\": [],\n          \"approved_total\": 1990.00,\n          \"refused_total\": 0.00\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2406,
+          "completion_tokens": 431,
+          "total_tokens": 2837,
+          "cost": 0.004561,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.004561,
+            "upstream_inference_prompt_cost": 0.002406,
+            "upstream_inference_completions_cost": 0.002155
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8960",
+          "decision": "approve_in_principle",
+          "decision_hash": "c8bf738871cd801cf742e02b87f704cdb6d986b5036d8018fa7613bf054b89ca"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8960"
+      },
+      "result": {
+        "claim_id": "CLM-8960",
+        "member_id": "M-5502",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-15",
+        "narrative": "Several tests and a consultation over two days.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "99213",
+            "amount": 180
+          },
+          {
+            "code": "80053",
+            "amount": 90
+          },
+          {
+            "code": "70553",
+            "amount": 620
+          },
+          {
+            "code": "45378",
+            "amount": 1100
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8960"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 1990.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8960",
+        "code": "99213"
+      },
+      "result": {
+        "code": "99213",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8960",
+        "code": "80053"
+      },
+      "result": {
+        "code": "80053",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8960",
+        "code": "70553"
+      },
+      "result": {
+        "code": "70553",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8960",
+        "code": "45378"
+      },
+      "result": {
+        "code": "45378",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [
+          "itemised_bill"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-7",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8960"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-8",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8960",
+          "decision": "approve_in_principle",
+          "reason": "All four service lines are covered under active policy POL-6001 (Shield Plus, active 2026-06-01 to 2027-05-31). No preauthorisation required for any code. Code 45378 requires itemised_bill, which is present in claim documents. Claim total 1990.00 is within remaining annual limit of 15000.00. Hospital H-114 (Riverside General, SG) is panel. No exclusions, no missing documents, no policy triggers.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5",
+            "obs-6",
+            "obs-7"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 180.0,
+              "status": "covered"
+            },
+            {
+              "code": "80053",
+              "amount": 90.0,
+              "status": "covered"
+            },
+            {
+              "code": "70553",
+              "amount": 620.0,
+              "status": "covered"
+            },
+            {
+              "code": "45378",
+              "amount": 1100.0,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 1990.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8960",
+        "decision": "approve_in_principle",
+        "decision_hash": "c8bf738871cd801cf742e02b87f704cdb6d986b5036d8018fa7613bf054b89ca"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 7488,
+  "tokens_out": 762,
+  "cost_usd": 0.011297999999999999,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 9.6835,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

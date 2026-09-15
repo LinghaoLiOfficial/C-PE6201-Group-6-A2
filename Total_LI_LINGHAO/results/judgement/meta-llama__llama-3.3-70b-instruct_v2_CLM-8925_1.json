@@ -1,0 +1,7 @@
+{
+  "source": "meta-llama__llama-3.3-70b-instruct_v2_CLM-8925_1.json",
+  "case_id": "CLM-8925",
+  "pass": false,
+  "status": "code_failed_not_judged",
+  "cost_usd": 0
+}

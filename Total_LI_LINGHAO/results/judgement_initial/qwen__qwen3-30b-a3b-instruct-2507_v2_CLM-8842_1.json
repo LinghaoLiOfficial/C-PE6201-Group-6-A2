@@ -1,0 +1,7 @@
+{
+  "source": "qwen__qwen3-30b-a3b-instruct-2507_v2_CLM-8842_1.json",
+  "case_id": "CLM-8842",
+  "pass": false,
+  "status": "code_failed_not_judged",
+  "cost_usd": 0
+}

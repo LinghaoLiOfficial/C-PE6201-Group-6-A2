@@ -1,0 +1,187 @@
+{
+  "source": "scripted_CLM-8925_1.json",
+  "case_id": "CLM-8925",
+  "judge": "anthropic/claude-haiku-4.5",
+  "status": "judged",
+  "pass": true,
+  "reason": "All must_record requirements are met with explicit evidential support. Claim total 11400 is stated in obs-2 lookup_policy result and cited in the reason. Remaining balance 9200 is explicitly shown in obs-2 and cited in reason. The statement 'No lines were individually priced: stopped before check_coverage because the total already exceeded the remaining annual limit' directly documents the early-exit behaviour and absence of line-level pricing, confirming check_coverage was not executed. Policy POL-3310 is active with valid dates 2026-04-01..2027-03-31 (obs-2). Decision correctly escalates to human claims assessor with trigger annual_limit_exceeded.",
+  "missing_requirements": [],
+  "cost_usd": 0.002236,
+  "evaluated_input": {
+    "case": {
+      "case_id": "CLM-8925",
+      "expected_decision": "escalate",
+      "trigger": "annual_limit_exceeded",
+      "family": "annual_limit_exceeded",
+      "must_record": [
+        "claim total 11400",
+        "9200 remaining on POL-3310",
+        "that lines were not individually priced"
+      ],
+      "note": "The brief's worked escalation. Two turns, and the early exit is the correct behaviour."
+    },
+    "record": {
+      "case_id": "CLM-8925",
+      "decision": "escalate",
+      "lines": [],
+      "missing": [],
+      "approved_total": 0,
+      "refused_total": 0,
+      "reason": "Policy POL-3310 status active, dates 2026-04-01..2027-03-31; claim total 11400.0, remaining 9200.0. Escalated to human claims assessor: annual_limit_exceeded. No lines were individually priced: stopped before check_coverage because the total already exceeded the remaining annual limit.",
+      "evidence": [
+        "obs-1",
+        "obs-2"
+      ],
+      "trigger": "annual_limit_exceeded",
+      "escalate_to": "human claims assessor",
+      "turns": 3,
+      "tokens_in": 4549,
+      "tokens_out": 180,
+      "cost_usd": 0.0005269000000000001,
+      "token_measurement": "estimated_chars_div4",
+      "autonomy": "confirm",
+      "gate": "operator approved",
+      "ts": "2026-09-15T06:31:09.174245+00:00",
+      "decision_hash": "c8a3df08a96c6d74d1a6a97aa4584fc9e1a99bd48e8e050128bcf6fa9c4b69da"
+    },
+    "observations": [
+      {
+        "id": "obs-1",
+        "tool": "get_claim",
+        "arguments": {
+          "claim_id": "CLM-8925"
+        },
+        "result": {
+          "claim_id": "CLM-8925",
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-12",
+          "narrative": "Knee replacement, plus the appendix operation and a scan.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "27447",
+              "amount": 9800
+            },
+            {
+              "code": "47120",
+              "amount": 1400
+            },
+            {
+              "code": "70553",
+              "amount": 200
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      },
+      {
+        "id": "obs-2",
+        "tool": "lookup_policy",
+        "arguments": {
+          "claim_id": "CLM-8925"
+        },
+        "result": {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 11400.0,
+          "policy_trigger": "annual_limit_exceeded"
+        }
+      },
+      {
+        "id": "obs-3",
+        "tool": "issue_decision_letter",
+        "arguments": {
+          "decision": {
+            "case_id": "CLM-8925",
+            "decision": "escalate",
+            "lines": [],
+            "missing": [],
+            "approved_total": 0,
+            "refused_total": 0,
+            "reason": "Policy POL-3310 status active, dates 2026-04-01..2027-03-31; claim total 11400.0, remaining 9200.0. Escalated to human claims assessor: annual_limit_exceeded. No lines were individually priced: stopped before check_coverage because the total already exceeded the remaining annual limit.",
+            "evidence": [
+              "obs-1",
+              "obs-2"
+            ],
+            "trigger": "annual_limit_exceeded",
+            "escalate_to": "human claims assessor"
+          }
+        },
+        "result": {
+          "status": "recorded",
+          "case_id": "CLM-8925",
+          "decision": "escalate",
+          "decision_hash": "c8a3df08a96c6d74d1a6a97aa4584fc9e1a99bd48e8e050128bcf6fa9c4b69da"
+        }
+      }
+    ]
+  },
+  "raw": {
+    "id": "gen-1789454581-50WuABGov0P8dtgsX7C5",
+    "object": "chat.completion",
+    "created": 1789454581,
+    "model": "anthropic/claude-haiku-4.5",
+    "provider": "Amazon Bedrock",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "```json\n{\n  \"pass\": true,\n  \"reason\": \"All must_record requirements are met with explicit evidential support. Claim total 11400 is stated in obs-2 lookup_policy result and cited in the reason. Remaining balance 9200 is explicitly shown in obs-2 and cited in reason. The statement 'No lines were individually priced: stopped before check_coverage because the total already exceeded the remaining annual limit' directly documents the early-exit behaviour and absence of line-level pricing, confirming check_coverage was not executed. Policy POL-3310 is active with valid dates 2026-04-01..2027-03-31 (obs-2). Decision correctly escalates to human claims assessor with trigger annual_limit_exceeded.\",\n  \"missing_requirements\": []\n}\n```",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1296,
+      "completion_tokens": 188,
+      "total_tokens": 1484,
+      "cost": 0.002236,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.002236,
+        "upstream_inference_prompt_cost": 0.001296,
+        "upstream_inference_completions_cost": 0.00094
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,880 @@
+{
+  "case_id": "CLM-9105",
+  "record": {
+    "case_id": "CLM-9105",
+    "decision": "approve_in_principle",
+    "reason": "Claim CLM-9105 for member M-2214 under active policy POL-3310 (Shield Plus, 2026-04-01 to 2027-03-31). Two of three lines are covered: code 47120 (USD 1400.00) requires no preauthorisation and all required documents present; code 62480 (USD 780.00) requires preauthorisation and discharge_summary is provided\u2014valid preauth PA-5521 exists (valid 2026-08-01 to 2026-10-31, covering service date 2026-09-05). Code 31255 (USD 300.00) is excluded under policy rule EX-14 (cosmetic dermatology). Approved total USD 2180.00 within remaining annual limit of USD 9200.00. Hospital H-114 (Riverside General, Singapore) is panel.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5",
+      "obs-6",
+      "obs-7"
+    ],
+    "lines": [
+      {
+        "code": "47120",
+        "amount": 1400.0,
+        "status": "covered"
+      },
+      {
+        "code": "62480",
+        "amount": 780.0,
+        "status": "covered",
+        "preauth": "PA-5521"
+      },
+      {
+        "code": "31255",
+        "amount": 300.0,
+        "status": "not_covered",
+        "exclusion": "EX-14 cosmetic dermatology"
+      }
+    ],
+    "missing": [],
+    "approved_total": 2180.0,
+    "refused_total": 300.0,
+    "turns": 5,
+    "tokens_in": 9090,
+    "tokens_out": 1504,
+    "cost_usd": 0.01661,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:19:09.195043+00:00",
+    "decision_hash": "b7ec287d230233b1473cb9ff1fa4db4ef8a948af9a75814fb6643f4312c0ba11"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9105"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1420,
+        "output": 59,
+        "cost": 0.001715,
+        "provider_usage": {
+          "prompt_tokens": 1420,
+          "completion_tokens": 59,
+          "total_tokens": 1479,
+          "cost": 0.001715,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001715,
+            "upstream_inference_prompt_cost": 0.00142,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453131-AbjzeWRowg8bLvwPw7Cx",
+        "object": "chat.completion",
+        "created": 1789453131,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9105\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1420,
+          "completion_tokens": 59,
+          "total_tokens": 1479,
+          "cost": 0.001715,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001715,
+            "upstream_inference_prompt_cost": 0.00142,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-05",
+          "narrative": "Admission for abdominal pain.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1400
+            },
+            {
+              "code": "62480",
+              "amount": 780
+            },
+            {
+              "code": "31255",
+              "amount": 300
+            }
+          ],
+          "claim_id": "CLM-9105",
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9105"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9105"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1591,
+        "output": 198,
+        "cost": 0.002581,
+        "provider_usage": {
+          "prompt_tokens": 1591,
+          "completion_tokens": 198,
+          "total_tokens": 1789,
+          "cost": 0.002581,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002581,
+            "upstream_inference_prompt_cost": 0.001591,
+            "upstream_inference_completions_cost": 0.00099
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453133-wzgq5GkG8ctcCRlOLbZ7",
+        "object": "chat.completion",
+        "created": 1789453133,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim systematically using the required tools.\n\nStarting with the observation provided (get_claim), I now need to:\n1. Look up the policy for member M-2214\n2. Check coverage for each unique code (47120, 62480, 31255)\n3. Get hospital status\n4. Determine preauthorisation requirements\n5. Issue the decision letter\n\nLet me batch the independent policy and hospital lookups first:\n\n```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9105\"\n      }\n    },\n    {\n      \"tool\": \"get_hospital_status\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9105\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1591,
+          "completion_tokens": 198,
+          "total_tokens": 1789,
+          "cost": 0.002581,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002581,
+            "upstream_inference_prompt_cost": 0.001591,
+            "upstream_inference_completions_cost": 0.00099
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 2480.0,
+          "policy_trigger": null
+        },
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9105",
+            "code": "47120"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9105",
+            "code": "62480"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1819,
+        "output": 376,
+        "cost": 0.003699,
+        "provider_usage": {
+          "prompt_tokens": 1819,
+          "completion_tokens": 376,
+          "total_tokens": 2195,
+          "cost": 0.003699,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003699,
+            "upstream_inference_prompt_cost": 0.001819,
+            "upstream_inference_completions_cost": 0.00188
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453136-wVlycx2mkKUURnwAtEFx",
+        "object": "chat.completion",
+        "created": 1789453136,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I need to process this claim systematically. Let me analyze the observations provided and determine what additional tool calls are needed.\n\n**Analysis of provided observations:**\n\n1. **get_claim (obs-1)**: Claim CLM-9105 has 3 lines:\n   - 47120: $1,400\n   - 62480: $780\n   - 31255: $300\n   - No duplicates, no instruction detected\n\n2. **lookup_policy (obs-2)**: Policy POL-3310 is active, covers period 2026-04-01 to 2027-03-31\n   - Annual limit: $12,000\n   - Used to date: $2,800\n   - Remaining: $9,200\n   - Exclusion found: Code 31255 is excluded under EX-14 (cosmetic dermatology)\n   - No policy_trigger\n\n3. **get_hospital_status (obs-3)**: H-114 (Riverside General) is a panel hospital in SG\n\n**Next steps needed:**\n- Check coverage for codes 47120 and 62480 (31255 is already excluded)\n- Get preauthorisation for any codes requiring it\n\nLet me proceed with coverage checks for the non-excluded codes:\n\n```json\n{\n  \"calls\": [\n    {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-9105\", \"code\": \"47120\"}},\n    {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-9105\", \"code\": \"62480\"}}\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1819,
+          "completion_tokens": 376,
+          "total_tokens": 2195,
+          "cost": 0.003699,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003699,
+            "upstream_inference_prompt_cost": 0.001819,
+            "upstream_inference_completions_cost": 0.00188
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "47120",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "62480",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [
+            "discharge_summary"
+          ],
+          "missing_documents": []
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9105",
+            "code": "31255"
+          }
+        },
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-9105",
+            "code": "62480"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1986,
+        "output": 350,
+        "cost": 0.003736,
+        "provider_usage": {
+          "prompt_tokens": 1986,
+          "completion_tokens": 350,
+          "total_tokens": 2336,
+          "cost": 0.003736,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003736,
+            "upstream_inference_prompt_cost": 0.001986,
+            "upstream_inference_completions_cost": 0.00175
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453139-WvV0l1ZKS0nTLVNUW0ny",
+        "object": "chat.completion",
+        "created": 1789453139,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I need to process this claim systematically. Let me analyze the observations provided and determine the next steps.\n\n**Analysis of observations:**\n1. **Claim CLM-9105**: 3 lines totaling $2,480; no duplicates, no instruction detected\n2. **Policy POL-3310**: Active, $9,200 remaining (sufficient for claim total)\n3. **Hospital H-114**: Panel provider in SG\n4. **Coverage checks completed**:\n   - Code 47120: Covered, no preauth required, no missing documents\n   - Code 62480: Covered, preauth required, discharge_summary available (not missing)\n   - Code 31255: Not yet checked but policy shows it's excluded under EX-14 (cosmetic dermatology)\n\n**Next steps:**\n1. Check coverage for code 31255 (to confirm exclusion)\n2. Get preauthorisation for code 62480 (requires preauth, documents present)\n3. Issue decision letter\n\nLet me proceed:\n\n```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"check_coverage\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9105\",\n        \"code\": \"31255\"\n      }\n    },\n    {\n      \"tool\": \"get_preauthorisation\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9105\",\n        \"code\": \"62480\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1986,
+          "completion_tokens": 350,
+          "total_tokens": 2336,
+          "cost": 0.003736,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003736,
+            "upstream_inference_prompt_cost": 0.001986,
+            "upstream_inference_completions_cost": 0.00175
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "31255",
+          "excluded": true,
+          "exclusion": "EX-14 cosmetic dermatology",
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "62480",
+          "candidates": [
+            {
+              "preauth_id": "PA-5521",
+              "member_id": "M-2214",
+              "procedure_code": "62480",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9105",
+              "decision": "approve_in_principle",
+              "reason": "Claim CLM-9105 for member M-2214 under active policy POL-3310 (Shield Plus, 2026-04-01 to 2027-03-31). Two of three lines are covered: code 47120 (USD 1400.00) requires no preauthorisation and all required documents present; code 62480 (USD 780.00) requires preauthorisation and discharge_summary is provided\u2014valid preauth PA-5521 exists (valid 2026-08-01 to 2026-10-31, covering service date 2026-09-05). Code 31255 (USD 300.00) is excluded under policy rule EX-14 (cosmetic dermatology). Approved total USD 2180.00 within remaining annual limit of USD 9200.00. Hospital H-114 (Riverside General, Singapore) is panel.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5",
+                "obs-6",
+                "obs-7"
+              ],
+              "lines": [
+                {
+                  "code": "47120",
+                  "amount": 1400.0,
+                  "status": "covered"
+                },
+                {
+                  "code": "62480",
+                  "amount": 780.0,
+                  "status": "covered",
+                  "preauth": "PA-5521"
+                },
+                {
+                  "code": "31255",
+                  "amount": 300.0,
+                  "status": "not_covered",
+                  "exclusion": "EX-14 cosmetic dermatology"
+                }
+              ],
+              "missing": [],
+              "approved_total": 2180.0,
+              "refused_total": 300.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2274,
+        "output": 521,
+        "cost": 0.004879,
+        "provider_usage": {
+          "prompt_tokens": 2274,
+          "completion_tokens": 521,
+          "total_tokens": 2795,
+          "cost": 0.004879,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.004879,
+            "upstream_inference_prompt_cost": 0.002274,
+            "upstream_inference_completions_cost": 0.002605
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453143-KAFZF4ytlfxV3YrgMw97",
+        "object": "chat.completion",
+        "created": 1789453143,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-9105\",\n          \"decision\": \"approve_in_principle\",\n          \"reason\": \"Claim CLM-9105 for member M-2214 under active policy POL-3310 (Shield Plus, 2026-04-01 to 2027-03-31). Two of three lines are covered: code 47120 (USD 1400.00) requires no preauthorisation and all required documents present; code 62480 (USD 780.00) requires preauthorisation and discharge_summary is provided\u2014valid preauth PA-5521 exists (valid 2026-08-01 to 2026-10-31, covering service date 2026-09-05). Code 31255 (USD 300.00) is excluded under policy rule EX-14 (cosmetic dermatology). Approved total USD 2180.00 within remaining annual limit of USD 9200.00. Hospital H-114 (Riverside General, Singapore) is panel.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\",\n            \"obs-3\",\n            \"obs-4\",\n            \"obs-5\",\n            \"obs-6\",\n            \"obs-7\"\n          ],\n          \"lines\": [\n            {\n              \"code\": \"47120\",\n              \"amount\": 1400.00,\n              \"status\": \"covered\"\n            },\n            {\n              \"code\": \"62480\",\n              \"amount\": 780.00,\n              \"status\": \"covered\",\n              \"preauth\": \"PA-5521\"\n            },\n            {\n              \"code\": \"31255\",\n              \"amount\": 300.00,\n              \"status\": \"not_covered\",\n              \"exclusion\": \"EX-14 cosmetic dermatology\"\n            }\n          ],\n          \"missing\": [],\n          \"approved_total\": 2180.00,\n          \"refused_total\": 300.00\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2274,
+          "completion_tokens": 521,
+          "total_tokens": 2795,
+          "cost": 0.004879,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.004879,
+            "upstream_inference_prompt_cost": 0.002274,
+            "upstream_inference_completions_cost": 0.002605
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9105",
+          "decision": "approve_in_principle",
+          "decision_hash": "b7ec287d230233b1473cb9ff1fa4db4ef8a948af9a75814fb6643f4312c0ba11"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9105"
+      },
+      "result": {
+        "member_id": "M-2214",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-05",
+        "narrative": "Admission for abdominal pain.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 1400
+          },
+          {
+            "code": "62480",
+            "amount": 780
+          },
+          {
+            "code": "31255",
+            "amount": 300
+          }
+        ],
+        "claim_id": "CLM-9105",
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9105"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 2480.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9105"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9105",
+        "code": "47120"
+      },
+      "result": {
+        "code": "47120",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9105",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [
+          "discharge_summary"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9105",
+        "code": "31255"
+      },
+      "result": {
+        "code": "31255",
+        "excluded": true,
+        "exclusion": "EX-14 cosmetic dermatology",
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-7",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-9105",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "candidates": [
+          {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          }
+        ],
+        "valid": {
+          "preauth_id": "PA-5521",
+          "member_id": "M-2214",
+          "procedure_code": "62480",
+          "valid_from": "2026-08-01",
+          "valid_to": "2026-10-31",
+          "status": "valid"
+        },
+        "status": "valid"
+      }
+    },
+    {
+      "id": "obs-8",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9105",
+          "decision": "approve_in_principle",
+          "reason": "Claim CLM-9105 for member M-2214 under active policy POL-3310 (Shield Plus, 2026-04-01 to 2027-03-31). Two of three lines are covered: code 47120 (USD 1400.00) requires no preauthorisation and all required documents present; code 62480 (USD 780.00) requires preauthorisation and discharge_summary is provided\u2014valid preauth PA-5521 exists (valid 2026-08-01 to 2026-10-31, covering service date 2026-09-05). Code 31255 (USD 300.00) is excluded under policy rule EX-14 (cosmetic dermatology). Approved total USD 2180.00 within remaining annual limit of USD 9200.00. Hospital H-114 (Riverside General, Singapore) is panel.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5",
+            "obs-6",
+            "obs-7"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1400.0,
+              "status": "covered"
+            },
+            {
+              "code": "62480",
+              "amount": 780.0,
+              "status": "covered",
+              "preauth": "PA-5521"
+            },
+            {
+              "code": "31255",
+              "amount": 300.0,
+              "status": "not_covered",
+              "exclusion": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "missing": [],
+          "approved_total": 2180.0,
+          "refused_total": 300.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9105",
+        "decision": "approve_in_principle",
+        "decision_hash": "b7ec287d230233b1473cb9ff1fa4db4ef8a948af9a75814fb6643f4312c0ba11"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 9090,
+  "tokens_out": 1504,
+  "cost_usd": 0.01661,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 18.952,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

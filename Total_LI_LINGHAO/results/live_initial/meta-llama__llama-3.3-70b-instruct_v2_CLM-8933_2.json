@@ -1,0 +1,545 @@
+{
+  "case_id": "CLM-8933",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8933"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1278,
+        "output": 21,
+        "cost": 0.00015438,
+        "provider_usage": {
+          "prompt_tokens": 1278,
+          "completion_tokens": 21,
+          "total_tokens": 1299,
+          "cost": 0.00015438,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00015438,
+            "upstream_inference_prompt_cost": 0.00014388,
+            "upstream_inference_completions_cost": 1.05e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452721-gzMS1GWRKVQARYoOPxaG",
+        "object": "chat.completion",
+        "created": 1789452721,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "Parasail",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-8933\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1278,
+          "completion_tokens": 21,
+          "total_tokens": 1299,
+          "cost": 0.00015438,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00015438,
+            "upstream_inference_prompt_cost": 0.00014388,
+            "upstream_inference_completions_cost": 1.05e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8933",
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-08-20",
+          "narrative": "Resubmitting my August appendix claim, I do not think it was received.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1500
+            }
+          ],
+          "duplicates": [
+            {
+              "claim_id": "CLM-8710",
+              "decision": "approve_in_principle",
+              "decided_on": "2026-08-22",
+              "matched_fields": [
+                "member_id",
+                "hospital_id",
+                "date_of_service",
+                "lines"
+              ]
+            }
+          ],
+          "duplicate": {
+            "claim_id": "CLM-8710",
+            "decision": "approve_in_principle",
+            "decided_on": "2026-08-22",
+            "matched_fields": [
+              "member_id",
+              "hospital_id",
+              "date_of_service",
+              "lines"
+            ]
+          },
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8933"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1526,
+        "output": 21,
+        "cost": 0.00016412,
+        "provider_usage": {
+          "prompt_tokens": 1526,
+          "completion_tokens": 21,
+          "total_tokens": 1547,
+          "cost": 0.00016412,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1520,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00016412,
+            "upstream_inference_prompt_cost": 0.0001532,
+            "upstream_inference_completions_cost": 1.092e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452722-Sibh47zIx2BZ9yOYz911",
+        "object": "chat.completion",
+        "created": 1789452722,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "AkashML",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-8933\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1526,
+          "completion_tokens": 21,
+          "total_tokens": 1547,
+          "cost": 0.00016412,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1520,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00016412,
+            "upstream_inference_prompt_cost": 0.0001532,
+            "upstream_inference_completions_cost": 1.092e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 1500.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8933",
+              "decision": "escalate",
+              "reason": "Duplicate claim CLM-8710 with same member, hospital, date of service and lines",
+              "evidence": [
+                "obs-1"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0,
+              "trigger": "duplicate",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1665,
+        "output": 88,
+        "cost": 0.00025556,
+        "provider_usage": {
+          "prompt_tokens": 1665,
+          "completion_tokens": 88,
+          "total_tokens": 1753,
+          "cost": 0.00025556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00025556,
+            "upstream_inference_prompt_cost": 0.0002098,
+            "upstream_inference_completions_cost": 4.576e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452723-GO4QSG6JSheWzqom43lE",
+        "object": "chat.completion",
+        "created": 1789452723,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "AkashML",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8933\",\"decision\":\"escalate\",\"reason\":\"Duplicate claim CLM-8710 with same member, hospital, date of service and lines\",\"evidence\":[\"obs-1\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":0,\"trigger\":\"duplicate\",\"escalate_to\":\"human claims assessor\"}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1665,
+          "completion_tokens": 88,
+          "total_tokens": 1753,
+          "cost": 0.00025556,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00025556,
+            "upstream_inference_prompt_cost": 0.0002098,
+            "upstream_inference_completions_cost": 4.576e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: invalid_escalation"
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8933",
+              "decision": "escalate",
+              "reason": "Duplicate claim CLM-8710 with same member, hospital, date of service and lines",
+              "evidence": [
+                "obs-1"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0,
+              "trigger": "duplicate",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1804,
+        "output": 88,
+        "cost": 0.00023696,
+        "provider_usage": {
+          "prompt_tokens": 1804,
+          "completion_tokens": 88,
+          "total_tokens": 1892,
+          "cost": 0.00023696,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1696,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00023696,
+            "upstream_inference_prompt_cost": 0.0001912,
+            "upstream_inference_completions_cost": 4.576e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452726-Vk6JDPFv0fdimMuSiTJm",
+        "object": "chat.completion",
+        "created": 1789452726,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "AkashML",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8933\",\"decision\":\"escalate\",\"reason\":\"Duplicate claim CLM-8710 with same member, hospital, date of service and lines\",\"evidence\":[\"obs-1\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":0,\"trigger\":\"duplicate\",\"escalate_to\":\"human claims assessor\"}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1804,
+          "completion_tokens": 88,
+          "total_tokens": 1892,
+          "cost": 0.00023696,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1696,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00023696,
+            "upstream_inference_prompt_cost": 0.0001912,
+            "upstream_inference_completions_cost": 4.576e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: repeated action blocked"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8933"
+      },
+      "result": {
+        "claim_id": "CLM-8933",
+        "member_id": "M-2214",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-08-20",
+        "narrative": "Resubmitting my August appendix claim, I do not think it was received.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 1500
+          }
+        ],
+        "duplicates": [
+          {
+            "claim_id": "CLM-8710",
+            "decision": "approve_in_principle",
+            "decided_on": "2026-08-22",
+            "matched_fields": [
+              "member_id",
+              "hospital_id",
+              "date_of_service",
+              "lines"
+            ]
+          }
+        ],
+        "duplicate": {
+          "claim_id": "CLM-8710",
+          "decision": "approve_in_principle",
+          "decided_on": "2026-08-22",
+          "matched_fields": [
+            "member_id",
+            "hospital_id",
+            "date_of_service",
+            "lines"
+          ]
+        },
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8933"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 1500.0,
+        "policy_trigger": null
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6273,
+  "tokens_out": 218,
+  "cost_usd": 0.00081102,
+  "stop": "duplicate_action",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 7.6537,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "trial": 2,
+  "negative": true,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: duplicate_action"
+    ],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

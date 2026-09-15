@@ -1,0 +1,2244 @@
+{
+  "design": "Same injected observation/call policy; normal minus one component; restoration. Loop test measures containment, not successful task completion. All tokens are instrumented character-based estimates, not API charges.",
+  "loop": {
+    "normal": {
+      "case_id": "CLM-8850",
+      "record": null,
+      "trace": [
+        {
+          "turn": 1,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1393,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1490,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "error": "ToolError: repeated action blocked"
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs-1",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        }
+      ],
+      "turns": 2,
+      "tokens_in": 2883,
+      "tokens_out": 32,
+      "cost_usd": 0.0003011,
+      "stop": "duplicate_action",
+      "backend": "scripted",
+      "token_measurement": "estimated_chars_div4",
+      "elapsed_seconds": 0.0009,
+      "variant": "v2",
+      "sequential": false,
+      "autonomy": "confirm",
+      "grade": {
+        "pass": false,
+        "errors": [
+          "no gated record: duplicate_action"
+        ],
+        "check": "code"
+      }
+    },
+    "ablated": {
+      "case_id": "CLM-8850",
+      "record": null,
+      "trace": [
+        {
+          "turn": 1,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1393,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1490,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 3,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1587,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 4,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1684,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 5,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1781,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 6,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1879,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 7,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1976,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 8,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 2073,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 9,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 2170,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 10,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 2268,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs-1",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-2",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-3",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-4",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-5",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-6",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-7",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-8",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-9",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-10",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        }
+      ],
+      "turns": 10,
+      "tokens_in": 18301,
+      "tokens_out": 160,
+      "cost_usd": 0.0018941,
+      "stop": "step_cap",
+      "backend": "scripted",
+      "token_measurement": "estimated_chars_div4",
+      "elapsed_seconds": 0.0014,
+      "variant": "v2",
+      "sequential": false,
+      "autonomy": "confirm",
+      "grade": {
+        "pass": false,
+        "errors": [
+          "no gated record: step_cap"
+        ],
+        "check": "code"
+      }
+    },
+    "restored": {
+      "case_id": "CLM-8850",
+      "record": null,
+      "trace": [
+        {
+          "turn": 1,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1393,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "observations": [
+            {
+              "claim_id": "CLM-8850",
+              "member_id": "M-5502",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-04",
+              "narrative": "Routine consultation after a fall.",
+              "documents": [
+                "itemised_bill"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8850"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1490,
+            "output": 16
+          },
+          "raw": "Injected repeated-action fault",
+          "error": "ToolError: repeated action blocked"
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs-1",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          },
+          "result": {
+            "claim_id": "CLM-8850",
+            "member_id": "M-5502",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-04",
+            "narrative": "Routine consultation after a fall.",
+            "documents": [
+              "itemised_bill"
+            ],
+            "lines": [
+              {
+                "code": "99213",
+                "amount": 180
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        }
+      ],
+      "turns": 2,
+      "tokens_in": 2883,
+      "tokens_out": 32,
+      "cost_usd": 0.0003011,
+      "stop": "duplicate_action",
+      "backend": "scripted",
+      "token_measurement": "estimated_chars_div4",
+      "elapsed_seconds": 0.0001,
+      "variant": "v2",
+      "sequential": false,
+      "autonomy": "confirm",
+      "grade": {
+        "pass": false,
+        "errors": [
+          "no gated record: duplicate_action"
+        ],
+        "check": "code"
+      }
+    }
+  },
+  "interface": {
+    "normal": {
+      "case_id": "CLM-8894",
+      "record": {
+        "case_id": "CLM-8894",
+        "decision": "request_document",
+        "lines": [
+          {
+            "code": "29881",
+            "amount": 1950,
+            "status": "unresolved"
+          }
+        ],
+        "missing": [
+          {
+            "code": "29881",
+            "document": "preauthorisation",
+            "date": "2026-09-09"
+          }
+        ],
+        "approved_total": 0,
+        "refused_total": 0,
+        "reason": "Policy POL-7220 status active, dates 2026-02-01..2027-01-31; claim total 1950.0, remaining 6800.0. Hospital H-207, panel=True. Approved 0, refused 0. Authorisation evidence: [{\"member_id\": \"M-6118\", \"preauth_id\": \"PA-5640\", \"procedure_code\": \"29881\", \"status\": \"expired_before_service\", \"valid_from\": \"2026-03-01\", \"valid_to\": \"2026-05-31\"}] Missing: [{\"code\": \"29881\", \"date\": \"2026-09-09\", \"document\": \"preauthorisation\"}] Line evidence: [{\"amount\": 1950, \"code\": \"29881\", \"status\": \"unresolved\"}]",
+        "evidence": [
+          "obs-1",
+          "obs-2",
+          "obs-3",
+          "obs-4",
+          "obs-5"
+        ],
+        "turns": 5,
+        "tokens_in": 8011,
+        "tokens_out": 329,
+        "cost_usd": 0.0009327000000000001,
+        "token_measurement": "estimated_chars_div4",
+        "autonomy": "confirm",
+        "gate": "operator approved",
+        "ts": "2026-09-15T06:31:09.535573+00:00",
+        "decision_hash": "0e721feaaecc1ac1bf61b5d1e2c47f5c94c48ea1828ca4fd3dff47f564651af7"
+      },
+      "trace": [
+        {
+          "turn": 1,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8894"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1393,
+            "output": 16
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "get_claim",
+                "arguments": {
+                  "claim_id": "CLM-8894"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "claim_id": "CLM-8894",
+              "member_id": "M-6118",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-09",
+              "narrative": "Knee arthroscopy. I got approval for this earlier in the year.",
+              "documents": [
+                "itemised_bill",
+                "discharge_summary"
+              ],
+              "lines": [
+                {
+                  "code": "29881",
+                  "amount": 1950
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "calls": [
+            {
+              "tool": "lookup_policy",
+              "arguments": {
+                "claim_id": "CLM-8894"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1502,
+            "output": 17
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "lookup_policy",
+                "arguments": {
+                  "claim_id": "CLM-8894"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "policy_id": "POL-7220",
+              "product": "Shield Basic",
+              "status": "active",
+              "start_date": "2026-02-01",
+              "end_date": "2027-01-31",
+              "annual_limit": 8000,
+              "used_to_date": 1200,
+              "exclusions": [
+                {
+                  "code": "31255",
+                  "rule": "EX-14 cosmetic dermatology"
+                }
+              ],
+              "remaining": 6800.0,
+              "claim_total": 1950.0,
+              "policy_trigger": null
+            }
+          ]
+        },
+        {
+          "turn": 3,
+          "calls": [
+            {
+              "tool": "check_coverage",
+              "arguments": {
+                "claim_id": "CLM-8894",
+                "code": "29881"
+              }
+            },
+            {
+              "tool": "get_hospital_status",
+              "arguments": {
+                "claim_id": "CLM-8894"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1603,
+            "output": 39
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "check_coverage",
+                "arguments": {
+                  "claim_id": "CLM-8894",
+                  "code": "29881"
+                }
+              },
+              {
+                "tool": "get_hospital_status",
+                "arguments": {
+                  "claim_id": "CLM-8894"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "code": "29881",
+              "excluded": false,
+              "exclusion": null,
+              "requires_preauth": true,
+              "required_documents": [],
+              "missing_documents": []
+            },
+            {
+              "hospital_id": "H-207",
+              "name": "Mount Elizabeth East",
+              "panel": true,
+              "country": "SG"
+            }
+          ]
+        },
+        {
+          "turn": 4,
+          "calls": [
+            {
+              "tool": "get_preauthorisation",
+              "arguments": {
+                "claim_id": "CLM-8894",
+                "code": "29881"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1711,
+            "output": 23
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "get_preauthorisation",
+                "arguments": {
+                  "claim_id": "CLM-8894",
+                  "code": "29881"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "code": "29881",
+              "candidates": [
+                {
+                  "preauth_id": "PA-5640",
+                  "member_id": "M-6118",
+                  "procedure_code": "29881",
+                  "valid_from": "2026-03-01",
+                  "valid_to": "2026-05-31",
+                  "status": "expired_before_service"
+                }
+              ],
+              "valid": null,
+              "status": "no_valid_candidate"
+            }
+          ]
+        },
+        {
+          "turn": 5,
+          "calls": [
+            {
+              "tool": "issue_decision_letter",
+              "arguments": {
+                "decision": {
+                  "case_id": "CLM-8894",
+                  "decision": "request_document",
+                  "lines": [
+                    {
+                      "code": "29881",
+                      "amount": 1950,
+                      "status": "unresolved"
+                    }
+                  ],
+                  "missing": [
+                    {
+                      "code": "29881",
+                      "document": "preauthorisation",
+                      "date": "2026-09-09"
+                    }
+                  ],
+                  "approved_total": 0,
+                  "refused_total": 0,
+                  "reason": "Policy POL-7220 status active, dates 2026-02-01..2027-01-31; claim total 1950.0, remaining 6800.0. Hospital H-207, panel=True. Approved 0, refused 0. Authorisation evidence: [{\"member_id\": \"M-6118\", \"preauth_id\": \"PA-5640\", \"procedure_code\": \"29881\", \"status\": \"expired_before_service\", \"valid_from\": \"2026-03-01\", \"valid_to\": \"2026-05-31\"}] Missing: [{\"code\": \"29881\", \"date\": \"2026-09-09\", \"document\": \"preauthorisation\"}] Line evidence: [{\"amount\": 1950, \"code\": \"29881\", \"status\": \"unresolved\"}]",
+                  "evidence": [
+                    "obs-1",
+                    "obs-2",
+                    "obs-3",
+                    "obs-4",
+                    "obs-5"
+                  ]
+                }
+              }
+            }
+          ],
+          "usage": {
+            "input": 1802,
+            "output": 234
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "issue_decision_letter",
+                "arguments": {
+                  "decision": {
+                    "case_id": "CLM-8894",
+                    "decision": "request_document",
+                    "lines": [
+                      {
+                        "code": "29881",
+                        "amount": 1950,
+                        "status": "unresolved"
+                      }
+                    ],
+                    "missing": [
+                      {
+                        "code": "29881",
+                        "document": "preauthorisation",
+                        "date": "2026-09-09"
+                      }
+                    ],
+                    "approved_total": 0,
+                    "refused_total": 0,
+                    "reason": "Policy POL-7220 status active, dates 2026-02-01..2027-01-31; claim total 1950.0, remaining 6800.0. Hospital H-207, panel=True. Approved 0, refused 0. Authorisation evidence: [{\"member_id\": \"M-6118\", \"preauth_id\": \"PA-5640\", \"procedure_code\": \"29881\", \"status\": \"expired_before_service\", \"valid_from\": \"2026-03-01\", \"valid_to\": \"2026-05-31\"}] Missing: [{\"code\": \"29881\", \"date\": \"2026-09-09\", \"document\": \"preauthorisation\"}] Line evidence: [{\"amount\": 1950, \"code\": \"29881\", \"status\": \"unresolved\"}]",
+                    "evidence": [
+                      "obs-1",
+                      "obs-2",
+                      "obs-3",
+                      "obs-4",
+                      "obs-5"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "status": "recorded",
+              "case_id": "CLM-8894",
+              "decision": "request_document",
+              "decision_hash": "0e721feaaecc1ac1bf61b5d1e2c47f5c94c48ea1828ca4fd3dff47f564651af7"
+            }
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs-1",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          },
+          "result": {
+            "claim_id": "CLM-8894",
+            "member_id": "M-6118",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-09",
+            "narrative": "Knee arthroscopy. I got approval for this earlier in the year.",
+            "documents": [
+              "itemised_bill",
+              "discharge_summary"
+            ],
+            "lines": [
+              {
+                "code": "29881",
+                "amount": 1950
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-2",
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          },
+          "result": {
+            "policy_id": "POL-7220",
+            "product": "Shield Basic",
+            "status": "active",
+            "start_date": "2026-02-01",
+            "end_date": "2027-01-31",
+            "annual_limit": 8000,
+            "used_to_date": 1200,
+            "exclusions": [
+              {
+                "code": "31255",
+                "rule": "EX-14 cosmetic dermatology"
+              }
+            ],
+            "remaining": 6800.0,
+            "claim_total": 1950.0,
+            "policy_trigger": null
+          }
+        },
+        {
+          "id": "obs-3",
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8894",
+            "code": "29881"
+          },
+          "result": {
+            "code": "29881",
+            "excluded": false,
+            "exclusion": null,
+            "requires_preauth": true,
+            "required_documents": [],
+            "missing_documents": []
+          }
+        },
+        {
+          "id": "obs-4",
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          },
+          "result": {
+            "hospital_id": "H-207",
+            "name": "Mount Elizabeth East",
+            "panel": true,
+            "country": "SG"
+          }
+        },
+        {
+          "id": "obs-5",
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-8894",
+            "code": "29881"
+          },
+          "result": {
+            "code": "29881",
+            "candidates": [
+              {
+                "preauth_id": "PA-5640",
+                "member_id": "M-6118",
+                "procedure_code": "29881",
+                "valid_from": "2026-03-01",
+                "valid_to": "2026-05-31",
+                "status": "expired_before_service"
+              }
+            ],
+            "valid": null,
+            "status": "no_valid_candidate"
+          }
+        },
+        {
+          "id": "obs-6",
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8894",
+              "decision": "request_document",
+              "lines": [
+                {
+                  "code": "29881",
+                  "amount": 1950,
+                  "status": "unresolved"
+                }
+              ],
+              "missing": [
+                {
+                  "code": "29881",
+                  "document": "preauthorisation",
+                  "date": "2026-09-09"
+                }
+              ],
+              "approved_total": 0,
+              "refused_total": 0,
+              "reason": "Policy POL-7220 status active, dates 2026-02-01..2027-01-31; claim total 1950.0, remaining 6800.0. Hospital H-207, panel=True. Approved 0, refused 0. Authorisation evidence: [{\"member_id\": \"M-6118\", \"preauth_id\": \"PA-5640\", \"procedure_code\": \"29881\", \"status\": \"expired_before_service\", \"valid_from\": \"2026-03-01\", \"valid_to\": \"2026-05-31\"}] Missing: [{\"code\": \"29881\", \"date\": \"2026-09-09\", \"document\": \"preauthorisation\"}] Line evidence: [{\"amount\": 1950, \"code\": \"29881\", \"status\": \"unresolved\"}]",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5"
+              ]
+            }
+          },
+          "result": {
+            "status": "recorded",
+            "case_id": "CLM-8894",
+            "decision": "request_document",
+            "decision_hash": "0e721feaaecc1ac1bf61b5d1e2c47f5c94c48ea1828ca4fd3dff47f564651af7"
+          }
+        }
+      ],
+      "turns": 5,
+      "tokens_in": 8011,
+      "tokens_out": 329,
+      "cost_usd": 0.0009327000000000001,
+      "stop": "completed",
+      "backend": "scripted",
+      "token_measurement": "estimated_chars_div4",
+      "elapsed_seconds": 0.0008,
+      "variant": "v2",
+      "sequential": false,
+      "autonomy": "confirm",
+      "grade": {
+        "pass": true,
+        "errors": [],
+        "check": "code"
+      }
+    },
+    "ablated": {
+      "case_id": "CLM-8894",
+      "record": null,
+      "trace": [
+        {
+          "turn": 1,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8894"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1393,
+            "output": 16
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "get_claim",
+                "arguments": {
+                  "claim_id": "CLM-8894"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "claim_id": "CLM-8894",
+              "member_id": "M-6118",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-09",
+              "narrative": "Knee arthroscopy. I got approval for this earlier in the year.",
+              "documents": [
+                "itemised_bill",
+                "discharge_summary"
+              ],
+              "lines": [
+                {
+                  "code": "29881",
+                  "amount": 1950
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "calls": [
+            {
+              "tool": "lookup_policy",
+              "arguments": {
+                "claim_id": "CLM-8894"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1502,
+            "output": 17
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "lookup_policy",
+                "arguments": {
+                  "claim_id": "CLM-8894"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "policy_id": "POL-7220",
+              "product": "Shield Basic",
+              "status": "active",
+              "start_date": "2026-02-01",
+              "end_date": "2027-01-31",
+              "annual_limit": 8000,
+              "used_to_date": 1200,
+              "exclusions": [
+                {
+                  "code": "31255",
+                  "rule": "EX-14 cosmetic dermatology"
+                }
+              ],
+              "remaining": 6800.0,
+              "claim_total": 1950.0,
+              "policy_trigger": null
+            }
+          ]
+        },
+        {
+          "turn": 3,
+          "calls": [
+            {
+              "tool": "check_coverage",
+              "arguments": {
+                "claim_id": "CLM-8894",
+                "code": "29881"
+              }
+            },
+            {
+              "tool": "get_hospital_status",
+              "arguments": {
+                "claim_id": "CLM-8894"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1603,
+            "output": 39
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "check_coverage",
+                "arguments": {
+                  "claim_id": "CLM-8894",
+                  "code": "29881"
+                }
+              },
+              {
+                "tool": "get_hospital_status",
+                "arguments": {
+                  "claim_id": "CLM-8894"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "code": "29881",
+              "excluded": false,
+              "exclusion": null,
+              "requires_preauth": true,
+              "required_documents": [],
+              "missing_documents": []
+            },
+            {
+              "hospital_id": "H-207",
+              "name": "Mount Elizabeth East",
+              "panel": true,
+              "country": "SG"
+            }
+          ]
+        },
+        {
+          "turn": 4,
+          "calls": [
+            {
+              "tool": "get_preauthorisation",
+              "arguments": {
+                "claim_id": "CLM-8894",
+                "code": "29881"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1711,
+            "output": 23
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "get_preauthorisation",
+                "arguments": {
+                  "claim_id": "CLM-8894",
+                  "code": "29881"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "code": "29881",
+              "candidates": [
+                {
+                  "preauth_id": "PA-5640",
+                  "member_id": "M-6118",
+                  "procedure_code": "29881",
+                  "valid_from": "2026-03-01",
+                  "valid_to": "2026-05-31",
+                  "status": "expired_before_service"
+                }
+              ],
+              "valid": {
+                "preauth_id": "PA-5640",
+                "member_id": "M-6118",
+                "procedure_code": "29881",
+                "valid_from": "2026-03-01",
+                "valid_to": "2026-05-31",
+                "status": "expired_before_service"
+              },
+              "status": "valid"
+            }
+          ]
+        },
+        {
+          "turn": 5,
+          "calls": [
+            {
+              "tool": "issue_decision_letter",
+              "arguments": {
+                "decision": {
+                  "case_id": "CLM-8894",
+                  "decision": "approve_in_principle",
+                  "lines": [
+                    {
+                      "code": "29881",
+                      "amount": 1950,
+                      "status": "covered",
+                      "preauth": "PA-5640"
+                    }
+                  ],
+                  "missing": [],
+                  "approved_total": 1950,
+                  "refused_total": 0,
+                  "reason": "Policy POL-7220 status active, dates 2026-02-01..2027-01-31; claim total 1950.0, remaining 6800.0. Hospital H-207, panel=True. Approved 1950, refused 0. Authorisation evidence: [{\"member_id\": \"M-6118\", \"preauth_id\": \"PA-5640\", \"procedure_code\": \"29881\", \"status\": \"expired_before_service\", \"valid_from\": \"2026-03-01\", \"valid_to\": \"2026-05-31\"}] Line evidence: [{\"amount\": 1950, \"code\": \"29881\", \"preauth\": \"PA-5640\", \"status\": \"covered\"}]",
+                  "evidence": [
+                    "obs-1",
+                    "obs-2",
+                    "obs-3",
+                    "obs-4",
+                    "obs-5"
+                  ]
+                }
+              }
+            }
+          ],
+          "usage": {
+            "input": 1839,
+            "output": 205
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "issue_decision_letter",
+                "arguments": {
+                  "decision": {
+                    "case_id": "CLM-8894",
+                    "decision": "approve_in_principle",
+                    "lines": [
+                      {
+                        "code": "29881",
+                        "amount": 1950,
+                        "status": "covered",
+                        "preauth": "PA-5640"
+                      }
+                    ],
+                    "missing": [],
+                    "approved_total": 1950,
+                    "refused_total": 0,
+                    "reason": "Policy POL-7220 status active, dates 2026-02-01..2027-01-31; claim total 1950.0, remaining 6800.0. Hospital H-207, panel=True. Approved 1950, refused 0. Authorisation evidence: [{\"member_id\": \"M-6118\", \"preauth_id\": \"PA-5640\", \"procedure_code\": \"29881\", \"status\": \"expired_before_service\", \"valid_from\": \"2026-03-01\", \"valid_to\": \"2026-05-31\"}] Line evidence: [{\"amount\": 1950, \"code\": \"29881\", \"preauth\": \"PA-5640\", \"status\": \"covered\"}]",
+                    "evidence": [
+                      "obs-1",
+                      "obs-2",
+                      "obs-3",
+                      "obs-4",
+                      "obs-5"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "error": "ToolError: incorrect_missing_items: each item requires code, document and service date; use document=preauthorisation for authorisation requests; exclude documents for excluded lines"
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs-1",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          },
+          "result": {
+            "claim_id": "CLM-8894",
+            "member_id": "M-6118",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-09",
+            "narrative": "Knee arthroscopy. I got approval for this earlier in the year.",
+            "documents": [
+              "itemised_bill",
+              "discharge_summary"
+            ],
+            "lines": [
+              {
+                "code": "29881",
+                "amount": 1950
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-2",
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          },
+          "result": {
+            "policy_id": "POL-7220",
+            "product": "Shield Basic",
+            "status": "active",
+            "start_date": "2026-02-01",
+            "end_date": "2027-01-31",
+            "annual_limit": 8000,
+            "used_to_date": 1200,
+            "exclusions": [
+              {
+                "code": "31255",
+                "rule": "EX-14 cosmetic dermatology"
+              }
+            ],
+            "remaining": 6800.0,
+            "claim_total": 1950.0,
+            "policy_trigger": null
+          }
+        },
+        {
+          "id": "obs-3",
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8894",
+            "code": "29881"
+          },
+          "result": {
+            "code": "29881",
+            "excluded": false,
+            "exclusion": null,
+            "requires_preauth": true,
+            "required_documents": [],
+            "missing_documents": []
+          }
+        },
+        {
+          "id": "obs-4",
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          },
+          "result": {
+            "hospital_id": "H-207",
+            "name": "Mount Elizabeth East",
+            "panel": true,
+            "country": "SG"
+          }
+        },
+        {
+          "id": "obs-5",
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-8894",
+            "code": "29881"
+          },
+          "result": {
+            "code": "29881",
+            "candidates": [
+              {
+                "preauth_id": "PA-5640",
+                "member_id": "M-6118",
+                "procedure_code": "29881",
+                "valid_from": "2026-03-01",
+                "valid_to": "2026-05-31",
+                "status": "expired_before_service"
+              }
+            ],
+            "valid": {
+              "preauth_id": "PA-5640",
+              "member_id": "M-6118",
+              "procedure_code": "29881",
+              "valid_from": "2026-03-01",
+              "valid_to": "2026-05-31",
+              "status": "expired_before_service"
+            },
+            "status": "valid"
+          }
+        }
+      ],
+      "turns": 5,
+      "tokens_in": 8048,
+      "tokens_out": 300,
+      "cost_usd": 0.0009247999999999999,
+      "stop": "error",
+      "backend": "scripted",
+      "token_measurement": "estimated_chars_div4",
+      "elapsed_seconds": 0.0006,
+      "variant": "v2",
+      "sequential": false,
+      "autonomy": "confirm",
+      "grade": {
+        "pass": false,
+        "errors": [
+          "no gated record: error"
+        ],
+        "check": "code"
+      }
+    },
+    "restored": {
+      "case_id": "CLM-8894",
+      "record": {
+        "case_id": "CLM-8894",
+        "decision": "request_document",
+        "lines": [
+          {
+            "code": "29881",
+            "amount": 1950,
+            "status": "unresolved"
+          }
+        ],
+        "missing": [
+          {
+            "code": "29881",
+            "document": "preauthorisation",
+            "date": "2026-09-09"
+          }
+        ],
+        "approved_total": 0,
+        "refused_total": 0,
+        "reason": "Policy POL-7220 status active, dates 2026-02-01..2027-01-31; claim total 1950.0, remaining 6800.0. Hospital H-207, panel=True. Approved 0, refused 0. Authorisation evidence: [{\"member_id\": \"M-6118\", \"preauth_id\": \"PA-5640\", \"procedure_code\": \"29881\", \"status\": \"expired_before_service\", \"valid_from\": \"2026-03-01\", \"valid_to\": \"2026-05-31\"}] Missing: [{\"code\": \"29881\", \"date\": \"2026-09-09\", \"document\": \"preauthorisation\"}] Line evidence: [{\"amount\": 1950, \"code\": \"29881\", \"status\": \"unresolved\"}]",
+        "evidence": [
+          "obs-1",
+          "obs-2",
+          "obs-3",
+          "obs-4",
+          "obs-5"
+        ],
+        "turns": 5,
+        "tokens_in": 8011,
+        "tokens_out": 329,
+        "cost_usd": 0.0009327000000000001,
+        "token_measurement": "estimated_chars_div4",
+        "autonomy": "confirm",
+        "gate": "operator approved",
+        "ts": "2026-09-15T06:31:09.539713+00:00",
+        "decision_hash": "0e721feaaecc1ac1bf61b5d1e2c47f5c94c48ea1828ca4fd3dff47f564651af7"
+      },
+      "trace": [
+        {
+          "turn": 1,
+          "calls": [
+            {
+              "tool": "get_claim",
+              "arguments": {
+                "claim_id": "CLM-8894"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1393,
+            "output": 16
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "get_claim",
+                "arguments": {
+                  "claim_id": "CLM-8894"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "claim_id": "CLM-8894",
+              "member_id": "M-6118",
+              "hospital_id": "H-207",
+              "date_of_service": "2026-09-09",
+              "narrative": "Knee arthroscopy. I got approval for this earlier in the year.",
+              "documents": [
+                "itemised_bill",
+                "discharge_summary"
+              ],
+              "lines": [
+                {
+                  "code": "29881",
+                  "amount": 1950
+                }
+              ],
+              "duplicates": [],
+              "duplicate": null,
+              "instruction_detected": false
+            }
+          ]
+        },
+        {
+          "turn": 2,
+          "calls": [
+            {
+              "tool": "lookup_policy",
+              "arguments": {
+                "claim_id": "CLM-8894"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1502,
+            "output": 17
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "lookup_policy",
+                "arguments": {
+                  "claim_id": "CLM-8894"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "policy_id": "POL-7220",
+              "product": "Shield Basic",
+              "status": "active",
+              "start_date": "2026-02-01",
+              "end_date": "2027-01-31",
+              "annual_limit": 8000,
+              "used_to_date": 1200,
+              "exclusions": [
+                {
+                  "code": "31255",
+                  "rule": "EX-14 cosmetic dermatology"
+                }
+              ],
+              "remaining": 6800.0,
+              "claim_total": 1950.0,
+              "policy_trigger": null
+            }
+          ]
+        },
+        {
+          "turn": 3,
+          "calls": [
+            {
+              "tool": "check_coverage",
+              "arguments": {
+                "claim_id": "CLM-8894",
+                "code": "29881"
+              }
+            },
+            {
+              "tool": "get_hospital_status",
+              "arguments": {
+                "claim_id": "CLM-8894"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1603,
+            "output": 39
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "check_coverage",
+                "arguments": {
+                  "claim_id": "CLM-8894",
+                  "code": "29881"
+                }
+              },
+              {
+                "tool": "get_hospital_status",
+                "arguments": {
+                  "claim_id": "CLM-8894"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "code": "29881",
+              "excluded": false,
+              "exclusion": null,
+              "requires_preauth": true,
+              "required_documents": [],
+              "missing_documents": []
+            },
+            {
+              "hospital_id": "H-207",
+              "name": "Mount Elizabeth East",
+              "panel": true,
+              "country": "SG"
+            }
+          ]
+        },
+        {
+          "turn": 4,
+          "calls": [
+            {
+              "tool": "get_preauthorisation",
+              "arguments": {
+                "claim_id": "CLM-8894",
+                "code": "29881"
+              }
+            }
+          ],
+          "usage": {
+            "input": 1711,
+            "output": 23
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "get_preauthorisation",
+                "arguments": {
+                  "claim_id": "CLM-8894",
+                  "code": "29881"
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "code": "29881",
+              "candidates": [
+                {
+                  "preauth_id": "PA-5640",
+                  "member_id": "M-6118",
+                  "procedure_code": "29881",
+                  "valid_from": "2026-03-01",
+                  "valid_to": "2026-05-31",
+                  "status": "expired_before_service"
+                }
+              ],
+              "valid": null,
+              "status": "no_valid_candidate"
+            }
+          ]
+        },
+        {
+          "turn": 5,
+          "calls": [
+            {
+              "tool": "issue_decision_letter",
+              "arguments": {
+                "decision": {
+                  "case_id": "CLM-8894",
+                  "decision": "request_document",
+                  "lines": [
+                    {
+                      "code": "29881",
+                      "amount": 1950,
+                      "status": "unresolved"
+                    }
+                  ],
+                  "missing": [
+                    {
+                      "code": "29881",
+                      "document": "preauthorisation",
+                      "date": "2026-09-09"
+                    }
+                  ],
+                  "approved_total": 0,
+                  "refused_total": 0,
+                  "reason": "Policy POL-7220 status active, dates 2026-02-01..2027-01-31; claim total 1950.0, remaining 6800.0. Hospital H-207, panel=True. Approved 0, refused 0. Authorisation evidence: [{\"member_id\": \"M-6118\", \"preauth_id\": \"PA-5640\", \"procedure_code\": \"29881\", \"status\": \"expired_before_service\", \"valid_from\": \"2026-03-01\", \"valid_to\": \"2026-05-31\"}] Missing: [{\"code\": \"29881\", \"date\": \"2026-09-09\", \"document\": \"preauthorisation\"}] Line evidence: [{\"amount\": 1950, \"code\": \"29881\", \"status\": \"unresolved\"}]",
+                  "evidence": [
+                    "obs-1",
+                    "obs-2",
+                    "obs-3",
+                    "obs-4",
+                    "obs-5"
+                  ]
+                }
+              }
+            }
+          ],
+          "usage": {
+            "input": 1802,
+            "output": 234
+          },
+          "raw": {
+            "calls": [
+              {
+                "tool": "issue_decision_letter",
+                "arguments": {
+                  "decision": {
+                    "case_id": "CLM-8894",
+                    "decision": "request_document",
+                    "lines": [
+                      {
+                        "code": "29881",
+                        "amount": 1950,
+                        "status": "unresolved"
+                      }
+                    ],
+                    "missing": [
+                      {
+                        "code": "29881",
+                        "document": "preauthorisation",
+                        "date": "2026-09-09"
+                      }
+                    ],
+                    "approved_total": 0,
+                    "refused_total": 0,
+                    "reason": "Policy POL-7220 status active, dates 2026-02-01..2027-01-31; claim total 1950.0, remaining 6800.0. Hospital H-207, panel=True. Approved 0, refused 0. Authorisation evidence: [{\"member_id\": \"M-6118\", \"preauth_id\": \"PA-5640\", \"procedure_code\": \"29881\", \"status\": \"expired_before_service\", \"valid_from\": \"2026-03-01\", \"valid_to\": \"2026-05-31\"}] Missing: [{\"code\": \"29881\", \"date\": \"2026-09-09\", \"document\": \"preauthorisation\"}] Line evidence: [{\"amount\": 1950, \"code\": \"29881\", \"status\": \"unresolved\"}]",
+                    "evidence": [
+                      "obs-1",
+                      "obs-2",
+                      "obs-3",
+                      "obs-4",
+                      "obs-5"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "observations": [
+            {
+              "status": "recorded",
+              "case_id": "CLM-8894",
+              "decision": "request_document",
+              "decision_hash": "0e721feaaecc1ac1bf61b5d1e2c47f5c94c48ea1828ca4fd3dff47f564651af7"
+            }
+          ]
+        }
+      ],
+      "observations": [
+        {
+          "id": "obs-1",
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          },
+          "result": {
+            "claim_id": "CLM-8894",
+            "member_id": "M-6118",
+            "hospital_id": "H-207",
+            "date_of_service": "2026-09-09",
+            "narrative": "Knee arthroscopy. I got approval for this earlier in the year.",
+            "documents": [
+              "itemised_bill",
+              "discharge_summary"
+            ],
+            "lines": [
+              {
+                "code": "29881",
+                "amount": 1950
+              }
+            ],
+            "duplicates": [],
+            "duplicate": null,
+            "instruction_detected": false
+          }
+        },
+        {
+          "id": "obs-2",
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          },
+          "result": {
+            "policy_id": "POL-7220",
+            "product": "Shield Basic",
+            "status": "active",
+            "start_date": "2026-02-01",
+            "end_date": "2027-01-31",
+            "annual_limit": 8000,
+            "used_to_date": 1200,
+            "exclusions": [
+              {
+                "code": "31255",
+                "rule": "EX-14 cosmetic dermatology"
+              }
+            ],
+            "remaining": 6800.0,
+            "claim_total": 1950.0,
+            "policy_trigger": null
+          }
+        },
+        {
+          "id": "obs-3",
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8894",
+            "code": "29881"
+          },
+          "result": {
+            "code": "29881",
+            "excluded": false,
+            "exclusion": null,
+            "requires_preauth": true,
+            "required_documents": [],
+            "missing_documents": []
+          }
+        },
+        {
+          "id": "obs-4",
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          },
+          "result": {
+            "hospital_id": "H-207",
+            "name": "Mount Elizabeth East",
+            "panel": true,
+            "country": "SG"
+          }
+        },
+        {
+          "id": "obs-5",
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-8894",
+            "code": "29881"
+          },
+          "result": {
+            "code": "29881",
+            "candidates": [
+              {
+                "preauth_id": "PA-5640",
+                "member_id": "M-6118",
+                "procedure_code": "29881",
+                "valid_from": "2026-03-01",
+                "valid_to": "2026-05-31",
+                "status": "expired_before_service"
+              }
+            ],
+            "valid": null,
+            "status": "no_valid_candidate"
+          }
+        },
+        {
+          "id": "obs-6",
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8894",
+              "decision": "request_document",
+              "lines": [
+                {
+                  "code": "29881",
+                  "amount": 1950,
+                  "status": "unresolved"
+                }
+              ],
+              "missing": [
+                {
+                  "code": "29881",
+                  "document": "preauthorisation",
+                  "date": "2026-09-09"
+                }
+              ],
+              "approved_total": 0,
+              "refused_total": 0,
+              "reason": "Policy POL-7220 status active, dates 2026-02-01..2027-01-31; claim total 1950.0, remaining 6800.0. Hospital H-207, panel=True. Approved 0, refused 0. Authorisation evidence: [{\"member_id\": \"M-6118\", \"preauth_id\": \"PA-5640\", \"procedure_code\": \"29881\", \"status\": \"expired_before_service\", \"valid_from\": \"2026-03-01\", \"valid_to\": \"2026-05-31\"}] Missing: [{\"code\": \"29881\", \"date\": \"2026-09-09\", \"document\": \"preauthorisation\"}] Line evidence: [{\"amount\": 1950, \"code\": \"29881\", \"status\": \"unresolved\"}]",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5"
+              ]
+            }
+          },
+          "result": {
+            "status": "recorded",
+            "case_id": "CLM-8894",
+            "decision": "request_document",
+            "decision_hash": "0e721feaaecc1ac1bf61b5d1e2c47f5c94c48ea1828ca4fd3dff47f564651af7"
+          }
+        }
+      ],
+      "turns": 5,
+      "tokens_in": 8011,
+      "tokens_out": 329,
+      "cost_usd": 0.0009327000000000001,
+      "stop": "completed",
+      "backend": "scripted",
+      "token_measurement": "estimated_chars_div4",
+      "elapsed_seconds": 0.0007,
+      "variant": "v2",
+      "sequential": false,
+      "autonomy": "confirm",
+      "grade": {
+        "pass": true,
+        "errors": [],
+        "check": "code"
+      }
+    }
+  }
+}

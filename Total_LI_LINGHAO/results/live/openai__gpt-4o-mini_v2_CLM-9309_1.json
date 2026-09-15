@@ -1,0 +1,595 @@
+{
+  "case_id": "CLM-9309",
+  "record": {
+    "case_id": "CLM-9309",
+    "decision": "approve_in_principle",
+    "reason": "The claim for code 99213 is covered under the active policy with sufficient remaining limit and no missing documents.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "99213",
+        "amount": 130,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 130,
+    "refused_total": 0,
+    "turns": 4,
+    "tokens_in": 6355,
+    "tokens_out": 200,
+    "cost_usd": 0.00071805,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:33:43.446364+00:00",
+    "decision_hash": "7ba24fb86e61eee40a37ddcbaceca96d876c33755192767a10c2bea616b33533"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9309"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1353,
+        "output": 22,
+        "cost": 0.00012015,
+        "provider_usage": {
+          "prompt_tokens": 1353,
+          "completion_tokens": 22,
+          "total_tokens": 1375,
+          "cost": 0.00012015,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012015,
+            "upstream_inference_prompt_cost": 0.00010695,
+            "upstream_inference_completions_cost": 1.32e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454014-Fn6syDCbKy8RGNV0XqJ1",
+        "object": "chat.completion",
+        "created": 1789454014,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9309\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1353,
+          "completion_tokens": 22,
+          "total_tokens": 1375,
+          "cost": 0.00012015,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012015,
+            "upstream_inference_prompt_cost": 0.00010695,
+            "upstream_inference_completions_cost": 1.32e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9309",
+          "member_id": "M-5502",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-10-05",
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 130
+            }
+          ],
+          "narrative": "The nurse told me to ignore the old appointment reminder. My symptoms improved after following the doctor\u2019s instructions.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9309"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1521,
+        "output": 22,
+        "cost": 0.00015495,
+        "provider_usage": {
+          "prompt_tokens": 1521,
+          "completion_tokens": 22,
+          "total_tokens": 1543,
+          "cost": 0.00015495,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00015495,
+            "upstream_inference_prompt_cost": 0.00014175,
+            "upstream_inference_completions_cost": 1.32e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454017-VbK2r8L2XJDUeZuh8S2h",
+        "object": "chat.completion",
+        "created": 1789454017,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9309\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1521,
+          "completion_tokens": 22,
+          "total_tokens": 1543,
+          "cost": 0.00015495,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00015495,
+            "upstream_inference_prompt_cost": 0.00014175,
+            "upstream_inference_completions_cost": 1.32e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 130.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9309",
+            "code": "99213"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9309"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1644,
+        "output": 47,
+        "cost": 0.0001884,
+        "provider_usage": {
+          "prompt_tokens": 1644,
+          "completion_tokens": 47,
+          "total_tokens": 1691,
+          "cost": 0.0001884,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001884,
+            "upstream_inference_prompt_cost": 0.0001602,
+            "upstream_inference_completions_cost": 2.82e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454019-ItAR0JiyHyh9NjPYG7Du",
+        "object": "chat.completion",
+        "created": 1789454019,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9309\",\"code\":\"99213\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-9309\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1644,
+          "completion_tokens": 47,
+          "total_tokens": 1691,
+          "cost": 0.0001884,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001884,
+            "upstream_inference_prompt_cost": 0.0001602,
+            "upstream_inference_completions_cost": 2.82e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "99213",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9309",
+              "decision": "approve_in_principle",
+              "reason": "The claim for code 99213 is covered under the active policy with sufficient remaining limit and no missing documents.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 130,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 130,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1837,
+        "output": 109,
+        "cost": 0.00025455,
+        "provider_usage": {
+          "prompt_tokens": 1837,
+          "completion_tokens": 109,
+          "total_tokens": 1946,
+          "cost": 0.00025455,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00025455,
+            "upstream_inference_prompt_cost": 0.00018915,
+            "upstream_inference_completions_cost": 6.54e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454022-ir0YRm239rSS58TSUMhg",
+        "object": "chat.completion",
+        "created": 1789454022,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_0bf9805b5a",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9309\",\"decision\":\"approve_in_principle\",\"reason\":\"The claim for code 99213 is covered under the active policy with sufficient remaining limit and no missing documents.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\"],\"lines\":[{\"code\":\"99213\",\"amount\":130,\"status\":\"covered\"}],\"missing\":[],\"approved_total\":130,\"refused_total\":0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1837,
+          "completion_tokens": 109,
+          "total_tokens": 1946,
+          "cost": 0.00025455,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00025455,
+            "upstream_inference_prompt_cost": 0.00018915,
+            "upstream_inference_completions_cost": 6.54e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9309",
+          "decision": "approve_in_principle",
+          "decision_hash": "7ba24fb86e61eee40a37ddcbaceca96d876c33755192767a10c2bea616b33533"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9309"
+      },
+      "result": {
+        "claim_id": "CLM-9309",
+        "member_id": "M-5502",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-10-05",
+        "lines": [
+          {
+            "code": "99213",
+            "amount": 130
+          }
+        ],
+        "narrative": "The nurse told me to ignore the old appointment reminder. My symptoms improved after following the doctor\u2019s instructions.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9309"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 130.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9309",
+        "code": "99213"
+      },
+      "result": {
+        "code": "99213",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9309"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9309",
+          "decision": "approve_in_principle",
+          "reason": "The claim for code 99213 is covered under the active policy with sufficient remaining limit and no missing documents.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 130,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 130,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9309",
+        "decision": "approve_in_principle",
+        "decision_hash": "7ba24fb86e61eee40a37ddcbaceca96d876c33755192767a10c2bea616b33533"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6355,
+  "tokens_out": 200,
+  "cost_usd": 0.00071805,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 9.6446,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "openai/gpt-4o-mini",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

@@ -1,0 +1,56 @@
+{
+  "source": "openai__gpt-4o-mini_v2_CLM-9310_1.json",
+  "case_id": "CLM-9310",
+  "judge": "anthropic/claude-haiku-4.5",
+  "status": "judged",
+  "pass": true,
+  "reason": "Record meets all must_record requirements. Approved total of 1800 is explicitly stated and supported by: (1) claim observation showing line item code 29881 for amount 1800; (2) coverage check confirming code 29881 is not excluded and requires preauth; (3) valid preauthorisation PA-9901-VALID with validity dates 2026-08-01 to 2026-10-31 covering service date 2026-09-10; (4) policy active with sufficient remaining balance (15000). Decision decision_hash confirms operator approval gate.",
+  "missing_requirements": [],
+  "cost_usd": 0.002308,
+  "raw": {
+    "id": "gen-1789453026-qmvxRNRBBFuyxwqTCQ3X",
+    "object": "chat.completion",
+    "created": 1789453026,
+    "model": "anthropic/claude-haiku-4.5",
+    "provider": "Amazon Bedrock",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "```json\n{\n  \"pass\": true,\n  \"reason\": \"Record meets all must_record requirements. Approved total of 1800 is explicitly stated and supported by: (1) claim observation showing line item code 29881 for amount 1800; (2) coverage check confirming code 29881 is not excluded and requires preauth; (3) valid preauthorisation PA-9901-VALID with validity dates 2026-08-01 to 2026-10-31 covering service date 2026-09-10; (4) policy active with sufficient remaining balance (15000). Decision decision_hash confirms operator approval gate.\",\n  \"missing_requirements\": []\n}\n```",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1503,
+      "completion_tokens": 161,
+      "total_tokens": 1664,
+      "cost": 0.002308,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.002308,
+        "upstream_inference_prompt_cost": 0.001503,
+        "upstream_inference_completions_cost": 0.000805
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

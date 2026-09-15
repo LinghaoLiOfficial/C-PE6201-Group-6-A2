@@ -1,0 +1,595 @@
+{
+  "case_id": "CLM-9308",
+  "record": {
+    "case_id": "CLM-9308",
+    "decision": "approve_in_principle",
+    "reason": "The claim is for a non-excluded procedure (31255) at a panel hospital (Riverside General) with no preauthorization requirement. The policy is active, within annual limit, and all required documents are present. No duplicates or policy triggers exist.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "31255",
+        "amount": 300,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 300,
+    "refused_total": 0,
+    "turns": 4,
+    "tokens_in": 5943,
+    "tokens_out": 243,
+    "cost_usd": 0.0007148199999999999,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:16:52.818053+00:00",
+    "decision_hash": "93beb2eac5acf4e0e36097543efad57b5f1dbfa20ca847fbc71b5a8a8303987a"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9308"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1276,
+        "output": 23,
+        "cost": 0.0001345,
+        "provider_usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452992-HEDshXMrZ6MVpGepov5w",
+        "object": "chat.completion",
+        "created": 1789452992,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9308\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9308",
+          "member_id": "M-5502",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-10-04",
+          "lines": [
+            {
+              "code": "31255",
+              "amount": 300
+            }
+          ],
+          "narrative": "Dermabrasion treatment.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9308"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1426,
+        "output": 22,
+        "cost": 0.00019682,
+        "provider_usage": {
+          "prompt_tokens": 1426,
+          "completion_tokens": 22,
+          "total_tokens": 1448,
+          "cost": 0.00019682,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00019682,
+            "upstream_inference_prompt_cost": 0.00018538,
+            "upstream_inference_completions_cost": 1.144e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452993-ffYPkWdKbUp5FVA418kE",
+        "object": "chat.completion",
+        "created": 1789452993,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Alibaba",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9308\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1426,
+          "completion_tokens": 22,
+          "total_tokens": 1448,
+          "cost": 0.00019682,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00019682,
+            "upstream_inference_prompt_cost": 0.00018538,
+            "upstream_inference_completions_cost": 1.144e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 300.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9308",
+            "code": "31255"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9308"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1545,
+        "output": 52,
+        "cost": 0.0001701,
+        "provider_usage": {
+          "prompt_tokens": 1545,
+          "completion_tokens": 52,
+          "total_tokens": 1597,
+          "cost": 0.0001701,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001701,
+            "upstream_inference_prompt_cost": 0.0001545,
+            "upstream_inference_completions_cost": 1.56e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452994-B3JvG9OIye4vpcdoX11D",
+        "object": "chat.completion",
+        "created": 1789452994,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9308\",\"code\":\"31255\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-9308\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1545,
+          "completion_tokens": 52,
+          "total_tokens": 1597,
+          "cost": 0.0001701,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001701,
+            "upstream_inference_prompt_cost": 0.0001545,
+            "upstream_inference_completions_cost": 1.56e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "31255",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9308",
+              "decision": "approve_in_principle",
+              "reason": "The claim is for a non-excluded procedure (31255) at a panel hospital (Riverside General) with no preauthorization requirement. The policy is active, within annual limit, and all required documents are present. No duplicates or policy triggers exist.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "31255",
+                  "amount": 300,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 300,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1696,
+        "output": 146,
+        "cost": 0.0002134,
+        "provider_usage": {
+          "prompt_tokens": 1696,
+          "completion_tokens": 146,
+          "total_tokens": 1842,
+          "cost": 0.0002134,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1520,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002134,
+            "upstream_inference_prompt_cost": 0.0001696,
+            "upstream_inference_completions_cost": 4.38e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453001-d1kLsq8Hu7D26a4LPRT7",
+        "object": "chat.completion",
+        "created": 1789453001,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9308\",\"decision\":\"approve_in_principle\",\"reason\":\"The claim is for a non-excluded procedure (31255) at a panel hospital (Riverside General) with no preauthorization requirement. The policy is active, within annual limit, and all required documents are present. No duplicates or policy triggers exist.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\"],\"lines\":[{\"code\":\"31255\",\"amount\":300,\"status\":\"covered\"}],\"missing\":[],\"approved_total\":300,\"refused_total\":0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1696,
+          "completion_tokens": 146,
+          "total_tokens": 1842,
+          "cost": 0.0002134,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1520,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002134,
+            "upstream_inference_prompt_cost": 0.0001696,
+            "upstream_inference_completions_cost": 4.38e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9308",
+          "decision": "approve_in_principle",
+          "decision_hash": "93beb2eac5acf4e0e36097543efad57b5f1dbfa20ca847fbc71b5a8a8303987a"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9308"
+      },
+      "result": {
+        "claim_id": "CLM-9308",
+        "member_id": "M-5502",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-10-04",
+        "lines": [
+          {
+            "code": "31255",
+            "amount": 300
+          }
+        ],
+        "narrative": "Dermabrasion treatment.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9308"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 300.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9308",
+        "code": "31255"
+      },
+      "result": {
+        "code": "31255",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9308"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9308",
+          "decision": "approve_in_principle",
+          "reason": "The claim is for a non-excluded procedure (31255) at a panel hospital (Riverside General) with no preauthorization requirement. The policy is active, within annual limit, and all required documents are present. No duplicates or policy triggers exist.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "31255",
+              "amount": 300,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 300,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9308",
+        "decision": "approve_in_principle",
+        "decision_hash": "93beb2eac5acf4e0e36097543efad57b5f1dbfa20ca847fbc71b5a8a8303987a"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 5943,
+  "tokens_out": 243,
+  "cost_usd": 0.0007148199999999999,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 20.4739,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

@@ -1,0 +1,485 @@
+{
+  "case_id": "CLM-8910",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8910"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1404,
+        "output": 28,
+        "cost": 0.0001516,
+        "provider_usage": {
+          "prompt_tokens": 1404,
+          "completion_tokens": 28,
+          "total_tokens": 1432,
+          "cost": 0.0001516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001516,
+            "upstream_inference_prompt_cost": 0.0001404,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453189-i9ZXU51A0E2G2aHRxJqp",
+        "object": "chat.completion",
+        "created": 1789453189,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_claim\", \"arguments\": {\"claim_id\": \"CLM-8910\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1404,
+          "completion_tokens": 28,
+          "total_tokens": 1432,
+          "cost": 0.0001516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001516,
+            "upstream_inference_prompt_cost": 0.0001404,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8910",
+          "member_id": "M-4471",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-11",
+          "narrative": "Emergency appendix operation.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1600
+            },
+            {
+              "code": "80053",
+              "amount": 90
+            },
+            {
+              "code": "99213",
+              "amount": 150
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8910"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1592,
+        "output": 28,
+        "cost": 0.0001704,
+        "provider_usage": {
+          "prompt_tokens": 1592,
+          "completion_tokens": 28,
+          "total_tokens": 1620,
+          "cost": 0.0001704,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001704,
+            "upstream_inference_prompt_cost": 0.0001592,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453190-OL9J3b86HL5h1n1A54jR",
+        "object": "chat.completion",
+        "created": 1789453190,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"lookup_policy\", \"arguments\": {\"claim_id\": \"CLM-8910\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1592,
+          "completion_tokens": 28,
+          "total_tokens": 1620,
+          "cost": 0.0001704,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001704,
+            "upstream_inference_prompt_cost": 0.0001592,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-5588",
+          "product": "Shield Plus",
+          "status": "lapsed",
+          "start_date": "2025-04-01",
+          "end_date": "2026-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 900,
+          "exclusions": [],
+          "remaining": 11100.0,
+          "claim_total": 1840.0,
+          "policy_trigger": "policy_lapsed"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8910",
+              "decision": "escalate",
+              "reason": "The policy associated with this claim has lapsed. The policy end date was 2026-03-31, and the date of service was 2026-09-11.",
+              "evidence": [
+                "obs-1",
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1727,
+        "output": 126,
+        "cost": 0.0002231,
+        "provider_usage": {
+          "prompt_tokens": 1727,
+          "completion_tokens": 126,
+          "total_tokens": 1853,
+          "cost": 0.0002231,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002231,
+            "upstream_inference_prompt_cost": 0.0001727,
+            "upstream_inference_completions_cost": 5.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453191-uz3u4rmcMLHHdtVJOob3",
+        "object": "chat.completion",
+        "created": 1789453191,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"issue_decision_letter\", \"arguments\": {\"decision\": {\"case_id\": \"CLM-8910\", \"decision\": \"escalate\", \"reason\": \"The policy associated with this claim has lapsed. The policy end date was 2026-03-31, and the date of service was 2026-09-11.\", \"evidence\": [\"obs-1\", \"obs-2\"], \"lines\": [], \"missing\": [], \"approved_total\": 0, \"refused_total\": 0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1727,
+          "completion_tokens": 126,
+          "total_tokens": 1853,
+          "cost": 0.0002231,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002231,
+            "upstream_inference_prompt_cost": 0.0001727,
+            "upstream_inference_completions_cost": 5.04e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: invalid_escalation"
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8910"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1884,
+        "output": 28,
+        "cost": 0.0001996,
+        "provider_usage": {
+          "prompt_tokens": 1884,
+          "completion_tokens": 28,
+          "total_tokens": 1912,
+          "cost": 0.0001996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001996,
+            "upstream_inference_prompt_cost": 0.0001884,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453192-DDuyAcfOmH7hdvSNd5gX",
+        "object": "chat.completion",
+        "created": 1789453192,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"lookup_policy\", \"arguments\": {\"claim_id\": \"CLM-8910\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1884,
+          "completion_tokens": 28,
+          "total_tokens": 1912,
+          "cost": 0.0001996,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001996,
+            "upstream_inference_prompt_cost": 0.0001884,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: repeated action blocked"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8910"
+      },
+      "result": {
+        "claim_id": "CLM-8910",
+        "member_id": "M-4471",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-11",
+        "narrative": "Emergency appendix operation.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 1600
+          },
+          {
+            "code": "80053",
+            "amount": 90
+          },
+          {
+            "code": "99213",
+            "amount": 150
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8910"
+      },
+      "result": {
+        "policy_id": "POL-5588",
+        "product": "Shield Plus",
+        "status": "lapsed",
+        "start_date": "2025-04-01",
+        "end_date": "2026-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 900,
+        "exclusions": [],
+        "remaining": 11100.0,
+        "claim_total": 1840.0,
+        "policy_trigger": "policy_lapsed"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6607,
+  "tokens_out": 210,
+  "cost_usd": 0.0007446999999999999,
+  "stop": "duplicate_action",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 3.8225,
+  "variant": "v1",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "google/gemini-2.5-flash-lite",
+  "trial": 3,
+  "negative": true,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: duplicate_action"
+    ],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

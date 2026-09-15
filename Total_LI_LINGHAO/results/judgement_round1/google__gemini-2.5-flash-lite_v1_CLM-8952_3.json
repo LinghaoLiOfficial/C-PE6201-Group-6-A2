@@ -1,0 +1,7 @@
+{
+  "source": "google__gemini-2.5-flash-lite_v1_CLM-8952_3.json",
+  "case_id": "CLM-8952",
+  "pass": false,
+  "status": "code_failed_not_judged",
+  "cost_usd": 0
+}

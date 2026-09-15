@@ -1,0 +1,763 @@
+{
+  "case_id": "CLM-9203",
+  "record": {
+    "case_id": "CLM-9203",
+    "decision": "approve_in_principle",
+    "reason": "All required documents are present and preauthorisation is valid",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5"
+    ],
+    "lines": [
+      {
+        "code": "62480",
+        "amount": 1800,
+        "status": "covered",
+        "preauth": "PA-5521"
+      }
+    ],
+    "missing": [],
+    "approved_total": 1800.0,
+    "refused_total": 0.0,
+    "turns": 5,
+    "tokens_in": 8471,
+    "tokens_out": 227,
+    "cost_usd": 0.00108354,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:35:05.064395+00:00",
+    "decision_hash": "f0894f75eb54a81ae0a1b241131d39ca631141cde927fae3624c70d667d581ef"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1359,
+        "output": 21,
+        "cost": 0.00014992,
+        "provider_usage": {
+          "prompt_tokens": 1359,
+          "completion_tokens": 21,
+          "total_tokens": 1380,
+          "cost": 0.00014992,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1328,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014992,
+            "upstream_inference_prompt_cost": 0.000139,
+            "upstream_inference_completions_cost": 1.092e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454081-YXHvf1Mp5GQf82vT3UN8",
+        "object": "chat.completion",
+        "created": 1789454081,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "AkashML",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9203\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1359,
+          "completion_tokens": 21,
+          "total_tokens": 1380,
+          "cost": 0.00014992,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1328,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014992,
+            "upstream_inference_prompt_cost": 0.000139,
+            "upstream_inference_completions_cost": 1.092e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9203",
+          "member_id": "M-2214",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-08-01",
+          "narrative": "Planned lumbar spinal fusion after approval was granted.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "62480",
+              "amount": 1800
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1497,
+        "output": 21,
+        "cost": 0.00015642,
+        "provider_usage": {
+          "prompt_tokens": 1497,
+          "completion_tokens": 21,
+          "total_tokens": 1518,
+          "cost": 0.00015642,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00015642,
+            "upstream_inference_prompt_cost": 0.0001497,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454082-a7A08N6vsn8lhDmvCRS7",
+        "object": "chat.completion",
+        "created": 1789454082,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9203\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1497,
+          "completion_tokens": 21,
+          "total_tokens": 1518,
+          "cost": 0.00015642,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00015642,
+            "upstream_inference_prompt_cost": 0.0001497,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 1800.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9203",
+            "code": "62480"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1658,
+        "output": 45,
+        "cost": 0.0001802,
+        "provider_usage": {
+          "prompt_tokens": 1658,
+          "completion_tokens": 45,
+          "total_tokens": 1703,
+          "cost": 0.0001802,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001802,
+            "upstream_inference_prompt_cost": 0.0001658,
+            "upstream_inference_completions_cost": 1.44e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454083-Uiobvm4vNeKP3Kso5fF9",
+        "object": "chat.completion",
+        "created": 1789454083,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9203\",\"code\":\"62480\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-9203\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1658,
+          "completion_tokens": 45,
+          "total_tokens": 1703,
+          "cost": 0.0001802,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001802,
+            "upstream_inference_prompt_cost": 0.0001658,
+            "upstream_inference_completions_cost": 1.44e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [
+            "discharge_summary"
+          ],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-9203",
+            "code": "62480"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1873,
+        "output": 28,
+        "cost": 0.00025956,
+        "provider_usage": {
+          "prompt_tokens": 1873,
+          "completion_tokens": 28,
+          "total_tokens": 1901,
+          "cost": 0.00025956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1296,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00025956,
+            "upstream_inference_prompt_cost": 0.000245,
+            "upstream_inference_completions_cost": 1.456e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454098-FLQIL1k43ktZ1DCLLKB9",
+        "object": "chat.completion",
+        "created": 1789454098,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "AkashML",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_preauthorisation\",\"arguments\":{\"claim_id\":\"CLM-9203\",\"code\":\"62480\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1873,
+          "completion_tokens": 28,
+          "total_tokens": 1901,
+          "cost": 0.00025956,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1296,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00025956,
+            "upstream_inference_prompt_cost": 0.000245,
+            "upstream_inference_completions_cost": 1.456e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "candidates": [
+            {
+              "preauth_id": "PA-5521",
+              "member_id": "M-2214",
+              "procedure_code": "62480",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9203",
+              "decision": "approve_in_principle",
+              "reason": "All required documents are present and preauthorisation is valid",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5"
+              ],
+              "lines": [
+                {
+                  "code": "62480",
+                  "amount": 1800,
+                  "status": "covered",
+                  "preauth": "PA-5521"
+                }
+              ],
+              "missing": [],
+              "approved_total": 1800.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2084,
+        "output": 112,
+        "cost": 0.00033744,
+        "provider_usage": {
+          "prompt_tokens": 2084,
+          "completion_tokens": 112,
+          "total_tokens": 2196,
+          "cost": 0.00033744,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1376,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00033744,
+            "upstream_inference_prompt_cost": 0.0002792,
+            "upstream_inference_completions_cost": 5.824e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454099-K8OE2oRB4X3SgR5Hq2E3",
+        "object": "chat.completion",
+        "created": 1789454099,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "AkashML",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9203\",\"decision\":\"approve_in_principle\",\"reason\":\"All required documents are present and preauthorisation is valid\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\",\"obs-5\"],\"lines\":[{\"code\":\"62480\",\"amount\":1800,\"status\":\"covered\",\"preauth\":\"PA-5521\"}],\"missing\":[],\"approved_total\":1800.00,\"refused_total\":0.00}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2084,
+          "completion_tokens": 112,
+          "total_tokens": 2196,
+          "cost": 0.00033744,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1376,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00033744,
+            "upstream_inference_prompt_cost": 0.0002792,
+            "upstream_inference_completions_cost": 5.824e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9203",
+          "decision": "approve_in_principle",
+          "decision_hash": "f0894f75eb54a81ae0a1b241131d39ca631141cde927fae3624c70d667d581ef"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "claim_id": "CLM-9203",
+        "member_id": "M-2214",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-08-01",
+        "narrative": "Planned lumbar spinal fusion after approval was granted.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "62480",
+            "amount": 1800
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 1800.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9203",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [
+          "discharge_summary"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-9203",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "candidates": [
+          {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          }
+        ],
+        "valid": {
+          "preauth_id": "PA-5521",
+          "member_id": "M-2214",
+          "procedure_code": "62480",
+          "valid_from": "2026-08-01",
+          "valid_to": "2026-10-31",
+          "status": "valid"
+        },
+        "status": "valid"
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9203",
+          "decision": "approve_in_principle",
+          "reason": "All required documents are present and preauthorisation is valid",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5"
+          ],
+          "lines": [
+            {
+              "code": "62480",
+              "amount": 1800,
+              "status": "covered",
+              "preauth": "PA-5521"
+            }
+          ],
+          "missing": [],
+          "approved_total": 1800.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9203",
+        "decision": "approve_in_principle",
+        "decision_hash": "f0894f75eb54a81ae0a1b241131d39ca631141cde927fae3624c70d667d581ef"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 8471,
+  "tokens_out": 227,
+  "cost_usd": 0.00108354,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 23.9204,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

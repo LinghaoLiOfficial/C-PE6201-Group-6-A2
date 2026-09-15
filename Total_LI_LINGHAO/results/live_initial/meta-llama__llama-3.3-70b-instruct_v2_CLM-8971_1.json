@@ -1,0 +1,682 @@
+{
+  "case_id": "CLM-8971",
+  "record": {
+    "case_id": "CLM-8971",
+    "decision": "approve_in_principle",
+    "reason": "Policy is active, claim total is within remaining limit, and line 99213 is covered.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "99213",
+        "amount": 170,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 170.0,
+    "refused_total": 0,
+    "turns": 5,
+    "tokens_in": 7363,
+    "tokens_out": 215,
+    "cost_usd": 0.0017493640000000002,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:12:36.182073+00:00",
+    "decision_hash": "98673ecdf5420bbd3c9520ad4ba5c6583f459da0048e16dcd0628bf4da4d5ad3"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8971"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1258,
+        "output": 21,
+        "cost": 0.00013252,
+        "provider_usage": {
+          "prompt_tokens": 1258,
+          "completion_tokens": 21,
+          "total_tokens": 1279,
+          "cost": 0.00013252,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013252,
+            "upstream_inference_prompt_cost": 0.0001258,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452736-W4nBVQ9yKA45Ha7UEJG5",
+        "object": "chat.completion",
+        "created": 1789452736,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-8971\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1258,
+          "completion_tokens": 21,
+          "total_tokens": 1279,
+          "cost": 0.00013252,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013252,
+            "upstream_inference_prompt_cost": 0.0001258,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8971",
+          "member_id": "M-3390",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-09-16",
+          "narrative": "Consultation only.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 170
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": null,
+      "usage": {
+        "input": 1402,
+        "output": 26,
+        "cost": 0.000469364,
+        "provider_usage": {
+          "prompt_tokens": 1402,
+          "completion_tokens": 26,
+          "total_tokens": 1428,
+          "cost": 0.000469364,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000469364,
+            "upstream_inference_prompt_cost": 0.000410786,
+            "upstream_inference_completions_cost": 5.8578e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452742-w6zXGZFDn3CQfLruKdD1",
+        "object": "chat.completion",
+        "created": 1789452742,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "Cloudflare",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls: [{tool\": \"lookup_policy\", \"arguments\": {\"claim_id\": \"CLM-8971\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1402,
+          "completion_tokens": 26,
+          "total_tokens": 1428,
+          "cost": 0.000469364,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000469364,
+            "upstream_inference_prompt_cost": 0.000410786,
+            "upstream_inference_completions_cost": 5.8578e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: invalid action block"
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8971"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1437,
+        "output": 21,
+        "cost": 0.00019112,
+        "provider_usage": {
+          "prompt_tokens": 1437,
+          "completion_tokens": 21,
+          "total_tokens": 1458,
+          "cost": 0.00019112,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00019112,
+            "upstream_inference_prompt_cost": 0.00018062,
+            "upstream_inference_completions_cost": 1.05e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452744-y3W2P7rUgjUVJiJNPxxp",
+        "object": "chat.completion",
+        "created": 1789452744,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "Parasail",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-8971\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1437,
+          "completion_tokens": 21,
+          "total_tokens": 1458,
+          "cost": 0.00019112,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00019112,
+            "upstream_inference_prompt_cost": 0.00018062,
+            "upstream_inference_completions_cost": 1.05e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-4102",
+          "product": "Shield Basic",
+          "status": "active",
+          "start_date": "2026-01-01",
+          "end_date": "2026-12-31",
+          "annual_limit": 6000,
+          "used_to_date": 5400,
+          "exclusions": [
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 600.0,
+          "claim_total": 170.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8971",
+            "code": "99213"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8971"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1592,
+        "output": 44,
+        "cost": 0.000756,
+        "provider_usage": {
+          "prompt_tokens": 1592,
+          "completion_tokens": 44,
+          "total_tokens": 1636,
+          "cost": 0.000756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000756,
+            "upstream_inference_prompt_cost": 0.0007164,
+            "upstream_inference_completions_cost": 3.96e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452745-yAm74WAsykWOkTb0ffTm",
+        "object": "chat.completion",
+        "created": 1789452745,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "SambaNova",
+        "system_fingerprint": "fastcoe",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-8971\",\"code\":\"99213\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-8971\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1592,
+          "completion_tokens": 44,
+          "total_tokens": 1636,
+          "cost": 0.000756,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000756,
+            "upstream_inference_prompt_cost": 0.0007164,
+            "upstream_inference_completions_cost": 3.96e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "99213",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8971",
+              "decision": "approve_in_principle",
+              "reason": "Policy is active, claim total is within remaining limit, and line 99213 is covered.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 170,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 170.0,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1674,
+        "output": 103,
+        "cost": 0.00020036,
+        "provider_usage": {
+          "prompt_tokens": 1674,
+          "completion_tokens": 103,
+          "total_tokens": 1777,
+          "cost": 0.00020036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00020036,
+            "upstream_inference_prompt_cost": 0.0001674,
+            "upstream_inference_completions_cost": 3.296e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452746-t0QuyMBcwpd8tjd1MG9a",
+        "object": "chat.completion",
+        "created": 1789452746,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8971\",\"decision\":\"approve_in_principle\",\"reason\":\"Policy is active, claim total is within remaining limit, and line 99213 is covered.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\"],\"lines\":[{\"code\":\"99213\",\"amount\":170,\"status\":\"covered\"}],\"missing\":[],\"approved_total\":170.0,\"refused_total\":0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1674,
+          "completion_tokens": 103,
+          "total_tokens": 1777,
+          "cost": 0.00020036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00020036,
+            "upstream_inference_prompt_cost": 0.0001674,
+            "upstream_inference_completions_cost": 3.296e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8971",
+          "decision": "approve_in_principle",
+          "decision_hash": "98673ecdf5420bbd3c9520ad4ba5c6583f459da0048e16dcd0628bf4da4d5ad3"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8971"
+      },
+      "result": {
+        "claim_id": "CLM-8971",
+        "member_id": "M-3390",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-09-16",
+        "narrative": "Consultation only.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "99213",
+            "amount": 170
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8971"
+      },
+      "result": {
+        "policy_id": "POL-4102",
+        "product": "Shield Basic",
+        "status": "active",
+        "start_date": "2026-01-01",
+        "end_date": "2026-12-31",
+        "annual_limit": 6000,
+        "used_to_date": 5400,
+        "exclusions": [
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 600.0,
+        "claim_total": 170.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8971",
+        "code": "99213"
+      },
+      "result": {
+        "code": "99213",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8971"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8971",
+          "decision": "approve_in_principle",
+          "reason": "Policy is active, claim total is within remaining limit, and line 99213 is covered.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 170,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 170.0,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8971",
+        "decision": "approve_in_principle",
+        "decision_hash": "98673ecdf5420bbd3c9520ad4ba5c6583f459da0048e16dcd0628bf4da4d5ad3"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 7363,
+  "tokens_out": 215,
+  "cost_usd": 0.0017493640000000002,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 20.1345,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

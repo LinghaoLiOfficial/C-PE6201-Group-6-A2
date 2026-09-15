@@ -1,0 +1,613 @@
+{
+  "case_id": "CLM-9303",
+  "record": {
+    "case_id": "CLM-9303",
+    "decision": "approve_in_principle",
+    "reason": "Claim CLM-9303 for member M-2214 approved. Code 47120 (amount SGD 1500.01) is covered under active policy POL-3310 (Shield Plus), not excluded, requires no preauthorisation, and all required documents are present. Hospital H-114 (Riverside General, SG) is panel. Policy has sufficient remaining balance (SGD 9200.00 remaining of SGD 12000.00 annual limit). Service date 2026-08-20 is within policy period 2026-04-01 to 2027-03-31.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "47120",
+        "amount": 1500.01,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 1500.01,
+    "refused_total": 0.0,
+    "turns": 4,
+    "tokens_in": 6658,
+    "tokens_out": 562,
+    "cost_usd": 0.009468,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:19:18.272004+00:00",
+    "decision_hash": "9ae3e7f7d70ae20e23b570f12783019a13c2f73d95336e2b29224b27119cb961"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9303"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1420,
+        "output": 59,
+        "cost": 0.001715,
+        "provider_usage": {
+          "prompt_tokens": 1420,
+          "completion_tokens": 59,
+          "total_tokens": 1479,
+          "cost": 0.001715,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001715,
+            "upstream_inference_prompt_cost": 0.00142,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453148-iDJSDNAcfRWDr4EqlVi3",
+        "object": "chat.completion",
+        "created": 1789453148,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9303\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1420,
+          "completion_tokens": 59,
+          "total_tokens": 1479,
+          "cost": 0.001715,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001715,
+            "upstream_inference_prompt_cost": 0.00142,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9303",
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-08-20",
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1500.01
+            }
+          ],
+          "narrative": "Corrected amount for my treatment.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9303"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9303"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1567,
+        "output": 100,
+        "cost": 0.002067,
+        "provider_usage": {
+          "prompt_tokens": 1567,
+          "completion_tokens": 100,
+          "total_tokens": 1667,
+          "cost": 0.002067,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002067,
+            "upstream_inference_prompt_cost": 0.001567,
+            "upstream_inference_completions_cost": 0.0005
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453151-IUuqVHsX1FtH6Uel2o3y",
+        "object": "chat.completion",
+        "created": 1789453151,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9303\"\n      }\n    },\n    {\n      \"tool\": \"get_hospital_status\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9303\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1567,
+          "completion_tokens": 100,
+          "total_tokens": 1667,
+          "cost": 0.002067,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002067,
+            "upstream_inference_prompt_cost": 0.001567,
+            "upstream_inference_completions_cost": 0.0005
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 1500.01,
+          "policy_trigger": null
+        },
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9303",
+            "code": "47120"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1795,
+        "output": 68,
+        "cost": 0.002135,
+        "provider_usage": {
+          "prompt_tokens": 1795,
+          "completion_tokens": 68,
+          "total_tokens": 1863,
+          "cost": 0.002135,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002135,
+            "upstream_inference_prompt_cost": 0.001795,
+            "upstream_inference_completions_cost": 0.00034
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453153-kQ5QcQiWSOhJuKolGhKG",
+        "object": "chat.completion",
+        "created": 1789453153,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"check_coverage\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9303\",\n        \"code\": \"47120\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1795,
+          "completion_tokens": 68,
+          "total_tokens": 1863,
+          "cost": 0.002135,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002135,
+            "upstream_inference_prompt_cost": 0.001795,
+            "upstream_inference_completions_cost": 0.00034
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "47120",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9303",
+              "decision": "approve_in_principle",
+              "reason": "Claim CLM-9303 for member M-2214 approved. Code 47120 (amount SGD 1500.01) is covered under active policy POL-3310 (Shield Plus), not excluded, requires no preauthorisation, and all required documents are present. Hospital H-114 (Riverside General, SG) is panel. Policy has sufficient remaining balance (SGD 9200.00 remaining of SGD 12000.00 annual limit). Service date 2026-08-20 is within policy period 2026-04-01 to 2027-03-31.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "47120",
+                  "amount": 1500.01,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 1500.01,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1876,
+        "output": 335,
+        "cost": 0.003551,
+        "provider_usage": {
+          "prompt_tokens": 1876,
+          "completion_tokens": 335,
+          "total_tokens": 2211,
+          "cost": 0.003551,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003551,
+            "upstream_inference_prompt_cost": 0.001876,
+            "upstream_inference_completions_cost": 0.001675
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453154-ybWRh5HDqkLitPVH8gn5",
+        "object": "chat.completion",
+        "created": 1789453154,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-9303\",\n          \"decision\": \"approve_in_principle\",\n          \"reason\": \"Claim CLM-9303 for member M-2214 approved. Code 47120 (amount SGD 1500.01) is covered under active policy POL-3310 (Shield Plus), not excluded, requires no preauthorisation, and all required documents are present. Hospital H-114 (Riverside General, SG) is panel. Policy has sufficient remaining balance (SGD 9200.00 remaining of SGD 12000.00 annual limit). Service date 2026-08-20 is within policy period 2026-04-01 to 2027-03-31.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\",\n            \"obs-3\",\n            \"obs-4\"\n          ],\n          \"lines\": [\n            {\n              \"code\": \"47120\",\n              \"amount\": 1500.01,\n              \"status\": \"covered\"\n            }\n          ],\n          \"missing\": [],\n          \"approved_total\": 1500.01,\n          \"refused_total\": 0.00\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1876,
+          "completion_tokens": 335,
+          "total_tokens": 2211,
+          "cost": 0.003551,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003551,
+            "upstream_inference_prompt_cost": 0.001876,
+            "upstream_inference_completions_cost": 0.001675
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9303",
+          "decision": "approve_in_principle",
+          "decision_hash": "9ae3e7f7d70ae20e23b570f12783019a13c2f73d95336e2b29224b27119cb961"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9303"
+      },
+      "result": {
+        "claim_id": "CLM-9303",
+        "member_id": "M-2214",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-08-20",
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 1500.01
+          }
+        ],
+        "narrative": "Corrected amount for my treatment.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9303"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 1500.01,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9303"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9303",
+        "code": "47120"
+      },
+      "result": {
+        "code": "47120",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9303",
+          "decision": "approve_in_principle",
+          "reason": "Claim CLM-9303 for member M-2214 approved. Code 47120 (amount SGD 1500.01) is covered under active policy POL-3310 (Shield Plus), not excluded, requires no preauthorisation, and all required documents are present. Hospital H-114 (Riverside General, SG) is panel. Policy has sufficient remaining balance (SGD 9200.00 remaining of SGD 12000.00 annual limit). Service date 2026-08-20 is within policy period 2026-04-01 to 2027-03-31.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1500.01,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 1500.01,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9303",
+        "decision": "approve_in_principle",
+        "decision_hash": "9ae3e7f7d70ae20e23b570f12783019a13c2f73d95336e2b29224b27119cb961"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6658,
+  "tokens_out": 562,
+  "cost_usd": 0.009468,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 9.8119,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

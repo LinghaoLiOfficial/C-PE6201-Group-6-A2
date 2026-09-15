@@ -18,4 +18,5 @@ for name,disabled in [('normal',False),('ablated',True),('restored',False)]:
     r['grade']=grade(r,expected[r['case_id']]);interface[name]=r
 out={'design':'Same injected observation/call policy; normal minus one component; restoration. Loop test measures containment, not successful task completion. All tokens are instrumented character-based estimates, not API charges.','loop':loop,'interface':interface}
 (ROOT/'results/d7_failures.json').write_text(json.dumps(out,indent=2))
+subprocess.run([sys.executable,'scripts/check_guardrail_variants.py'],cwd=ROOT,check=True)
 print('Offline evidence rebuilt.')

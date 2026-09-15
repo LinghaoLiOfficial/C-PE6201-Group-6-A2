@@ -1,0 +1,763 @@
+{
+  "case_id": "CLM-9203",
+  "record": {
+    "case_id": "CLM-9203",
+    "decision": "approve_in_principle",
+    "reason": "Claim CLM-9203 for lumbar spinal fusion (code 62480, $1,800.00) is approved. Member M-2214 holds active policy POL-3310 (Shield Plus) with $9,200.00 remaining annual limit. Code 62480 is covered, not excluded, and requires preauthorisation. Valid preauthorisation PA-5521 exists, valid from 2026-08-01 to 2026-10-31, covering the service date 2026-08-01. Required document discharge_summary is present. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. All eligibility and documentation requirements satisfied.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5"
+    ],
+    "lines": [
+      {
+        "code": "62480",
+        "amount": 1800.0,
+        "status": "covered",
+        "preauth": "PA-5521"
+      }
+    ],
+    "missing": [],
+    "approved_total": 1800.0,
+    "refused_total": 0.0,
+    "turns": 5,
+    "tokens_in": 8678,
+    "tokens_out": 989,
+    "cost_usd": 0.013623,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:18:46.838476+00:00",
+    "decision_hash": "951c79ba167b64ad9831017763d189a4a3ca602af7a6cfe697b3cfc7a010847a"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1420,
+        "output": 59,
+        "cost": 0.001715,
+        "provider_usage": {
+          "prompt_tokens": 1420,
+          "completion_tokens": 59,
+          "total_tokens": 1479,
+          "cost": 0.001715,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001715,
+            "upstream_inference_prompt_cost": 0.00142,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453114-t7dwlxWcRSaIBCgrtybe",
+        "object": "chat.completion",
+        "created": 1789453114,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9203\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1420,
+          "completion_tokens": 59,
+          "total_tokens": 1479,
+          "cost": 0.001715,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001715,
+            "upstream_inference_prompt_cost": 0.00142,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9203",
+          "member_id": "M-2214",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-08-01",
+          "narrative": "Planned lumbar spinal fusion after approval was granted.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "62480",
+              "amount": 1800
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1569,
+        "output": 116,
+        "cost": 0.002149,
+        "provider_usage": {
+          "prompt_tokens": 1569,
+          "completion_tokens": 116,
+          "total_tokens": 1685,
+          "cost": 0.002149,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002149,
+            "upstream_inference_prompt_cost": 0.001569,
+            "upstream_inference_completions_cost": 0.00058
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453115-TVt2kioZqJA3kvdQyEgr",
+        "object": "chat.completion",
+        "created": 1789453115,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim step by step using the ReAct agent approach.\n\n**Turn 1: Get claim (already observed) and lookup policy**\n\nThe claim has been retrieved. Now I need to look up the policy to check eligibility and any policy triggers.\n\n```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9203\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1569,
+          "completion_tokens": 116,
+          "total_tokens": 1685,
+          "cost": 0.002149,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002149,
+            "upstream_inference_prompt_cost": 0.001569,
+            "upstream_inference_completions_cost": 0.00058
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 1800.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9203",
+            "code": "62480"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1728,
+        "output": 376,
+        "cost": 0.003608,
+        "provider_usage": {
+          "prompt_tokens": 1728,
+          "completion_tokens": 376,
+          "total_tokens": 2104,
+          "cost": 0.003608,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003608,
+            "upstream_inference_prompt_cost": 0.001728,
+            "upstream_inference_completions_cost": 0.00188
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453118-vP1BkZdPNUaDgfqHiiBB",
+        "object": "chat.completion",
+        "created": 1789453118,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim systematically using the provided observations and tools.\n\n**Analysis of provided observations:**\n\n1. **get_claim (obs-1)**: Claim CLM-9203 for member M-2214, hospital H-207, service date 2026-08-01. Single line code 62480 for $1,800. No duplicates, no instruction detected. Documents provided: itemised_bill, discharge_summary.\n\n2. **lookup_policy (obs-2)**: Policy POL-3310 (Shield Plus) is active, covers period 2026-04-01 to 2027-03-31. Annual limit $12,000, used to date $2,800, remaining $9,200. Claim total $1,800 fits within remaining balance. No policy_trigger. Exclusions listed are for codes 31255 and 15823 (cosmetic dermatology), not applicable to code 62480.\n\n**Next steps required:**\n- Check coverage for code 62480\n- Get hospital status for H-207\n- Determine if preauthorisation is required for code 62480\n- Validate all documents and preauth status before issuing decision\n\n```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"check_coverage\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9203\",\n        \"code\": \"62480\"\n      }\n    },\n    {\n      \"tool\": \"get_hospital_status\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9203\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1728,
+          "completion_tokens": 376,
+          "total_tokens": 2104,
+          "cost": 0.003608,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003608,
+            "upstream_inference_prompt_cost": 0.001728,
+            "upstream_inference_completions_cost": 0.00188
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [
+            "discharge_summary"
+          ],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-9203",
+            "code": "62480"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1883,
+        "output": 70,
+        "cost": 0.002233,
+        "provider_usage": {
+          "prompt_tokens": 1883,
+          "completion_tokens": 70,
+          "total_tokens": 1953,
+          "cost": 0.002233,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002233,
+            "upstream_inference_prompt_cost": 0.001883,
+            "upstream_inference_completions_cost": 0.00035
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453121-IjoeyK1PfYhisAIp5QaL",
+        "object": "chat.completion",
+        "created": 1789453121,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_preauthorisation\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9203\",\n        \"code\": \"62480\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1883,
+          "completion_tokens": 70,
+          "total_tokens": 1953,
+          "cost": 0.002233,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002233,
+            "upstream_inference_prompt_cost": 0.001883,
+            "upstream_inference_completions_cost": 0.00035
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "candidates": [
+            {
+              "preauth_id": "PA-5521",
+              "member_id": "M-2214",
+              "procedure_code": "62480",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9203",
+              "decision": "approve_in_principle",
+              "reason": "Claim CLM-9203 for lumbar spinal fusion (code 62480, $1,800.00) is approved. Member M-2214 holds active policy POL-3310 (Shield Plus) with $9,200.00 remaining annual limit. Code 62480 is covered, not excluded, and requires preauthorisation. Valid preauthorisation PA-5521 exists, valid from 2026-08-01 to 2026-10-31, covering the service date 2026-08-01. Required document discharge_summary is present. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. All eligibility and documentation requirements satisfied.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5"
+              ],
+              "lines": [
+                {
+                  "code": "62480",
+                  "amount": 1800.0,
+                  "status": "covered",
+                  "preauth": "PA-5521"
+                }
+              ],
+              "missing": [],
+              "approved_total": 1800.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2078,
+        "output": 368,
+        "cost": 0.003918,
+        "provider_usage": {
+          "prompt_tokens": 2078,
+          "completion_tokens": 368,
+          "total_tokens": 2446,
+          "cost": 0.003918,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003918,
+            "upstream_inference_prompt_cost": 0.002078,
+            "upstream_inference_completions_cost": 0.00184
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453123-YUIP2uVZUGxnB6TRbZso",
+        "object": "chat.completion",
+        "created": 1789453123,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-9203\",\n          \"decision\": \"approve_in_principle\",\n          \"reason\": \"Claim CLM-9203 for lumbar spinal fusion (code 62480, $1,800.00) is approved. Member M-2214 holds active policy POL-3310 (Shield Plus) with $9,200.00 remaining annual limit. Code 62480 is covered, not excluded, and requires preauthorisation. Valid preauthorisation PA-5521 exists, valid from 2026-08-01 to 2026-10-31, covering the service date 2026-08-01. Required document discharge_summary is present. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. All eligibility and documentation requirements satisfied.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\",\n            \"obs-3\",\n            \"obs-4\",\n            \"obs-5\"\n          ],\n          \"lines\": [\n            {\n              \"code\": \"62480\",\n              \"amount\": 1800.00,\n              \"status\": \"covered\",\n              \"preauth\": \"PA-5521\"\n            }\n          ],\n          \"missing\": [],\n          \"approved_total\": 1800.00,\n          \"refused_total\": 0.00\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2078,
+          "completion_tokens": 368,
+          "total_tokens": 2446,
+          "cost": 0.003918,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003918,
+            "upstream_inference_prompt_cost": 0.002078,
+            "upstream_inference_completions_cost": 0.00184
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9203",
+          "decision": "approve_in_principle",
+          "decision_hash": "951c79ba167b64ad9831017763d189a4a3ca602af7a6cfe697b3cfc7a010847a"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "claim_id": "CLM-9203",
+        "member_id": "M-2214",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-08-01",
+        "narrative": "Planned lumbar spinal fusion after approval was granted.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "62480",
+            "amount": 1800
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 1800.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9203",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [
+          "discharge_summary"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-9203",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "candidates": [
+          {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          }
+        ],
+        "valid": {
+          "preauth_id": "PA-5521",
+          "member_id": "M-2214",
+          "procedure_code": "62480",
+          "valid_from": "2026-08-01",
+          "valid_to": "2026-10-31",
+          "status": "valid"
+        },
+        "status": "valid"
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9203",
+          "decision": "approve_in_principle",
+          "reason": "Claim CLM-9203 for lumbar spinal fusion (code 62480, $1,800.00) is approved. Member M-2214 holds active policy POL-3310 (Shield Plus) with $9,200.00 remaining annual limit. Code 62480 is covered, not excluded, and requires preauthorisation. Valid preauthorisation PA-5521 exists, valid from 2026-08-01 to 2026-10-31, covering the service date 2026-08-01. Required document discharge_summary is present. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. All eligibility and documentation requirements satisfied.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5"
+          ],
+          "lines": [
+            {
+              "code": "62480",
+              "amount": 1800.0,
+              "status": "covered",
+              "preauth": "PA-5521"
+            }
+          ],
+          "missing": [],
+          "approved_total": 1800.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9203",
+        "decision": "approve_in_principle",
+        "decision_hash": "951c79ba167b64ad9831017763d189a4a3ca602af7a6cfe697b3cfc7a010847a"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 8678,
+  "tokens_out": 989,
+  "cost_usd": 0.013623,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 12.3907,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

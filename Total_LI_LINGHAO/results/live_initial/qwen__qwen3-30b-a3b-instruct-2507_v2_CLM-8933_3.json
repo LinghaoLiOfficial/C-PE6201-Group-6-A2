@@ -1,0 +1,545 @@
+{
+  "case_id": "CLM-8933",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8933"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1276,
+        "output": 23,
+        "cost": 0.0001345,
+        "provider_usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452908-tONKo9JBkhfg4T5mZse6",
+        "object": "chat.completion",
+        "created": 1789452908,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-8933\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8933",
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-08-20",
+          "narrative": "Resubmitting my August appendix claim, I do not think it was received.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1500
+            }
+          ],
+          "duplicates": [
+            {
+              "claim_id": "CLM-8710",
+              "decision": "approve_in_principle",
+              "decided_on": "2026-08-22",
+              "matched_fields": [
+                "member_id",
+                "hospital_id",
+                "date_of_service",
+                "lines"
+              ]
+            }
+          ],
+          "duplicate": {
+            "claim_id": "CLM-8710",
+            "decision": "approve_in_principle",
+            "decided_on": "2026-08-22",
+            "matched_fields": [
+              "member_id",
+              "hospital_id",
+              "date_of_service",
+              "lines"
+            ]
+          },
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8933"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1553,
+        "output": 23,
+        "cost": 7.92171e-05,
+        "provider_usage": {
+          "prompt_tokens": 1553,
+          "completion_tokens": 23,
+          "total_tokens": 1576,
+          "cost": 7.92171e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1255,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.92171e-05,
+            "upstream_inference_prompt_cost": 7.477695e-05,
+            "upstream_inference_completions_cost": 4.44015e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452909-hNgPo8fHC2KPRAAItLnn",
+        "object": "chat.completion",
+        "created": 1789452909,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-8933\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1553,
+          "completion_tokens": 23,
+          "total_tokens": 1576,
+          "cost": 7.92171e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1255,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.92171e-05,
+            "upstream_inference_prompt_cost": 7.477695e-05,
+            "upstream_inference_completions_cost": 4.44015e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 1500.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8933",
+              "decision": "escalate",
+              "reason": "Duplicate claim detected. Claim CLM-8710 was previously approved on 2026-08-22 for the same member, hospital, service date, and line code. The current claim is a resubmission of the same service and must be escalated.",
+              "evidence": [
+                "obs-1"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0,
+              "trigger": "duplicate",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1721,
+        "output": 129,
+        "cost": 0.0002108,
+        "provider_usage": {
+          "prompt_tokens": 1721,
+          "completion_tokens": 129,
+          "total_tokens": 1850,
+          "cost": 0.0002108,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002108,
+            "upstream_inference_prompt_cost": 0.0001721,
+            "upstream_inference_completions_cost": 3.87e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452911-tSF0j0beVxpB6ktqLLLo",
+        "object": "chat.completion",
+        "created": 1789452911,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8933\",\"decision\":\"escalate\",\"reason\":\"Duplicate claim detected. Claim CLM-8710 was previously approved on 2026-08-22 for the same member, hospital, service date, and line code. The current claim is a resubmission of the same service and must be escalated.\",\"evidence\":[\"obs-1\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":0,\"trigger\":\"duplicate\",\"escalate_to\":\"human claims assessor\"}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1721,
+          "completion_tokens": 129,
+          "total_tokens": 1850,
+          "cost": 0.0002108,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002108,
+            "upstream_inference_prompt_cost": 0.0001721,
+            "upstream_inference_completions_cost": 3.87e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: invalid_escalation"
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8933",
+              "decision": "escalate",
+              "reason": "Duplicate claim detected. Claim CLM-8710 was previously approved on 2026-08-22 for the same member, hospital, service date, and line code. The current claim is a resubmission of the same service and must be escalated.",
+              "evidence": [
+                "obs-1"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0,
+              "trigger": "duplicate",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1901,
+        "output": 129,
+        "cost": 0.00020979,
+        "provider_usage": {
+          "prompt_tokens": 1901,
+          "completion_tokens": 129,
+          "total_tokens": 2030,
+          "cost": 0.00020979,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00020979,
+            "upstream_inference_prompt_cost": 0.00017109,
+            "upstream_inference_completions_cost": 3.87e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452915-EgZ5LHPMd4hLahJ1plib",
+        "object": "chat.completion",
+        "created": 1789452915,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "DekaLLM",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8933\",\"decision\":\"escalate\",\"reason\":\"Duplicate claim detected. Claim CLM-8710 was previously approved on 2026-08-22 for the same member, hospital, service date, and line code. The current claim is a resubmission of the same service and must be escalated.\",\"evidence\":[\"obs-1\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":0,\"trigger\":\"duplicate\",\"escalate_to\":\"human claims assessor\"}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1901,
+          "completion_tokens": 129,
+          "total_tokens": 2030,
+          "cost": 0.00020979,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00020979,
+            "upstream_inference_prompt_cost": 0.00017109,
+            "upstream_inference_completions_cost": 3.87e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: repeated action blocked"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8933"
+      },
+      "result": {
+        "claim_id": "CLM-8933",
+        "member_id": "M-2214",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-08-20",
+        "narrative": "Resubmitting my August appendix claim, I do not think it was received.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 1500
+          }
+        ],
+        "duplicates": [
+          {
+            "claim_id": "CLM-8710",
+            "decision": "approve_in_principle",
+            "decided_on": "2026-08-22",
+            "matched_fields": [
+              "member_id",
+              "hospital_id",
+              "date_of_service",
+              "lines"
+            ]
+          }
+        ],
+        "duplicate": {
+          "claim_id": "CLM-8710",
+          "decision": "approve_in_principle",
+          "decided_on": "2026-08-22",
+          "matched_fields": [
+            "member_id",
+            "hospital_id",
+            "date_of_service",
+            "lines"
+          ]
+        },
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8933"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 1500.0,
+        "policy_trigger": null
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6451,
+  "tokens_out": 304,
+  "cost_usd": 0.0006343071,
+  "stop": "duplicate_action",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 8.2975,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "trial": 3,
+  "negative": true,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: duplicate_action"
+    ],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

@@ -1,0 +1,593 @@
+{
+  "case_id": "CLM-8850",
+  "record": {
+    "case_id": "CLM-8850",
+    "decision": "approve_in_principle",
+    "reason": "The claim is approved as the service code is covered by the policy and does not require pre-authorization. The hospital is also on the panel.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "99213",
+        "amount": 180,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 180.0,
+    "refused_total": 0.0,
+    "turns": 4,
+    "tokens_in": 6471,
+    "tokens_out": 276,
+    "cost_usd": 0.0007574999999999999,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:19:32.156645+00:00",
+    "decision_hash": "bc5731dd418484bb0b1bc9fdef5f0818c5e1334b028f10aa214b44a3e4feae98"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1404,
+        "output": 28,
+        "cost": 0.0001516,
+        "provider_usage": {
+          "prompt_tokens": 1404,
+          "completion_tokens": 28,
+          "total_tokens": 1432,
+          "cost": 0.0001516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001516,
+            "upstream_inference_prompt_cost": 0.0001404,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453167-bAZy4kFO76bzWv6MtVsv",
+        "object": "chat.completion",
+        "created": 1789453167,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_claim\", \"arguments\": {\"claim_id\": \"CLM-8850\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1404,
+          "completion_tokens": 28,
+          "total_tokens": 1432,
+          "cost": 0.0001516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001516,
+            "upstream_inference_prompt_cost": 0.0001404,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8850",
+          "member_id": "M-5502",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-09-04",
+          "narrative": "Routine consultation after a fall.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 180
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1553,
+        "output": 28,
+        "cost": 0.0001665,
+        "provider_usage": {
+          "prompt_tokens": 1553,
+          "completion_tokens": 28,
+          "total_tokens": 1581,
+          "cost": 0.0001665,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001665,
+            "upstream_inference_prompt_cost": 0.0001553,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453168-WL8gMfQCUSRezP1BeWgr",
+        "object": "chat.completion",
+        "created": 1789453168,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"lookup_policy\", \"arguments\": {\"claim_id\": \"CLM-8850\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1553,
+          "completion_tokens": 28,
+          "total_tokens": 1581,
+          "cost": 0.0001665,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001665,
+            "upstream_inference_prompt_cost": 0.0001553,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 180.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8850",
+            "code": "99213"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8850"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1680,
+        "output": 65,
+        "cost": 0.000194,
+        "provider_usage": {
+          "prompt_tokens": 1680,
+          "completion_tokens": 65,
+          "total_tokens": 1745,
+          "cost": 0.000194,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000194,
+            "upstream_inference_prompt_cost": 0.000168,
+            "upstream_inference_completions_cost": 2.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453169-vd2EAgfSUZ2WYT28paIK",
+        "object": "chat.completion",
+        "created": 1789453169,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8850\", \"code\": \"99213\"}}, {\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-8850\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1680,
+          "completion_tokens": 65,
+          "total_tokens": 1745,
+          "cost": 0.000194,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.000194,
+            "upstream_inference_prompt_cost": 0.000168,
+            "upstream_inference_completions_cost": 2.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "99213",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8850",
+              "decision": "approve_in_principle",
+              "reason": "The claim is approved as the service code is covered by the policy and does not require pre-authorization. The hospital is also on the panel.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 180.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1834,
+        "output": 155,
+        "cost": 0.0002454,
+        "provider_usage": {
+          "prompt_tokens": 1834,
+          "completion_tokens": 155,
+          "total_tokens": 1989,
+          "cost": 0.0002454,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002454,
+            "upstream_inference_prompt_cost": 0.0001834,
+            "upstream_inference_completions_cost": 6.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453170-UuJDVbvpbGzlwpSD1BkP",
+        "object": "chat.completion",
+        "created": 1789453170,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"issue_decision_letter\", \"arguments\": {\"decision\": {\"case_id\": \"CLM-8850\", \"decision\": \"approve_in_principle\", \"reason\": \"The claim is approved as the service code is covered by the policy and does not require pre-authorization. The hospital is also on the panel.\", \"evidence\": [\"obs-1\", \"obs-2\", \"obs-3\", \"obs-4\"], \"lines\": [{\"code\": \"99213\", \"amount\": 180, \"status\": \"covered\"}], \"missing\": [], \"approved_total\": 180.0, \"refused_total\": 0.0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1834,
+          "completion_tokens": 155,
+          "total_tokens": 1989,
+          "cost": 0.0002454,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002454,
+            "upstream_inference_prompt_cost": 0.0001834,
+            "upstream_inference_completions_cost": 6.2e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8850",
+          "decision": "approve_in_principle",
+          "decision_hash": "bc5731dd418484bb0b1bc9fdef5f0818c5e1334b028f10aa214b44a3e4feae98"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8850"
+      },
+      "result": {
+        "claim_id": "CLM-8850",
+        "member_id": "M-5502",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-09-04",
+        "narrative": "Routine consultation after a fall.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "99213",
+            "amount": 180
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8850"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 180.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8850",
+        "code": "99213"
+      },
+      "result": {
+        "code": "99213",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8850"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8850",
+          "decision": "approve_in_principle",
+          "reason": "The claim is approved as the service code is covered by the policy and does not require pre-authorization. The hospital is also on the panel.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 180,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 180.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8850",
+        "decision": "approve_in_principle",
+        "decision_hash": "bc5731dd418484bb0b1bc9fdef5f0818c5e1334b028f10aa214b44a3e4feae98"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6471,
+  "tokens_out": 276,
+  "cost_usd": 0.0007574999999999999,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 4.5674,
+  "variant": "v1",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "google/gemini-2.5-flash-lite",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

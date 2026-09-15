@@ -1,0 +1,1040 @@
+{
+  "case_id": "CLM-9312",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9312"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1353,
+        "output": 21,
+        "cost": 0.00011955,
+        "provider_usage": {
+          "prompt_tokens": 1353,
+          "completion_tokens": 21,
+          "total_tokens": 1374,
+          "cost": 0.00011955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00011955,
+            "upstream_inference_prompt_cost": 0.00010695,
+            "upstream_inference_completions_cost": 1.26e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454016-OFeTq74S8jt7tgDQQG2E",
+        "object": "chat.completion",
+        "created": 1789454016,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_0bf9805b5a",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9312\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1353,
+          "completion_tokens": 21,
+          "total_tokens": 1374,
+          "cost": 0.00011955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00011955,
+            "upstream_inference_prompt_cost": 0.00010695,
+            "upstream_inference_completions_cost": 1.26e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9312",
+          "member_id": "M-9901",
+          "hospital_id": "H-451",
+          "date_of_service": "2026-09-12",
+          "lines": [
+            {
+              "code": "62480",
+              "amount": 2000
+            },
+            {
+              "code": "45378",
+              "amount": 900
+            },
+            {
+              "code": "99213",
+              "amount": 120
+            }
+          ],
+          "narrative": "Operation and diagnostic tests at an overseas hospital.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9312"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1536,
+        "output": 21,
+        "cost": 0.0001566,
+        "provider_usage": {
+          "prompt_tokens": 1536,
+          "completion_tokens": 21,
+          "total_tokens": 1557,
+          "cost": 0.0001566,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001566,
+            "upstream_inference_prompt_cost": 0.000144,
+            "upstream_inference_completions_cost": 1.26e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454017-7gOPYsYa1gxI0iPgAIS0",
+        "object": "chat.completion",
+        "created": 1789454017,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_0bf9805b5a",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9312\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1536,
+          "completion_tokens": 21,
+          "total_tokens": 1557,
+          "cost": 0.0001566,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001566,
+            "upstream_inference_prompt_cost": 0.000144,
+            "upstream_inference_completions_cost": 1.26e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 3020.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9312",
+            "code": "62480"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9312",
+            "code": "45378"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9312",
+            "code": "99213"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9312"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1660,
+        "output": 93,
+        "cost": 0.0002184,
+        "provider_usage": {
+          "prompt_tokens": 1660,
+          "completion_tokens": 93,
+          "total_tokens": 1753,
+          "cost": 0.0002184,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002184,
+            "upstream_inference_prompt_cost": 0.0001626,
+            "upstream_inference_completions_cost": 5.58e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454018-3bt0nSzUD2Fhy8VBb2bX",
+        "object": "chat.completion",
+        "created": 1789454018,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9312\",\"code\":\"62480\"}},{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9312\",\"code\":\"45378\"}},{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9312\",\"code\":\"99213\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-9312\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1660,
+          "completion_tokens": 93,
+          "total_tokens": 1753,
+          "cost": 0.0002184,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002184,
+            "upstream_inference_prompt_cost": 0.0001626,
+            "upstream_inference_completions_cost": 5.58e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [
+            "discharge_summary"
+          ],
+          "missing_documents": []
+        },
+        {
+          "code": "45378",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [
+            "itemised_bill"
+          ],
+          "missing_documents": []
+        },
+        {
+          "code": "99213",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-451",
+          "name": "Penang Medical",
+          "panel": false,
+          "country": "MY"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-9312",
+            "code": "62480"
+          }
+        }
+      ],
+      "usage": {
+        "input": 2075,
+        "output": 30,
+        "cost": 0.00023325,
+        "provider_usage": {
+          "prompt_tokens": 2075,
+          "completion_tokens": 30,
+          "total_tokens": 2105,
+          "cost": 0.00023325,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00023325,
+            "upstream_inference_prompt_cost": 0.00021525,
+            "upstream_inference_completions_cost": 1.8e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454021-dhuuCwUBblszBH12dSHZ",
+        "object": "chat.completion",
+        "created": 1789454021,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_preauthorisation\",\"arguments\":{\"claim_id\":\"CLM-9312\",\"code\":\"62480\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2075,
+          "completion_tokens": 30,
+          "total_tokens": 2105,
+          "cost": 0.00023325,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00023325,
+            "upstream_inference_prompt_cost": 0.00021525,
+            "upstream_inference_completions_cost": 1.8e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "candidates": [
+            {
+              "preauth_id": "PA-9902",
+              "member_id": "M-9901",
+              "procedure_code": "62480",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-9902",
+            "member_id": "M-9901",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9312",
+              "decision": "request_document",
+              "reason": "The claim requires the itemised bill for code 45378 and the discharge summary for code 62480 to proceed with the assessment.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5",
+                "obs-6",
+                "obs-7"
+              ],
+              "lines": [
+                {
+                  "code": "62480",
+                  "amount": 2000,
+                  "status": "covered"
+                },
+                {
+                  "code": "45378",
+                  "amount": 900,
+                  "status": "unresolved"
+                },
+                {
+                  "code": "99213",
+                  "amount": 120,
+                  "status": "covered"
+                }
+              ],
+              "missing": [
+                {
+                  "code": "45378",
+                  "document": "itemised_bill",
+                  "date": "2026-09-12"
+                },
+                {
+                  "code": "62480",
+                  "document": "discharge_summary",
+                  "date": "2026-09-12"
+                }
+              ],
+              "approved_total": 2120,
+              "refused_total": 900
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2289,
+        "output": 193,
+        "cost": 0.00037275,
+        "provider_usage": {
+          "prompt_tokens": 2289,
+          "completion_tokens": 193,
+          "total_tokens": 2482,
+          "cost": 0.00037275,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00037275,
+            "upstream_inference_prompt_cost": 0.00025695,
+            "upstream_inference_completions_cost": 0.0001158
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454023-RgQ6i95fHbTaY9xtI53U",
+        "object": "chat.completion",
+        "created": 1789454023,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9312\",\"decision\":\"request_document\",\"reason\":\"The claim requires the itemised bill for code 45378 and the discharge summary for code 62480 to proceed with the assessment.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\",\"obs-5\",\"obs-6\",\"obs-7\"],\"lines\":[{\"code\":\"62480\",\"amount\":2000,\"status\":\"covered\"},{\"code\":\"45378\",\"amount\":900,\"status\":\"unresolved\"},{\"code\":\"99213\",\"amount\":120,\"status\":\"covered\"}],\"missing\":[{\"code\":\"45378\",\"document\":\"itemised_bill\",\"date\":\"2026-09-12\"},{\"code\":\"62480\",\"document\":\"discharge_summary\",\"date\":\"2026-09-12\"}],\"approved_total\":2120,\"refused_total\":900}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2289,
+          "completion_tokens": 193,
+          "total_tokens": 2482,
+          "cost": 0.00037275,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00037275,
+            "upstream_inference_prompt_cost": 0.00025695,
+            "upstream_inference_completions_cost": 0.0001158
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: incorrect_missing_items: each item requires code, document and service date; use document=preauthorisation for authorisation requests; exclude documents for excluded lines"
+    },
+    {
+      "turn": 6,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9312",
+              "decision": "request_document",
+              "reason": "The claim requires the itemised bill for code 45378 and the discharge summary for code 62480 to proceed with the assessment.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5",
+                "obs-6",
+                "obs-7"
+              ],
+              "lines": [
+                {
+                  "code": "62480",
+                  "amount": 2000,
+                  "status": "covered",
+                  "preauth": "PA-9902"
+                },
+                {
+                  "code": "45378",
+                  "amount": 900,
+                  "status": "unresolved"
+                },
+                {
+                  "code": "99213",
+                  "amount": 120,
+                  "status": "covered"
+                }
+              ],
+              "missing": [
+                {
+                  "code": "45378",
+                  "document": "itemised_bill",
+                  "date": "2026-09-12"
+                },
+                {
+                  "code": "62480",
+                  "document": "discharge_summary",
+                  "date": "2026-09-12"
+                }
+              ],
+              "approved_total": 2120,
+              "refused_total": 900
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2589,
+        "output": 202,
+        "cost": 0.00042315,
+        "provider_usage": {
+          "prompt_tokens": 2589,
+          "completion_tokens": 202,
+          "total_tokens": 2791,
+          "cost": 0.00042315,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00042315,
+            "upstream_inference_prompt_cost": 0.00030195,
+            "upstream_inference_completions_cost": 0.0001212
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454027-j1arW6xGw63o1GSrIiWt",
+        "object": "chat.completion",
+        "created": 1789454027,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9312\",\"decision\":\"request_document\",\"reason\":\"The claim requires the itemised bill for code 45378 and the discharge summary for code 62480 to proceed with the assessment.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\",\"obs-5\",\"obs-6\",\"obs-7\"],\"lines\":[{\"code\":\"62480\",\"amount\":2000,\"status\":\"covered\",\"preauth\":\"PA-9902\"},{\"code\":\"45378\",\"amount\":900,\"status\":\"unresolved\"},{\"code\":\"99213\",\"amount\":120,\"status\":\"covered\"}],\"missing\":[{\"code\":\"45378\",\"document\":\"itemised_bill\",\"date\":\"2026-09-12\"},{\"code\":\"62480\",\"document\":\"discharge_summary\",\"date\":\"2026-09-12\"}],\"approved_total\":2120,\"refused_total\":900}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2589,
+          "completion_tokens": 202,
+          "total_tokens": 2791,
+          "cost": 0.00042315,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00042315,
+            "upstream_inference_prompt_cost": 0.00030195,
+            "upstream_inference_completions_cost": 0.0001212
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: incorrect_missing_items: each item requires code, document and service date; use document=preauthorisation for authorisation requests; exclude documents for excluded lines"
+    },
+    {
+      "turn": 7,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9312",
+              "decision": "request_document",
+              "reason": "The claim requires the itemised bill for code 45378 and the discharge summary for code 62480 to proceed with the assessment.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5",
+                "obs-6",
+                "obs-7"
+              ],
+              "lines": [
+                {
+                  "code": "62480",
+                  "amount": 2000,
+                  "status": "covered",
+                  "preauth": "PA-9902"
+                },
+                {
+                  "code": "45378",
+                  "amount": 900,
+                  "status": "unresolved"
+                },
+                {
+                  "code": "99213",
+                  "amount": 120,
+                  "status": "covered"
+                }
+              ],
+              "missing": [
+                {
+                  "code": "45378",
+                  "document": "itemised_bill",
+                  "date": "2026-09-12"
+                },
+                {
+                  "code": "62480",
+                  "document": "discharge_summary",
+                  "date": "2026-09-12"
+                }
+              ],
+              "approved_total": 2120,
+              "refused_total": 900
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2900,
+        "output": 202,
+        "cost": 0.0003642,
+        "provider_usage": {
+          "prompt_tokens": 2900,
+          "completion_tokens": 202,
+          "total_tokens": 3102,
+          "cost": 0.0003642,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 2560,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0003642,
+            "upstream_inference_prompt_cost": 0.000243,
+            "upstream_inference_completions_cost": 0.0001212
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454033-rTY2OE3P0NETO2pyIATx",
+        "object": "chat.completion",
+        "created": 1789454033,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9312\",\"decision\":\"request_document\",\"reason\":\"The claim requires the itemised bill for code 45378 and the discharge summary for code 62480 to proceed with the assessment.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\",\"obs-5\",\"obs-6\",\"obs-7\"],\"lines\":[{\"code\":\"62480\",\"amount\":2000,\"status\":\"covered\",\"preauth\":\"PA-9902\"},{\"code\":\"45378\",\"amount\":900,\"status\":\"unresolved\"},{\"code\":\"99213\",\"amount\":120,\"status\":\"covered\"}],\"missing\":[{\"code\":\"45378\",\"document\":\"itemised_bill\",\"date\":\"2026-09-12\"},{\"code\":\"62480\",\"document\":\"discharge_summary\",\"date\":\"2026-09-12\"}],\"approved_total\":2120,\"refused_total\":900}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2900,
+          "completion_tokens": 202,
+          "total_tokens": 3102,
+          "cost": 0.0003642,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 2560,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0003642,
+            "upstream_inference_prompt_cost": 0.000243,
+            "upstream_inference_completions_cost": 0.0001212
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: repeated action blocked"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9312"
+      },
+      "result": {
+        "claim_id": "CLM-9312",
+        "member_id": "M-9901",
+        "hospital_id": "H-451",
+        "date_of_service": "2026-09-12",
+        "lines": [
+          {
+            "code": "62480",
+            "amount": 2000
+          },
+          {
+            "code": "45378",
+            "amount": 900
+          },
+          {
+            "code": "99213",
+            "amount": 120
+          }
+        ],
+        "narrative": "Operation and diagnostic tests at an overseas hospital.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9312"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 3020.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9312",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [
+          "discharge_summary"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9312",
+        "code": "45378"
+      },
+      "result": {
+        "code": "45378",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [
+          "itemised_bill"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9312",
+        "code": "99213"
+      },
+      "result": {
+        "code": "99213",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9312"
+      },
+      "result": {
+        "hospital_id": "H-451",
+        "name": "Penang Medical",
+        "panel": false,
+        "country": "MY"
+      }
+    },
+    {
+      "id": "obs-7",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-9312",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "candidates": [
+          {
+            "preauth_id": "PA-9902",
+            "member_id": "M-9901",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          }
+        ],
+        "valid": {
+          "preauth_id": "PA-9902",
+          "member_id": "M-9901",
+          "procedure_code": "62480",
+          "valid_from": "2026-08-01",
+          "valid_to": "2026-10-31",
+          "status": "valid"
+        },
+        "status": "valid"
+      }
+    }
+  ],
+  "turns": 7,
+  "tokens_in": 14402,
+  "tokens_out": 762,
+  "cost_usd": 0.0018879,
+  "stop": "duplicate_action",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 22.0474,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "openai/gpt-4o-mini",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: duplicate_action"
+    ],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

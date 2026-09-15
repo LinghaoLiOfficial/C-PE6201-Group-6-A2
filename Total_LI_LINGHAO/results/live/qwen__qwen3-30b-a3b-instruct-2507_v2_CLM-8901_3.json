@@ -1,0 +1,702 @@
+{
+  "case_id": "CLM-8901",
+  "record": {
+    "case_id": "CLM-8901",
+    "decision": "request_document",
+    "reason": "The claim line code 45378 requires an itemised bill, which is missing. No preauthorisation is required as the service does not require it per policy. The hospital is in the panel, and the policy is active with sufficient remaining limit. The claim is otherwise eligible, but documentation is pending.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "45378",
+        "amount": 1150,
+        "status": "unresolved"
+      }
+    ],
+    "missing": [
+      {
+        "code": "45378",
+        "document": "itemised_bill",
+        "date": "2026-09-10"
+      }
+    ],
+    "approved_total": 0,
+    "refused_total": 0,
+    "turns": 5,
+    "tokens_in": 8390,
+    "tokens_out": 312,
+    "cost_usd": 0.0005895741,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:36:28.792964+00:00",
+    "decision_hash": "ca091950d23224915b761026f6e8cee9115df500878200d318c5bdcec4d7c462"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8901"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1357,
+        "output": 23,
+        "cost": 0.00012903,
+        "provider_usage": {
+          "prompt_tokens": 1357,
+          "completion_tokens": 23,
+          "total_tokens": 1380,
+          "cost": 0.00012903,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012903,
+            "upstream_inference_prompt_cost": 0.00012213,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454179-qzi09WXfvMgk4XozFe1c",
+        "object": "chat.completion",
+        "created": 1789454179,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "DekaLLM",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-8901\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1357,
+          "completion_tokens": 23,
+          "total_tokens": 1380,
+          "cost": 0.00012903,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012903,
+            "upstream_inference_prompt_cost": 0.00012213,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8901",
+          "member_id": "M-5502",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-10",
+          "narrative": "Colonoscopy, day procedure.",
+          "documents": [],
+          "lines": [
+            {
+              "code": "45378",
+              "amount": 1150
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8901"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1521,
+        "output": 23,
+        "cost": 0.00014379,
+        "provider_usage": {
+          "prompt_tokens": 1521,
+          "completion_tokens": 23,
+          "total_tokens": 1544,
+          "cost": 0.00014379,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014379,
+            "upstream_inference_prompt_cost": 0.00013689,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454179-ICuU1kuT9TKIoGPxfH88",
+        "object": "chat.completion",
+        "created": 1789454179,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "DekaLLM",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-8901\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1521,
+          "completion_tokens": 23,
+          "total_tokens": 1544,
+          "cost": 0.00014379,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00014379,
+            "upstream_inference_prompt_cost": 0.00013689,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 1150.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8901",
+            "code": "45378"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8901"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1668,
+        "output": 52,
+        "cost": 9.03528e-05,
+        "provider_usage": {
+          "prompt_tokens": 1668,
+          "completion_tokens": 52,
+          "total_tokens": 1720,
+          "cost": 9.03528e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1306,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.03528e-05,
+            "upstream_inference_prompt_cost": 8.03142e-05,
+            "upstream_inference_completions_cost": 1.00386e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454180-3C9zSH1ix1a0y2VrzxiC",
+        "object": "chat.completion",
+        "created": 1789454180,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-8901\",\"code\":\"45378\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-8901\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1668,
+          "completion_tokens": 52,
+          "total_tokens": 1720,
+          "cost": 9.03528e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1306,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.03528e-05,
+            "upstream_inference_prompt_cost": 8.03142e-05,
+            "upstream_inference_completions_cost": 1.00386e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "45378",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [
+            "itemised_bill"
+          ],
+          "missing_documents": [
+            "itemised_bill"
+          ]
+        },
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-8901",
+            "code": "45378"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1887,
+        "output": 33,
+        "cost": 9.72297e-05,
+        "provider_usage": {
+          "prompt_tokens": 1887,
+          "completion_tokens": 33,
+          "total_tokens": 1920,
+          "cost": 9.72297e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1333,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.72297e-05,
+            "upstream_inference_prompt_cost": 9.085905e-05,
+            "upstream_inference_completions_cost": 6.37065e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454182-XaGJtj1P5AGrtSIJGjEj",
+        "object": "chat.completion",
+        "created": 1789454182,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_preauthorisation\",\"arguments\":{\"claim_id\":\"CLM-8901\",\"code\":\"45378\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1887,
+          "completion_tokens": 33,
+          "total_tokens": 1920,
+          "cost": 9.72297e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1333,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.72297e-05,
+            "upstream_inference_prompt_cost": 9.085905e-05,
+            "upstream_inference_completions_cost": 6.37065e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: preauth_not_required"
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8901",
+              "decision": "request_document",
+              "reason": "The claim line code 45378 requires an itemised bill, which is missing. No preauthorisation is required as the service does not require it per policy. The hospital is in the panel, and the policy is active with sufficient remaining limit. The claim is otherwise eligible, but documentation is pending.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "45378",
+                  "amount": 1150,
+                  "status": "unresolved"
+                }
+              ],
+              "missing": [
+                {
+                  "code": "45378",
+                  "document": "itemised_bill",
+                  "date": "2026-09-10"
+                }
+              ],
+              "approved_total": 0,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1957,
+        "output": 181,
+        "cost": 0.0001291716,
+        "provider_usage": {
+          "prompt_tokens": 1957,
+          "completion_tokens": 181,
+          "total_tokens": 2138,
+          "cost": 0.0001291716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1880,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001291716,
+            "upstream_inference_prompt_cost": 9.422955e-05,
+            "upstream_inference_completions_cost": 3.494205e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454185-oK5YGi5noILicjK87YSQ",
+        "object": "chat.completion",
+        "created": 1789454185,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8901\",\"decision\":\"request_document\",\"reason\":\"The claim line code 45378 requires an itemised bill, which is missing. No preauthorisation is required as the service does not require it per policy. The hospital is in the panel, and the policy is active with sufficient remaining limit. The claim is otherwise eligible, but documentation is pending.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\"],\"lines\":[{\"code\":\"45378\",\"amount\":1150,\"status\":\"unresolved\"}],\"missing\":[{\"code\":\"45378\",\"document\":\"itemised_bill\",\"date\":\"2026-09-10\"}],\"approved_total\":0,\"refused_total\":0}}}] }",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1957,
+          "completion_tokens": 181,
+          "total_tokens": 2138,
+          "cost": 0.0001291716,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1880,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001291716,
+            "upstream_inference_prompt_cost": 9.422955e-05,
+            "upstream_inference_completions_cost": 3.494205e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8901",
+          "decision": "request_document",
+          "decision_hash": "ca091950d23224915b761026f6e8cee9115df500878200d318c5bdcec4d7c462"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8901"
+      },
+      "result": {
+        "claim_id": "CLM-8901",
+        "member_id": "M-5502",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-10",
+        "narrative": "Colonoscopy, day procedure.",
+        "documents": [],
+        "lines": [
+          {
+            "code": "45378",
+            "amount": 1150
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8901"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 1150.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8901",
+        "code": "45378"
+      },
+      "result": {
+        "code": "45378",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [
+          "itemised_bill"
+        ],
+        "missing_documents": [
+          "itemised_bill"
+        ]
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8901"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8901",
+          "decision": "request_document",
+          "reason": "The claim line code 45378 requires an itemised bill, which is missing. No preauthorisation is required as the service does not require it per policy. The hospital is in the panel, and the policy is active with sufficient remaining limit. The claim is otherwise eligible, but documentation is pending.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "45378",
+              "amount": 1150,
+              "status": "unresolved"
+            }
+          ],
+          "missing": [
+            {
+              "code": "45378",
+              "document": "itemised_bill",
+              "date": "2026-09-10"
+            }
+          ],
+          "approved_total": 0,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8901",
+        "decision": "request_document",
+        "decision_hash": "ca091950d23224915b761026f6e8cee9115df500878200d318c5bdcec4d7c462"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 8390,
+  "tokens_out": 312,
+  "cost_usd": 0.0005895741,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 9.6163,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "trial": 3,
+  "negative": true,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

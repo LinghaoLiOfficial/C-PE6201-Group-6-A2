@@ -1,0 +1,611 @@
+{
+  "case_id": "CLM-8874",
+  "record": {
+    "case_id": "CLM-8874",
+    "decision": "approve_in_principle",
+    "reason": "The claim for service code 70553 is covered under the active policy with sufficient remaining limit and no exclusions applicable.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "70553",
+        "amount": 620,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 620,
+    "refused_total": 0,
+    "turns": 4,
+    "tokens_in": 6387,
+    "tokens_out": 199,
+    "cost_usd": 0.00072225,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:32:25.163986+00:00",
+    "decision_hash": "d1044205138bdce915daa3031f91e40ab3195005d15d504967fe20e7331c7acc"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8874"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1353,
+        "output": 21,
+        "cost": 0.00011955,
+        "provider_usage": {
+          "prompt_tokens": 1353,
+          "completion_tokens": 21,
+          "total_tokens": 1374,
+          "cost": 0.00011955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00011955,
+            "upstream_inference_prompt_cost": 0.00010695,
+            "upstream_inference_completions_cost": 1.26e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453937-OqAzt2e8nrcrRJGoOXRP",
+        "object": "chat.completion",
+        "created": 1789453937,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_0bf9805b5a",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-8874\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1353,
+          "completion_tokens": 21,
+          "total_tokens": 1374,
+          "cost": 0.00011955,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00011955,
+            "upstream_inference_prompt_cost": 0.00010695,
+            "upstream_inference_completions_cost": 1.26e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8874",
+          "member_id": "M-2214",
+          "hospital_id": "H-330",
+          "date_of_service": "2026-09-06",
+          "narrative": "Went to Bayfront because it was nearest. Paid myself.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "70553",
+              "amount": 620
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8874"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1507,
+        "output": 22,
+        "cost": 0.00015285,
+        "provider_usage": {
+          "prompt_tokens": 1507,
+          "completion_tokens": 22,
+          "total_tokens": 1529,
+          "cost": 0.00015285,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00015285,
+            "upstream_inference_prompt_cost": 0.00013965,
+            "upstream_inference_completions_cost": 1.32e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453938-dWppvVyhgUiIDVimu6RR",
+        "object": "chat.completion",
+        "created": 1789453938,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-8874\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1507,
+          "completion_tokens": 22,
+          "total_tokens": 1529,
+          "cost": 0.00015285,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00015285,
+            "upstream_inference_prompt_cost": 0.00013965,
+            "upstream_inference_completions_cost": 1.32e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 620.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8874",
+            "code": "70553"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8874"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1667,
+        "output": 46,
+        "cost": 0.00019125,
+        "provider_usage": {
+          "prompt_tokens": 1667,
+          "completion_tokens": 46,
+          "total_tokens": 1713,
+          "cost": 0.00019125,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00019125,
+            "upstream_inference_prompt_cost": 0.00016365,
+            "upstream_inference_completions_cost": 2.76e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453941-WlIXywFIAvzUGSUFhriS",
+        "object": "chat.completion",
+        "created": 1789453941,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_0bf9805b5a",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-8874\",\"code\":\"70553\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-8874\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1667,
+          "completion_tokens": 46,
+          "total_tokens": 1713,
+          "cost": 0.00019125,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00019125,
+            "upstream_inference_prompt_cost": 0.00016365,
+            "upstream_inference_completions_cost": 2.76e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "70553",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-330",
+          "name": "Bayfront Specialist",
+          "panel": false,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8874",
+              "decision": "approve_in_principle",
+              "reason": "The claim for service code 70553 is covered under the active policy with sufficient remaining limit and no exclusions applicable.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "70553",
+                  "amount": 620,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 620,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1860,
+        "output": 110,
+        "cost": 0.0002586,
+        "provider_usage": {
+          "prompt_tokens": 1860,
+          "completion_tokens": 110,
+          "total_tokens": 1970,
+          "cost": 0.0002586,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002586,
+            "upstream_inference_prompt_cost": 0.0001926,
+            "upstream_inference_completions_cost": 6.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453943-nJQjVk9BArKdSSztVoSR",
+        "object": "chat.completion",
+        "created": 1789453943,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_0bf9805b5a",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8874\",\"decision\":\"approve_in_principle\",\"reason\":\"The claim for service code 70553 is covered under the active policy with sufficient remaining limit and no exclusions applicable.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\"],\"lines\":[{\"code\":\"70553\",\"amount\":620,\"status\":\"covered\"}],\"missing\":[],\"approved_total\":620,\"refused_total\":0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1860,
+          "completion_tokens": 110,
+          "total_tokens": 1970,
+          "cost": 0.0002586,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002586,
+            "upstream_inference_prompt_cost": 0.0001926,
+            "upstream_inference_completions_cost": 6.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8874",
+          "decision": "approve_in_principle",
+          "decision_hash": "d1044205138bdce915daa3031f91e40ab3195005d15d504967fe20e7331c7acc"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8874"
+      },
+      "result": {
+        "claim_id": "CLM-8874",
+        "member_id": "M-2214",
+        "hospital_id": "H-330",
+        "date_of_service": "2026-09-06",
+        "narrative": "Went to Bayfront because it was nearest. Paid myself.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "70553",
+            "amount": 620
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8874"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 620.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8874",
+        "code": "70553"
+      },
+      "result": {
+        "code": "70553",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8874"
+      },
+      "result": {
+        "hospital_id": "H-330",
+        "name": "Bayfront Specialist",
+        "panel": false,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8874",
+          "decision": "approve_in_principle",
+          "reason": "The claim for service code 70553 is covered under the active policy with sufficient remaining limit and no exclusions applicable.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "70553",
+              "amount": 620,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 620,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8874",
+        "decision": "approve_in_principle",
+        "decision_hash": "d1044205138bdce915daa3031f91e40ab3195005d15d504967fe20e7331c7acc"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6387,
+  "tokens_out": 199,
+  "cost_usd": 0.00072225,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 7.498,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "openai/gpt-4o-mini",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

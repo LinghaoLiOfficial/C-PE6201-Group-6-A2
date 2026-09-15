@@ -1,0 +1,765 @@
+{
+  "case_id": "CLM-9203",
+  "record": {
+    "case_id": "CLM-9203",
+    "decision": "approve_in_principle",
+    "reason": "The claim is approved as the service date falls within the valid period of the pre-authorization and the hospital is on the panel. The policy is active and has sufficient remaining limit.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5"
+    ],
+    "lines": [
+      {
+        "code": "62480",
+        "amount": 1800,
+        "status": "covered",
+        "preauth": "PA-5521"
+      }
+    ],
+    "missing": [],
+    "approved_total": 1800.0,
+    "refused_total": 0.0,
+    "turns": 5,
+    "tokens_in": 8766,
+    "tokens_out": 342,
+    "cost_usd": 0.0010134,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:20:11.001786+00:00",
+    "decision_hash": "a6f2d8d50404b75255e657b5f919647f08f469736052f4d4612a6f66ecc14a1e"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1404,
+        "output": 28,
+        "cost": 0.0001516,
+        "provider_usage": {
+          "prompt_tokens": 1404,
+          "completion_tokens": 28,
+          "total_tokens": 1432,
+          "cost": 0.0001516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001516,
+            "upstream_inference_prompt_cost": 0.0001404,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453206-RznHf8ZCAOYt60lvHa39",
+        "object": "chat.completion",
+        "created": 1789453206,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_claim\", \"arguments\": {\"claim_id\": \"CLM-9203\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1404,
+          "completion_tokens": 28,
+          "total_tokens": 1432,
+          "cost": 0.0001516,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001516,
+            "upstream_inference_prompt_cost": 0.0001404,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9203",
+          "member_id": "M-2214",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-08-01",
+          "narrative": "Planned lumbar spinal fusion after approval was granted.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "62480",
+              "amount": 1800
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1562,
+        "output": 28,
+        "cost": 0.0001674,
+        "provider_usage": {
+          "prompt_tokens": 1562,
+          "completion_tokens": 28,
+          "total_tokens": 1590,
+          "cost": 0.0001674,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001674,
+            "upstream_inference_prompt_cost": 0.0001562,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453207-LNXw3dMLmGajBy5WNyMj",
+        "object": "chat.completion",
+        "created": 1789453207,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"lookup_policy\", \"arguments\": {\"claim_id\": \"CLM-9203\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1562,
+          "completion_tokens": 28,
+          "total_tokens": 1590,
+          "cost": 0.0001674,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001674,
+            "upstream_inference_prompt_cost": 0.0001562,
+            "upstream_inference_completions_cost": 1.12e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 1800.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9203",
+            "code": "62480"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1734,
+        "output": 65,
+        "cost": 0.0001994,
+        "provider_usage": {
+          "prompt_tokens": 1734,
+          "completion_tokens": 65,
+          "total_tokens": 1799,
+          "cost": 0.0001994,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001994,
+            "upstream_inference_prompt_cost": 0.0001734,
+            "upstream_inference_completions_cost": 2.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453207-Ot0vJmX3cpVHOMjP4g5t",
+        "object": "chat.completion",
+        "created": 1789453207,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-9203\", \"code\": \"62480\"}}, {\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-9203\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1734,
+          "completion_tokens": 65,
+          "total_tokens": 1799,
+          "cost": 0.0001994,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001994,
+            "upstream_inference_prompt_cost": 0.0001734,
+            "upstream_inference_completions_cost": 2.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [
+            "discharge_summary"
+          ],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-9203",
+            "code": "62480"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1892,
+        "output": 40,
+        "cost": 0.0002052,
+        "provider_usage": {
+          "prompt_tokens": 1892,
+          "completion_tokens": 40,
+          "total_tokens": 1932,
+          "cost": 0.0002052,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002052,
+            "upstream_inference_prompt_cost": 0.0001892,
+            "upstream_inference_completions_cost": 1.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453208-61X6suyBk41C9B9Qyudv",
+        "object": "chat.completion",
+        "created": 1789453208,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_preauthorisation\", \"arguments\": {\"claim_id\": \"CLM-9203\", \"code\": \"62480\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1892,
+          "completion_tokens": 40,
+          "total_tokens": 1932,
+          "cost": 0.0002052,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002052,
+            "upstream_inference_prompt_cost": 0.0001892,
+            "upstream_inference_completions_cost": 1.6e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "candidates": [
+            {
+              "preauth_id": "PA-5521",
+              "member_id": "M-2214",
+              "procedure_code": "62480",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid",
+          "explanation": "These are all matching authorisation records. Existence alone does not establish applicability. Compare valid_from and valid_to inclusively against date_of_service 2026-08-01; use a valid candidate only."
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9203",
+              "decision": "approve_in_principle",
+              "reason": "The claim is approved as the service date falls within the valid period of the pre-authorization and the hospital is on the panel. The policy is active and has sufficient remaining limit.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5"
+              ],
+              "lines": [
+                {
+                  "code": "62480",
+                  "amount": 1800,
+                  "status": "covered",
+                  "preauth": "PA-5521"
+                }
+              ],
+              "missing": [],
+              "approved_total": 1800.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2174,
+        "output": 181,
+        "cost": 0.0002898,
+        "provider_usage": {
+          "prompt_tokens": 2174,
+          "completion_tokens": 181,
+          "total_tokens": 2355,
+          "cost": 0.0002898,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002898,
+            "upstream_inference_prompt_cost": 0.0002174,
+            "upstream_inference_completions_cost": 7.24e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453209-zokuRuPMNzmptqiWYqR6",
+        "object": "chat.completion",
+        "created": 1789453209,
+        "model": "google/gemini-2.5-flash-lite",
+        "provider": "Google",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "STOP",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"issue_decision_letter\", \"arguments\": {\"decision\": {\"case_id\": \"CLM-9203\", \"decision\": \"approve_in_principle\", \"reason\": \"The claim is approved as the service date falls within the valid period of the pre-authorization and the hospital is on the panel. The policy is active and has sufficient remaining limit.\", \"evidence\": [\"obs-1\", \"obs-2\", \"obs-3\", \"obs-4\", \"obs-5\"], \"lines\": [{\"code\": \"62480\", \"amount\": 1800, \"status\": \"covered\", \"preauth\": \"PA-5521\"}], \"missing\": [], \"approved_total\": 1800.0, \"refused_total\": 0.0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2174,
+          "completion_tokens": 181,
+          "total_tokens": 2355,
+          "cost": 0.0002898,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002898,
+            "upstream_inference_prompt_cost": 0.0002174,
+            "upstream_inference_completions_cost": 7.24e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9203",
+          "decision": "approve_in_principle",
+          "decision_hash": "a6f2d8d50404b75255e657b5f919647f08f469736052f4d4612a6f66ecc14a1e"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "claim_id": "CLM-9203",
+        "member_id": "M-2214",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-08-01",
+        "narrative": "Planned lumbar spinal fusion after approval was granted.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "62480",
+            "amount": 1800
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 1800.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9203",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [
+          "discharge_summary"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-9203",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "candidates": [
+          {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          }
+        ],
+        "valid": {
+          "preauth_id": "PA-5521",
+          "member_id": "M-2214",
+          "procedure_code": "62480",
+          "valid_from": "2026-08-01",
+          "valid_to": "2026-10-31",
+          "status": "valid"
+        },
+        "status": "valid",
+        "explanation": "These are all matching authorisation records. Existence alone does not establish applicability. Compare valid_from and valid_to inclusively against date_of_service 2026-08-01; use a valid candidate only."
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9203",
+          "decision": "approve_in_principle",
+          "reason": "The claim is approved as the service date falls within the valid period of the pre-authorization and the hospital is on the panel. The policy is active and has sufficient remaining limit.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5"
+          ],
+          "lines": [
+            {
+              "code": "62480",
+              "amount": 1800,
+              "status": "covered",
+              "preauth": "PA-5521"
+            }
+          ],
+          "missing": [],
+          "approved_total": 1800.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9203",
+        "decision": "approve_in_principle",
+        "decision_hash": "a6f2d8d50404b75255e657b5f919647f08f469736052f4d4612a6f66ecc14a1e"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 8766,
+  "tokens_out": 342,
+  "cost_usd": 0.0010134,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 5.108,
+  "variant": "v1",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "google/gemini-2.5-flash-lite",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

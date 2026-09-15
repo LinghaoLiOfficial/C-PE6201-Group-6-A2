@@ -1,0 +1,567 @@
+{
+  "case_id": "CLM-8917",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8917"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1258,
+        "output": 21,
+        "cost": 0.00013252,
+        "provider_usage": {
+          "prompt_tokens": 1258,
+          "completion_tokens": 21,
+          "total_tokens": 1279,
+          "cost": 0.00013252,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013252,
+            "upstream_inference_prompt_cost": 0.0001258,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452697-7B7d95Ty7prlvNpoynrY",
+        "object": "chat.completion",
+        "created": 1789452697,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-8917\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1258,
+          "completion_tokens": 21,
+          "total_tokens": 1279,
+          "cost": 0.00013252,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013252,
+            "upstream_inference_prompt_cost": 0.0001258,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8917",
+          "member_id": "M-5502",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-05-20",
+          "narrative": "Treatment in May.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 200
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8917"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1402,
+        "output": 21,
+        "cost": 0.00016652,
+        "provider_usage": {
+          "prompt_tokens": 1402,
+          "completion_tokens": 21,
+          "total_tokens": 1423,
+          "cost": 0.00016652,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00016652,
+            "upstream_inference_prompt_cost": 0.0001556,
+            "upstream_inference_completions_cost": 1.092e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452702-oYcQUxqBqw44e3vOpyqt",
+        "object": "chat.completion",
+        "created": 1789452702,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "AkashML",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-8917\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1402,
+          "completion_tokens": 21,
+          "total_tokens": 1423,
+          "cost": 0.00016652,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00016652,
+            "upstream_inference_prompt_cost": 0.0001556,
+            "upstream_inference_completions_cost": 1.092e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 200.0,
+          "policy_trigger": "outside_policy_dates"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8917",
+              "decision": "escalate",
+              "reason": "Policy trigger: outside policy dates",
+              "evidence": [
+                "obs-1",
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1486,
+        "output": 66,
+        "cost": 0.00016972,
+        "provider_usage": {
+          "prompt_tokens": 1486,
+          "completion_tokens": 66,
+          "total_tokens": 1552,
+          "cost": 0.00016972,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00016972,
+            "upstream_inference_prompt_cost": 0.0001486,
+            "upstream_inference_completions_cost": 2.112e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452703-PmzNsVSFTPTGK2XDkX98",
+        "object": "chat.completion",
+        "created": 1789452703,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8917\",\"decision\":\"escalate\",\"reason\":\"Policy trigger: outside policy dates\",\"evidence\":[\"obs-1\",\"obs-2\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1486,
+          "completion_tokens": 66,
+          "total_tokens": 1552,
+          "cost": 0.00016972,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00016972,
+            "upstream_inference_prompt_cost": 0.0001486,
+            "upstream_inference_completions_cost": 2.112e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: invalid_escalation"
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8917",
+              "decision": "escalate",
+              "reason": "Policy trigger: outside policy dates",
+              "evidence": [
+                "obs-1",
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 200,
+              "trigger": "policy_trigger",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1621,
+        "output": 81,
+        "cost": 0.00026336,
+        "provider_usage": {
+          "prompt_tokens": 1621,
+          "completion_tokens": 81,
+          "total_tokens": 1702,
+          "cost": 0.00026336,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1216,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00026336,
+            "upstream_inference_prompt_cost": 0.00022286,
+            "upstream_inference_completions_cost": 4.05e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452708-su3qgJI8tTLI9jj6Nha0",
+        "object": "chat.completion",
+        "created": 1789452708,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "Parasail",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8917\",\"decision\":\"escalate\",\"reason\":\"Policy trigger: outside policy dates\",\"evidence\":[\"obs-1\",\"obs-2\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":200,\"trigger\":\"policy_trigger\",\"escalate_to\":\"human claims assessor\"}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1621,
+          "completion_tokens": 81,
+          "total_tokens": 1702,
+          "cost": 0.00026336,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1216,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00026336,
+            "upstream_inference_prompt_cost": 0.00022286,
+            "upstream_inference_completions_cost": 4.05e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: invalid_escalation"
+    },
+    {
+      "turn": 5,
+      "calls": null,
+      "usage": {
+        "input": 0,
+        "output": 1,
+        "cost": 0,
+        "provider_usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 1,
+          "total_tokens": 1,
+          "cost": 0,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 2.253e-06,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 2.253e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452712-Dp6EPnjbk6fkajioXcpp",
+        "object": "chat.completion",
+        "created": 1789452712,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "Cloudflare",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "error",
+            "native_finish_reason": null,
+            "error": {
+              "code": 500,
+              "message": "Internal Server Error",
+              "metadata": {
+                "error_type": "server"
+              }
+            },
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"issue_decision_letter\", \"arguments\": {\"decision\": {\"case_id\": \"CLM-89",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 1,
+          "total_tokens": 1,
+          "cost": 0,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 2.253e-06,
+            "upstream_inference_prompt_cost": 0,
+            "upstream_inference_completions_cost": 2.253e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: invalid action block"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8917"
+      },
+      "result": {
+        "claim_id": "CLM-8917",
+        "member_id": "M-5502",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-05-20",
+        "narrative": "Treatment in May.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "99213",
+            "amount": 200
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8917"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 200.0,
+        "policy_trigger": "outside_policy_dates"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 5767,
+  "tokens_out": 190,
+  "cost_usd": 0.00073212,
+  "stop": "error",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 17.4337,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "trial": 1,
+  "negative": true,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: error"
+    ],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

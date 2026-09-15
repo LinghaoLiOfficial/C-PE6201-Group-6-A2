@@ -1,0 +1,842 @@
+{
+  "case_id": "CLM-9204",
+  "record": {
+    "case_id": "CLM-9204",
+    "decision": "approve_in_principle",
+    "reason": "Claim CLM-9204 for lumbar spinal fusion (code 62480, amount $2,200.00) is approved. Policy POL-3310 (Shield Plus) is active with remaining annual limit of $9,200.00. Code 62480 is not excluded. Required preauthorisation is valid: PA-5521 covers the service date 2026-10-31 (valid period 2026-08-01 to 2026-10-31, status valid). Required document discharge_summary is present. Hospital H-114 (Riverside General, Singapore) is panel. All eligibility and documentation requirements satisfied.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5"
+    ],
+    "lines": [
+      {
+        "code": "62480",
+        "amount": 2200.0,
+        "status": "covered",
+        "preauth": "PA-5521"
+      }
+    ],
+    "missing": [],
+    "approved_total": 2200.0,
+    "refused_total": 0.0,
+    "turns": 6,
+    "tokens_in": 11453,
+    "tokens_out": 1136,
+    "cost_usd": 0.017133,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:39:06.033529+00:00",
+    "decision_hash": "f02b8ce3afb435b832ed800cbc4bddbffcb50dcf784051119145d8c822732840"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9204"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1512,
+        "output": 59,
+        "cost": 0.001807,
+        "provider_usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454331-Bv7Lkm8X9xz6YNxLc0M8",
+        "object": "chat.completion",
+        "created": 1789454331,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9204\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9204",
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-10-31",
+          "narrative": "Lumbar spinal fusion completed on the final authorised day.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "62480",
+              "amount": 2200
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9204"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1687,
+        "output": 59,
+        "cost": 0.001982,
+        "provider_usage": {
+          "prompt_tokens": 1687,
+          "completion_tokens": 59,
+          "total_tokens": 1746,
+          "cost": 0.001982,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001982,
+            "upstream_inference_prompt_cost": 0.001687,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454332-kFuq700DC2rxGkjCrEkH",
+        "object": "chat.completion",
+        "created": 1789454332,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9204\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1687,
+          "completion_tokens": 59,
+          "total_tokens": 1746,
+          "cost": 0.001982,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001982,
+            "upstream_inference_prompt_cost": 0.001687,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 2200.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": null,
+      "usage": {
+        "input": 1872,
+        "output": 238,
+        "cost": 0.003062,
+        "provider_usage": {
+          "prompt_tokens": 1872,
+          "completion_tokens": 238,
+          "total_tokens": 2110,
+          "cost": 0.003062,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003062,
+            "upstream_inference_prompt_cost": 0.001872,
+            "upstream_inference_completions_cost": 0.00119
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454334-mTjyFV3HnpcfNIhCFDVx",
+        "object": "chat.completion",
+        "created": 1789454334,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim systematically. Let me start by analyzing the observations already provided, then proceed with the remaining required checks.\n\n**Analysis of completed observations:**\n- Claim CLM-9204: Single line code 62480 for $2,200, service date 2026-10-31\n- Policy POL-3310: Active, remaining limit $9,200.00, no policy_trigger\n- No duplicates, no instruction_detected\n- Documents provided: itemised_bill, discharge_summary\n\n**Next steps:**\n1. Check coverage for code 62480\n2. Check hospital status\n3. Get preauthorisation if required\n4. Issue decision letter\n\nLet me proceed with the independent checks:\n<function_calls>\n[{\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-9204\", \"code\": \"62480\"}}, {\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-9204\"}}]\n</function_calls>",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1872,
+          "completion_tokens": 238,
+          "total_tokens": 2110,
+          "cost": 0.003062,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003062,
+            "upstream_inference_prompt_cost": 0.001872,
+            "upstream_inference_completions_cost": 0.00119
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: invalid action block"
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9204",
+            "code": "62480"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9204"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1910,
+        "output": 350,
+        "cost": 0.00366,
+        "provider_usage": {
+          "prompt_tokens": 1910,
+          "completion_tokens": 350,
+          "total_tokens": 2260,
+          "cost": 0.00366,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00366,
+            "upstream_inference_prompt_cost": 0.00191,
+            "upstream_inference_completions_cost": 0.00175
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454337-j21NwBdLvZ4Fe6BAQWZ0",
+        "object": "chat.completion",
+        "created": 1789454337,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim systematically using the observations provided.\n\n**Analysis of observations:**\n\n1. **obs-1 (get_claim)**: Claim CLM-9204 for member M-2214 at hospital H-114, service date 2026-10-31. Single line code 62480 for $2,200. No duplicates, no instruction detected. Documents present: itemised_bill, discharge_summary.\n\n2. **obs-2 (lookup_policy)**: Policy POL-3310 (Shield Plus) is active, covers 2026-04-01 to 2027-03-31. Annual limit $12,000, used $2,800, remaining $9,200. Claim total $2,200 fits within remaining. No policy_trigger. Exclusions listed are codes 31255 and 15823 (cosmetic dermatology), not affecting code 62480.\n\n**Next steps:**\n- Check coverage for code 62480\n- Get hospital status\n- Determine if preauthorisation required\n- Then issue decision\n\n```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"check_coverage\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9204\",\n        \"code\": \"62480\"\n      }\n    },\n    {\n      \"tool\": \"get_hospital_status\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9204\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1910,
+          "completion_tokens": 350,
+          "total_tokens": 2260,
+          "cost": 0.00366,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00366,
+            "upstream_inference_prompt_cost": 0.00191,
+            "upstream_inference_completions_cost": 0.00175
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [
+            "discharge_summary"
+          ],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-9204",
+            "code": "62480"
+          }
+        }
+      ],
+      "usage": {
+        "input": 2122,
+        "output": 70,
+        "cost": 0.002472,
+        "provider_usage": {
+          "prompt_tokens": 2122,
+          "completion_tokens": 70,
+          "total_tokens": 2192,
+          "cost": 0.002472,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002472,
+            "upstream_inference_prompt_cost": 0.002122,
+            "upstream_inference_completions_cost": 0.00035
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454340-LuMBHOlJuFOyWcsG76pD",
+        "object": "chat.completion",
+        "created": 1789454340,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_preauthorisation\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9204\",\n        \"code\": \"62480\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2122,
+          "completion_tokens": 70,
+          "total_tokens": 2192,
+          "cost": 0.002472,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002472,
+            "upstream_inference_prompt_cost": 0.002122,
+            "upstream_inference_completions_cost": 0.00035
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "candidates": [
+            {
+              "preauth_id": "PA-5521",
+              "member_id": "M-2214",
+              "procedure_code": "62480",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid"
+        }
+      ]
+    },
+    {
+      "turn": 6,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9204",
+              "decision": "approve_in_principle",
+              "reason": "Claim CLM-9204 for lumbar spinal fusion (code 62480, amount $2,200.00) is approved. Policy POL-3310 (Shield Plus) is active with remaining annual limit of $9,200.00. Code 62480 is not excluded. Required preauthorisation is valid: PA-5521 covers the service date 2026-10-31 (valid period 2026-08-01 to 2026-10-31, status valid). Required document discharge_summary is present. Hospital H-114 (Riverside General, Singapore) is panel. All eligibility and documentation requirements satisfied.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5"
+              ],
+              "lines": [
+                {
+                  "code": "62480",
+                  "amount": 2200.0,
+                  "status": "covered",
+                  "preauth": "PA-5521"
+                }
+              ],
+              "missing": [],
+              "approved_total": 2200.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2350,
+        "output": 360,
+        "cost": 0.00415,
+        "provider_usage": {
+          "prompt_tokens": 2350,
+          "completion_tokens": 360,
+          "total_tokens": 2710,
+          "cost": 0.00415,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00415,
+            "upstream_inference_prompt_cost": 0.00235,
+            "upstream_inference_completions_cost": 0.0018
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454342-0YRBgq4GpUPLC6W4Gkiy",
+        "object": "chat.completion",
+        "created": 1789454342,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-9204\",\n          \"decision\": \"approve_in_principle\",\n          \"reason\": \"Claim CLM-9204 for lumbar spinal fusion (code 62480, amount $2,200.00) is approved. Policy POL-3310 (Shield Plus) is active with remaining annual limit of $9,200.00. Code 62480 is not excluded. Required preauthorisation is valid: PA-5521 covers the service date 2026-10-31 (valid period 2026-08-01 to 2026-10-31, status valid). Required document discharge_summary is present. Hospital H-114 (Riverside General, Singapore) is panel. All eligibility and documentation requirements satisfied.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\",\n            \"obs-3\",\n            \"obs-4\",\n            \"obs-5\"\n          ],\n          \"lines\": [\n            {\n              \"code\": \"62480\",\n              \"amount\": 2200.00,\n              \"status\": \"covered\",\n              \"preauth\": \"PA-5521\"\n            }\n          ],\n          \"missing\": [],\n          \"approved_total\": 2200.00,\n          \"refused_total\": 0.00\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2350,
+          "completion_tokens": 360,
+          "total_tokens": 2710,
+          "cost": 0.00415,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00415,
+            "upstream_inference_prompt_cost": 0.00235,
+            "upstream_inference_completions_cost": 0.0018
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9204",
+          "decision": "approve_in_principle",
+          "decision_hash": "f02b8ce3afb435b832ed800cbc4bddbffcb50dcf784051119145d8c822732840"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9204"
+      },
+      "result": {
+        "claim_id": "CLM-9204",
+        "member_id": "M-2214",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-10-31",
+        "narrative": "Lumbar spinal fusion completed on the final authorised day.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "62480",
+            "amount": 2200
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9204"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 2200.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9204",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [
+          "discharge_summary"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9204"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-9204",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "candidates": [
+          {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          }
+        ],
+        "valid": {
+          "preauth_id": "PA-5521",
+          "member_id": "M-2214",
+          "procedure_code": "62480",
+          "valid_from": "2026-08-01",
+          "valid_to": "2026-10-31",
+          "status": "valid"
+        },
+        "status": "valid"
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9204",
+          "decision": "approve_in_principle",
+          "reason": "Claim CLM-9204 for lumbar spinal fusion (code 62480, amount $2,200.00) is approved. Policy POL-3310 (Shield Plus) is active with remaining annual limit of $9,200.00. Code 62480 is not excluded. Required preauthorisation is valid: PA-5521 covers the service date 2026-10-31 (valid period 2026-08-01 to 2026-10-31, status valid). Required document discharge_summary is present. Hospital H-114 (Riverside General, Singapore) is panel. All eligibility and documentation requirements satisfied.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5"
+          ],
+          "lines": [
+            {
+              "code": "62480",
+              "amount": 2200.0,
+              "status": "covered",
+              "preauth": "PA-5521"
+            }
+          ],
+          "missing": [],
+          "approved_total": 2200.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9204",
+        "decision": "approve_in_principle",
+        "decision_hash": "f02b8ce3afb435b832ed800cbc4bddbffcb50dcf784051119145d8c822732840"
+      }
+    }
+  ],
+  "turns": 6,
+  "tokens_in": 11453,
+  "tokens_out": 1136,
+  "cost_usd": 0.017133,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 14.8641,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

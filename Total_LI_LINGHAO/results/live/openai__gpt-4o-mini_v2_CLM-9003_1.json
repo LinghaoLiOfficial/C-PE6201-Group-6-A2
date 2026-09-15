@@ -1,0 +1,593 @@
+{
+  "case_id": "CLM-9003",
+  "record": {
+    "case_id": "CLM-9003",
+    "decision": "approve_in_principle",
+    "reason": "The claim for consultation is covered under the active policy with sufficient remaining limit and no exclusions apply.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "99213",
+        "amount": 180,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 180,
+    "refused_total": 0,
+    "turns": 4,
+    "tokens_in": 6298,
+    "tokens_out": 196,
+    "cost_usd": 0.0007071,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:33:18.725530+00:00",
+    "decision_hash": "74e8234293c4b405939c8967402839236d68ab034157d68297c20e4a10d999d1"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9003"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1353,
+        "output": 22,
+        "cost": 0.00012015,
+        "provider_usage": {
+          "prompt_tokens": 1353,
+          "completion_tokens": 22,
+          "total_tokens": 1375,
+          "cost": 0.00012015,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012015,
+            "upstream_inference_prompt_cost": 0.00010695,
+            "upstream_inference_completions_cost": 1.32e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453989-32ZbOU801PurMqFHgjV9",
+        "object": "chat.completion",
+        "created": 1789453989,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9003\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1353,
+          "completion_tokens": 22,
+          "total_tokens": 1375,
+          "cost": 0.00012015,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1280,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00012015,
+            "upstream_inference_prompt_cost": 0.00010695,
+            "upstream_inference_completions_cost": 1.32e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "member_id": "M-5502",
+          "hospital_id": "H-451",
+          "date_of_service": "2026-09-22",
+          "narrative": "Consultation while travelling in Malaysia.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 180
+            }
+          ],
+          "claim_id": "CLM-9003",
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9003"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1502,
+        "output": 21,
+        "cost": 0.0001515,
+        "provider_usage": {
+          "prompt_tokens": 1502,
+          "completion_tokens": 21,
+          "total_tokens": 1523,
+          "cost": 0.0001515,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001515,
+            "upstream_inference_prompt_cost": 0.0001389,
+            "upstream_inference_completions_cost": 1.26e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453991-5ty8mzqyavithi8bF25p",
+        "object": "chat.completion",
+        "created": 1789453991,
+        "model": "openai/gpt-4o-mini",
+        "provider": "OpenAI",
+        "system_fingerprint": "fp_0bf9805b5a",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9003\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1502,
+          "completion_tokens": 21,
+          "total_tokens": 1523,
+          "cost": 0.0001515,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001515,
+            "upstream_inference_prompt_cost": 0.0001389,
+            "upstream_inference_completions_cost": 1.26e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 180.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9003",
+            "code": "99213"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9003"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1625,
+        "output": 47,
+        "cost": 0.00018555,
+        "provider_usage": {
+          "prompt_tokens": 1625,
+          "completion_tokens": 47,
+          "total_tokens": 1672,
+          "cost": 0.00018555,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00018555,
+            "upstream_inference_prompt_cost": 0.00015735,
+            "upstream_inference_completions_cost": 2.82e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453992-AKjB75HPQLjY01NbmeIc",
+        "object": "chat.completion",
+        "created": 1789453992,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9003\",\"code\":\"99213\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-9003\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1625,
+          "completion_tokens": 47,
+          "total_tokens": 1672,
+          "cost": 0.00018555,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00018555,
+            "upstream_inference_prompt_cost": 0.00015735,
+            "upstream_inference_completions_cost": 2.82e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "99213",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-451",
+          "name": "Penang Medical",
+          "panel": false,
+          "country": "MY"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9003",
+              "decision": "approve_in_principle",
+              "reason": "The claim for consultation is covered under the active policy with sufficient remaining limit and no exclusions apply.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 180,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 180,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1818,
+        "output": 106,
+        "cost": 0.0002499,
+        "provider_usage": {
+          "prompt_tokens": 1818,
+          "completion_tokens": 106,
+          "total_tokens": 1924,
+          "cost": 0.0002499,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002499,
+            "upstream_inference_prompt_cost": 0.0001863,
+            "upstream_inference_completions_cost": 6.36e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453995-QP4Ye99R24emBDD7uz0D",
+        "object": "chat.completion",
+        "created": 1789453995,
+        "model": "openai/gpt-4o-mini",
+        "provider": "Azure",
+        "system_fingerprint": "fp_369e662417",
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9003\",\"decision\":\"approve_in_principle\",\"reason\":\"The claim for consultation is covered under the active policy with sufficient remaining limit and no exclusions apply.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\"],\"lines\":[{\"code\":\"99213\",\"amount\":180,\"status\":\"covered\"}],\"missing\":[],\"approved_total\":180,\"refused_total\":0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1818,
+          "completion_tokens": 106,
+          "total_tokens": 1924,
+          "cost": 0.0002499,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1152,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002499,
+            "upstream_inference_prompt_cost": 0.0001863,
+            "upstream_inference_completions_cost": 6.36e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9003",
+          "decision": "approve_in_principle",
+          "decision_hash": "74e8234293c4b405939c8967402839236d68ab034157d68297c20e4a10d999d1"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9003"
+      },
+      "result": {
+        "member_id": "M-5502",
+        "hospital_id": "H-451",
+        "date_of_service": "2026-09-22",
+        "narrative": "Consultation while travelling in Malaysia.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "99213",
+            "amount": 180
+          }
+        ],
+        "claim_id": "CLM-9003",
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9003"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 180.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9003",
+        "code": "99213"
+      },
+      "result": {
+        "code": "99213",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9003"
+      },
+      "result": {
+        "hospital_id": "H-451",
+        "name": "Penang Medical",
+        "panel": false,
+        "country": "MY"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9003",
+          "decision": "approve_in_principle",
+          "reason": "The claim for consultation is covered under the active policy with sufficient remaining limit and no exclusions apply.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 180,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 180,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9003",
+        "decision": "approve_in_principle",
+        "decision_hash": "74e8234293c4b405939c8967402839236d68ab034157d68297c20e4a10d999d1"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6298,
+  "tokens_out": 196,
+  "cost_usd": 0.0007071,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 9.3253,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "openai/gpt-4o-mini",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

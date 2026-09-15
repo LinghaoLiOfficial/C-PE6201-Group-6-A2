@@ -1,0 +1,499 @@
+{
+  "case_id": "CLM-8910",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8910"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1359,
+        "output": 22,
+        "cost": 0.00018811,
+        "provider_usage": {
+          "prompt_tokens": 1359,
+          "completion_tokens": 22,
+          "total_tokens": 1381,
+          "cost": 0.00018811,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00018811,
+            "upstream_inference_prompt_cost": 0.00017667,
+            "upstream_inference_completions_cost": 1.144e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454180-apAwrgSsJGlShV5dKO8Z",
+        "object": "chat.completion",
+        "created": 1789454180,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Alibaba",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-8910\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1359,
+          "completion_tokens": 22,
+          "total_tokens": 1381,
+          "cost": 0.00018811,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00018811,
+            "upstream_inference_prompt_cost": 0.00017667,
+            "upstream_inference_completions_cost": 1.144e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8910",
+          "member_id": "M-4471",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-11",
+          "narrative": "Emergency appendix operation.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1600
+            },
+            {
+              "code": "80053",
+              "amount": 90
+            },
+            {
+              "code": "99213",
+              "amount": 150
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8910"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1562,
+        "output": 23,
+        "cost": 7.965045e-05,
+        "provider_usage": {
+          "prompt_tokens": 1562,
+          "completion_tokens": 23,
+          "total_tokens": 1585,
+          "cost": 7.965045e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1306,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.965045e-05,
+            "upstream_inference_prompt_cost": 7.52103e-05,
+            "upstream_inference_completions_cost": 4.44015e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454181-Jmfwjym9nj7GNPklHQvX",
+        "object": "chat.completion",
+        "created": 1789454181,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-8910\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1562,
+          "completion_tokens": 23,
+          "total_tokens": 1585,
+          "cost": 7.965045e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1306,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.965045e-05,
+            "upstream_inference_prompt_cost": 7.52103e-05,
+            "upstream_inference_completions_cost": 4.44015e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-5588",
+          "product": "Shield Plus",
+          "status": "lapsed",
+          "start_date": "2025-04-01",
+          "end_date": "2026-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 900,
+          "exclusions": [],
+          "remaining": 11100.0,
+          "claim_total": 1840.0,
+          "policy_trigger": "policy_lapsed"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8910",
+              "decision": "escalate",
+              "trigger": "policy_lapsed",
+              "escalate_to": "human claims assessor",
+              "reason": "The policy is lapsed as of 2026-03-31, and the date of service is 2026-09-11, which falls outside the policy period. No coverage pricing was performed because the policy is lapsed.",
+              "evidence": [
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1715,
+        "output": 129,
+        "cost": 0.00019305,
+        "provider_usage": {
+          "prompt_tokens": 1715,
+          "completion_tokens": 129,
+          "total_tokens": 1844,
+          "cost": 0.00019305,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1296,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00019305,
+            "upstream_inference_prompt_cost": 0.00015435,
+            "upstream_inference_completions_cost": 3.87e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454182-JKYGw8gkooExXAJzoWtL",
+        "object": "chat.completion",
+        "created": 1789454182,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "DekaLLM",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8910\",\"decision\":\"escalate\",\"trigger\":\"policy_lapsed\",\"escalate_to\":\"human claims assessor\",\"reason\":\"The policy is lapsed as of 2026-03-31, and the date of service is 2026-09-11, which falls outside the policy period. No coverage pricing was performed because the policy is lapsed.\",\"evidence\":[\"obs-2\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":0}}}] }",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1715,
+          "completion_tokens": 129,
+          "total_tokens": 1844,
+          "cost": 0.00019305,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1296,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00019305,
+            "upstream_inference_prompt_cost": 0.00015435,
+            "upstream_inference_completions_cost": 3.87e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: missing_evidence: get_claim"
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8910",
+              "decision": "escalate",
+              "trigger": "policy_lapsed",
+              "escalate_to": "human claims assessor",
+              "reason": "The policy is lapsed as of 2026-03-31, and the date of service is 2026-09-11, which falls outside the policy period. No coverage pricing was performed because the policy is lapsed.",
+              "evidence": [
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1897,
+        "output": 129,
+        "cost": 0.0002284,
+        "provider_usage": {
+          "prompt_tokens": 1897,
+          "completion_tokens": 129,
+          "total_tokens": 2026,
+          "cost": 0.0002284,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1296,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002284,
+            "upstream_inference_prompt_cost": 0.0001897,
+            "upstream_inference_completions_cost": 3.87e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454183-KWwV4OHxaUKicnOSwZAR",
+        "object": "chat.completion",
+        "created": 1789454183,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8910\",\"decision\":\"escalate\",\"trigger\":\"policy_lapsed\",\"escalate_to\":\"human claims assessor\",\"reason\":\"The policy is lapsed as of 2026-03-31, and the date of service is 2026-09-11, which falls outside the policy period. No coverage pricing was performed because the policy is lapsed.\",\"evidence\":[\"obs-2\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":0}}}] }",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1897,
+          "completion_tokens": 129,
+          "total_tokens": 2026,
+          "cost": 0.0002284,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1296,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002284,
+            "upstream_inference_prompt_cost": 0.0001897,
+            "upstream_inference_completions_cost": 3.87e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: repeated action blocked"
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8910"
+      },
+      "result": {
+        "claim_id": "CLM-8910",
+        "member_id": "M-4471",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-11",
+        "narrative": "Emergency appendix operation.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 1600
+          },
+          {
+            "code": "80053",
+            "amount": 90
+          },
+          {
+            "code": "99213",
+            "amount": 150
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8910"
+      },
+      "result": {
+        "policy_id": "POL-5588",
+        "product": "Shield Plus",
+        "status": "lapsed",
+        "start_date": "2025-04-01",
+        "end_date": "2026-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 900,
+        "exclusions": [],
+        "remaining": 11100.0,
+        "claim_total": 1840.0,
+        "policy_trigger": "policy_lapsed"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 6533,
+  "tokens_out": 303,
+  "cost_usd": 0.00068921045,
+  "stop": "duplicate_action",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 15.4334,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "trial": 3,
+  "negative": true,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: duplicate_action"
+    ],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

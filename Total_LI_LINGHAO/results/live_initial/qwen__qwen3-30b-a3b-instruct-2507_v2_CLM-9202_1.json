@@ -1,0 +1,603 @@
+{
+  "case_id": "CLM-9202",
+  "record": {
+    "case_id": "CLM-9202",
+    "decision": "approve_in_principle",
+    "reason": "The claim is for a routine consultation (code 99213) within the policy period, not excluded, does not require preauthorisation, and the hospital is in-network. The remaining policy limit of $600.00 exceeds the claim amount of $590.00. No documents are missing.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "99213",
+        "amount": 590,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 590,
+    "refused_total": 0,
+    "turns": 4,
+    "tokens_in": 5977,
+    "tokens_out": 256,
+    "cost_usd": 0.00080846,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:15:50.407153+00:00",
+    "decision_hash": "db3e3e26abe56325dca2a128dabf4c9da0e0515ca04b695db5eaed0534a9d296"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9202"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1276,
+        "output": 23,
+        "cost": 0.0001345,
+        "provider_usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452944-yFtkYa7Ooiudn4no5DCT",
+        "object": "chat.completion",
+        "created": 1789452944,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9202\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9202",
+          "member_id": "M-3390",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-12-31",
+          "narrative": "Final routine consultation before policy renewal.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 590
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9202"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1422,
+        "output": 22,
+        "cost": 0.0001963,
+        "provider_usage": {
+          "prompt_tokens": 1422,
+          "completion_tokens": 22,
+          "total_tokens": 1444,
+          "cost": 0.0001963,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001963,
+            "upstream_inference_prompt_cost": 0.00018486,
+            "upstream_inference_completions_cost": 1.144e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452946-VPwxCVHfaEi7Dl1WpIIm",
+        "object": "chat.completion",
+        "created": 1789452946,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Alibaba",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9202\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1422,
+          "completion_tokens": 22,
+          "total_tokens": 1444,
+          "cost": 0.0001963,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001963,
+            "upstream_inference_prompt_cost": 0.00018486,
+            "upstream_inference_completions_cost": 1.144e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-4102",
+          "product": "Shield Basic",
+          "status": "active",
+          "start_date": "2026-01-01",
+          "end_date": "2026-12-31",
+          "annual_limit": 6000,
+          "used_to_date": 5400,
+          "exclusions": [
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 600.0,
+          "claim_total": 590.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9202",
+            "code": "99213"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9202"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1563,
+        "output": 52,
+        "cost": 0.0001719,
+        "provider_usage": {
+          "prompt_tokens": 1563,
+          "completion_tokens": 52,
+          "total_tokens": 1615,
+          "cost": 0.0001719,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001719,
+            "upstream_inference_prompt_cost": 0.0001563,
+            "upstream_inference_completions_cost": 1.56e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452946-QVEzrByWNkKr1gLOiBpu",
+        "object": "chat.completion",
+        "created": 1789452946,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9202\",\"code\":\"99213\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-9202\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1563,
+          "completion_tokens": 52,
+          "total_tokens": 1615,
+          "cost": 0.0001719,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001719,
+            "upstream_inference_prompt_cost": 0.0001563,
+            "upstream_inference_completions_cost": 1.56e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "99213",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9202",
+              "decision": "approve_in_principle",
+              "reason": "The claim is for a routine consultation (code 99213) within the policy period, not excluded, does not require preauthorisation, and the hospital is in-network. The remaining policy limit of $600.00 exceeds the claim amount of $590.00. No documents are missing.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 590,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 590,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1716,
+        "output": 159,
+        "cost": 0.00030576,
+        "provider_usage": {
+          "prompt_tokens": 1716,
+          "completion_tokens": 159,
+          "total_tokens": 1875,
+          "cost": 0.00030576,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00030576,
+            "upstream_inference_prompt_cost": 0.00022308,
+            "upstream_inference_completions_cost": 8.268e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452948-Z5juxHamTVSVXc3U1PCr",
+        "object": "chat.completion",
+        "created": 1789452948,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Alibaba",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9202\",\"decision\":\"approve_in_principle\",\"reason\":\"The claim is for a routine consultation (code 99213) within the policy period, not excluded, does not require preauthorisation, and the hospital is in-network. The remaining policy limit of $600.00 exceeds the claim amount of $590.00. No documents are missing.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\"],\"lines\":[{\"code\":\"99213\",\"amount\":590,\"status\":\"covered\"}],\"missing\":[],\"approved_total\":590,\"refused_total\":0}}}] }",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1716,
+          "completion_tokens": 159,
+          "total_tokens": 1875,
+          "cost": 0.00030576,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00030576,
+            "upstream_inference_prompt_cost": 0.00022308,
+            "upstream_inference_completions_cost": 8.268e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9202",
+          "decision": "approve_in_principle",
+          "decision_hash": "db3e3e26abe56325dca2a128dabf4c9da0e0515ca04b695db5eaed0534a9d296"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9202"
+      },
+      "result": {
+        "claim_id": "CLM-9202",
+        "member_id": "M-3390",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-12-31",
+        "narrative": "Final routine consultation before policy renewal.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "99213",
+            "amount": 590
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9202"
+      },
+      "result": {
+        "policy_id": "POL-4102",
+        "product": "Shield Basic",
+        "status": "active",
+        "start_date": "2026-01-01",
+        "end_date": "2026-12-31",
+        "annual_limit": 6000,
+        "used_to_date": 5400,
+        "exclusions": [
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 600.0,
+        "claim_total": 590.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9202",
+        "code": "99213"
+      },
+      "result": {
+        "code": "99213",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9202"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9202",
+          "decision": "approve_in_principle",
+          "reason": "The claim is for a routine consultation (code 99213) within the policy period, not excluded, does not require preauthorisation, and the hospital is in-network. The remaining policy limit of $600.00 exceeds the claim amount of $590.00. No documents are missing.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 590,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 590,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9202",
+        "decision": "approve_in_principle",
+        "decision_hash": "db3e3e26abe56325dca2a128dabf4c9da0e0515ca04b695db5eaed0534a9d296"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 5977,
+  "tokens_out": 256,
+  "cost_usd": 0.00080846,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 7.3459,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

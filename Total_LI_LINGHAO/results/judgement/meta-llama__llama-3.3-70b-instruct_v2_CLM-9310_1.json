@@ -1,0 +1,258 @@
+{
+  "source": "meta-llama__llama-3.3-70b-instruct_v2_CLM-9310_1.json",
+  "case_id": "CLM-9310",
+  "judge": "anthropic/claude-haiku-4.5",
+  "status": "judged",
+  "pass": true,
+  "reason": "Record fully supports approve_in_principle decision with approved_total 1800 as required. Claim line 29881 for $1800 is covered; policy POL-6001 is active with $15,000 annual limit and $0 used (obs-2); procedure code 29881 is not excluded and requires preauth (obs-4); valid preauthorisation PA-9901-VALID exists covering service date 2026-09-10 within validity window 2026-08-01 to 2026-10-31 (obs-5). All must_record requirements met with cited observations.",
+  "missing_requirements": [],
+  "cost_usd": 0.002449,
+  "evaluated_input": {
+    "case": {
+      "case_id": "CLM-9310",
+      "expected_decision": "approve_in_principle",
+      "family": "multiple_authorisations_select_valid",
+      "must_record": [
+        "approved_total 1800"
+      ],
+      "note": null
+    },
+    "record": {
+      "case_id": "CLM-9310",
+      "decision": "approve_in_principle",
+      "reason": "The claim is within the policy limits and has valid preauthorisation for the procedure code 29881",
+      "evidence": [
+        "obs-1",
+        "obs-2",
+        "obs-3",
+        "obs-4",
+        "obs-5"
+      ],
+      "lines": [
+        {
+          "code": "29881",
+          "amount": 1800,
+          "status": "covered",
+          "preauth": "PA-9901-VALID"
+        }
+      ],
+      "missing": [],
+      "approved_total": 1800.0,
+      "refused_total": 0.0,
+      "turns": 5,
+      "tokens_in": 8476,
+      "tokens_out": 238,
+      "cost_usd": 0.00116344,
+      "token_measurement": "api_usage",
+      "autonomy": "confirm",
+      "gate": "operator approved",
+      "ts": "2026-09-15T06:35:56.042042+00:00",
+      "decision_hash": "468da11cda5a017129dc429053f60db36f459f2a2143813be6212e7a779c4b75"
+    },
+    "observations": [
+      {
+        "id": "obs-1",
+        "tool": "get_claim",
+        "arguments": {
+          "claim_id": "CLM-9310"
+        },
+        "result": {
+          "claim_id": "CLM-9310",
+          "member_id": "M-9901",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-09-10",
+          "lines": [
+            {
+              "code": "29881",
+              "amount": 1800
+            }
+          ],
+          "narrative": "Planned arthroscopy with renewed approval.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      },
+      {
+        "id": "obs-2",
+        "tool": "lookup_policy",
+        "arguments": {
+          "claim_id": "CLM-9310"
+        },
+        "result": {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 1800.0,
+          "policy_trigger": null
+        }
+      },
+      {
+        "id": "obs-3",
+        "tool": "get_hospital_status",
+        "arguments": {
+          "claim_id": "CLM-9310"
+        },
+        "result": {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      },
+      {
+        "id": "obs-4",
+        "tool": "check_coverage",
+        "arguments": {
+          "claim_id": "CLM-9310",
+          "code": "29881"
+        },
+        "result": {
+          "code": "29881",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [],
+          "missing_documents": []
+        }
+      },
+      {
+        "id": "obs-5",
+        "tool": "get_preauthorisation",
+        "arguments": {
+          "claim_id": "CLM-9310",
+          "code": "29881"
+        },
+        "result": {
+          "code": "29881",
+          "candidates": [
+            {
+              "preauth_id": "PA-9901-OLD",
+              "member_id": "M-9901",
+              "procedure_code": "29881",
+              "valid_from": "2026-06-01",
+              "valid_to": "2026-07-31",
+              "status": "expired_before_service"
+            },
+            {
+              "preauth_id": "PA-9901-FUTURE",
+              "member_id": "M-9901",
+              "procedure_code": "29881",
+              "valid_from": "2026-11-01",
+              "valid_to": "2026-12-31",
+              "status": "not_yet_valid"
+            },
+            {
+              "preauth_id": "PA-9901-VALID",
+              "member_id": "M-9901",
+              "procedure_code": "29881",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-9901-VALID",
+            "member_id": "M-9901",
+            "procedure_code": "29881",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid"
+        }
+      },
+      {
+        "id": "obs-6",
+        "tool": "issue_decision_letter",
+        "arguments": {
+          "decision": {
+            "case_id": "CLM-9310",
+            "decision": "approve_in_principle",
+            "reason": "The claim is within the policy limits and has valid preauthorisation for the procedure code 29881",
+            "evidence": [
+              "obs-1",
+              "obs-2",
+              "obs-3",
+              "obs-4",
+              "obs-5"
+            ],
+            "lines": [
+              {
+                "code": "29881",
+                "amount": 1800,
+                "status": "covered",
+                "preauth": "PA-9901-VALID"
+              }
+            ],
+            "missing": [],
+            "approved_total": 1800.0,
+            "refused_total": 0.0
+          }
+        },
+        "result": {
+          "status": "recorded",
+          "case_id": "CLM-9310",
+          "decision": "approve_in_principle",
+          "decision_hash": "468da11cda5a017129dc429053f60db36f459f2a2143813be6212e7a779c4b75"
+        }
+      }
+    ]
+  },
+  "raw": {
+    "id": "gen-1789454557-MhFEi12RudGLQn0jdg68",
+    "object": "chat.completion",
+    "created": 1789454557,
+    "model": "anthropic/claude-haiku-4.5",
+    "provider": "Amazon Bedrock",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "```json\n{\n  \"pass\": true,\n  \"reason\": \"Record fully supports approve_in_principle decision with approved_total 1800 as required. Claim line 29881 for $1800 is covered; policy POL-6001 is active with $15,000 annual limit and $0 used (obs-2); procedure code 29881 is not excluded and requires preauth (obs-4); valid preauthorisation PA-9901-VALID exists covering service date 2026-09-10 within validity window 2026-08-01 to 2026-10-31 (obs-5). All must_record requirements met with cited observations.\",\n  \"missing_requirements\": []\n}\n```",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1599,
+      "completion_tokens": 170,
+      "total_tokens": 1769,
+      "cost": 0.002449,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.002449,
+        "upstream_inference_prompt_cost": 0.001599,
+        "upstream_inference_completions_cost": 0.00085
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,474 @@
+{
+  "case_id": "CLM-8925",
+  "record": {
+    "case_id": "CLM-8925",
+    "decision": "escalate",
+    "reason": "Policy trigger: annual limit exceeded",
+    "evidence": [
+      "obs-1",
+      "obs-2"
+    ],
+    "lines": [],
+    "missing": [],
+    "approved_total": 0,
+    "refused_total": 0,
+    "trigger": "annual_limit_exceeded",
+    "escalate_to": "human claims assessor",
+    "turns": 3,
+    "tokens_in": 4287,
+    "tokens_out": 125,
+    "cost_usd": 0.0014123200000000001,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:12:01.688724+00:00",
+    "decision_hash": "90152d9badd5930ef2824c8c04d5c9c8a8d35ec45ed06bcc870806407465693b"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8925"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1258,
+        "output": 21,
+        "cost": 0.00013252,
+        "provider_usage": {
+          "prompt_tokens": 1258,
+          "completion_tokens": 21,
+          "total_tokens": 1279,
+          "cost": 0.00013252,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013252,
+            "upstream_inference_prompt_cost": 0.0001258,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452715-rs8iUYLJkTIqHL1U0GJc",
+        "object": "chat.completion",
+        "created": 1789452715,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "DeepInfra",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-8925\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1258,
+          "completion_tokens": 21,
+          "total_tokens": 1279,
+          "cost": 0.00013252,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00013252,
+            "upstream_inference_prompt_cost": 0.0001258,
+            "upstream_inference_completions_cost": 6.72e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8925",
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-12",
+          "narrative": "Knee replacement, plus the appendix operation and a scan.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "27447",
+              "amount": 9800
+            },
+            {
+              "code": "47120",
+              "amount": 1400
+            },
+            {
+              "code": "70553",
+              "amount": 200
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8925"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1443,
+        "output": 21,
+        "cost": 0.00103944,
+        "provider_usage": {
+          "prompt_tokens": 1443,
+          "completion_tokens": 21,
+          "total_tokens": 1464,
+          "cost": 0.00103944,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00103944,
+            "upstream_inference_prompt_cost": 0.00102453,
+            "upstream_inference_completions_cost": 1.491e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452717-pgp18k7jOobxyKY8uniV",
+        "object": "chat.completion",
+        "created": 1789452717,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "CoreWeave",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-8925\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1443,
+          "completion_tokens": 21,
+          "total_tokens": 1464,
+          "cost": 0.00103944,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00103944,
+            "upstream_inference_prompt_cost": 0.00102453,
+            "upstream_inference_completions_cost": 1.491e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 11400.0,
+          "policy_trigger": "annual_limit_exceeded"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8925",
+              "decision": "escalate",
+              "reason": "Policy trigger: annual limit exceeded",
+              "evidence": [
+                "obs-1",
+                "obs-2"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0,
+              "refused_total": 0,
+              "trigger": "annual_limit_exceeded",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1586,
+        "output": 83,
+        "cost": 0.00024036,
+        "provider_usage": {
+          "prompt_tokens": 1586,
+          "completion_tokens": 83,
+          "total_tokens": 1669,
+          "cost": 0.00024036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1200,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00024036,
+            "upstream_inference_prompt_cost": 0.0001972,
+            "upstream_inference_completions_cost": 4.316e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452718-FisYaUrPi387Uw3PZmor",
+        "object": "chat.completion",
+        "created": 1789452718,
+        "model": "meta-llama/llama-3.3-70b-instruct",
+        "provider": "AkashML",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-8925\",\"decision\":\"escalate\",\"reason\":\"Policy trigger: annual limit exceeded\",\"evidence\":[\"obs-1\",\"obs-2\"],\"lines\":[],\"missing\":[],\"approved_total\":0,\"refused_total\":0,\"trigger\":\"annual_limit_exceeded\",\"escalate_to\":\"human claims assessor\"}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1586,
+          "completion_tokens": 83,
+          "total_tokens": 1669,
+          "cost": 0.00024036,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1200,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00024036,
+            "upstream_inference_prompt_cost": 0.0001972,
+            "upstream_inference_completions_cost": 4.316e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8925",
+          "decision": "escalate",
+          "decision_hash": "90152d9badd5930ef2824c8c04d5c9c8a8d35ec45ed06bcc870806407465693b"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8925"
+      },
+      "result": {
+        "claim_id": "CLM-8925",
+        "member_id": "M-2214",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-12",
+        "narrative": "Knee replacement, plus the appendix operation and a scan.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "27447",
+            "amount": 9800
+          },
+          {
+            "code": "47120",
+            "amount": 1400
+          },
+          {
+            "code": "70553",
+            "amount": 200
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8925"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 11400.0,
+        "policy_trigger": "annual_limit_exceeded"
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8925",
+          "decision": "escalate",
+          "reason": "Policy trigger: annual limit exceeded",
+          "evidence": [
+            "obs-1",
+            "obs-2"
+          ],
+          "lines": [],
+          "missing": [],
+          "approved_total": 0,
+          "refused_total": 0,
+          "trigger": "annual_limit_exceeded",
+          "escalate_to": "human claims assessor"
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8925",
+        "decision": "escalate",
+        "decision_hash": "90152d9badd5930ef2824c8c04d5c9c8a8d35ec45ed06bcc870806407465693b"
+      }
+    }
+  ],
+  "turns": 3,
+  "tokens_in": 4287,
+  "tokens_out": 125,
+  "cost_usd": 0.0014123200000000001,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 6.4443,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "trial": 2,
+  "negative": true,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

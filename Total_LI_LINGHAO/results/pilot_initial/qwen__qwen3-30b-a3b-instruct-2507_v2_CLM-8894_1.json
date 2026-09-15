@@ -1,0 +1,122 @@
+{
+  "case_id": "CLM-8894",
+  "record": null,
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8894"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1184,
+        "output": 54,
+        "cost": 6.74343e-05,
+        "provider_usage": {
+          "prompt_tokens": 1184,
+          "completion_tokens": 54,
+          "total_tokens": 1238,
+          "cost": 6.74343e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 6,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.74343e-05,
+            "upstream_inference_prompt_cost": 5.70096e-05,
+            "upstream_inference_completions_cost": 1.04247e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452289-kBp3T88QEfCeVqPw63au",
+        "object": "chat.completion",
+        "created": 1789452289,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\": [{\"tool\": \"get_claim\", \"arguments\": {\"claim_id\": \"CLM-8894\"}}, {\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-8894\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1184,
+          "completion_tokens": 54,
+          "total_tokens": 1238,
+          "cost": 6.74343e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 6,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 6.74343e-05,
+            "upstream_inference_prompt_cost": 5.70096e-05,
+            "upstream_inference_completions_cost": 1.04247e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "error": "ToolError: same-turn claim dependency"
+    }
+  ],
+  "observations": [],
+  "turns": 1,
+  "tokens_in": 1184,
+  "tokens_out": 54,
+  "cost_usd": 6.74343e-05,
+  "stop": "error",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 2.1487,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "trial": 1,
+  "negative": true,
+  "grade": {
+    "pass": false,
+    "errors": [
+      "no gated record: error"
+    ],
+    "check": "code"
+  },
+  "source_hash": "278c7c6eb1bfef2c1f70574389a1c1b7fe0d5b86ced524ff48b595c71c255472",
+  "operator": "simulated"
+}

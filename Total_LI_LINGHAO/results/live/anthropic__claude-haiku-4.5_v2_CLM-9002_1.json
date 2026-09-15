@@ -1,0 +1,603 @@
+{
+  "case_id": "CLM-9002",
+  "record": {
+    "case_id": "CLM-9002",
+    "decision": "approve_in_principle",
+    "reason": "Claim CLM-9002 for code 99213 (routine consultation) on 2026-09-21 is covered under active policy POL-4102 (Shield Basic). Service date falls within policy period 2026-01-01 to 2026-12-31. Code 99213 is not excluded and does not require preauthorisation. Claimed amount of 600.00 equals remaining annual limit of 600.00. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. All required documents present (itemised_bill). No policy triggers, duplicates, or instruction injection detected.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "99213",
+        "amount": 600.0,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 600.0,
+    "refused_total": 0.0,
+    "turns": 4,
+    "tokens_in": 7053,
+    "tokens_out": 781,
+    "cost_usd": 0.010957999999999999,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:39:07.083368+00:00",
+    "decision_hash": "916a9117d25db482cac88666c3e80ee99eb0275f25ed9639a1a5bd8cb2a746f0"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9002"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1512,
+        "output": 59,
+        "cost": 0.001807,
+        "provider_usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454337-puSyJSPoOpLWNU02Zvc6",
+        "object": "chat.completion",
+        "created": 1789454337,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9002\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "member_id": "M-3390",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-09-21",
+          "narrative": "Routine consultation.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 600
+            }
+          ],
+          "claim_id": "CLM-9002",
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9002"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1671,
+        "output": 59,
+        "cost": 0.001966,
+        "provider_usage": {
+          "prompt_tokens": 1671,
+          "completion_tokens": 59,
+          "total_tokens": 1730,
+          "cost": 0.001966,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001966,
+            "upstream_inference_prompt_cost": 0.001671,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454338-XCCAzVAZiYuN0nOKXg11",
+        "object": "chat.completion",
+        "created": 1789454338,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9002\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1671,
+          "completion_tokens": 59,
+          "total_tokens": 1730,
+          "cost": 0.001966,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001966,
+            "upstream_inference_prompt_cost": 0.001671,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-4102",
+          "product": "Shield Basic",
+          "status": "active",
+          "start_date": "2026-01-01",
+          "end_date": "2026-12-31",
+          "annual_limit": 6000,
+          "used_to_date": 5400,
+          "exclusions": [
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 600.0,
+          "claim_total": 600.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9002",
+            "code": "99213"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9002"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1831,
+        "output": 330,
+        "cost": 0.003481,
+        "provider_usage": {
+          "prompt_tokens": 1831,
+          "completion_tokens": 330,
+          "total_tokens": 2161,
+          "cost": 0.003481,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003481,
+            "upstream_inference_prompt_cost": 0.001831,
+            "upstream_inference_completions_cost": 0.00165
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454340-gjv6IyzAQpNgHGJbF8Sk",
+        "object": "chat.completion",
+        "created": 1789454340,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim step by step using the observations provided.\n\n**Analysis of observations:**\n\n1. **obs-1 (get_claim)**: Claim CLM-9002 for member M-3390 at hospital H-207 on 2026-09-21. Single line: code 99213, amount 600. No duplicates, no instruction detected.\n\n2. **obs-2 (lookup_policy)**: Policy POL-4102 is active (2026-01-01 to 2026-12-31), annual limit 6000, used 5400, remaining 600. Claim total 600. No policy_trigger. One exclusion on code 15823 (cosmetic dermatology).\n\n**Next steps needed:**\n- Check coverage for code 99213 (the only line code)\n- Get hospital status for H-207\n- Determine if preauthorisation is required\n- Issue decision letter\n\nLet me proceed with the independent reads:\n\n```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"check_coverage\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9002\",\n        \"code\": \"99213\"\n      }\n    },\n    {\n      \"tool\": \"get_hospital_status\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-9002\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1831,
+          "completion_tokens": 330,
+          "total_tokens": 2161,
+          "cost": 0.003481,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003481,
+            "upstream_inference_prompt_cost": 0.001831,
+            "upstream_inference_completions_cost": 0.00165
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "99213",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9002",
+              "decision": "approve_in_principle",
+              "reason": "Claim CLM-9002 for code 99213 (routine consultation) on 2026-09-21 is covered under active policy POL-4102 (Shield Basic). Service date falls within policy period 2026-01-01 to 2026-12-31. Code 99213 is not excluded and does not require preauthorisation. Claimed amount of 600.00 equals remaining annual limit of 600.00. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. All required documents present (itemised_bill). No policy triggers, duplicates, or instruction injection detected.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "99213",
+                  "amount": 600.0,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 600.0,
+              "refused_total": 0.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2039,
+        "output": 333,
+        "cost": 0.003704,
+        "provider_usage": {
+          "prompt_tokens": 2039,
+          "completion_tokens": 333,
+          "total_tokens": 2372,
+          "cost": 0.003704,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003704,
+            "upstream_inference_prompt_cost": 0.002039,
+            "upstream_inference_completions_cost": 0.001665
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454343-wHU7NrAt2XbK7PSf6Eto",
+        "object": "chat.completion",
+        "created": 1789454343,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-9002\",\n          \"decision\": \"approve_in_principle\",\n          \"reason\": \"Claim CLM-9002 for code 99213 (routine consultation) on 2026-09-21 is covered under active policy POL-4102 (Shield Basic). Service date falls within policy period 2026-01-01 to 2026-12-31. Code 99213 is not excluded and does not require preauthorisation. Claimed amount of 600.00 equals remaining annual limit of 600.00. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. All required documents present (itemised_bill). No policy triggers, duplicates, or instruction injection detected.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\",\n            \"obs-3\",\n            \"obs-4\"\n          ],\n          \"lines\": [\n            {\n              \"code\": \"99213\",\n              \"amount\": 600.00,\n              \"status\": \"covered\"\n            }\n          ],\n          \"missing\": [],\n          \"approved_total\": 600.00,\n          \"refused_total\": 0.00\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2039,
+          "completion_tokens": 333,
+          "total_tokens": 2372,
+          "cost": 0.003704,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003704,
+            "upstream_inference_prompt_cost": 0.002039,
+            "upstream_inference_completions_cost": 0.001665
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9002",
+          "decision": "approve_in_principle",
+          "decision_hash": "916a9117d25db482cac88666c3e80ee99eb0275f25ed9639a1a5bd8cb2a746f0"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9002"
+      },
+      "result": {
+        "member_id": "M-3390",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-09-21",
+        "narrative": "Routine consultation.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "99213",
+            "amount": 600
+          }
+        ],
+        "claim_id": "CLM-9002",
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9002"
+      },
+      "result": {
+        "policy_id": "POL-4102",
+        "product": "Shield Basic",
+        "status": "active",
+        "start_date": "2026-01-01",
+        "end_date": "2026-12-31",
+        "annual_limit": 6000,
+        "used_to_date": 5400,
+        "exclusions": [
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 600.0,
+        "claim_total": 600.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9002",
+        "code": "99213"
+      },
+      "result": {
+        "code": "99213",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9002"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9002",
+          "decision": "approve_in_principle",
+          "reason": "Claim CLM-9002 for code 99213 (routine consultation) on 2026-09-21 is covered under active policy POL-4102 (Shield Basic). Service date falls within policy period 2026-01-01 to 2026-12-31. Code 99213 is not excluded and does not require preauthorisation. Claimed amount of 600.00 equals remaining annual limit of 600.00. Hospital H-207 (Mount Elizabeth East, Singapore) is panel. All required documents present (itemised_bill). No policy triggers, duplicates, or instruction injection detected.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 600.0,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 600.0,
+          "refused_total": 0.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9002",
+        "decision": "approve_in_principle",
+        "decision_hash": "916a9117d25db482cac88666c3e80ee99eb0275f25ed9639a1a5bd8cb2a746f0"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 7053,
+  "tokens_out": 781,
+  "cost_usd": 0.010957999999999999,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 9.8145,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

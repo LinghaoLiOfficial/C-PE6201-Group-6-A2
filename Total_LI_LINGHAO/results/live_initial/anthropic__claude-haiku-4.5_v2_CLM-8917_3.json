@@ -1,0 +1,466 @@
+{
+  "case_id": "CLM-8917",
+  "record": {
+    "case_id": "CLM-8917",
+    "decision": "escalate",
+    "reason": "Policy trigger: service date 2026-05-20 falls outside active policy dates (2026-06-01 to 2027-05-31). Claim is outside coverage period and must be escalated for manual review.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3"
+    ],
+    "lines": [],
+    "missing": [],
+    "approved_total": 0.0,
+    "refused_total": 0.0,
+    "trigger": "outside_policy_dates",
+    "escalate_to": "human claims assessor",
+    "turns": 3,
+    "tokens_in": 4715,
+    "tokens_out": 461,
+    "cost_usd": 0.007019999999999999,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:18:04.674193+00:00",
+    "decision_hash": "b8d9aae487556e1318bcda0dcc605b5f3a61a0ecdc62f671c34c8f8739a9bd71"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8917"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1420,
+        "output": 59,
+        "cost": 0.001715,
+        "provider_usage": {
+          "prompt_tokens": 1420,
+          "completion_tokens": 59,
+          "total_tokens": 1479,
+          "cost": 0.001715,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001715,
+            "upstream_inference_prompt_cost": 0.00142,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453078-SdEEazq2OmX6x1NVsjtj",
+        "object": "chat.completion",
+        "created": 1789453078,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8917\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1420,
+          "completion_tokens": 59,
+          "total_tokens": 1479,
+          "cost": 0.001715,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001715,
+            "upstream_inference_prompt_cost": 0.00142,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8917",
+          "member_id": "M-5502",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-05-20",
+          "narrative": "Treatment in May.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "99213",
+              "amount": 200
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8917"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8917"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1555,
+        "output": 175,
+        "cost": 0.00243,
+        "provider_usage": {
+          "prompt_tokens": 1555,
+          "completion_tokens": 175,
+          "total_tokens": 1730,
+          "cost": 0.00243,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00243,
+            "upstream_inference_prompt_cost": 0.001555,
+            "upstream_inference_completions_cost": 0.000875
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453079-hBTaP6cGpOUIYZjdCyzK",
+        "object": "chat.completion",
+        "created": 1789453079,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim step by step using the ReAct agent approach.\n\n**Turn 1: Retrieve policy and hospital status**\n\nI have the claim. Now I need to:\n1. Look up the policy to check for triggers and eligibility\n2. Get hospital status for panel verification\n3. Then check coverage for code 99213\n\n```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8917\"\n      }\n    },\n    {\n      \"tool\": \"get_hospital_status\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8917\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1555,
+          "completion_tokens": 175,
+          "total_tokens": 1730,
+          "cost": 0.00243,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00243,
+            "upstream_inference_prompt_cost": 0.001555,
+            "upstream_inference_completions_cost": 0.000875
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 200.0,
+          "policy_trigger": "outside_policy_dates"
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8917",
+              "decision": "escalate",
+              "reason": "Policy trigger: service date 2026-05-20 falls outside active policy dates (2026-06-01 to 2027-05-31). Claim is outside coverage period and must be escalated for manual review.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3"
+              ],
+              "lines": [],
+              "missing": [],
+              "approved_total": 0.0,
+              "refused_total": 0.0,
+              "trigger": "outside_policy_dates",
+              "escalate_to": "human claims assessor"
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1740,
+        "output": 227,
+        "cost": 0.002875,
+        "provider_usage": {
+          "prompt_tokens": 1740,
+          "completion_tokens": 227,
+          "total_tokens": 1967,
+          "cost": 0.002875,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002875,
+            "upstream_inference_prompt_cost": 0.00174,
+            "upstream_inference_completions_cost": 0.001135
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789453082-jlAMcqwenTh6OaoV2fJH",
+        "object": "chat.completion",
+        "created": 1789453082,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-8917\",\n          \"decision\": \"escalate\",\n          \"reason\": \"Policy trigger: service date 2026-05-20 falls outside active policy dates (2026-06-01 to 2027-05-31). Claim is outside coverage period and must be escalated for manual review.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\",\n            \"obs-3\"\n          ],\n          \"lines\": [],\n          \"missing\": [],\n          \"approved_total\": 0.0,\n          \"refused_total\": 0.0,\n          \"trigger\": \"outside_policy_dates\",\n          \"escalate_to\": \"human claims assessor\"\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1740,
+          "completion_tokens": 227,
+          "total_tokens": 1967,
+          "cost": 0.002875,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002875,
+            "upstream_inference_prompt_cost": 0.00174,
+            "upstream_inference_completions_cost": 0.001135
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8917",
+          "decision": "escalate",
+          "decision_hash": "b8d9aae487556e1318bcda0dcc605b5f3a61a0ecdc62f671c34c8f8739a9bd71"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8917"
+      },
+      "result": {
+        "claim_id": "CLM-8917",
+        "member_id": "M-5502",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-05-20",
+        "narrative": "Treatment in May.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "99213",
+            "amount": 200
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8917"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 200.0,
+        "policy_trigger": "outside_policy_dates"
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8917"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8917",
+          "decision": "escalate",
+          "reason": "Policy trigger: service date 2026-05-20 falls outside active policy dates (2026-06-01 to 2027-05-31). Claim is outside coverage period and must be escalated for manual review.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3"
+          ],
+          "lines": [],
+          "missing": [],
+          "approved_total": 0.0,
+          "refused_total": 0.0,
+          "trigger": "outside_policy_dates",
+          "escalate_to": "human claims assessor"
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8917",
+        "decision": "escalate",
+        "decision_hash": "b8d9aae487556e1318bcda0dcc605b5f3a61a0ecdc62f671c34c8f8739a9bd71"
+      }
+    }
+  ],
+  "turns": 3,
+  "tokens_in": 4715,
+  "tokens_out": 461,
+  "cost_usd": 0.007019999999999999,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 6.5021,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 3,
+  "negative": true,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

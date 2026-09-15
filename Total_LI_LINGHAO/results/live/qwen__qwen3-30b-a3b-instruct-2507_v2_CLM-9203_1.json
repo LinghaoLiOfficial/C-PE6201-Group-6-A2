@@ -1,0 +1,763 @@
+{
+  "case_id": "CLM-9203",
+  "record": {
+    "case_id": "CLM-9203",
+    "decision": "approve_in_principle",
+    "reason": "The claim for code 62480 is covered under the active policy with valid preauthorisation PA-5521, which covers the service date of 2026-08-01. The hospital is in the panel, and all required documents (discharge_summary) are present. No exclusions apply. The annual limit remains at 9200.0, which exceeds the claim amount of 1800.0.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5"
+    ],
+    "lines": [
+      {
+        "code": "62480",
+        "amount": 1800,
+        "status": "covered",
+        "preauth": "PA-5521"
+      }
+    ],
+    "missing": [],
+    "approved_total": 1800,
+    "refused_total": 0,
+    "turns": 5,
+    "tokens_in": 8756,
+    "tokens_out": 334,
+    "cost_usd": 0.0008050957,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:37:14.676376+00:00",
+    "decision_hash": "c6d8601968b561ab9b11c37980663544f8e9e575d5d140b938d1871875276342"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1357,
+        "output": 23,
+        "cost": 0.0001426,
+        "provider_usage": {
+          "prompt_tokens": 1357,
+          "completion_tokens": 23,
+          "total_tokens": 1380,
+          "cost": 0.0001426,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1328,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001426,
+            "upstream_inference_prompt_cost": 0.0001357,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454222-gZpoR0myTnrL92v7iyKb",
+        "object": "chat.completion",
+        "created": 1789454222,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9203\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1357,
+          "completion_tokens": 23,
+          "total_tokens": 1380,
+          "cost": 0.0001426,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1328,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001426,
+            "upstream_inference_prompt_cost": 0.0001357,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9203",
+          "member_id": "M-2214",
+          "hospital_id": "H-207",
+          "date_of_service": "2026-08-01",
+          "narrative": "Planned lumbar spinal fusion after approval was granted.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "62480",
+              "amount": 1800
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1534,
+        "output": 23,
+        "cost": 7.830225e-05,
+        "provider_usage": {
+          "prompt_tokens": 1534,
+          "completion_tokens": 23,
+          "total_tokens": 1557,
+          "cost": 7.830225e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1308,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.830225e-05,
+            "upstream_inference_prompt_cost": 7.38621e-05,
+            "upstream_inference_completions_cost": 4.44015e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454224-5wtDlF25ld7wTgbOkD42",
+        "object": "chat.completion",
+        "created": 1789454224,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9203\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1534,
+          "completion_tokens": 23,
+          "total_tokens": 1557,
+          "cost": 7.830225e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1308,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 7.830225e-05,
+            "upstream_inference_prompt_cost": 7.38621e-05,
+            "upstream_inference_completions_cost": 4.44015e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 1800.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9203",
+            "code": "62480"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9203"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1727,
+        "output": 52,
+        "cost": 9.319365e-05,
+        "provider_usage": {
+          "prompt_tokens": 1727,
+          "completion_tokens": 52,
+          "total_tokens": 1779,
+          "cost": 9.319365e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1309,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.319365e-05,
+            "upstream_inference_prompt_cost": 8.315505e-05,
+            "upstream_inference_completions_cost": 1.00386e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454228-EIkcVQlmK3I1O5cpj70y",
+        "object": "chat.completion",
+        "created": 1789454228,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9203\",\"code\":\"62480\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-9203\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1727,
+          "completion_tokens": 52,
+          "total_tokens": 1779,
+          "cost": 9.319365e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1309,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.319365e-05,
+            "upstream_inference_prompt_cost": 8.315505e-05,
+            "upstream_inference_completions_cost": 1.00386e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [
+            "discharge_summary"
+          ],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-207",
+          "name": "Mount Elizabeth East",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-9203",
+            "code": "62480"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1941,
+        "output": 33,
+        "cost": 9.98298e-05,
+        "provider_usage": {
+          "prompt_tokens": 1941,
+          "completion_tokens": 33,
+          "total_tokens": 1974,
+          "cost": 9.98298e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1333,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.98298e-05,
+            "upstream_inference_prompt_cost": 9.345915e-05,
+            "upstream_inference_completions_cost": 6.37065e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454230-oQoUtvYmmnd2xE4RJF4j",
+        "object": "chat.completion",
+        "created": 1789454230,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "StreamLake",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_preauthorisation\",\"arguments\":{\"claim_id\":\"CLM-9203\",\"code\":\"62480\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1941,
+          "completion_tokens": 33,
+          "total_tokens": 1974,
+          "cost": 9.98298e-05,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1333,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 9.98298e-05,
+            "upstream_inference_prompt_cost": 9.345915e-05,
+            "upstream_inference_completions_cost": 6.37065e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "candidates": [
+            {
+              "preauth_id": "PA-5521",
+              "member_id": "M-2214",
+              "procedure_code": "62480",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9203",
+              "decision": "approve_in_principle",
+              "reason": "The claim for code 62480 is covered under the active policy with valid preauthorisation PA-5521, which covers the service date of 2026-08-01. The hospital is in the panel, and all required documents (discharge_summary) are present. No exclusions apply. The annual limit remains at 9200.0, which exceeds the claim amount of 1800.0.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5"
+              ],
+              "lines": [
+                {
+                  "code": "62480",
+                  "amount": 1800,
+                  "status": "covered",
+                  "preauth": "PA-5521"
+                }
+              ],
+              "missing": [],
+              "approved_total": 1800,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2197,
+        "output": 203,
+        "cost": 0.00039117,
+        "provider_usage": {
+          "prompt_tokens": 2197,
+          "completion_tokens": 203,
+          "total_tokens": 2400,
+          "cost": 0.00039117,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00039117,
+            "upstream_inference_prompt_cost": 0.00028561,
+            "upstream_inference_completions_cost": 0.00010556
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454232-MG9qwp3vuc6fvvJKNPVH",
+        "object": "chat.completion",
+        "created": 1789454232,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Alibaba",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9203\",\"decision\":\"approve_in_principle\",\"reason\":\"The claim for code 62480 is covered under the active policy with valid preauthorisation PA-5521, which covers the service date of 2026-08-01. The hospital is in the panel, and all required documents (discharge_summary) are present. No exclusions apply. The annual limit remains at 9200.0, which exceeds the claim amount of 1800.0.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\",\"obs-5\"],\"lines\":[{\"code\":\"62480\",\"amount\":1800,\"status\":\"covered\",\"preauth\":\"PA-5521\"}],\"missing\":[],\"approved_total\":1800,\"refused_total\":0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2197,
+          "completion_tokens": 203,
+          "total_tokens": 2400,
+          "cost": 0.00039117,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00039117,
+            "upstream_inference_prompt_cost": 0.00028561,
+            "upstream_inference_completions_cost": 0.00010556
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9203",
+          "decision": "approve_in_principle",
+          "decision_hash": "c6d8601968b561ab9b11c37980663544f8e9e575d5d140b938d1871875276342"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "claim_id": "CLM-9203",
+        "member_id": "M-2214",
+        "hospital_id": "H-207",
+        "date_of_service": "2026-08-01",
+        "narrative": "Planned lumbar spinal fusion after approval was granted.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "62480",
+            "amount": 1800
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 1800.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9203",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [
+          "discharge_summary"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9203"
+      },
+      "result": {
+        "hospital_id": "H-207",
+        "name": "Mount Elizabeth East",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-9203",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "candidates": [
+          {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          }
+        ],
+        "valid": {
+          "preauth_id": "PA-5521",
+          "member_id": "M-2214",
+          "procedure_code": "62480",
+          "valid_from": "2026-08-01",
+          "valid_to": "2026-10-31",
+          "status": "valid"
+        },
+        "status": "valid"
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9203",
+          "decision": "approve_in_principle",
+          "reason": "The claim for code 62480 is covered under the active policy with valid preauthorisation PA-5521, which covers the service date of 2026-08-01. The hospital is in the panel, and all required documents (discharge_summary) are present. No exclusions apply. The annual limit remains at 9200.0, which exceeds the claim amount of 1800.0.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5"
+          ],
+          "lines": [
+            {
+              "code": "62480",
+              "amount": 1800,
+              "status": "covered",
+              "preauth": "PA-5521"
+            }
+          ],
+          "missing": [],
+          "approved_total": 1800,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9203",
+        "decision": "approve_in_principle",
+        "decision_hash": "c6d8601968b561ab9b11c37980663544f8e9e575d5d140b938d1871875276342"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 8756,
+  "tokens_out": 334,
+  "cost_usd": 0.0008050957,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 12.7492,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}

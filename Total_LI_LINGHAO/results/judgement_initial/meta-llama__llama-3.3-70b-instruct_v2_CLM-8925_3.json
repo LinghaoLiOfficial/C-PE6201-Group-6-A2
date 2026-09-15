@@ -1,0 +1,58 @@
+{
+  "source": "meta-llama__llama-3.3-70b-instruct_v2_CLM-8925_3.json",
+  "case_id": "CLM-8925",
+  "judge": "anthropic/claude-haiku-4.5",
+  "status": "judged",
+  "pass": false,
+  "reason": "Missing evidential support for one must_record requirement. The record cites obs-1 and obs-2, which provide: claim total 11400 (obs-2), remaining balance 9200 (obs-2), and line items with amounts (obs-1: 27447=9800, 47120=1400, 70553=200). However, the must_record requirement 'that lines were not individually priced' is not supported by any cited observation. The observations show line items with individual amounts, but contain no explicit statement or evidence that lines were NOT individually priced. This requirement cannot be inferred from the presence of itemised amounts.",
+  "missing_requirements": [
+    "evidential support for 'that lines were not individually priced' - observations show itemised amounts but no statement confirming lines lack individual pricing"
+  ],
+  "cost_usd": 0.002111,
+  "raw": {
+    "id": "gen-1789453026-SEyUy0u3aQTz5WU5UNNX",
+    "object": "chat.completion",
+    "created": 1789453026,
+    "model": "anthropic/claude-haiku-4.5",
+    "provider": "Amazon Bedrock",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "```json\n{\n  \"pass\": false,\n  \"reason\": \"Missing evidential support for one must_record requirement. The record cites obs-1 and obs-2, which provide: claim total 11400 (obs-2), remaining balance 9200 (obs-2), and line items with amounts (obs-1: 27447=9800, 47120=1400, 70553=200). However, the must_record requirement 'that lines were not individually priced' is not supported by any cited observation. The observations show line items with individual amounts, but contain no explicit statement or evidence that lines were NOT individually priced. This requirement cannot be inferred from the presence of itemised amounts.\",\n  \"missing_requirements\": [\n    \"evidential support for 'that lines were not individually priced' - observations show itemised amounts but no statement confirming lines lack individual pricing\"\n  ]\n}\n```",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1061,
+      "completion_tokens": 210,
+      "total_tokens": 1271,
+      "cost": 0.002111,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.002111,
+        "upstream_inference_prompt_cost": 0.001061,
+        "upstream_inference_completions_cost": 0.00105
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

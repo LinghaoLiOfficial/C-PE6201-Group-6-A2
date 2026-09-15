@@ -1,0 +1,593 @@
+{
+  "case_id": "CLM-9205",
+  "record": {
+    "case_id": "CLM-9205",
+    "decision": "approve_in_principle",
+    "reason": "The claim is for a non-excluded procedure (15823) under an active policy (POL-6001) with sufficient remaining limit. No preauthorisation is required, and all documents are present. The hospital is not on the panel, but this does not affect coverage for this claim as per policy terms.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4"
+    ],
+    "lines": [
+      {
+        "code": "15823",
+        "amount": 700,
+        "status": "covered"
+      }
+    ],
+    "missing": [],
+    "approved_total": 700,
+    "refused_total": 0,
+    "turns": 4,
+    "tokens_in": 5945,
+    "tokens_out": 256,
+    "cost_usd": 0.00071895,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:15:55.478312+00:00",
+    "decision_hash": "7b7764440e81904633ccc6207894a839ab46697cc6ca0cb88e45b7fda453fdb8"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-9205"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1276,
+        "output": 23,
+        "cost": 0.0001345,
+        "provider_usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452946-SyYKHQvKj4IS2B0NAIIF",
+        "object": "chat.completion",
+        "created": 1789452946,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"get_claim\",\"arguments\":{\"claim_id\":\"CLM-9205\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1276,
+          "completion_tokens": 23,
+          "total_tokens": 1299,
+          "cost": 0.0001345,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1248,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001345,
+            "upstream_inference_prompt_cost": 0.0001276,
+            "upstream_inference_completions_cost": 6.9e-06
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-9205",
+          "member_id": "M-5502",
+          "hospital_id": "H-330",
+          "date_of_service": "2026-09-25",
+          "narrative": "Blepharoplasty performed at Bayfront Specialist.",
+          "documents": [
+            "itemised_bill"
+          ],
+          "lines": [
+            {
+              "code": "15823",
+              "amount": 700
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-9205"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1427,
+        "output": 22,
+        "cost": 0.00019695,
+        "provider_usage": {
+          "prompt_tokens": 1427,
+          "completion_tokens": 22,
+          "total_tokens": 1449,
+          "cost": 0.00019695,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00019695,
+            "upstream_inference_prompt_cost": 0.00018551,
+            "upstream_inference_completions_cost": 1.144e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452948-0IGL5zwXcBficmUNnTVx",
+        "object": "chat.completion",
+        "created": 1789452948,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Alibaba",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"lookup_policy\",\"arguments\":{\"claim_id\":\"CLM-9205\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1427,
+          "completion_tokens": 22,
+          "total_tokens": 1449,
+          "cost": 0.00019695,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00019695,
+            "upstream_inference_prompt_cost": 0.00018551,
+            "upstream_inference_completions_cost": 1.144e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-6001",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-06-01",
+          "end_date": "2027-05-31",
+          "annual_limit": 15000,
+          "used_to_date": 0,
+          "exclusions": [],
+          "remaining": 15000.0,
+          "claim_total": 700.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-9205",
+            "code": "15823"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-9205"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1546,
+        "output": 52,
+        "cost": 0.0001702,
+        "provider_usage": {
+          "prompt_tokens": 1546,
+          "completion_tokens": 52,
+          "total_tokens": 1598,
+          "cost": 0.0001702,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001702,
+            "upstream_inference_prompt_cost": 0.0001546,
+            "upstream_inference_completions_cost": 1.56e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452949-deLP5i67oS6NnqcvRIWp",
+        "object": "chat.completion",
+        "created": 1789452949,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"check_coverage\",\"arguments\":{\"claim_id\":\"CLM-9205\",\"code\":\"15823\"}},{\"tool\":\"get_hospital_status\",\"arguments\":{\"claim_id\":\"CLM-9205\"}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1546,
+          "completion_tokens": 52,
+          "total_tokens": 1598,
+          "cost": 0.0001702,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1232,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0001702,
+            "upstream_inference_prompt_cost": 0.0001546,
+            "upstream_inference_completions_cost": 1.56e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "15823",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-330",
+          "name": "Bayfront Specialist",
+          "panel": false,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-9205",
+              "decision": "approve_in_principle",
+              "reason": "The claim is for a non-excluded procedure (15823) under an active policy (POL-6001) with sufficient remaining limit. No preauthorisation is required, and all documents are present. The hospital is not on the panel, but this does not affect coverage for this claim as per policy terms.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4"
+              ],
+              "lines": [
+                {
+                  "code": "15823",
+                  "amount": 700,
+                  "status": "covered"
+                }
+              ],
+              "missing": [],
+              "approved_total": 700,
+              "refused_total": 0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 1696,
+        "output": 159,
+        "cost": 0.0002173,
+        "provider_usage": {
+          "prompt_tokens": 1696,
+          "completion_tokens": 159,
+          "total_tokens": 1855,
+          "cost": 0.0002173,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1520,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002173,
+            "upstream_inference_prompt_cost": 0.0001696,
+            "upstream_inference_completions_cost": 4.77e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789452951-iOBAVnhAMdZWM3gptfhl",
+        "object": "chat.completion",
+        "created": 1789452951,
+        "model": "qwen/qwen3-30b-a3b-instruct-2507",
+        "provider": "Nebius",
+        "system_fingerprint": null,
+        "service_tier": null,
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "{\"calls\":[{\"tool\":\"issue_decision_letter\",\"arguments\":{\"decision\":{\"case_id\":\"CLM-9205\",\"decision\":\"approve_in_principle\",\"reason\":\"The claim is for a non-excluded procedure (15823) under an active policy (POL-6001) with sufficient remaining limit. No preauthorisation is required, and all documents are present. The hospital is not on the panel, but this does not affect coverage for this claim as per policy terms.\",\"evidence\":[\"obs-1\",\"obs-2\",\"obs-3\",\"obs-4\"],\"lines\":[{\"code\":\"15823\",\"amount\":700,\"status\":\"covered\"}],\"missing\":[],\"approved_total\":700,\"refused_total\":0}}}]}",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1696,
+          "completion_tokens": 159,
+          "total_tokens": 1855,
+          "cost": 0.0002173,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 1520,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0002173,
+            "upstream_inference_prompt_cost": 0.0001696,
+            "upstream_inference_completions_cost": 4.77e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-9205",
+          "decision": "approve_in_principle",
+          "decision_hash": "7b7764440e81904633ccc6207894a839ab46697cc6ca0cb88e45b7fda453fdb8"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-9205"
+      },
+      "result": {
+        "claim_id": "CLM-9205",
+        "member_id": "M-5502",
+        "hospital_id": "H-330",
+        "date_of_service": "2026-09-25",
+        "narrative": "Blepharoplasty performed at Bayfront Specialist.",
+        "documents": [
+          "itemised_bill"
+        ],
+        "lines": [
+          {
+            "code": "15823",
+            "amount": 700
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-9205"
+      },
+      "result": {
+        "policy_id": "POL-6001",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-06-01",
+        "end_date": "2027-05-31",
+        "annual_limit": 15000,
+        "used_to_date": 0,
+        "exclusions": [],
+        "remaining": 15000.0,
+        "claim_total": 700.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-9205",
+        "code": "15823"
+      },
+      "result": {
+        "code": "15823",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-9205"
+      },
+      "result": {
+        "hospital_id": "H-330",
+        "name": "Bayfront Specialist",
+        "panel": false,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-9205",
+          "decision": "approve_in_principle",
+          "reason": "The claim is for a non-excluded procedure (15823) under an active policy (POL-6001) with sufficient remaining limit. No preauthorisation is required, and all documents are present. The hospital is not on the panel, but this does not affect coverage for this claim as per policy terms.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4"
+          ],
+          "lines": [
+            {
+              "code": "15823",
+              "amount": 700,
+              "status": "covered"
+            }
+          ],
+          "missing": [],
+          "approved_total": 700,
+          "refused_total": 0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-9205",
+        "decision": "approve_in_principle",
+        "decision_hash": "7b7764440e81904633ccc6207894a839ab46697cc6ca0cb88e45b7fda453fdb8"
+      }
+    }
+  ],
+  "turns": 4,
+  "tokens_in": 5945,
+  "tokens_out": 256,
+  "cost_usd": 0.00071895,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 8.6947,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "qwen/qwen3-30b-a3b-instruct-2507",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "e137324ce4e2d50cd5856736c7ee186d1d4dad0f2fe40d0d32695d1c4cd0649c",
+  "operator": "simulated"
+}

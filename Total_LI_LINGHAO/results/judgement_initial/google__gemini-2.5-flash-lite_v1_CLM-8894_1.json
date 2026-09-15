@@ -1,0 +1,56 @@
+{
+  "source": "google__gemini-2.5-flash-lite_v1_CLM-8894_1.json",
+  "case_id": "CLM-8894",
+  "judge": "anthropic/claude-haiku-4.5",
+  "status": "judged",
+  "pass": true,
+  "reason": "Record fully satisfies must_record requirements. PA-5640 is identified in obs-5 result; its validity period (valid_from 2026-03-01, valid_to 2026-05-31) is explicitly stated; the reason correctly cites expiration before service date (2026-09-09) as the basis for denial. The explanation demonstrates the critical distinction that existence of an authorisation does not establish applicability\u2014obs-5 explicitly states 'Existence alone does not establish applicability' and confirms status 'no_valid_candidate'. Decision and evidence chain are properly documented.",
+  "missing_requirements": [],
+  "cost_usd": 0.002353,
+  "raw": {
+    "id": "gen-1789453294-0hMftvvfODwfNXfBnPdu",
+    "object": "chat.completion",
+    "created": 1789453294,
+    "model": "anthropic/claude-haiku-4.5",
+    "provider": "Amazon Bedrock",
+    "system_fingerprint": null,
+    "service_tier": "default",
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "end_turn",
+        "message": {
+          "role": "assistant",
+          "content": "```json\n{\n  \"pass\": true,\n  \"reason\": \"Record fully satisfies must_record requirements. PA-5640 is identified in obs-5 result; its validity period (valid_from 2026-03-01, valid_to 2026-05-31) is explicitly stated; the reason correctly cites expiration before service date (2026-09-09) as the basis for denial. The explanation demonstrates the critical distinction that existence of an authorisation does not establish applicability\u2014obs-5 explicitly states 'Existence alone does not establish applicability' and confirms status 'no_valid_candidate'. Decision and evidence chain are properly documented.\",\n  \"missing_requirements\": []\n}\n```",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1538,
+      "completion_tokens": 163,
+      "total_tokens": 1701,
+      "cost": 0.002353,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.002353,
+        "upstream_inference_prompt_cost": 0.001538,
+        "upstream_inference_completions_cost": 0.000815
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

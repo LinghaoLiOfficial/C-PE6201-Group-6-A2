@@ -1,0 +1,880 @@
+{
+  "case_id": "CLM-8842",
+  "record": {
+    "case_id": "CLM-8842",
+    "decision": "approve_in_principle",
+    "reason": "Claim CLM-8842 for member M-2214 processed against active policy POL-3310 (Shield Plus, valid 2026-04-01 to 2027-03-31). Two of three lines approved: code 47120 (appendectomy, $1400) covered with no preauth requirement; code 62480 (back treatment, $780) covered with valid preauthorisation PA-5521 (valid 2026-08-01 to 2026-10-31, service date 2026-09-02 within validity). Code 31255 (skin procedure, $300) excluded under policy rule EX-14 cosmetic dermatology. Approved total $2180 within remaining annual limit of $9200. Hospital H-114 (Riverside General, Singapore) is panel provider. All required documents present (itemised_bill, discharge_summary). No policy trigger, no duplicate, no instruction detected.",
+    "evidence": [
+      "obs-1",
+      "obs-2",
+      "obs-3",
+      "obs-4",
+      "obs-5",
+      "obs-6",
+      "obs-7"
+    ],
+    "lines": [
+      {
+        "code": "47120",
+        "amount": 1400.0,
+        "status": "covered"
+      },
+      {
+        "code": "62480",
+        "amount": 780.0,
+        "status": "covered",
+        "preauth": "PA-5521"
+      },
+      {
+        "code": "31255",
+        "amount": 300.0,
+        "status": "not_covered",
+        "exclusion": "EX-14 cosmetic dermatology"
+      }
+    ],
+    "missing": [],
+    "approved_total": 2180.0,
+    "refused_total": 300.0,
+    "turns": 5,
+    "tokens_in": 10083,
+    "tokens_out": 1109,
+    "cost_usd": 0.015628,
+    "token_measurement": "api_usage",
+    "autonomy": "confirm",
+    "gate": "operator approved",
+    "ts": "2026-09-15T06:38:16.303236+00:00",
+    "decision_hash": "c972eab1c5c1755b639f9bdc9560f095bd259d684352c20dfddbefa357fd7254"
+  },
+  "trace": [
+    {
+      "turn": 1,
+      "calls": [
+        {
+          "tool": "get_claim",
+          "arguments": {
+            "claim_id": "CLM-8842"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1512,
+        "output": 59,
+        "cost": 0.001807,
+        "provider_usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454282-Gm41M7QQvdaX8uN2cb2L",
+        "object": "chat.completion",
+        "created": 1789454282,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_claim\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8842\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1512,
+          "completion_tokens": 59,
+          "total_tokens": 1571,
+          "cost": 0.001807,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.001807,
+            "upstream_inference_prompt_cost": 0.001512,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "claim_id": "CLM-8842",
+          "member_id": "M-2214",
+          "hospital_id": "H-114",
+          "date_of_service": "2026-09-02",
+          "narrative": "Admitted for appendix removal. Surgeon also treated a back problem and did a skin procedure while I was in.",
+          "documents": [
+            "itemised_bill",
+            "discharge_summary"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1400
+            },
+            {
+              "code": "62480",
+              "amount": 780
+            },
+            {
+              "code": "31255",
+              "amount": 300
+            }
+          ],
+          "duplicates": [],
+          "duplicate": null,
+          "instruction_detected": false
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "calls": [
+        {
+          "tool": "lookup_policy",
+          "arguments": {
+            "claim_id": "CLM-8842"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1723,
+        "output": 59,
+        "cost": 0.002018,
+        "provider_usage": {
+          "prompt_tokens": 1723,
+          "completion_tokens": 59,
+          "total_tokens": 1782,
+          "cost": 0.002018,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002018,
+            "upstream_inference_prompt_cost": 0.001723,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454283-zFNaLRHBbB23A0nqpH3d",
+        "object": "chat.completion",
+        "created": 1789454283,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"lookup_policy\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8842\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1723,
+          "completion_tokens": 59,
+          "total_tokens": 1782,
+          "cost": 0.002018,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002018,
+            "upstream_inference_prompt_cost": 0.001723,
+            "upstream_inference_completions_cost": 0.000295
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "policy_id": "POL-3310",
+          "product": "Shield Plus",
+          "status": "active",
+          "start_date": "2026-04-01",
+          "end_date": "2027-03-31",
+          "annual_limit": 12000,
+          "used_to_date": 2800,
+          "exclusions": [
+            {
+              "code": "31255",
+              "rule": "EX-14 cosmetic dermatology"
+            },
+            {
+              "code": "15823",
+              "rule": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "remaining": 9200.0,
+          "claim_total": 2480.0,
+          "policy_trigger": null
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "calls": [
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8842",
+            "code": "47120"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8842",
+            "code": "62480"
+          }
+        },
+        {
+          "tool": "check_coverage",
+          "arguments": {
+            "claim_id": "CLM-8842",
+            "code": "31255"
+          }
+        },
+        {
+          "tool": "get_hospital_status",
+          "arguments": {
+            "claim_id": "CLM-8842"
+          }
+        }
+      ],
+      "usage": {
+        "input": 1908,
+        "output": 391,
+        "cost": 0.003863,
+        "provider_usage": {
+          "prompt_tokens": 1908,
+          "completion_tokens": 391,
+          "total_tokens": 2299,
+          "cost": 0.003863,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003863,
+            "upstream_inference_prompt_cost": 0.001908,
+            "upstream_inference_completions_cost": 0.001955
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454285-4zK6Uzanig1CocYHcTyV",
+        "object": "chat.completion",
+        "created": 1789454285,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "I'll process this claim step by step.\n\n**Analysis of observations:**\n\n1. **get_claim (obs-1)**: Claim CLM-8842 has three lines:\n   - 47120 (appendix removal): $1,400\n   - 62480 (back problem treatment): $780\n   - 31255 (skin procedure): $300\n   - No duplicates, no instruction detected\n\n2. **lookup_policy (obs-2)**: Policy POL-3310 is active, within dates (2026-04-01 to 2027-03-31), service date 2026-09-02 is within policy period. Remaining limit: $9,200. Policy has no trigger. Code 31255 is explicitly excluded under EX-14 (cosmetic dermatology).\n\n**Next steps:**\n- Check coverage for each unique code (47120, 62480, 31255)\n- Get hospital status\n- Determine preauthorisation requirements for non-excluded codes\n- Build decision\n\nLet me proceed with coverage checks and hospital status:\n\n```json\n{\n  \"calls\": [\n    {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8842\", \"code\": \"47120\"}},\n    {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8842\", \"code\": \"62480\"}},\n    {\"tool\": \"check_coverage\", \"arguments\": {\"claim_id\": \"CLM-8842\", \"code\": \"31255\"}},\n    {\"tool\": \"get_hospital_status\", \"arguments\": {\"claim_id\": \"CLM-8842\"}}\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 1908,
+          "completion_tokens": 391,
+          "total_tokens": 2299,
+          "cost": 0.003863,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.003863,
+            "upstream_inference_prompt_cost": 0.001908,
+            "upstream_inference_completions_cost": 0.001955
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "47120",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "code": "62480",
+          "excluded": false,
+          "exclusion": null,
+          "requires_preauth": true,
+          "required_documents": [
+            "discharge_summary"
+          ],
+          "missing_documents": []
+        },
+        {
+          "code": "31255",
+          "excluded": true,
+          "exclusion": "EX-14 cosmetic dermatology",
+          "requires_preauth": false,
+          "required_documents": [],
+          "missing_documents": []
+        },
+        {
+          "hospital_id": "H-114",
+          "name": "Riverside General",
+          "panel": true,
+          "country": "SG"
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "calls": [
+        {
+          "tool": "get_preauthorisation",
+          "arguments": {
+            "claim_id": "CLM-8842",
+            "code": "62480"
+          }
+        }
+      ],
+      "usage": {
+        "input": 2356,
+        "output": 70,
+        "cost": 0.002706,
+        "provider_usage": {
+          "prompt_tokens": 2356,
+          "completion_tokens": 70,
+          "total_tokens": 2426,
+          "cost": 0.002706,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002706,
+            "upstream_inference_prompt_cost": 0.002356,
+            "upstream_inference_completions_cost": 0.00035
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454288-Xa71hOtH6XgyqCpA04GY",
+        "object": "chat.completion",
+        "created": 1789454288,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"get_preauthorisation\",\n      \"arguments\": {\n        \"claim_id\": \"CLM-8842\",\n        \"code\": \"62480\"\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2356,
+          "completion_tokens": 70,
+          "total_tokens": 2426,
+          "cost": 0.002706,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.002706,
+            "upstream_inference_prompt_cost": 0.002356,
+            "upstream_inference_completions_cost": 0.00035
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "code": "62480",
+          "candidates": [
+            {
+              "preauth_id": "PA-5521",
+              "member_id": "M-2214",
+              "procedure_code": "62480",
+              "valid_from": "2026-08-01",
+              "valid_to": "2026-10-31",
+              "status": "valid"
+            }
+          ],
+          "valid": {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          },
+          "status": "valid"
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "calls": [
+        {
+          "tool": "issue_decision_letter",
+          "arguments": {
+            "decision": {
+              "case_id": "CLM-8842",
+              "decision": "approve_in_principle",
+              "reason": "Claim CLM-8842 for member M-2214 processed against active policy POL-3310 (Shield Plus, valid 2026-04-01 to 2027-03-31). Two of three lines approved: code 47120 (appendectomy, $1400) covered with no preauth requirement; code 62480 (back treatment, $780) covered with valid preauthorisation PA-5521 (valid 2026-08-01 to 2026-10-31, service date 2026-09-02 within validity). Code 31255 (skin procedure, $300) excluded under policy rule EX-14 cosmetic dermatology. Approved total $2180 within remaining annual limit of $9200. Hospital H-114 (Riverside General, Singapore) is panel provider. All required documents present (itemised_bill, discharge_summary). No policy trigger, no duplicate, no instruction detected.",
+              "evidence": [
+                "obs-1",
+                "obs-2",
+                "obs-3",
+                "obs-4",
+                "obs-5",
+                "obs-6",
+                "obs-7"
+              ],
+              "lines": [
+                {
+                  "code": "47120",
+                  "amount": 1400.0,
+                  "status": "covered"
+                },
+                {
+                  "code": "62480",
+                  "amount": 780.0,
+                  "status": "covered",
+                  "preauth": "PA-5521"
+                },
+                {
+                  "code": "31255",
+                  "amount": 300.0,
+                  "status": "not_covered",
+                  "exclusion": "EX-14 cosmetic dermatology"
+                }
+              ],
+              "missing": [],
+              "approved_total": 2180.0,
+              "refused_total": 300.0
+            }
+          }
+        }
+      ],
+      "usage": {
+        "input": 2584,
+        "output": 530,
+        "cost": 0.005234,
+        "provider_usage": {
+          "prompt_tokens": 2584,
+          "completion_tokens": 530,
+          "total_tokens": 3114,
+          "cost": 0.005234,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.005234,
+            "upstream_inference_prompt_cost": 0.002584,
+            "upstream_inference_completions_cost": 0.00265
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "raw": {
+        "id": "gen-1789454291-KoVasWB4dHnTfoNOU6lZ",
+        "object": "chat.completion",
+        "created": 1789454291,
+        "model": "anthropic/claude-haiku-4.5",
+        "provider": "Amazon Bedrock",
+        "system_fingerprint": null,
+        "service_tier": "default",
+        "choices": [
+          {
+            "index": 0,
+            "logprobs": null,
+            "finish_reason": "stop",
+            "native_finish_reason": "end_turn",
+            "message": {
+              "role": "assistant",
+              "content": "```json\n{\n  \"calls\": [\n    {\n      \"tool\": \"issue_decision_letter\",\n      \"arguments\": {\n        \"decision\": {\n          \"case_id\": \"CLM-8842\",\n          \"decision\": \"approve_in_principle\",\n          \"reason\": \"Claim CLM-8842 for member M-2214 processed against active policy POL-3310 (Shield Plus, valid 2026-04-01 to 2027-03-31). Two of three lines approved: code 47120 (appendectomy, $1400) covered with no preauth requirement; code 62480 (back treatment, $780) covered with valid preauthorisation PA-5521 (valid 2026-08-01 to 2026-10-31, service date 2026-09-02 within validity). Code 31255 (skin procedure, $300) excluded under policy rule EX-14 cosmetic dermatology. Approved total $2180 within remaining annual limit of $9200. Hospital H-114 (Riverside General, Singapore) is panel provider. All required documents present (itemised_bill, discharge_summary). No policy trigger, no duplicate, no instruction detected.\",\n          \"evidence\": [\n            \"obs-1\",\n            \"obs-2\",\n            \"obs-3\",\n            \"obs-4\",\n            \"obs-5\",\n            \"obs-6\",\n            \"obs-7\"\n          ],\n          \"lines\": [\n            {\n              \"code\": \"47120\",\n              \"amount\": 1400.00,\n              \"status\": \"covered\"\n            },\n            {\n              \"code\": \"62480\",\n              \"amount\": 780.00,\n              \"status\": \"covered\",\n              \"preauth\": \"PA-5521\"\n            },\n            {\n              \"code\": \"31255\",\n              \"amount\": 300.00,\n              \"status\": \"not_covered\",\n              \"exclusion\": \"EX-14 cosmetic dermatology\"\n            }\n          ],\n          \"missing\": [],\n          \"approved_total\": 2180.00,\n          \"refused_total\": 300.00\n        }\n      }\n    }\n  ]\n}\n```",
+              "refusal": null,
+              "reasoning": null
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 2584,
+          "completion_tokens": 530,
+          "total_tokens": 3114,
+          "cost": 0.005234,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.005234,
+            "upstream_inference_prompt_cost": 0.002584,
+            "upstream_inference_completions_cost": 0.00265
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        }
+      },
+      "observations": [
+        {
+          "status": "recorded",
+          "case_id": "CLM-8842",
+          "decision": "approve_in_principle",
+          "decision_hash": "c972eab1c5c1755b639f9bdc9560f095bd259d684352c20dfddbefa357fd7254"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "id": "obs-1",
+      "tool": "get_claim",
+      "arguments": {
+        "claim_id": "CLM-8842"
+      },
+      "result": {
+        "claim_id": "CLM-8842",
+        "member_id": "M-2214",
+        "hospital_id": "H-114",
+        "date_of_service": "2026-09-02",
+        "narrative": "Admitted for appendix removal. Surgeon also treated a back problem and did a skin procedure while I was in.",
+        "documents": [
+          "itemised_bill",
+          "discharge_summary"
+        ],
+        "lines": [
+          {
+            "code": "47120",
+            "amount": 1400
+          },
+          {
+            "code": "62480",
+            "amount": 780
+          },
+          {
+            "code": "31255",
+            "amount": 300
+          }
+        ],
+        "duplicates": [],
+        "duplicate": null,
+        "instruction_detected": false
+      }
+    },
+    {
+      "id": "obs-2",
+      "tool": "lookup_policy",
+      "arguments": {
+        "claim_id": "CLM-8842"
+      },
+      "result": {
+        "policy_id": "POL-3310",
+        "product": "Shield Plus",
+        "status": "active",
+        "start_date": "2026-04-01",
+        "end_date": "2027-03-31",
+        "annual_limit": 12000,
+        "used_to_date": 2800,
+        "exclusions": [
+          {
+            "code": "31255",
+            "rule": "EX-14 cosmetic dermatology"
+          },
+          {
+            "code": "15823",
+            "rule": "EX-14 cosmetic dermatology"
+          }
+        ],
+        "remaining": 9200.0,
+        "claim_total": 2480.0,
+        "policy_trigger": null
+      }
+    },
+    {
+      "id": "obs-3",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8842",
+        "code": "47120"
+      },
+      "result": {
+        "code": "47120",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-4",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8842",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "excluded": false,
+        "exclusion": null,
+        "requires_preauth": true,
+        "required_documents": [
+          "discharge_summary"
+        ],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-5",
+      "tool": "check_coverage",
+      "arguments": {
+        "claim_id": "CLM-8842",
+        "code": "31255"
+      },
+      "result": {
+        "code": "31255",
+        "excluded": true,
+        "exclusion": "EX-14 cosmetic dermatology",
+        "requires_preauth": false,
+        "required_documents": [],
+        "missing_documents": []
+      }
+    },
+    {
+      "id": "obs-6",
+      "tool": "get_hospital_status",
+      "arguments": {
+        "claim_id": "CLM-8842"
+      },
+      "result": {
+        "hospital_id": "H-114",
+        "name": "Riverside General",
+        "panel": true,
+        "country": "SG"
+      }
+    },
+    {
+      "id": "obs-7",
+      "tool": "get_preauthorisation",
+      "arguments": {
+        "claim_id": "CLM-8842",
+        "code": "62480"
+      },
+      "result": {
+        "code": "62480",
+        "candidates": [
+          {
+            "preauth_id": "PA-5521",
+            "member_id": "M-2214",
+            "procedure_code": "62480",
+            "valid_from": "2026-08-01",
+            "valid_to": "2026-10-31",
+            "status": "valid"
+          }
+        ],
+        "valid": {
+          "preauth_id": "PA-5521",
+          "member_id": "M-2214",
+          "procedure_code": "62480",
+          "valid_from": "2026-08-01",
+          "valid_to": "2026-10-31",
+          "status": "valid"
+        },
+        "status": "valid"
+      }
+    },
+    {
+      "id": "obs-8",
+      "tool": "issue_decision_letter",
+      "arguments": {
+        "decision": {
+          "case_id": "CLM-8842",
+          "decision": "approve_in_principle",
+          "reason": "Claim CLM-8842 for member M-2214 processed against active policy POL-3310 (Shield Plus, valid 2026-04-01 to 2027-03-31). Two of three lines approved: code 47120 (appendectomy, $1400) covered with no preauth requirement; code 62480 (back treatment, $780) covered with valid preauthorisation PA-5521 (valid 2026-08-01 to 2026-10-31, service date 2026-09-02 within validity). Code 31255 (skin procedure, $300) excluded under policy rule EX-14 cosmetic dermatology. Approved total $2180 within remaining annual limit of $9200. Hospital H-114 (Riverside General, Singapore) is panel provider. All required documents present (itemised_bill, discharge_summary). No policy trigger, no duplicate, no instruction detected.",
+          "evidence": [
+            "obs-1",
+            "obs-2",
+            "obs-3",
+            "obs-4",
+            "obs-5",
+            "obs-6",
+            "obs-7"
+          ],
+          "lines": [
+            {
+              "code": "47120",
+              "amount": 1400.0,
+              "status": "covered"
+            },
+            {
+              "code": "62480",
+              "amount": 780.0,
+              "status": "covered",
+              "preauth": "PA-5521"
+            },
+            {
+              "code": "31255",
+              "amount": 300.0,
+              "status": "not_covered",
+              "exclusion": "EX-14 cosmetic dermatology"
+            }
+          ],
+          "missing": [],
+          "approved_total": 2180.0,
+          "refused_total": 300.0
+        }
+      },
+      "result": {
+        "status": "recorded",
+        "case_id": "CLM-8842",
+        "decision": "approve_in_principle",
+        "decision_hash": "c972eab1c5c1755b639f9bdc9560f095bd259d684352c20dfddbefa357fd7254"
+      }
+    }
+  ],
+  "turns": 5,
+  "tokens_in": 10083,
+  "tokens_out": 1109,
+  "cost_usd": 0.015628,
+  "stop": "completed",
+  "backend": "live",
+  "token_measurement": "api_usage",
+  "elapsed_seconds": 14.031,
+  "variant": "v2",
+  "sequential": false,
+  "autonomy": "confirm",
+  "model": "anthropic/claude-haiku-4.5",
+  "trial": 1,
+  "negative": false,
+  "grade": {
+    "pass": true,
+    "errors": [],
+    "check": "code"
+  },
+  "source_hash": "0c20764328b2ff7ba87bd352ca3e87464cfb13c778b4a3e9acf4150d63369077",
+  "operator": "simulated"
+}
