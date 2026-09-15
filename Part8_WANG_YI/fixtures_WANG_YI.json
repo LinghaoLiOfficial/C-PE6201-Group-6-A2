@@ -1,0 +1,78 @@
+{
+  "EXTRA_CLAIMS": [
+    {
+      "claim_id": "CLM-16501",
+      "member_id": "M-5502",
+      "hospital_id": "H-330",
+      "date_of_service": "2026-10-15",
+      "narrative": "MRI brain scan after a persistent headache.",
+      "documents": ["itemised_bill"],
+      "lines": [
+        {"code": "70553", "amount": 620}
+      ]
+    },
+    {
+      "claim_id": "CLM-16502",
+      "member_id": "M-6118",
+      "hospital_id": "H-207",
+      "date_of_service": "2026-10-15",
+      "narrative": "MRI brain scan after a persistent headache.",
+      "documents": ["itemised_bill"],
+      "lines": [
+        {"code": "70553", "amount": 620}
+      ]
+    },
+    {
+      "claim_id": "CLM-16503",
+      "member_id": "M-6118",
+      "hospital_id": "H-330",
+      "date_of_service": "2026-10-16",
+      "narrative": "MRI brain scan after a persistent headache.",
+      "documents": ["itemised_bill"],
+      "lines": [
+        {"code": "70553", "amount": 620}
+      ]
+    },
+    {
+      "claim_id": "CLM-16504",
+      "member_id": "M-6118",
+      "hospital_id": "H-330",
+      "date_of_service": "2026-10-15",
+      "narrative": "MRI brain scan after a persistent headache; the invoiced amount was corrected.",
+      "documents": ["itemised_bill"],
+      "lines": [
+        {"code": "70553", "amount": 621}
+      ]
+    },
+    {
+      "claim_id": "CLM-16505",
+      "member_id": "M-6118",
+      "hospital_id": "H-330",
+      "date_of_service": "2026-10-15",
+      "narrative": "Resubmitting the MRI claim because I am unsure whether the earlier claim was received.",
+      "documents": ["itemised_bill"],
+      "lines": [
+        {"code": "70553", "amount": 620}
+      ]
+    }
+  ],
+  "EXTRA_MEMBERS": [],
+  "EXTRA_POLICIES": [],
+  "EXTRA_PREAUTHORISATIONS": [],
+  "EXTRA_DECIDED": [
+    {
+      "claim_id": "CLM-16506",
+      "member_id": "M-6118",
+      "hospital_id": "H-330",
+      "date_of_service": "2026-10-15",
+      "lines": [
+        {"code": "70553", "amount": 620}
+      ],
+      "decision": "approve_in_principle",
+      "decided_on": "2026-10-17"
+    }
+  ],
+  "EXTRA_HOSPITALS": [],
+  "EXTRA_PROCEDURES": [],
+  "EXTRA_REQUIRED_DOCS": {}
+}

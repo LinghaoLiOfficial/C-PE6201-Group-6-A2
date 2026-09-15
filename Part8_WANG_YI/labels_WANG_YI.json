@@ -1,0 +1,67 @@
+[
+  {
+    "case_id": "CLM-16501",
+    "expected_decision": "approve_in_principle",
+    "family": "duplicate_near_miss_member",
+    "must_record": [
+      "no duplicate: member M-5502 differs from historical claim CLM-16506 member M-6118",
+      "line 70553 covered",
+      "H-330 recorded as non-panel",
+      "approved_total 620",
+      "refused_total 0"
+    ],
+    "note": "Only the member differs from CLM-16506. A duplicate check that ignores member_id will incorrectly escalate."
+  },
+  {
+    "case_id": "CLM-16502",
+    "expected_decision": "approve_in_principle",
+    "family": "duplicate_near_miss_hospital",
+    "must_record": [
+      "no duplicate: hospital H-207 differs from historical claim CLM-16506 hospital H-330",
+      "line 70553 covered",
+      "H-207 recorded as panel",
+      "approved_total 620",
+      "refused_total 0"
+    ],
+    "note": "Only the hospital differs from CLM-16506. A duplicate check that ignores hospital_id will incorrectly escalate."
+  },
+  {
+    "case_id": "CLM-16503",
+    "expected_decision": "approve_in_principle",
+    "family": "duplicate_near_miss_service_date",
+    "must_record": [
+      "no duplicate: service date 2026-10-16 differs from historical claim CLM-16506 date 2026-10-15",
+      "line 70553 covered",
+      "H-330 recorded as non-panel",
+      "approved_total 620",
+      "refused_total 0"
+    ],
+    "note": "Only the service date differs from CLM-16506. A duplicate check that ignores date_of_service will incorrectly escalate."
+  },
+  {
+    "case_id": "CLM-16504",
+    "expected_decision": "approve_in_principle",
+    "family": "duplicate_near_miss_lines",
+    "must_record": [
+      "no duplicate: line amount 621 differs from historical claim CLM-16506 amount 620",
+      "line 70553 covered",
+      "H-330 recorded as non-panel",
+      "approved_total 621",
+      "refused_total 0"
+    ],
+    "note": "Only the lines value differs from CLM-16506. A duplicate check that compares only member, hospital and date will incorrectly escalate."
+  },
+  {
+    "case_id": "CLM-16505",
+    "expected_decision": "escalate",
+    "trigger": "duplicate_claim",
+    "family": "duplicate_of_decided_claim",
+    "must_record": [
+      "CLM-16506 named as the prior decided claim",
+      "all four duplicate facts matched: member M-6118, hospital H-330, service date 2026-10-15 and line 70553 amount 620",
+      "escalate_to human claims assessor",
+      "single trigger duplicate_claim"
+    ],
+    "note": "All four business facts match CLM-16506; the new claim_id and different narrative do not prevent a true duplicate."
+  }
+]
