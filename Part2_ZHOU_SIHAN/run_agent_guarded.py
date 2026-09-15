@@ -72,7 +72,7 @@ def _find_part1_or_part2() -> tuple[ModuleType, ModuleType, str]:
             "part1",
             "tools",
         ),
-        # Optional local mirrors under 作业/vendor (you may copy later; not required)
+        # Optional local mirrors under vendor/ (you may copy later; not required)
         (
             os.path.join(HERE, "vendor", "agent.py"),
             os.path.join(HERE, "vendor", "tools.py"),
