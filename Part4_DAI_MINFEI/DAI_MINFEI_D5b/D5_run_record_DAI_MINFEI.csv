@@ -1,0 +1,1 @@
+run_id,member_name,model_name,model_family,price_tier,prompt_version,case_id,is_negative,trial_number,expected_outcome,actual_outcome,code_check_pass,judgement_check_pass,overall_pass,turns,tokens_in,tokens_out,estimated_cost_usd,cap_fired,tools_called_in_order,run_date,notes

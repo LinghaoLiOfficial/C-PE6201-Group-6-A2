@@ -1,0 +1,116 @@
+{
+  "EXTRA_CLAIMS": [
+    {
+      "claim_id": "CLM-16401",
+      "member_id": "M-2214",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-09-20",
+      "narrative": "Appendix surgery with complete billing and discharge records.",
+      "documents": [
+        "itemised_bill",
+        "discharge_summary"
+      ],
+      "lines": [
+        {
+          "code": "47120",
+          "amount": 9199
+        }
+      ]
+    },
+    {
+      "claim_id": "CLM-16402",
+      "member_id": "M-2214",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-09-21",
+      "narrative": "Appendix surgery with complete supporting documents.",
+      "documents": [
+        "itemised_bill",
+        "discharge_summary"
+      ],
+      "lines": [
+        {
+          "code": "47120",
+          "amount": 9200
+        }
+      ]
+    },
+    {
+      "claim_id": "CLM-16403",
+      "member_id": "M-2214",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-09-22",
+      "narrative": "Hospital admission involved appendix surgery, treatment for a back condition and a skin procedure.",
+      "documents": [
+        "itemised_bill",
+        "discharge_summary"
+      ],
+      "lines": [
+        {
+          "code": "47120",
+          "amount": 4000
+        },
+        {
+          "code": "62480",
+          "amount": 3000
+        },
+        {
+          "code": "31255",
+          "amount": 2000
+        }
+      ]
+    },
+    {
+      "claim_id": "CLM-16404",
+      "member_id": "M-2214",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-09-23",
+      "narrative": "The admission involved two appendix-related billed items, treatment for a back condition and a skin procedure.",
+      "documents": [
+        "itemised_bill",
+        "discharge_summary"
+      ],
+      "lines": [
+        {
+          "code": "47120",
+          "amount": 3000
+        },
+        {
+          "code": "62480",
+          "amount": 3000
+        },
+        {
+          "code": "31255",
+          "amount": 200
+        },
+        {
+          "code": "47120",
+          "amount": 3000
+        }
+      ]
+    },
+    {
+      "claim_id": "CLM-16405",
+      "member_id": "M-2214",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-09-24",
+      "narrative": "Appendix surgery with complete supporting documents.",
+      "documents": [
+        "itemised_bill",
+        "discharge_summary"
+      ],
+      "lines": [
+        {
+          "code": "47120",
+          "amount": 9201
+        }
+      ]
+    }
+  ],
+  "EXTRA_MEMBERS": [],
+  "EXTRA_POLICIES": [],
+  "EXTRA_PREAUTHORISATIONS": [],
+  "EXTRA_DECIDED": [],
+  "EXTRA_HOSPITALS": [],
+  "EXTRA_PROCEDURES": [],
+  "EXTRA_REQUIRED_DOCS": {}
+}

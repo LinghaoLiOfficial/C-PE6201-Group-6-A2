@@ -1,0 +1,71 @@
+[
+  {
+    "case_id": "CLM-16401",
+    "expected_decision": "approve_in_principle",
+    "family": "annual_limit_below_boundary",
+    "must_record": [
+      "line 47120 covered",
+      "claim total 9199",
+      "9200 remaining on POL-3310",
+      "approved_total 9199",
+      "refused_total 0"
+    ],
+    "note": "A claim one dollar below the remaining annual limit remains an ACT case."
+  },
+  {
+    "case_id": "CLM-16402",
+    "expected_decision": "approve_in_principle",
+    "family": "annual_limit_exact_boundary",
+    "must_record": [
+      "line 47120 covered",
+      "claim total 9200",
+      "9200 remaining on POL-3310",
+      "approved_total 9200",
+      "refused_total 0"
+    ],
+    "note": "Equality does not satisfy the strictly-greater-than annual-limit escalation rule."
+  },
+  {
+    "case_id": "CLM-16403",
+    "expected_decision": "approve_in_principle",
+    "family": "multi_line_sum_with_partial_payment",
+    "must_record": [
+      "a disposition for all 3 lines",
+      "claim total 9000",
+      "9200 remaining on POL-3310",
+      "31255 refused under EX-14 cosmetic dermatology",
+      "PA-5521 cited for line 62480",
+      "approved_total 7000",
+      "refused_total 2000"
+    ],
+    "note": "The whole claim is within the remaining limit, and the excluded line is recorded in the same ACT decision."
+  },
+  {
+    "case_id": "CLM-16404",
+    "expected_decision": "approve_in_principle",
+    "family": "four_line_exact_boundary_partial_payment",
+    "must_record": [
+      "a disposition for all 4 lines",
+      "claim total 9200",
+      "9200 remaining on POL-3310",
+      "31255 refused under EX-14 cosmetic dermatology",
+      "PA-5521 cited for line 62480",
+      "approved_total 9000",
+      "refused_total 200"
+    ],
+    "note": "A four-line claim exactly at the remaining limit remains ACT even though one line is excluded."
+  },
+  {
+    "case_id": "CLM-16405",
+    "expected_decision": "escalate",
+    "trigger": "annual_limit_exceeded",
+    "family": "annual_limit_exceeded",
+    "must_record": [
+      "claim total 9201",
+      "9200 remaining on POL-3310",
+      "escalation to the human claims assessor",
+      "that lines were not individually priced"
+    ],
+    "note": "The claim exceeds the remaining annual limit by one dollar and should exit early with one applicable trigger."
+  }
+]
