@@ -10,14 +10,16 @@
 | budget | 最多约 **US$0.05 / 单** |
 | autonomy | **confirm** |
 
-## 文档（已合并为 4 个 md）
+## 文档
 
 | 文件 | 内容 |
 |------|------|
 | `README.md` | 本页：总览、联动点、怎么跑 |
 | `D3_guardrail_layer.md` | autonomy + 12 条 checklist + 盖章 descriptor |
 | `D7_reproduced_failures.md` | Failure1 死循环 + Failure2 接口 |
-| `D4_eval_cases_zhou.md` | 你的 6 个 eval case 草稿 |
+| `fixtures_ZHOU_SIHAN.json` | D4：5 条新 claim + supporting rows（CLM-16201–16205） |
+| `labels_ZHOU_SIHAN.json` | D4：5 条独立标签 |
+| `design_ZHOU_SIHAN.md` | D4：设计说明（4 ACT 合法叙事 + 1 敌意 escalate） |
 
 ## 代码
 
