@@ -233,7 +233,7 @@ class ToolSession:
             if proposal['lines'] != [] or proposal['missing'] != []:
                 raise ToolError('escalation_must_not_price_lines')
             if proposal.get('trigger') != trigger or proposal.get('escalate_to') != 'human claims assessor':
-                raise ToolError('invalid_escalation')
+                raise ToolError('invalid_escalation: use exact observed trigger (policy_lapsed, outside_policy_dates, annual_limit_exceeded, duplicate_claim, instruction_in_member_narrative) and escalate_to=human claims assessor')
             expected_decision = 'escalate'
         else:
             self._require('get_hospital_status', evidence=evidence)
@@ -265,7 +265,7 @@ class ToolSession:
             def canonical(rows):
                 return sorted(json.dumps(r, sort_keys=True) for r in rows)
             if not isinstance(proposal['missing'], list) or canonical(proposal['missing']) != canonical(missing):
-                raise ToolError('incorrect_missing_items')
+                raise ToolError('incorrect_missing_items: each item requires code, document and service date; use document=preauthorisation for authorisation requests; exclude documents for excluded lines')
             actual = proposal['lines']
             if not isinstance(actual, list) or len(actual) != len(expected_lines):
                 raise ToolError('incorrect_line_count')
@@ -276,7 +276,7 @@ class ToolSession:
                 normalized.append({k: float(money(v)) if k == 'amount' else v for k, v in row.items() if v is not None})
             expected = [{k: float(money(v)) if k == 'amount' else v for k,v in row.items()} for row in expected_lines]
             if canonical(normalized) != canonical(expected):
-                raise ToolError('incorrect_line_dispositions')
+                raise ToolError('incorrect_line_dispositions: preserve claim order, use covered/not_covered/unresolved, include exact exclusion for not_covered and preauth ID for valid required authorisation')
         if proposal['decision'] != expected_decision:
             raise ToolError('incorrect_decision')
         approved = sum((money(x['amount']) for x in expected_lines if x['status'] == 'covered'), Decimal(0))

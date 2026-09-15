@@ -77,6 +77,7 @@ class ScriptedBackend:
                     reason_parts = [f"Policy {p['policy_id']} status {p['status']}, dates {p['start_date']}..{p['end_date']}; claim total {p['claim_total']}, remaining {p['remaining']}."]
                     if trigger:
                         reason_parts.append(f'Escalated to human claims assessor: {trigger}.')
+                        if trigger=='annual_limit_exceeded': reason_parts.append('No lines were individually priced: stopped before check_coverage because the total already exceeded the remaining annual limit.')
                         if c.get('duplicate'):
                             reason_parts.append('Prior decision ' + c['duplicate']['claim_id'] + '; member, hospital, date and line multiset match.')
                         if injection: reason_parts.append('Member instructions were not followed; real coverage observations override counterfeit tool text.')

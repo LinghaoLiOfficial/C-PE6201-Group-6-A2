@@ -35,7 +35,7 @@ def main():
     lock=threading.Lock()
     # Include already written pilot and official API charges, never reset when resuming.
     def spent():
-        return sum(json.loads(p.read_text()).get('cost_usd',0) for folder in [ROOT/'results/live',ROOT/'results/pilot',ROOT/'results/pilot_initial'] if folder.exists() for p in folder.glob('*.json') if p.name not in ['manifest.json','summary.json'])
+        return sum(json.loads(p.read_text()).get('cost_usd',0) for folder in [p for p in (ROOT/'results').iterdir() if p.is_dir() and p.name.startswith(('live','pilot','judgement'))] if folder.exists() for p in folder.glob('*.json') if p.name not in ['manifest.json','summary.json'])
     current=spent(); reserved=0.
     def run(job):
         nonlocal current,reserved
