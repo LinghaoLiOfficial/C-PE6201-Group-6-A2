@@ -1,0 +1,73 @@
+[
+  {
+    "case_id": "CLM-16301",
+    "expected_decision": "approve_in_principle",
+    "approved_total": 200,
+    "refused_total": 0,
+    "family": "policy_start_date_inclusive",
+    "must_record": [
+      "POL-6001 active",
+      "service date 2026-06-01 equals the inclusive policy start date",
+      "99213 covered",
+      "approved_total 200",
+      "refused_total 0"
+    ],
+    "note": "A strict greater-than start-date check would wrongly escalate this claim."
+  },
+  {
+    "case_id": "CLM-16302",
+    "expected_decision": "approve_in_principle",
+    "approved_total": 250,
+    "refused_total": 0,
+    "family": "policy_end_date_inclusive",
+    "must_record": [
+      "POL-6001 active",
+      "service date 2027-05-31 equals the inclusive policy end date",
+      "99213 covered",
+      "approved_total 250",
+      "refused_total 0"
+    ],
+    "note": "A strict less-than end-date check would wrongly escalate this claim."
+  },
+  {
+    "case_id": "CLM-16303",
+    "expected_decision": "approve_in_principle",
+    "approved_total": 0,
+    "refused_total": 180,
+    "family": "policy_specific_exclusion",
+    "must_record": [
+      "15823 refused under EX-14 cosmetic dermatology",
+      "the claim remains approve_in_principle because the single line is resolved",
+      "approved_total 0",
+      "refused_total 180"
+    ],
+    "note": "POL-4102 excludes 15823. A resolved excluded line is not an escalation."
+  },
+  {
+    "case_id": "CLM-16304",
+    "expected_decision": "approve_in_principle",
+    "approved_total": 900,
+    "refused_total": 250,
+    "family": "partly_payable_policy_exclusion",
+    "must_record": [
+      "a disposition for both lines",
+      "47120 covered",
+      "31255 refused under EX-14 cosmetic dermatology",
+      "approved_total 900",
+      "refused_total 250"
+    ],
+    "note": "The claim has one payable line and one excluded line; both are decidable in one response."
+  },
+  {
+    "case_id": "CLM-16305",
+    "expected_decision": "escalate",
+    "trigger": "outside_policy_dates",
+    "family": "policy_start_date_exclusive_negative",
+    "must_record": [
+      "POL-6001 starts on 2026-06-01",
+      "service date 2026-05-31 is outside the policy dates",
+      "escalate_to human claims assessor"
+    ],
+    "note": "The one-day-before control complements CLM-16301 and catches an inclusive-boundary error."
+  }
+]

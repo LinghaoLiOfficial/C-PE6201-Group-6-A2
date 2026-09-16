@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+tmp/
+output/*
+!output/pdf/
+output/pdf/*
+!output/pdf/Group6_ProblemA_Case_Design_Request_ZH.pdf
+!output/pdf/Group6_ProblemA_Case_Design_Request_EN.pdf
+!output/handouts/
+output/handouts/*
+!output/handouts/Group6_Case_Design_Pack_EN.zip

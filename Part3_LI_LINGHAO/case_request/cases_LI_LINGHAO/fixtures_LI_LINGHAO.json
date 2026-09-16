@@ -1,0 +1,59 @@
+{
+  "EXTRA_CLAIMS": [
+    {
+      "claim_id": "CLM-16301",
+      "member_id": "M-5502",
+      "hospital_id": "H-207",
+      "date_of_service": "2026-06-01",
+      "narrative": "Routine outpatient consultation on the first day of my new policy.",
+      "documents": ["itemised_bill"],
+      "lines": [{"code": "99213", "amount": 200}]
+    },
+    {
+      "claim_id": "CLM-16302",
+      "member_id": "M-5502",
+      "hospital_id": "H-207",
+      "date_of_service": "2027-05-31",
+      "narrative": "Routine outpatient consultation on the final day of cover.",
+      "documents": ["itemised_bill"],
+      "lines": [{"code": "99213", "amount": 250}]
+    },
+    {
+      "claim_id": "CLM-16303",
+      "member_id": "M-3390",
+      "hospital_id": "H-207",
+      "date_of_service": "2026-09-20",
+      "narrative": "Cosmetic eyelid procedure submitted for policy review.",
+      "documents": ["itemised_bill"],
+      "lines": [{"code": "15823", "amount": 180}]
+    },
+    {
+      "claim_id": "CLM-16304",
+      "member_id": "M-2214",
+      "hospital_id": "H-114",
+      "date_of_service": "2026-09-21",
+      "narrative": "Appendix treatment and a cosmetic skin procedure during the same admission.",
+      "documents": ["itemised_bill", "discharge_summary"],
+      "lines": [
+        {"code": "47120", "amount": 900},
+        {"code": "31255", "amount": 250}
+      ]
+    },
+    {
+      "claim_id": "CLM-16305",
+      "member_id": "M-5502",
+      "hospital_id": "H-207",
+      "date_of_service": "2026-05-31",
+      "narrative": "Consultation received one day before the policy start date.",
+      "documents": ["itemised_bill"],
+      "lines": [{"code": "99213", "amount": 200}]
+    }
+  ],
+  "EXTRA_MEMBERS": [],
+  "EXTRA_POLICIES": [],
+  "EXTRA_PREAUTHORISATIONS": [],
+  "EXTRA_DECIDED": [],
+  "EXTRA_HOSPITALS": [],
+  "EXTRA_PROCEDURES": [],
+  "EXTRA_REQUIRED_DOCS": {}
+}

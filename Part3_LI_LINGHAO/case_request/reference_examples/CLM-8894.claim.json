@@ -1,0 +1,17 @@
+{
+  "claim_id": "CLM-8894",
+  "member_id": "M-6118",
+  "hospital_id": "H-207",
+  "date_of_service": "2026-09-09",
+  "narrative": "Knee arthroscopy. I got approval for this earlier in the year.",
+  "documents": [
+    "itemised_bill",
+    "discharge_summary"
+  ],
+  "lines": [
+    {
+      "code": "29881",
+      "amount": 1950
+    }
+  ]
+}
