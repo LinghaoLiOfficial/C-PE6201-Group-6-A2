@@ -1,0 +1,51 @@
+{
+  "revision": "d5-live-1.1",
+  "formal_battery_run": false,
+  "development_attempts": [
+    {
+      "attempt": "attempt01",
+      "package_sha256": "ca51a9b7e5de3720b1f5953300efe4767f697e79ee2180e0fc364be18ee1d387",
+      "trials": 6,
+      "code_passed": 4,
+      "agent_list_price_usd": 0.029394133000000003,
+      "provider_usage_cost_usd": 0.018420461000000003
+    },
+    {
+      "attempt": "attempt02",
+      "package_sha256": "77037f38acc287115456de12324549cb69ab823be53db7b028c7329828cf670d",
+      "trials": 6,
+      "code_passed": 3,
+      "agent_list_price_usd": 0.023247571,
+      "provider_usage_cost_usd": 0.013925107000000004
+    },
+    {
+      "attempt": "attempt03",
+      "package_sha256": "35c2b247fe46b83c5dc7e802bbf36edd0fb5548f556940468e6d573c6f36d7d2",
+      "trials": 6,
+      "code_passed": 5,
+      "agent_list_price_usd": 0.026086838,
+      "provider_usage_cost_usd": 0.015960326999999996
+    }
+  ],
+  "latest_preflight": {
+    "trials": 6,
+    "code_passed": 5,
+    "overall_passed": 5,
+    "judge_passed": 5,
+    "judge_not_reviewable": 1,
+    "remaining_failure": "CLM-16404 repeated get_claim blocked by de-duplication; retained as failure"
+  },
+  "judge_list_price_usd": 0.0063416,
+  "total_development_list_price_usd": 0.08507014200000002,
+  "original_tests_passed": 35,
+  "revision_tests_passed": 13,
+  "scripted_v2": {
+    "trials": 75,
+    "passed": 75
+  },
+  "scripted_v1": {
+    "trials": 75,
+    "passed": 72
+  },
+  "frozen_files_verified": 127
+}

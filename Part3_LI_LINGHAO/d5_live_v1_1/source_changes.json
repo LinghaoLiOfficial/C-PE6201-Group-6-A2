@@ -1,0 +1,42 @@
+[
+  {
+    "path": "integration/d4_harness.py",
+    "old_sha256": "4a0cf08daa7bdfadfca020822f4092653bf605dbdbde89ac69d3aa94d9c8266f",
+    "new_sha256": "87ef7dc2fd7a2cdb33dd6b7a1cbec1ae69816e70e694a1ac79f5260b05ebe32c"
+  },
+  {
+    "path": "integration/judge_prompt.md",
+    "old_sha256": "92090fdc3cd3663b4106c98883556c4ef443de4f1ea5ccafc6c256516fcec3b1",
+    "new_sha256": "f8834dd5dc9f9deebe0045bd78bf514ee1804616ba9d4d711433682c430e633b"
+  },
+  {
+    "path": "integration/llm_judge.py",
+    "old_sha256": "35b6efd8719effe7e76828c81f8c0b25d9cf0f195d0bfd19dffaf8f76e8dadd0",
+    "new_sha256": "a494926fcfa046a298c5b9269218e27e5d484bb9c969fb4adc897cd65654aa0c"
+  },
+  {
+    "path": "integration/output_contract.py",
+    "old_sha256": null,
+    "new_sha256": "ad72bc14fc3d80341232123308403ca5e727854fd77c7e307ffe8827337ddcc6"
+  },
+  {
+    "path": "integration/prompt.py",
+    "old_sha256": "8dc7ede2e11b0e83b2d8cbd1018203f0d8c48adaa5fe68035ced62e5e2539e70",
+    "new_sha256": "fa427b0934a402b95109081480d958351c76033fd17454ccb9fb8ced57af8372"
+  },
+  {
+    "path": "integration/protocol.py",
+    "old_sha256": "bc15d4c4ff27d6ac3fccab07c2abf0e74137282dfa75f0f187accc66afd45e08",
+    "new_sha256": "bcab5304dabad9cd0c08251c61e8e400e9f20499bf366c8d77014359b82b39f6"
+  },
+  {
+    "path": "integration/rubric_clarifications.json",
+    "old_sha256": null,
+    "new_sha256": "b5de24d5ae7040896a43e501dcf86a12da71a6777569292105b2584f33011ccc"
+  },
+  {
+    "path": "integration/runner.py",
+    "old_sha256": "1b31c4e817c492c00237cb2e775b0f83f95380ccde0922ade48e5c6d7ea46dda",
+    "new_sha256": "7e51b6647d40b462965c53a94cb643b1fdbe266ded5a4ae4a81dde3994cc9697"
+  }
+]

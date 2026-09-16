@@ -1,0 +1,9 @@
+{
+  "contract_revision": "d5-live-1.1",
+  "backend": "live",
+  "model": "deepseek/deepseek-v3.2",
+  "prompt_version": "v2",
+  "scope": "six-case diagnostic; not formal battery",
+  "source_preflight_sha256": "ac0eb37cb1c2d480dcd4e74e134362d36c5aecc7b36d6a03a45f34e8b4896e8c",
+  "package_sha256": "35c2b247fe46b83c5dc7e802bbf36edd0fb5548f556940468e6d573c6f36d7d2"
+}

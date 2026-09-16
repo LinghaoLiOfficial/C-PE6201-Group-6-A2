@@ -1,0 +1,645 @@
+{
+  "checked_at_utc": "2026-09-16T13:36:56.488152+00:00",
+  "source": "https://openrouter.ai/api/v1/models",
+  "models": [
+    {
+      "id": "anthropic/claude-haiku-4.5",
+      "canonical_slug": "anthropic/claude-4.5-haiku-20251001",
+      "hugging_face_id": "",
+      "name": "Anthropic: Claude Haiku 4.5",
+      "created": 1760547638,
+      "description": "Claude Haiku 4.5 is Anthropic’s fastest and most efficient model, delivering near-frontier intelligence at a fraction of the cost and latency of larger Claude models. Matching Claude Sonnet 4’s performance...",
+      "context_length": 200000,
+      "architecture": {
+        "modality": "text+image+file->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Claude",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.000001",
+        "completion": "0.000005",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000001",
+        "input_cache_write": "0.00000125",
+        "input_cache_write_1h": "0.000002"
+      },
+      "top_provider": {
+        "context_length": 200000,
+        "max_completion_tokens": 64000,
+        "is_moderated": true
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_completion_tokens",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/anthropic/claude-4.5-haiku-20251001/endpoints"
+      },
+      "benchmarks": {
+        "design_arena": [
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 1100,
+            "win_rate": 41.1,
+            "rank": 88
+          },
+          {
+            "arena": "models",
+            "category": "asciiart",
+            "elo": 1158,
+            "win_rate": 49.3,
+            "rank": 40
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1130,
+            "win_rate": 44.9,
+            "rank": 85
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1140,
+            "win_rate": 45.7,
+            "rank": 82
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1120,
+            "win_rate": 44.7,
+            "rank": 81
+          },
+          {
+            "arena": "models",
+            "category": "svg",
+            "elo": 1050,
+            "win_rate": 39.1,
+            "rank": 72
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 1115,
+            "win_rate": 42.6,
+            "rank": 82
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1135,
+            "win_rate": 45.1,
+            "rank": 86
+          }
+        ],
+        "artificial_analysis": {
+          "intelligence_index": 17.6,
+          "coding_index": 43.9,
+          "agentic_index": 10.3
+        }
+      },
+      "reasoning": {
+        "mandatory": false
+      }
+    },
+    {
+      "id": "deepseek/deepseek-v3.2",
+      "canonical_slug": "deepseek/deepseek-v3.2-20251201",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.2",
+      "name": "DeepSeek: DeepSeek V3.2",
+      "created": 1764594642,
+      "description": "DeepSeek-V3.2 is a large language model designed to harmonize high computational efficiency with strong reasoning and agentic tool-use performance. It introduces DeepSeek Sparse Attention (DSA), a fine-grained sparse attention mechanism...",
+      "context_length": 163840,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "DeepSeek",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.000000269",
+        "completion": "0.0000004",
+        "input_cache_read": "0.0000001345"
+      },
+      "top_provider": {
+        "context_length": 163840,
+        "max_completion_tokens": 65536,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 1,
+        "top_p": 0.95,
+        "top_k": null,
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": null,
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/deepseek/deepseek-v3.2-20251201/endpoints"
+      },
+      "benchmarks": {
+        "design_arena": [
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 1161,
+            "win_rate": 49.4,
+            "rank": 63
+          },
+          {
+            "arena": "models",
+            "category": "asciiart",
+            "elo": 1100,
+            "win_rate": 40.5,
+            "rank": 59
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1179,
+            "win_rate": 49.3,
+            "rank": 68
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1174,
+            "win_rate": 48.2,
+            "rank": 67
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1154,
+            "win_rate": 46.5,
+            "rank": 71
+          },
+          {
+            "arena": "models",
+            "category": "svg",
+            "elo": 1057,
+            "win_rate": 40.8,
+            "rank": 70
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 1164,
+            "win_rate": 46.8,
+            "rank": 67
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1187,
+            "win_rate": 50.2,
+            "rank": 66
+          }
+        ],
+        "artificial_analysis": {
+          "intelligence_index": null,
+          "coding_index": 44.2,
+          "agentic_index": null
+        }
+      },
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": false
+      }
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite",
+      "canonical_slug": "google/gemini-2.5-flash-lite",
+      "hugging_face_id": "",
+      "name": "Google: Gemini 2.5 Flash Lite",
+      "created": 1753200276,
+      "description": "Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better performance...",
+      "context_length": 1048576,
+      "architecture": {
+        "modality": "text+image+file+audio+video->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "file",
+          "audio",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemini",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000001",
+        "completion": "0.0000004",
+        "image": "0.0000001",
+        "audio": "0.0000003",
+        "input_audio_cache": "0.00000003",
+        "web_search": "0.014",
+        "internal_reasoning": "0.0000004",
+        "input_cache_read": "0.00000001",
+        "input_cache_write": "0.0000000833333333333333"
+      },
+      "top_provider": {
+        "context_length": 1048576,
+        "max_completion_tokens": 65535,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": "2025-01-31",
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/google/gemini-2.5-flash-lite/endpoints"
+      },
+      "reasoning": {
+        "mandatory": false
+      }
+    },
+    {
+      "id": "mistralai/mistral-small-3.2-24b-instruct",
+      "canonical_slug": "mistralai/mistral-small-3.2-24b-instruct-2506",
+      "hugging_face_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+      "name": "Mistral: Mistral Small 3.2 24B",
+      "created": 1750443016,
+      "description": "Mistral-Small-3.2-24B-Instruct-2506 is an updated 24B parameter model from Mistral optimized for instruction following, repetition reduction, and improved function calling. Compared to the 3.1 release, version 3.2 significantly improves accuracy on...",
+      "context_length": 256000,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "image",
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Mistral",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000009375",
+        "completion": "0.00000025"
+      },
+      "top_provider": {
+        "context_length": 256000,
+        "max_completion_tokens": 16384,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 0.3
+      },
+      "supported_voices": null,
+      "knowledge_cutoff": "2023-10-31",
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/mistralai/mistral-small-3.2-24b-instruct-2506/endpoints"
+      },
+      "benchmarks": {
+        "design_arena": [
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 922,
+            "win_rate": 39.8,
+            "rank": 120
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 943,
+            "win_rate": 43.3,
+            "rank": 113
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 911,
+            "win_rate": 39.4,
+            "rank": 121
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 922,
+            "win_rate": 40.5,
+            "rank": 114
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 908,
+            "win_rate": 38.3,
+            "rank": 123
+          }
+        ]
+      }
+    },
+    {
+      "id": "openai/gpt-4.1-mini",
+      "canonical_slug": "openai/gpt-4.1-mini-2025-04-14",
+      "hugging_face_id": "",
+      "name": "OpenAI: GPT-4.1 Mini",
+      "created": 1744651381,
+      "description": "GPT-4.1 Mini is a mid-sized model delivering performance competitive with GPT-4o at substantially lower latency and cost. It retains a 1 million token context window and scores 45.1% on hard...",
+      "context_length": 1047576,
+      "architecture": {
+        "modality": "text+image+file->text",
+        "input_modalities": [
+          "image",
+          "text",
+          "file"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "GPT",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000004",
+        "completion": "0.0000016",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000001"
+      },
+      "top_provider": {
+        "context_length": 1047576,
+        "max_completion_tokens": 32768,
+        "is_moderated": true
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_completion_tokens",
+        "max_tokens",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": "2024-06-30",
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/openai/gpt-4.1-mini-2025-04-14/endpoints"
+      },
+      "benchmarks": {
+        "design_arena": [
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 865,
+            "win_rate": 30.5,
+            "rank": 115
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1009,
+            "win_rate": 47.5,
+            "rank": 113
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1048,
+            "win_rate": 49.2,
+            "rank": 101
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1093,
+            "win_rate": 58.5,
+            "rank": 91
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 976,
+            "win_rate": 45.4,
+            "rank": 107
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1010,
+            "win_rate": 47.8,
+            "rank": 115
+          }
+        ],
+        "artificial_analysis": {
+          "intelligence_index": null,
+          "coding_index": 20.2,
+          "agentic_index": null
+        }
+      }
+    },
+    {
+      "id": "qwen/qwen3-235b-a22b-2507",
+      "canonical_slug": "qwen/qwen3-235b-a22b-07-25",
+      "hugging_face_id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+      "name": "Qwen: Qwen3 235B A22B Instruct 2507",
+      "created": 1753119555,
+      "description": "Qwen3-235B-A22B-Instruct-2507 is a multilingual, instruction-tuned mixture-of-experts language model based on the Qwen3-235B architecture, with 22B active parameters per forward pass. It is optimized for general-purpose text generation, including instruction following,...",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000000875",
+        "completion": "0.00000035",
+        "input_cache_read": "0.0000000175"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "supported_voices": null,
+      "knowledge_cutoff": "2025-06-30",
+      "expiration_date": null,
+      "links": {
+        "details": "/api/v1/models/qwen/qwen3-235b-a22b-07-25/endpoints"
+      },
+      "benchmarks": {
+        "design_arena": [
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 1022,
+            "win_rate": 41.1,
+            "rank": 101
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1054,
+            "win_rate": 42.6,
+            "rank": 102
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1085,
+            "win_rate": 49,
+            "rank": 95
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 974,
+            "win_rate": 35,
+            "rank": 114
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 980,
+            "win_rate": 38.4,
+            "rank": 106
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1070,
+            "win_rate": 43.6,
+            "rank": 102
+          }
+        ]
+      }
+    }
+  ]
+}

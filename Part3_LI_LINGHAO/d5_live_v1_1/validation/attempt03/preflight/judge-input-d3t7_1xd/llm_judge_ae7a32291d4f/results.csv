@@ -1,0 +1,7 @@
+﻿case_id,trial,negative,status,decision,code_passed,judgement,overall_passed,turns,tokens_in,tokens_out,cost_usd,failures
+CLM-8842,1,False,completed,approve_in_principle,True,pass,True,6,15862,1228,0.004758078,
+CLM-8888,1,True,completed,request_document,True,pass,True,6,15686,1298,0.004738734,
+CLM-8910,1,True,completed,escalate,True,pass,True,5,12595,630,0.0036400550000000005,
+CLM-8925,1,True,completed,escalate,True,pass,True,6,15302,770,0.004424238,
+CLM-8952,1,True,completed,escalate,True,pass,True,4,9727,803,0.002937763,
+CLM-16404,1,False,completed_with_tool_issues,approve_in_principle,False,not_reviewable,False,7,18730,1374,0.005587970000000001,execution not completed: completed_with_tool_issues; missing or unsuccessful tool trace
