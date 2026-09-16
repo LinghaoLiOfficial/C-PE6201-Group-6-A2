@@ -1,3 +1,5 @@
+> Historical Step 1 baseline. The user reports that Chen, Lu and Zhou reviewed the interface and had no objections. The current three-outcome implementation and v2 evidence-field addition are documented in MINIMAL_FLOW.md; this document retains the original one-case scope and 17-test record.
+
 # Step 1 — Integration baseline and team interface contract
 
 Owner: LI LINGHAO. Scope: the interface preparation for D4 and D5(a).

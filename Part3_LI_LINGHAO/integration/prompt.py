@@ -6,11 +6,11 @@ def build_prompt(version="v2"):
     TOOL_SPEC_COMMON = """
     get_claim(claim_id: str) -> claim header: member_id, hospital_id, date_of_service, narrative, documents, lines
     lookup_member(member_id: str) -> member_id, policy_id
-    lookup_policy(policy_id: str, date_of_service: str, claim_total: number) -> policy_status, service_date_covered, remaining_annual_limit, annual_limit_status, exclusions
+    lookup_policy(policy_id: str, date_of_service: str, claim_total: number) -> policy_status, start_date, end_date, service_date_covered, remaining_annual_limit, annual_limit_status, exclusions
     get_hospital_status(hospital_id: str) -> hospital_id, panel (true=in-network)
     check_procedure(code: str) -> code, description, requires_preauth
     check_documents(procedure_code: str) -> required_documents (list)
-    check_duplicate(claim_id: str) -> duplicate of an earlier decided claim, or "no duplicate found"
+    check_duplicate(claim_id: str) -> duplicate of an earlier decided claim, or "no duplicate found" with near-match comparison evidence when available
     """.strip()
 
     if version == "v1":
@@ -27,7 +27,7 @@ def build_prompt(version="v2"):
         PREAUTH_TOOL_SPEC = (
             "get_preauthorisation(member_id: str, procedure_code: str, date_of_service: str) "
             "-> status=valid|expired_before_service|not_found, valid_on_service_date, "
-            "and preauth_id only when valid"
+            "preauth_id when found, valid_from and valid_to when valid, and valid_to when expired"
         )
         PREAUTH_RULE = (
             "If requires_preauth is true, call get_preauthorisation(member_id, procedure_code, "

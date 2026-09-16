@@ -44,3 +44,18 @@ def _live_call(transcript, model, base_url):
         if not isinstance(usage.get(name), int) or usage[name] < 0:
             raise ValueError("provider did not supply valid token usage")
     return payload["choices"][0]["message"]["content"], usage
+
+
+def judge_call(messages, model, base_url, max_tokens=2400):
+    """Judge transport: separate system instructions, no agent stop sequences."""
+    key = os.environ.get('OPENROUTER_API_KEY')
+    if not key:
+        raise ValueError('Judge requires OPENROUTER_API_KEY')
+    request = urllib.request.Request(
+        base_url.rstrip('/') + '/chat/completions',
+        data=json.dumps({'model': model, 'messages': messages,
+                         'temperature': 0, 'max_tokens': max_tokens,
+                         'response_format': {'type': 'json_object'}}).encode(),
+        headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})
+    with urllib.request.urlopen(request, timeout=60) as response:
+        return json.load(response)

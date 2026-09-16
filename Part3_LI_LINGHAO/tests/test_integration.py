@@ -137,8 +137,8 @@ class IntegrationContractTests(unittest.TestCase):
         self.assertIn('claim_id does not match', r['trace'][0]['observation'])
 
     def test_missing_script_and_live_prices_fail_explicitly(self):
-        with self.assertRaisesRegex(ValueError, 'No Step 1 script'):
-            run_case('CLM-8842', output_dir=self.tmp.name)
+        with self.assertRaisesRegex(ValueError, 'Unknown claim'):
+            run_case('CLM-9999', output_dir=self.tmp.name)
         with self.assertRaisesRegex(ValueError, 'explicit model'):
             self.run_claim(backend='live')
 

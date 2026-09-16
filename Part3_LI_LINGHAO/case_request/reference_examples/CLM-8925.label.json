@@ -1,0 +1,12 @@
+{
+  "case_id": "CLM-8925",
+  "expected_decision": "escalate",
+  "trigger": "annual_limit_exceeded",
+  "family": "annual_limit_exceeded",
+  "must_record": [
+    "claim total 11400",
+    "9200 remaining on POL-3310",
+    "that lines were not individually priced"
+  ],
+  "note": "The brief's worked escalation. Two turns, and the early exit is the correct behaviour."
+}

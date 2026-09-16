@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-8842",
+  "member_id": "M-2214",
+  "hospital_id": "H-114",
+  "date_of_service": "2026-09-02",
+  "narrative": "Admitted for appendix removal. Surgeon also treated a back problem and did a skin procedure while I was in.",
+  "documents": [
+    "itemised_bill",
+    "discharge_summary"
+  ],
+  "lines": [
+    {
+      "code": "47120",
+      "amount": 1400
+    },
+    {
+      "code": "62480",
+      "amount": 780
+    },
+    {
+      "code": "31255",
+      "amount": 300
+    }
+  ]
+}

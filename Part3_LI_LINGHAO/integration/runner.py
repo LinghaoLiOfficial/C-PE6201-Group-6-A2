@@ -47,7 +47,7 @@ def run_case(case_id, backend=config.BACKEND, prompt_version=config.PROMPT_VERSI
     source = ClaimTools(data_dir or config.DATA_DIR, prompt_version)
     if case_id not in source.CLAIMS:
         raise ValueError(f"Unknown claim {case_id}")
-    engine = (ScriptedBackend(script_for(case_id) if scripted_steps is None else scripted_steps)
+    engine = (ScriptedBackend(script_for(case_id, prompt_version) if scripted_steps is None else scripted_steps)
               if backend == "scripted" else LiveBackend(model, base_url))
     root = Path(output_dir or config.OUTPUT_DIR).resolve()
     root.mkdir(parents=True, exist_ok=True)

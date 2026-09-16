@@ -72,7 +72,7 @@ class ClaimTools:
             remaining = p['annual_limit'] - p['used_to_date']
             covered = p['start_date'] <= date_of_service <= p['end_date']
             limit_status = 'within_limit' if claim_total <= remaining else 'exceeded'
-            return f"policy_id={p['policy_id']} policy_status={p['status']} service_date_covered={covered} remaining_annual_limit={remaining} annual_limit_status={limit_status} exclusions={p['exclusions']}"
+            return f"policy_id={p['policy_id']} policy_status={p['status']} start_date={p['start_date']} end_date={p['end_date']} service_date_covered={covered} remaining_annual_limit={remaining} annual_limit_status={limit_status} exclusions={p['exclusions']}"
         return f"policy_id={p['policy_id']} status={p['status']} start_date={p['start_date']} end_date={p['end_date']} annual_limit={p['annual_limit']} used_to_date={p['used_to_date']} exclusions={p['exclusions']}"
 
     def get_hospital_status(self, hospital_id: str) -> str:
@@ -117,8 +117,9 @@ class ClaimTools:
         if not pa:
             return 'status=not_found valid_on_service_date=False'
         if pa['valid_from'] <= date_of_service <= pa['valid_to']:
-            return f"status=valid valid_on_service_date=True preauth_id={pa['preauth_id']}"
-        return 'status=expired_before_service valid_on_service_date=False'
+            return f"status=valid valid_on_service_date=True preauth_id={pa['preauth_id']} valid_from={pa['valid_from']} valid_to={pa['valid_to']}"
+        return (f"status=expired_before_service valid_on_service_date=False "
+                f"preauth_id={pa['preauth_id']} valid_to={pa['valid_to']}")
 
     def check_documents(self, procedure_code: str) -> str:
         """WHAT    check which documents a procedure requires
@@ -146,4 +147,12 @@ class ClaimTools:
         for d in self.DECIDED_CLAIMS:
             if d['member_id'] == c['member_id'] and d['hospital_id'] == c['hospital_id'] and (d['date_of_service'] == c['date_of_service']) and (d['lines'] == c['lines']):
                 return f"DUPLICATE of {d['claim_id']}: already decided {d['decision']} on {d['decided_on']}"
-        return f'no duplicate found for {claim_id}'
+        # Near matches make the four-fact comparison auditable without exposing
+        # unrelated history. A near match never changes the duplicate decision.
+        fields = ('member_id', 'hospital_id', 'date_of_service', 'lines')
+        near = [d for d in self.DECIDED_CLAIMS
+                if sum(d[k] == c[k] for k in fields) >= 2]
+        details = '; '.join(
+            f"prior {d['claim_id']}: " + ', '.join(f'{k}={d[k]!r}' for k in fields)
+            for d in near)
+        return f'no duplicate found for {claim_id}' + (f'; comparison evidence: {details}' if details else '')

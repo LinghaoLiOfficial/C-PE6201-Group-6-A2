@@ -1,0 +1,25 @@
+{
+  "claim_id": "CLM-8925",
+  "member_id": "M-2214",
+  "hospital_id": "H-114",
+  "date_of_service": "2026-09-12",
+  "narrative": "Knee replacement, plus the appendix operation and a scan.",
+  "documents": [
+    "itemised_bill",
+    "discharge_summary"
+  ],
+  "lines": [
+    {
+      "code": "27447",
+      "amount": 9800
+    },
+    {
+      "code": "47120",
+      "amount": 1400
+    },
+    {
+      "code": "70553",
+      "amount": 200
+    }
+  ]
+}
