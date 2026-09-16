@@ -1,0 +1,19 @@
+{
+  "currency": "USD",
+  "formal_agent_list_price": 0.282861170,
+  "formal_judge_list_price": 0.088007600,
+  "formal_total_list_price": 0.370868770,
+  "released_agent_preflight_list_price": 0.026086838,
+  "formal_plus_released_agent_preflight_list_price": 0.396955608,
+  "formal_agent_provider_usage_cost": 0.169014933,
+  "formal_judge_provider_usage_cost": 0.088007600,
+  "released_agent_preflight_provider_usage_cost": 0.015960327,
+  "formal_plus_released_agent_preflight_provider_usage_cost": 0.272982860,
+  "formal_agent_calls": 383,
+  "formal_judge_calls": 72,
+  "released_agent_preflight_calls": 34,
+  "calls_missing_provider_usage_cost": 0,
+  "all_revision_1_1_development_list_price": 0.085070142,
+  "all_revision_1_1_development_plus_formal_list_price": 0.455938912,
+  "note": "Development already includes the released agent preflight and preflight judge; do not add that preflight again. Historical original-contract costs excluded. Provider usage.cost is not independent invoice verification; configured list prices ignore routing discounts."
+}
