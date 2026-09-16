@@ -20,6 +20,8 @@ Upload target: `Part2_ZHOU_SIHAN/` (**do not edit** Chen Mingsong's `agent.py`).
 | `fixtures_ZHOU_SIHAN.json` | D4: 5 new claims + supporting rows (CLM-16201–16205) |
 | `labels_ZHOU_SIHAN.json` | D4: 5 independently derived labels |
 | `design_ZHOU_SIHAN.md` | D4: design notes (4 ACT benign narratives + 1 hostile escalate) |
+| `D5_ZHOU_SIHAN/` | D5 personal live pack (frozen runtime + offline/live outputs) |
+| `D5_STATUS.md` | D5 progress: verify/offline done; live awaits key + release |
 
 ## Code
 

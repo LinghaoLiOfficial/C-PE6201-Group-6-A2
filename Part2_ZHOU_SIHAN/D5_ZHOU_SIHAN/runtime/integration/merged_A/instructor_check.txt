@@ -1,0 +1,14 @@
+Checking your fixture data …
+
+Problem A
+     45  claims
+      5  decided_claims
+      4  hospitals
+     15  members
+     15  policies
+      9  preauthorisations
+     10  procedures
+      3  required_documents
+
+
+Your data hangs together.
