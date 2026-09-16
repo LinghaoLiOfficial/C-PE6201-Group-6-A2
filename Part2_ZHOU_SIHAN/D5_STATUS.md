@@ -1,4 +1,6 @@
-# D5 live battery status — ZHOU_SIHAN
+﻿# D5 results — ZHOU_SIHAN
+
+Live preflight only (results for coordinator). Frozen D5 pack and offline suite are **not** on GitHub; run locally from your personal copy of `D5_ZHOU_SIHAN.zip`.
 
 ## Assignment
 
@@ -9,32 +11,16 @@
 | Cases / trials | 45 / 75 |
 | Member budget | USD 3.0 |
 
-## Completed locally
+## On GitHub (this folder)
 
-1. `python run_member.py verify` — package OK
-2. `python run_member.py offline` — scripted battery OK
-   - `code_passed`: **72 / 75** (matches pack note for v1 / CLM-8888)
-   - suite: `output/offline/suite-htfsfncv/`
-3. Results kept under `Part2_ZHOU_SIHAN/D5_ZHOU_SIHAN/` only
+| Path | Contents |
+|------|----------|
+| `D5_preflight-a2h14dzy/` | Live preflight (3 diagnostic trials): `preflight.json` + three `run-*` dirs |
 
-## Blocked until member action
+Projected agent spend from preflight (incl. estimate): about USD 0.46.
 
-- **Live preflight** needs personal `OPENROUTER_API_KEY` in the local environment (do not paste the key into chat).
-- **Full 75-trial live battery** needs `release.json` from LI_LINGHAO after preflight review.
+## Next (local only)
 
-## Commands (from this folder)
-
-```cmd
-cd Part2_ZHOU_SIHAN\D5_ZHOU_SIHAN
-python run_member.py verify
-python run_member.py offline
-set OPENROUTER_API_KEY=YOUR_KEY
-python run_member.py preflight
-```
-
-After coordinator returns `release.json` into the printed preflight folder:
-
-```cmd
-python run_member.py full --preflight "PREFLIGHT_FOLDER\preflight.json" --release "PREFLIGHT_FOLDER\release.json"
-python run_member.py pack --suite "SUITE_FOLDER"
-```
+1. Wait for coordinator `release.json` beside the local preflight folder.
+2. From your local runnable pack, run `full` then `pack`.
+3. Push **results only** under `Part2_ZHOU_SIHAN/` (do not re-upload frozen `runtime/`).
