@@ -1,8 +1,17 @@
-# Guardrail Layer — Zhou Sihan (D3 + D7)
+# Guardrail Layer — Zhou Sihan (D3 + D7 + D4 + D5)
 
 Upload target: `Part2_ZHOU_SIHAN/` (**do not edit** Chen Mingsong's `agent.py`).
 
-## Defaults
+## Folder layout
+
+| Folder / file | Contents |
+|---------------|----------|
+| *(root)* | **D3** guardrail code + checklist results + this README |
+| `D4_cases/` | D4 fixtures, labels, design (CLM-16201–16205) |
+| `D7_failures/` | D7 demos, results, write-up |
+| `D5_results/` | D5 live preflight results + status (no frozen runtime) |
+
+## Defaults (D3)
 
 | Item | Value |
 |------|-------|
@@ -10,34 +19,42 @@ Upload target: `Part2_ZHOU_SIHAN/` (**do not edit** Chen Mingsong's `agent.py`).
 | budget | about **US$0.05 / run** |
 | autonomy | **confirm** |
 
-## Documents
-
-| File | Contents |
-|------|----------|
-| `README.md` | This page: overview, integration points, how to run |
-| `D3_guardrail_layer.md` | autonomy + 12-case checklist + gated-action descriptor |
-| `D7_reproduced_failures.md` | Failure 1 loop + Failure 2 tool interface |
-| `fixtures_ZHOU_SIHAN.json` | D4: 5 new claims + supporting rows (CLM-16201–16205) |
-| `labels_ZHOU_SIHAN.json` | D4: 5 independently derived labels |
-| `design_ZHOU_SIHAN.md` | D4: design notes (4 ACT benign narratives + 1 hostile escalate) |
-| `D5_preflight-a2h14dzy/` | D5 live preflight results only (for coordinator) |
-| `D5_STATUS.md` | D5 status; full pack stays local, not on GitHub |
-
-## Code
+## D3 (root)
 
 | File | Purpose |
 |------|---------|
+| `D3_guardrail_layer.md` | autonomy + 12-case checklist + gated-action descriptor |
 | `guardrails.py` | step / budget / dedup / autonomy |
 | `gated_action.py` | `issue_decision_letter` |
 | `agent_guarded_helpers.py` | wrap teammate tools with guardrails |
 | `run_guardrail_checklist.py` | 12 scripted safety tests |
 | `run_agent_guarded.py` | **integration entry** (imports teammates; does not edit their files) |
+| `D3b_checklist_results.json` | checklist results |
+
+## D4 (`D4_cases/`)
+
+| File | Contents |
+|------|----------|
+| `fixtures_ZHOU_SIHAN.json` | 5 new claims + supporting rows |
+| `labels_ZHOU_SIHAN.json` | 5 independently derived labels |
+| `design_ZHOU_SIHAN.md` | design notes (4 ACT + 1 hostile escalate) |
+
+## D7 (`D7_failures/`)
+
+| File | Purpose |
+|------|---------|
+| `D7_reproduced_failures.md` | Failure 1 loop + Failure 2 tool interface |
 | `D7_loop_failure_demo.py` | D7 #1 |
 | `D7_failure2_tool_interface_demo.py` | D7 #2 |
+| `D7_loop_failure_results.json` | Failure 1 numbers |
+| `D7_failure2_results.json` | Failure 2 numbers |
 
-## Result JSON
+## D5 (`D5_results/`)
 
-`D3b_checklist_results.json` · `D7_loop_failure_results.json` · `D7_failure2_results.json`
+| Path | Contents |
+|------|----------|
+| `D5_STATUS.md` | status; full pack stays local |
+| `D5_preflight-a2h14dzy/` | live preflight for coordinator |
 
 ---
 
@@ -69,8 +86,8 @@ to his history by Zhou.
 ```cmd
 cd /d Part2_ZHOU_SIHAN
 python run_guardrail_checklist.py
-python D7_loop_failure_demo.py
-python D7_failure2_tool_interface_demo.py
+python D7_failures\D7_loop_failure_demo.py
+python D7_failures\D7_failure2_tool_interface_demo.py
 ```
 
 ### Integration (scripted; no API cost)

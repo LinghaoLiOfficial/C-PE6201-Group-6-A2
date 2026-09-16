@@ -9,16 +9,22 @@ Build as a DELETION from the working agent, not a separately written bad agent:
 Scripted: a fake model that keeps re-calling get_claim. No API key.
 
 Run:
-  python D7_loop_failure_demo.py
+  python D7_failures/D7_loop_failure_demo.py
+  (from Part2_ZHOU_SIHAN; or cd D7_failures and run with parent on PYTHONPATH)
 """
 from __future__ import annotations
 
 import json
 import os
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+PARENT = os.path.dirname(HERE)
+if PARENT not in sys.path:
+    sys.path.insert(0, PARENT)
 
 from guardrails import GuardrailState, wrap_tools
 
-HERE = os.path.dirname(os.path.abspath(__file__))
 REPORT_JSON = os.path.join(HERE, "D7_loop_failure_results.json")
 
 

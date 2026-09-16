@@ -4,8 +4,8 @@ Both built as **deletions** from the working system (not separate bad agents).
 Scripted demos — no API key.
 
 ```bash
-python D7_loop_failure_demo.py
-python D7_failure2_tool_interface_demo.py
+python D7_failures/D7_loop_failure_demo.py
+python D7_failures/D7_failure2_tool_interface_demo.py
 ```
 
 ---

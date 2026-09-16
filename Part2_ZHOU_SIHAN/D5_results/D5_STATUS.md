@@ -11,7 +11,7 @@ Live preflight only (results for coordinator). Frozen D5 pack and offline suite 
 | Cases / trials | 45 / 75 |
 | Member budget | USD 3.0 |
 
-## On GitHub (this folder)
+## On GitHub (`Part2_ZHOU_SIHAN/D5_results/`)
 
 | Path | Contents |
 |------|----------|

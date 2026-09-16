@@ -16,7 +16,7 @@ A tiny scripted "agent policy" then shows the wrong behaviour v1 allows:
 No API key.
 
 Run:
-  python D7_failure2_tool_interface_demo.py
+  python D7_failures/D7_failure2_tool_interface_demo.py
 """
 from __future__ import annotations
 
