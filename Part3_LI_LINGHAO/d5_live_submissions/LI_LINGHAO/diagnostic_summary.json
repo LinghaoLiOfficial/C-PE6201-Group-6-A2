@@ -1,0 +1,94 @@
+{
+  "source_suite": "suite-i8pdjdaz",
+  "trials": 75,
+  "strict_code_passed": 12,
+  "exact_top_level_decision_matches": 70,
+  "decision_match_is_not_acceptance": "Only an auxiliary diagnostic; excludes no trials and does not replace line/gate/trigger/reason checks.",
+  "execution_statuses": {
+    "completed": 65,
+    "completed_with_tool_issues": 5,
+    "error": 5
+  },
+  "stopped_by": {
+    "None": 70,
+    "parse_error": 5
+  },
+  "agent_costs": {
+    "list_price_usd": 0.205011146,
+    "provider_reported_cost_usd": 0.12540397065,
+    "responses_with_cost": 389,
+    "responses_total": 389,
+    "note": "Usage cost is provider response metadata, not an independent billing statement; missing calls may have unknown charges."
+  },
+  "preflight_costs": {
+    "list_price_usd": 0.007808731,
+    "provider_reported_cost_usd": 0.0043442974499999995,
+    "responses_with_cost": 14,
+    "responses_total": 14,
+    "note": "Usage cost is provider response metadata, not an independent billing statement; missing calls may have unknown charges."
+  },
+  "common_failures": [
+    [
+      "wrong line count",
+      19
+    ],
+    [
+      "wrong escalation recipient",
+      18
+    ],
+    [
+      "47120: wrong code",
+      13
+    ],
+    [
+      "47120: wrong amount",
+      13
+    ],
+    [
+      "47120: wrong status",
+      13
+    ],
+    [
+      "wrong named missing item / line / service date",
+      9
+    ],
+    [
+      "62480: wrong code",
+      8
+    ],
+    [
+      "62480: wrong amount",
+      8
+    ],
+    [
+      "62480: wrong status",
+      8
+    ],
+    [
+      "31255: wrong code",
+      8
+    ],
+    [
+      "31255: wrong amount",
+      8
+    ],
+    [
+      "31255: wrong status",
+      8
+    ],
+    [
+      "31255: wrong exclusion",
+      8
+    ],
+    [
+      "70553: wrong code",
+      8
+    ],
+    [
+      "70553: wrong amount",
+      8
+    ]
+  ],
+  "grading_limitation": "Prompt does not enumerate expected line status literals; approved/refused vs covered/not_covered causes strict failures and cascading field-mismatch messages. No grades altered.",
+  "cross_model_comparison": "Pending other member evidence; not fabricated."
+}

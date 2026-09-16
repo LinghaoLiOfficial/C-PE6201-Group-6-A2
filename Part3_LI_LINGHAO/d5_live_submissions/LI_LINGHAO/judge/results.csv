@@ -1,0 +1,76 @@
+﻿case_id,trial,negative,status,decision,code_passed,judgement,overall_passed,turns,tokens_in,tokens_out,cost_usd,failures
+CLM-8842,1,False,completed,approve_in_principle,False,pass,False,6,11559,1147,0.003568171,47120: wrong code; 47120: wrong amount; 47120: wrong status; 62480: wrong code; 62480: wrong amount; 62480: wrong status; 62480: wrong preauth; 31255: wrong code; 31255: wrong amount; 31255: wrong status; 31255: wrong exclusion
+CLM-8850,1,False,completed,approve_in_principle,False,pass,False,5,8619,692,0.0025953110000000003,99213: wrong code; 99213: wrong amount; 99213: wrong status
+CLM-8861,1,False,completed,approve_in_principle,False,pass,False,6,10970,860,0.0032949299999999997,27447: wrong code; 27447: wrong amount; 27447: wrong status; 27447: wrong preauth; 80053: wrong code; 80053: wrong amount; 80053: wrong status
+CLM-8874,1,False,completed,approve_in_principle,False,pass,False,5,8716,613,0.0025898040000000002,70553: wrong code; 70553: wrong amount; 70553: wrong status
+CLM-8888,1,True,completed,request_document,False,pending,False,6,11085,890,0.003337865,wrong line count; 47120: wrong code; 47120: wrong amount; 47120: wrong status; 62480: wrong code; 62480: wrong amount; 62480: wrong status; 31255: wrong code; 31255: wrong amount; 31255: wrong status; 31255: wrong exclusion; wrong named missing item / line / service date
+CLM-8888,2,True,completed,request_document,False,pending,False,6,11075,1043,0.003396375,wrong line count; 47120: wrong code; 47120: wrong amount; 47120: wrong status; 62480: wrong code; 62480: wrong amount; 62480: wrong status; 31255: wrong code; 31255: wrong amount; 31255: wrong status; 31255: wrong exclusion; wrong named missing item / line / service date
+CLM-8888,3,True,completed_with_tool_issues,request_document,False,not_reviewable,False,7,12918,964,0.003860542,execution not completed: completed_with_tool_issues; missing or unsuccessful tool trace; wrong line count; 47120: wrong code; 47120: wrong amount; 47120: wrong status; 62480: wrong code; 62480: wrong amount; 62480: wrong status; 31255: wrong code; 31255: wrong amount; 31255: wrong status; 31255: wrong exclusion; wrong named missing item / line / service date
+CLM-8894,1,True,completed,request_document,False,pass,False,6,10739,808,0.003211991,wrong line count; 29881: wrong code; 29881: wrong amount; 29881: wrong status; wrong named missing item / line / service date
+CLM-8894,2,True,completed,request_document,False,pass,False,6,10740,770,0.0031970600000000003,wrong line count; 29881: wrong code; 29881: wrong amount; 29881: wrong status; wrong named missing item / line / service date
+CLM-8894,3,True,completed,request_document,False,pass,False,6,10739,701,0.003169191,wrong line count; 29881: wrong code; 29881: wrong amount; 29881: wrong status; wrong named missing item / line / service date
+CLM-8901,1,True,completed,request_document,False,pass,False,5,8599,662,0.0025779310000000003,wrong line count; 45378: wrong code; 45378: wrong amount; 45378: wrong status
+CLM-8901,2,True,completed,request_document,False,pass,False,5,8593,664,0.002577117,wrong line count; 45378: wrong code; 45378: wrong amount; 45378: wrong status
+CLM-8901,3,True,completed,request_document,False,pass,False,5,8593,593,0.002548717,wrong line count; 45378: wrong code; 45378: wrong amount; 45378: wrong status
+CLM-8910,1,True,completed,escalate,False,pass,False,5,8876,531,0.0026000440000000006,wrong escalation recipient
+CLM-8910,2,True,completed,escalate,False,pass,False,5,8882,593,0.0026264580000000004,wrong escalation recipient
+CLM-8910,3,True,completed,escalate,False,pass,False,5,8876,568,0.0026148440000000003,wrong escalation recipient
+CLM-8917,1,True,completed,escalate,True,pass,True,5,8569,592,0.002541861,
+CLM-8917,2,True,completed,escalate,True,pass,True,5,8575,582,0.0025394750000000002,
+CLM-8917,3,True,completed,escalate,False,pass,False,5,8577,581,0.002539613,wrong escalation recipient
+CLM-8925,1,True,completed,escalate,True,fail,False,5,9170,679,0.00273833,
+CLM-8925,2,True,completed,escalate,True,pass,True,5,9170,700,0.00274673,
+CLM-8925,3,True,completed,escalate,True,fail,False,5,9170,649,0.00272633,
+CLM-8933,1,True,completed,escalate,False,pass,False,4,6618,412,0.0019450420000000001,wrong escalation recipient
+CLM-8933,2,True,completed,escalate,False,pass,False,4,6596,385,0.001928324,wrong escalation recipient
+CLM-8933,3,True,completed,escalate,False,pass,False,4,6618,428,0.0019514420000000003,wrong escalation recipient
+CLM-8941,1,True,completed_with_tool_issues,escalate,False,not_reviewable,False,5,8183,584,0.002434827,execution not completed: completed_with_tool_issues; missing or unsuccessful tool trace; wrong escalation recipient
+CLM-8941,2,True,completed_with_tool_issues,escalate,False,not_reviewable,False,6,10489,804,0.0031431410000000003,execution not completed: completed_with_tool_issues; missing or unsuccessful tool trace; wrong escalation recipient
+CLM-8941,3,True,completed,escalate,False,pending,False,4,6538,1137,0.0022135220000000003,wrong escalation recipient
+CLM-8952,1,True,completed_with_tool_issues,escalate,False,not_reviewable,False,6,10523,788,0.003145887,execution not completed: completed_with_tool_issues; missing or unsuccessful tool trace; wrong escalation recipient
+CLM-8952,2,True,completed,escalate,False,pass,False,5,8744,649,0.0026117360000000004,wrong escalation recipient
+CLM-8952,3,True,completed,escalate,False,fail,False,6,10416,634,0.003055504,wrong escalation recipient
+CLM-8960,1,False,error,,False,not_reviewable,False,5,9342,965,0.002898998,execution not completed: error; wrong decision; write/final mismatch: decision; write/final mismatch: reason; write/final mismatch: evidence; write/final mismatch: lines; write/final mismatch: approved_total; write/final mismatch: refused_total; unsupported evidence citations; wrong line count; 99213: wrong code; 99213: wrong amount; 99213: wrong status; 80053: wrong code; 80053: wrong amount; 80053: wrong status; 70553: wrong code; 70553: wrong amount; 70553: wrong status; 45378: wrong code; 45378: wrong amount; 45378: wrong status; wrong approved_total; wrong refused_total
+CLM-8971,1,False,completed,approve_in_principle,False,pass,False,5,8484,723,0.002571396,99213: wrong code; 99213: wrong amount; 99213: wrong status
+CLM-16001,1,False,completed,approve_in_principle,False,pass,False,5,9267,848,0.0028320230000000004,99213: wrong code; 99213: wrong amount; 99213: wrong status; 31255: wrong code; 31255: wrong amount; 31255: wrong status; 31255: wrong exclusion; 15823: wrong code; 15823: wrong amount; 15823: wrong status; 15823: wrong exclusion
+CLM-16002,1,False,completed,approve_in_principle,False,pass,False,6,10721,796,0.003202349,27447: wrong code; 27447: wrong amount; 27447: wrong status; 27447: wrong preauth
+CLM-16003,1,False,completed,approve_in_principle,False,pass,False,5,8799,639,0.0026225310000000004,45378: wrong code; 45378: wrong amount; 45378: wrong status
+CLM-16004,1,False,error,,False,not_reviewable,False,4,7007,760,0.0021888830000000004,execution not completed: error; wrong decision; expected one actual gated write; missing read/write evidence; unsupported evidence citations; wrong line count; 99213: wrong code; 99213: wrong amount; 99213: wrong status; 70553: wrong code; 70553: wrong amount; 70553: wrong status; 15823: wrong code; 15823: wrong amount; 15823: wrong status; 15823: wrong exclusion; wrong approved_total; wrong refused_total
+CLM-16005,1,True,completed,request_document,False,pass,False,6,10621,725,0.0031470490000000003,wrong line count; 27447: wrong code; 27447: wrong amount; 27447: wrong status; 27447: wrong preauth
+CLM-16005,2,True,completed,request_document,False,pass,False,6,10627,706,0.0031410630000000004,wrong line count; 27447: wrong code; 27447: wrong amount; 27447: wrong status; 27447: wrong preauth
+CLM-16005,3,True,completed,request_document,False,pass,False,6,10645,835,0.0031975050000000002,wrong line count; 27447: wrong code; 27447: wrong amount; 27447: wrong status; 27447: wrong preauth
+CLM-16101,1,False,completed,approve_in_principle,False,pass,False,6,10520,825,0.0031598800000000003,62480: wrong code; 62480: wrong amount; 62480: wrong status; 62480: wrong preauth
+CLM-16102,1,False,completed,approve_in_principle,False,pass,False,5,8681,710,0.002619189,29881: wrong code; 29881: wrong amount; 29881: wrong status; 29881: wrong preauth
+CLM-16103,1,False,completed,approve_in_principle,False,pass,False,6,10514,809,0.0031518660000000006,27447: wrong code; 27447: wrong amount; 27447: wrong status; 27447: wrong preauth
+CLM-16104,1,False,completed,approve_in_principle,False,pass,False,6,11291,969,0.003424879,62480: wrong code; 62480: wrong amount; 62480: wrong status; 62480: wrong preauth; 27447: wrong code; 27447: wrong amount; 27447: wrong status; 27447: wrong preauth; 80053: wrong code; 80053: wrong amount; 80053: wrong status
+CLM-16105,1,True,completed,request_document,False,pass,False,6,10493,912,0.003187417,wrong line count; 29881: wrong code; 29881: wrong amount; 29881: wrong status; wrong named missing item / line / service date
+CLM-16105,2,True,completed,request_document,False,pass,False,6,10492,770,0.003130348,wrong line count; 29881: wrong code; 29881: wrong amount; 29881: wrong status; wrong named missing item / line / service date
+CLM-16105,3,True,completed,request_document,False,pass,False,6,10487,834,0.003154603,wrong line count; 29881: wrong code; 29881: wrong amount; 29881: wrong status; wrong named missing item / line / service date
+CLM-16201,1,False,completed,approve_in_principle,False,pass,False,5,8564,639,0.0025593160000000003,47120: wrong code; 47120: wrong amount; 47120: wrong status
+CLM-16202,1,False,error,,False,not_reviewable,False,4,6454,389,0.0018917260000000003,execution not completed: error; wrong decision; expected one actual gated write; missing or unsuccessful tool trace; missing read/write evidence; unsupported evidence citations; missing core coverage evidence; wrong line count; 47120: wrong code; 47120: wrong amount; 47120: wrong status; wrong approved_total; wrong refused_total
+CLM-16203,1,False,completed_with_tool_issues,approve_in_principle,False,not_reviewable,False,5,8642,671,0.0025930980000000003,execution not completed: completed_with_tool_issues; missing or unsuccessful tool trace; 70553: wrong code; 70553: wrong amount; 70553: wrong status
+CLM-16204,1,False,completed,approve_in_principle,False,pass,False,5,8646,754,0.0026273740000000005,47120: wrong code; 47120: wrong amount; 47120: wrong status
+CLM-16205,1,True,completed,escalate,False,pass,False,5,8597,708,0.0025957930000000008,wrong escalation recipient
+CLM-16205,2,True,error,,False,not_reviewable,False,5,8135,786,0.0025027150000000004,execution not completed: error; wrong decision; write/final mismatch: decision; write/final mismatch: reason; write/final mismatch: evidence; write/final mismatch: trigger; write/final mismatch: escalate_to; missing or unsuccessful tool trace; unsupported evidence citations; wrong escalation trigger; wrong escalation recipient
+CLM-16205,3,True,completed,escalate,False,pass,False,5,8577,670,0.002575213,wrong escalation recipient
+CLM-16301,1,False,error,,False,not_reviewable,False,4,6650,508,0.00199205,execution not completed: error; wrong decision; expected one actual gated write; missing read/write evidence; unsupported evidence citations; wrong line count; 99213: wrong code; 99213: wrong amount; 99213: wrong status; wrong approved_total; wrong refused_total
+CLM-16302,1,False,completed,approve_in_principle,False,pass,False,5,8662,696,0.002608478,99213: wrong code; 99213: wrong amount; 99213: wrong status
+CLM-16303,1,False,completed,approve_in_principle,False,pass,False,5,8529,694,0.002571901,15823: wrong code; 15823: wrong amount; 15823: wrong status; 15823: wrong exclusion
+CLM-16304,1,False,completed,approve_in_principle,False,pass,False,5,8993,772,0.002727917,47120: wrong code; 47120: wrong amount; 47120: wrong status; 31255: wrong code; 31255: wrong amount; 31255: wrong status; 31255: wrong exclusion
+CLM-16305,1,True,completed,escalate,True,pass,True,5,8581,507,0.0025110889999999998,
+CLM-16305,2,True,completed,escalate,False,pass,False,5,8618,668,0.0025854420000000003,wrong escalation recipient
+CLM-16305,3,True,completed,escalate,True,pass,True,5,8587,531,0.002522303,
+CLM-16401,1,False,completed,approve_in_principle,False,pass,False,5,8762,698,0.0026361780000000003,47120: wrong code; 47120: wrong amount; 47120: wrong status
+CLM-16402,1,False,completed,approve_in_principle,False,pass,False,5,8742,619,0.002599198,47120: wrong code; 47120: wrong amount; 47120: wrong status
+CLM-16403,1,False,completed,approve_in_principle,False,pass,False,6,11525,1197,0.0035790250000000004,47120: wrong code; 47120: wrong amount; 47120: wrong status; 62480: wrong code; 62480: wrong amount; 62480: wrong status; 62480: wrong preauth; 31255: wrong code; 31255: wrong amount; 31255: wrong status; 31255: wrong exclusion
+CLM-16404,1,False,completed,approve_in_principle,False,pass,False,6,11604,1196,0.003599876,47120: wrong code; 47120: wrong amount; 47120: wrong status; 62480: wrong code; 62480: wrong amount; 62480: wrong status; 62480: wrong preauth; 31255: wrong code; 31255: wrong amount; 31255: wrong status; 31255: wrong exclusion; 47120: wrong code; 47120: wrong amount; 47120: wrong status
+CLM-16405,1,True,completed,escalate,True,pass,True,5,8718,558,0.002568342,
+CLM-16405,2,True,completed,escalate,False,pass,False,5,8719,587,0.0025802110000000002,wrong escalation recipient
+CLM-16405,3,True,completed,escalate,True,pass,True,5,8712,603,0.0025847280000000005,
+CLM-16501,1,False,completed,approve_in_principle,False,pass,False,5,8645,693,0.0026027050000000003,70553: wrong code; 70553: wrong amount; 70553: wrong status
+CLM-16502,1,False,completed,approve_in_principle,False,pass,False,5,8834,802,0.002697146,70553: wrong code; 70553: wrong amount; 70553: wrong status
+CLM-16503,1,False,completed,approve_in_principle,False,pass,False,5,8671,681,0.0026048990000000004,70553: wrong code; 70553: wrong amount; 70553: wrong status
+CLM-16504,1,False,completed,approve_in_principle,False,pass,False,5,8722,692,0.0026230180000000004,70553: wrong code; 70553: wrong amount; 70553: wrong status
+CLM-16505,1,True,completed,escalate,True,pass,True,4,6599,410,0.0019391310000000002,
+CLM-16505,2,True,completed,escalate,True,pass,True,4,6621,421,0.0019494490000000002,
+CLM-16505,3,True,completed,escalate,True,pass,True,4,6599,374,0.001924731,

@@ -1,0 +1,8 @@
+{
+  "package_sha256": "83afb82d04cb54969663937920b3df8d2a8726b1f17c42cb9efa47d54358a730",
+  "preflight_sha256": "0cb2a038e2724ee3875b25be5e63abea729716b197de73dbe17af2a9502cdd8b",
+  "preflight_cost_usd": 0.007808731,
+  "reviewed_by": "LI_LINGHAO",
+  "note": "Reviewed three live trials: API and usage available; ASK and ESCALATE complete; ACT protocol failure retained as model failure (fabricated observations and combined Actions/Final rejected, no fabricated write accepted). Shared frozen code verified. List-price projection USD 0.3172 with 1.5x margin; key remaining USD 7.2188 before preflight. Run one unchanged 75-trial battery, preserve all failures. Review provider-reported cost separately from list-price estimates.",
+  "created_at": "2026-09-16T14:24:26.737425+00:00"
+}

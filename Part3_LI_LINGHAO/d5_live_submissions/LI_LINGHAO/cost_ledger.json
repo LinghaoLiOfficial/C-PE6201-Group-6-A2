@@ -1,0 +1,11 @@
+{
+  "agent_list_price_usd": 0.205011146,
+  "preflight_list_price_usd": 0.007808731,
+  "judge_list_price_usd": 0.0700664,
+  "total_list_price_usd": 0.282886277,
+  "agent_provider_usage_cost_usd": 0.12540397065,
+  "preflight_provider_usage_cost_usd": 0.00434429745,
+  "judge_provider_usage_cost_usd": 0.07006640000000001,
+  "total_provider_usage_cost_usd": 0.19981466810000004,
+  "note": "Provider usage cost is not independent invoice verification; list-price ignores discounts/routing differences."
+}
