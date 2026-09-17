@@ -1,0 +1,22 @@
+{
+  "member": "LU_XINZE",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "family": "Qwen",
+  "tier": "cheap",
+  "version": "v2",
+  "price_in": 0.0875,
+  "price_out": 0.35,
+  "price_checked_at_utc": "2026-09-16T13:36:56.488152+00:00",
+  "price_source": "https://openrouter.ai/api/v1/models",
+  "member_budget_usd": 3.0,
+  "baseline_commit": "9867baa7bc200cc3de269fac460c72450daa7be4",
+  "frozen_tag": "part3-d4-d5a-v1.0.0",
+  "cases": 45,
+  "trials": 75,
+  "ordinary_trials": 30,
+  "negative_trials": 45,
+  "judge_model": "openai/gpt-4.1-mini",
+  "judge_owner": "LI_LINGHAO",
+  "contract_revision": "d5-live-1.1",
+  "role": "D5(b) live v2"
+}
