@@ -1,0 +1,8 @@
+{
+  "package_sha256": "208d0ee08ebaef4dc4d33c269e08f4b4cd113b0331d431d5fdbdafbfbd17a728",
+  "preflight_sha256": "57668d4f9b160b6268d00479b23b88d4d7ea498fd73252cfb1aafd3e0680542f",
+  "preflight_cost_usd": 0.005805099999999999,
+  "reviewed_by": "LU_XINZE",
+  "note": "Final reviewer authorized the full 75-trial run after transport verification; retain all model protocol failures as evidence.",
+  "created_at": "2026-09-18T09:41:43Z"
+}
