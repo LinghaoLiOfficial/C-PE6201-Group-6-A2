@@ -1,0 +1,8 @@
+{
+  "package_sha256": "9a9d790c9dddf790a8bce80d63523e05682c97f2a91eddb334e37e240397b335",
+  "preflight_sha256": "99811805acdb6b7ad56c85c334219e252132dba5f6809622bf333196442940d4",
+  "preflight_cost_usd": 0.007353874999999999,
+  "reviewed_by": "WANG_YI_SELF_AUTHORIZED",
+  "note": "User explicitly elected to proceed without LI_LINGHAO review. Transport passed and projected spend is within the assigned budget. This is a documented self-authorization deviation, not coordinator approval.",
+  "created_at": "2026-09-18T06:07:49Z"
+}
