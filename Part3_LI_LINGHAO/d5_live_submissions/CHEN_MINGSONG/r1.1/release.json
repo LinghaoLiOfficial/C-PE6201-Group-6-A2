@@ -1,0 +1,8 @@
+{
+  "package_sha256": "fb56a85e0ff52a0e8c2d725ab774f212e3985bde9c7303672844f20303cdafce",
+  "preflight_sha256": "60be0617f6e375abdffe9f8c0fa7ad07f2eb6e4b60cd4878049ad1066690133e",
+  "preflight_cost_usd": 0.0133753,
+  "reviewed_by": "LI_LINGHAO",
+  "note": "Coordinator LI_LINGHAO waived manual preflight review and instructed member to run full directly (transport_ok=true; projected spend USD 0.32 within USD 3 budget).",
+  "created_at": "2026-09-17T13:38:08.870206+00:00"
+}
