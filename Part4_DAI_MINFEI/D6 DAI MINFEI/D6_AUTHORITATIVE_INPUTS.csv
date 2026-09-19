@@ -1,0 +1,7 @@
+﻿member,model,prompt_version,tier,price_in,price_out,trials,turns,tokens_in,tokens_out,agent_spend,preflight_spend,judge_spend,ordinary_trials,ordinary_code_passed,negative_trials,negative_code_passed,code_passed,execution_errors,reviewable,judge_pass,judge_fail,judge_uncertain,overall_passed
+LI_LINGHAO,deepseek/deepseek-v3.2,v2,cheap,0.269,0.4,75,383,959130,62138,0.28286117,0.026086838,0.0820508,30,28,45,44,72,3,72,71,0,1,71
+ZHOU_SIHAN,deepseek/deepseek-v3.2,v1,cheap,0.269,0.4,75,398,983574,67043,0.291398606,0.02622079,0.0722228,30,25,45,39,64,11,64,64,0,0,64
+CHEN_MINGSONG,google/gemini-2.5-flash-lite,v2,cheap,0.1,0.4,75,460,1231861,59791,0.1471025,0.0133753,0.0047568,30,0,45,3,3,70,5,5,0,0,3
+LU_XINZE,qwen/qwen3-235b-a22b-2507,v2,cheap,0.0875,0.35,75,260,613991,54714,0.0728741125,0.0058051,0.014962,30,6,45,5,11,61,14,14,0,0,11
+WANG_YI,mistralai/mistral-small-3.2-24b-instruct,v2,cheap,0.09375,0.25,75,320,800977,46126,0.08662309375,0.007353875,0.0305852,30,17,45,8,25,48,27,24,3,0,23
+DAI_MINFEI,anthropic/claude-haiku-4.5,v2,mid,1.0,5.0,75,342,949938,81259,1.356233,0.103667,0.0386664,30,16,45,12,28,44,31,31,0,0,28
