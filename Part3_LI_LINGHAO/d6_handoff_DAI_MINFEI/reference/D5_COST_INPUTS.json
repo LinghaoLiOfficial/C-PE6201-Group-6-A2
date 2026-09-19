@@ -1,0 +1,357 @@
+{
+  "purpose": "D6 cost-to-serve input pack; derived only from frozen D5 evidence",
+  "generated_from": "Part3_LI_LINGHAO/d5_team_review/final_freeze/suites",
+  "frozen_contract": "d5-live-1.1",
+  "problem": "A",
+  "volume_per_month": 8000,
+  "failure_handling": {
+    "role": "claims assessor",
+    "hourly_usd": 38.0,
+    "minutes_per_escalation": 12.0,
+    "failure_cost_usd": 7.6,
+    "source": "PE6201_A2_Applied_AI_System.pdf Appendix A Problem A"
+  },
+  "trial_structure": {
+    "total_per_model": 75,
+    "ordinary": 30,
+    "negative": 45,
+    "cases": 45
+  },
+  "models": [
+    {
+      "member": "LI_LINGHAO",
+      "model": "deepseek/deepseek-v3.2",
+      "prompt_version": "v2",
+      "backend": "live",
+      "contract_revision": "d5-live-1.1",
+      "trials": 75,
+      "cases": 45,
+      "ordinary": {
+        "trials": 30,
+        "code_passed": 28,
+        "overall_passed": 0
+      },
+      "negative": {
+        "trials": 45,
+        "code_passed": 44,
+        "overall_passed": 0
+      },
+      "code_passed": 72,
+      "execution_errors": 3,
+      "overall_passed": 71,
+      "turns": {
+        "measured_trials": 75,
+        "total": 383,
+        "median": 5,
+        "max": 7
+      },
+      "tokens_in": {
+        "measured_trials": 75,
+        "total": 959130,
+        "median": 12464,
+        "max": 17935
+      },
+      "tokens_out": {
+        "measured_trials": 75,
+        "total": 62138,
+        "median": 751,
+        "max": 1510
+      },
+      "agent_cost_usd": {
+        "measured_trials": 75,
+        "total": 0.28286116999999994,
+        "median": 0.003642023,
+        "max": 0.005322515
+      },
+      "reviewable_trials": 72,
+      "judge_pass_trials": 71,
+      "judge_fail_trials": 0,
+      "judge_uncertain_trials": 1,
+      "judge_cost_usd": 0.08205080000000003,
+      "source_summary": "Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/LI_LINGHAO/suite/summary.json",
+      "preflight_cost_usd": 0.026086838,
+      "measured_d5_total_cost_usd": 0.390998808
+    },
+    {
+      "member": "ZHOU_SIHAN",
+      "model": "deepseek/deepseek-v3.2",
+      "prompt_version": "v1",
+      "backend": "live",
+      "contract_revision": "d5-live-1.1",
+      "trials": 75,
+      "cases": 45,
+      "ordinary": {
+        "trials": 30,
+        "code_passed": 25,
+        "overall_passed": 0
+      },
+      "negative": {
+        "trials": 45,
+        "code_passed": 39,
+        "overall_passed": 0
+      },
+      "code_passed": 64,
+      "execution_errors": 11,
+      "overall_passed": 64,
+      "turns": {
+        "measured_trials": 75,
+        "total": 398,
+        "median": 5,
+        "max": 7
+      },
+      "tokens_in": {
+        "measured_trials": 75,
+        "total": 983574,
+        "median": 12354,
+        "max": 18773
+      },
+      "tokens_out": {
+        "measured_trials": 75,
+        "total": 67043,
+        "median": 805,
+        "max": 4257
+      },
+      "agent_cost_usd": {
+        "measured_trials": 75,
+        "total": 0.291398606,
+        "median": 0.003647474,
+        "max": 0.005893820000000001
+      },
+      "reviewable_trials": 64,
+      "judge_pass_trials": 64,
+      "judge_fail_trials": 0,
+      "judge_uncertain_trials": 0,
+      "judge_cost_usd": 0.0722228,
+      "source_summary": "Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/ZHOU_SIHAN/suite/summary.json",
+      "preflight_cost_usd": 0.02622079,
+      "measured_d5_total_cost_usd": 0.38984219600000003
+    },
+    {
+      "member": "CHEN_MINGSONG",
+      "model": "google/gemini-2.5-flash-lite",
+      "prompt_version": "v2",
+      "backend": "live",
+      "contract_revision": "d5-live-1.1",
+      "trials": 75,
+      "cases": 45,
+      "ordinary": {
+        "trials": 30,
+        "code_passed": 0,
+        "overall_passed": 0
+      },
+      "negative": {
+        "trials": 45,
+        "code_passed": 3,
+        "overall_passed": 0
+      },
+      "code_passed": 3,
+      "execution_errors": 70,
+      "overall_passed": 3,
+      "turns": {
+        "measured_trials": 75,
+        "total": 460,
+        "median": 6,
+        "max": 8
+      },
+      "tokens_in": {
+        "measured_trials": 75,
+        "total": 1231861,
+        "median": 15952,
+        "max": 23289
+      },
+      "tokens_out": {
+        "measured_trials": 75,
+        "total": 59791,
+        "median": 786,
+        "max": 1649
+      },
+      "agent_cost_usd": {
+        "measured_trials": 75,
+        "total": 0.1471025,
+        "median": 0.0018909999999999999,
+        "max": 0.0029885
+      },
+      "reviewable_trials": 5,
+      "judge_pass_trials": 5,
+      "judge_fail_trials": 0,
+      "judge_uncertain_trials": 0,
+      "judge_cost_usd": 0.0047568,
+      "source_summary": "Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/CHEN_MINGSONG/suite/summary.json",
+      "preflight_cost_usd": 0.0133753,
+      "measured_d5_total_cost_usd": 0.1652346
+    },
+    {
+      "member": "LU_XINZE",
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "prompt_version": "v2",
+      "backend": "live",
+      "contract_revision": "d5-live-1.1",
+      "trials": 75,
+      "cases": 45,
+      "ordinary": {
+        "trials": 30,
+        "code_passed": 6,
+        "overall_passed": 0
+      },
+      "negative": {
+        "trials": 45,
+        "code_passed": 5,
+        "overall_passed": 0
+      },
+      "code_passed": 11,
+      "execution_errors": 61,
+      "overall_passed": 11,
+      "turns": {
+        "measured_trials": 75,
+        "total": 260,
+        "median": 3,
+        "max": 6
+      },
+      "tokens_in": {
+        "measured_trials": 75,
+        "total": 613991,
+        "median": 6889,
+        "max": 15928
+      },
+      "tokens_out": {
+        "measured_trials": 75,
+        "total": 54714,
+        "median": 695,
+        "max": 1401
+      },
+      "agent_cost_usd": {
+        "measured_trials": 75,
+        "total": 0.07287411249999999,
+        "median": 0.0008902249999999999,
+        "max": 0.0017997
+      },
+      "reviewable_trials": 14,
+      "judge_pass_trials": 14,
+      "judge_fail_trials": 0,
+      "judge_uncertain_trials": 0,
+      "judge_cost_usd": 0.014962,
+      "source_summary": "Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/LU_XINZE/suite/summary.json",
+      "preflight_cost_usd": 0.005805099999999999,
+      "measured_d5_total_cost_usd": 0.09364121249999999
+    },
+    {
+      "member": "WANG_YI",
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "prompt_version": "v2",
+      "backend": "live",
+      "contract_revision": "d5-live-1.1",
+      "trials": 75,
+      "cases": 45,
+      "ordinary": {
+        "trials": 30,
+        "code_passed": 17,
+        "overall_passed": 0
+      },
+      "negative": {
+        "trials": 45,
+        "code_passed": 8,
+        "overall_passed": 0
+      },
+      "code_passed": 25,
+      "execution_errors": 48,
+      "overall_passed": 23,
+      "turns": {
+        "measured_trials": 75,
+        "total": 320,
+        "median": 4,
+        "max": 5
+      },
+      "tokens_in": {
+        "measured_trials": 75,
+        "total": 800977,
+        "median": 10279,
+        "max": 13372
+      },
+      "tokens_out": {
+        "measured_trials": 75,
+        "total": 46126,
+        "median": 623,
+        "max": 1034
+      },
+      "agent_cost_usd": {
+        "measured_trials": 75,
+        "total": 0.08662309375,
+        "median": 0.0012041875,
+        "max": 0.00150209375
+      },
+      "reviewable_trials": 27,
+      "judge_pass_trials": 24,
+      "judge_fail_trials": 3,
+      "judge_uncertain_trials": 0,
+      "judge_cost_usd": 0.030585199999999996,
+      "source_summary": "Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/WANG_YI/suite/summary.json",
+      "preflight_cost_usd": 0.007353874999999999,
+      "measured_d5_total_cost_usd": 0.12456216875
+    },
+    {
+      "member": "DAI_MINFEI",
+      "model": "anthropic/claude-haiku-4.5",
+      "prompt_version": "v2",
+      "backend": "live",
+      "contract_revision": "d5-live-1.1",
+      "trials": 75,
+      "cases": 45,
+      "ordinary": {
+        "trials": 30,
+        "code_passed": 16,
+        "overall_passed": 0
+      },
+      "negative": {
+        "trials": 45,
+        "code_passed": 12,
+        "overall_passed": 0
+      },
+      "code_passed": 28,
+      "execution_errors": 44,
+      "overall_passed": 28,
+      "turns": {
+        "measured_trials": 75,
+        "total": 342,
+        "median": 5,
+        "max": 7
+      },
+      "tokens_in": {
+        "measured_trials": 75,
+        "total": 949938,
+        "median": 13806,
+        "max": 20039
+      },
+      "tokens_out": {
+        "measured_trials": 75,
+        "total": 81259,
+        "median": 1057,
+        "max": 2093
+      },
+      "agent_cost_usd": {
+        "measured_trials": 75,
+        "total": 1.356233,
+        "median": 0.019105,
+        "max": 0.027371
+      },
+      "reviewable_trials": 31,
+      "judge_pass_trials": 31,
+      "judge_fail_trials": 0,
+      "judge_uncertain_trials": 0,
+      "judge_cost_usd": 0.038666400000000004,
+      "source_summary": "Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/DAI_MINFEI/suite/summary.json",
+      "preflight_cost_usd": 0.103667,
+      "measured_d5_total_cost_usd": 1.4985664
+    }
+  ],
+  "price_note": "Use the per-model list prices and checked dates in reference/MODEL_ASSIGNMENT.csv for baseline token pricing. Do not substitute provider usage cost for list-price baseline without labeling it.",
+  "missing_measurements": [
+    "D2(a): tool-block token counts before and after the tool cut, with the exact measured configuration and method.",
+    "D2(b): descriptor/observation-size token counts for v1 versus v2, preferably same model/case or the existing paired DeepSeek v1/v2 comparison.",
+    "D2(c): sequential versus parallel runs with turns, input tokens, output tokens, cost, and code pass rate under the same cases.",
+    "Operational monthly volume confirmation if the team chooses a volume different from the Problem A default of 8,000 claims/month."
+  ],
+  "notes": {
+    "overall_pass_definition": "deterministic code pass AND independent judge pass; execution failures remain in the 75-trial denominator",
+    "source": "reference/D5_FINAL_REPORT.md"
+  }
+}
