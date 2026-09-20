@@ -1,0 +1,92 @@
+[
+  {
+    "member_id": "M-2214",
+    "name": "Tan Wei Ling",
+    "policy_id": "POL-3310",
+    "join_date": "2024-04-01"
+  },
+  {
+    "member_id": "M-3390",
+    "name": "Rajesh Kumar",
+    "policy_id": "POL-4102",
+    "join_date": "2023-01-15"
+  },
+  {
+    "member_id": "M-4471",
+    "name": "Chen Xiaoyu",
+    "policy_id": "POL-5588",
+    "join_date": "2022-04-01"
+  },
+  {
+    "member_id": "M-5502",
+    "name": "Nurul Aisyah",
+    "policy_id": "POL-6001",
+    "join_date": "2026-06-01"
+  },
+  {
+    "member_id": "M-6118",
+    "name": "Lim Jun Hao",
+    "policy_id": "POL-7220",
+    "join_date": "2025-02-01"
+  },
+  {
+    "member_id": "M-16101",
+    "name": "Case Member 16101",
+    "policy_id": "POL-16101",
+    "join_date": "2025-01-15"
+  },
+  {
+    "member_id": "M-16102",
+    "name": "Case Member 16102",
+    "policy_id": "POL-16102",
+    "join_date": "2025-02-10"
+  },
+  {
+    "member_id": "M-16103",
+    "name": "Case Member 16103",
+    "policy_id": "POL-16103",
+    "join_date": "2025-03-12"
+  },
+  {
+    "member_id": "M-16104",
+    "name": "Case Member 16104",
+    "policy_id": "POL-16104",
+    "join_date": "2025-04-18"
+  },
+  {
+    "member_id": "M-16105",
+    "name": "Case Member 16105",
+    "policy_id": "POL-16105",
+    "join_date": "2025-05-20"
+  },
+  {
+    "member_id": "M-16201",
+    "name": "Case Member 16201",
+    "policy_id": "POL-16201",
+    "join_date": "2025-01-20"
+  },
+  {
+    "member_id": "M-16202",
+    "name": "Case Member 16202",
+    "policy_id": "POL-16202",
+    "join_date": "2025-02-15"
+  },
+  {
+    "member_id": "M-16203",
+    "name": "Case Member 16203",
+    "policy_id": "POL-16203",
+    "join_date": "2025-03-10"
+  },
+  {
+    "member_id": "M-16204",
+    "name": "Case Member 16204",
+    "policy_id": "POL-16204",
+    "join_date": "2025-04-12"
+  },
+  {
+    "member_id": "M-16205",
+    "name": "Case Member 16205",
+    "policy_id": "POL-16205",
+    "join_date": "2025-05-08"
+  }
+]

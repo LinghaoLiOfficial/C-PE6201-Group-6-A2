@@ -10,3 +10,25 @@ __pycache__/
 htmlcov/
 .env
 .DS_Store
+
+# Generated runs, temporary review material and binary handoff packages.
+**/output/
+**/tmp/
+tmp/
+**/suites/
+**/staging/
+**/validation/
+**/full-suite-*/
+**/judge/
+**/r1.1/
+*.zip
+*.pdf
+*.docx
+*.xlsx
+*.pptx
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.mov

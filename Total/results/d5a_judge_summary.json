@@ -1,0 +1,68 @@
+{
+  "trials": 75,
+  "cases": 45,
+  "code_passed": 75,
+  "execution_errors": 0,
+  "judgement_passed": 75,
+  "judgement_failed": 0,
+  "judgement_pending": 0,
+  "overall_passed": 75,
+  "ordinary": {
+    "trials": 30,
+    "code_passed": 30,
+    "overall_passed": 30
+  },
+  "negative": {
+    "trials": 45,
+    "code_passed": 45,
+    "overall_passed": 45
+  },
+  "turns": {
+    "measured_trials": 75,
+    "total": 438,
+    "median": 6,
+    "max": 7
+  },
+  "tokens_in": {
+    "measured_trials": 75,
+    "total": 350400,
+    "median": 4800,
+    "max": 5600
+  },
+  "tokens_out": {
+    "measured_trials": 75,
+    "total": 26280,
+    "median": 360,
+    "max": 420
+  },
+  "cost_usd": {
+    "measured_trials": 75,
+    "total": 0.04555199999999998,
+    "median": 0.0006240000000000001,
+    "max": 0.0007280000000000001
+  },
+  "step_cap_hits": 0,
+  "backend": "scripted",
+  "prompt_version": "v2",
+  "model": "scripted",
+  "created_at": "2026-09-16T12:20:49.180774+00:00",
+  "operator_confirmation": "simulated for local decision-log writes",
+  "cost_basis": "synthetic; API cost zero",
+  "judgement_policy": "second-model judge, every trial and criterion",
+  "judge_model": "anthropic/claude-haiku-4.5",
+  "judge_calls_completed": 75,
+  "judge_calls_error": 0,
+  "judge_calls_pending": 0,
+  "judge_cost_usd": 0.3489,
+  "judge_cost_includes_reservations": false,
+  "judge_budget_usd": 2.0,
+  "source_suite": "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/d5a_acceptance/suite-com7qgsg",
+  "judge_tokens_in": 172660,
+  "judge_tokens_out": 35248,
+  "judge_criteria": {
+    "pass": 263,
+    "fail": 0,
+    "uncertain": 0
+  },
+  "suite": "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/d5a_acceptance/suite-com7qgsg/llm_judge_9478d33e8d90"
+}
