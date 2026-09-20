@@ -1,0 +1,67 @@
+{
+  "document_type": "D6 Layer 3 owner-approved assumption",
+  "approved_by": "LI_LINGHAO",
+  "approved_at_utc": "2026-09-19",
+  "status": "scenario assumption; not measured production spend",
+  "currency": "USD",
+  "problem": "A",
+  "monthly_volume_claims": 8000,
+  "monthly_volume_interpretation": "Problem A planning volume, not a hard platform quota; recalculate when volume changes.",
+  "failure_handling": {
+    "role": "claims assessor",
+    "hourly_usd": 38.0,
+    "minutes_per_escalation": 12.0,
+    "failure_cost_usd": 7.6,
+    "source": "PE6201_A2_Applied_AI_System.pdf Appendix A Problem A"
+  },
+  "layer3_base_monthly_usd": 200.0,
+  "layer3_per_claim_allocation_usd": 0.025,
+  "components": [
+    {
+      "name": "Hosting / runtime allowance",
+      "monthly_usd": 80.0,
+      "scope": "small managed runtime or equivalent scheduled execution allowance"
+    },
+    {
+      "name": "Logs and retained run evidence",
+      "monthly_usd": 20.0,
+      "scope": "retention of evaluation and operational logs"
+    },
+    {
+      "name": "Monitoring and alerting",
+      "monthly_usd": 30.0,
+      "scope": "basic uptime/error/threshold monitoring"
+    },
+    {
+      "name": "Storage and backups",
+      "monthly_usd": 20.0,
+      "scope": "artifact, result and backup storage"
+    },
+    {
+      "name": "Evaluation / regression execution allowance",
+      "monthly_usd": 30.0,
+      "scope": "scheduled regression and evidence generation"
+    },
+    {
+      "name": "Maintenance / fixed software allowance",
+      "monthly_usd": 20.0,
+      "scope": "minor maintenance and fixed software allocation"
+    }
+  ],
+  "layer3_sensitivity_monthly_usd": [
+    0.0,
+    100.0,
+    200.0,
+    500.0,
+    1000.0
+  ],
+  "excluded_from_base": [
+    "actual provider invoices",
+    "taxes and enterprise commitments",
+    "variable network/egress fees",
+    "uncommitted production database/vector-store charges",
+    "human labour fallback (Layer 2)",
+    "D5 agent and judge API usage (measured Layer 1/evaluation evidence)"
+  ],
+  "approval_rationale": "The repository contains a small prototype and no committed production contract or recurring bill. US$200/month is a conservative managed-prototype operating allowance, presented transparently as an assumption so the required three-layer model is complete."
+}
