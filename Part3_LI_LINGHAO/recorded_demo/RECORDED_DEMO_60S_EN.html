@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LI_LINGHAO · 60 秒负例录屏操作页</title>
+<style>
+:root{color-scheme:light;--ink:#172b3a;--muted:#526570;--accent:#116959;--line:#dbe4e6}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{margin:0;background:#f3f6f7;color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header,main{max-width:1120px;margin:auto;padding:28px 24px}header{padding-bottom:18px}
+.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--accent);font-weight:700}h1{font-size:30px;line-height:1.3;margin:8px 0 12px}header p{margin:0;color:var(--muted)}
+nav{position:sticky;top:0;z-index:2;background:#f3f6f7f5;border-block:1px solid var(--line);backdrop-filter:blur(8px)}
+.nav-inner{max-width:1120px;margin:auto;padding:12px 24px;display:flex;gap:8px;overflow-x:auto}
+nav a{white-space:nowrap;text-decoration:none;color:var(--ink);padding:5px 13px;border:1px solid var(--line);border-radius:8px;background:white}
+nav a:hover{border-color:var(--accent);color:var(--accent)}main{padding-top:22px}
+section{background:white;border:1px solid var(--line);border-radius:14px;padding:26px;margin-bottom:22px;box-shadow:0 3px 12px #172b3a04}
+h2{margin:0 0 22px;font-size:21px}h3{font-size:13px;color:var(--muted);margin:20px 0 9px;font-weight:600}
+.path-row{display:flex;align-items:center;gap:16px;background:#f5f8f8;border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin:8px 0}
+.path-row code{overflow-wrap:anywhere;flex:1;min-width:0;font-size:13px}code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+button{flex-shrink:0;border:1px solid #b9cbd0;background:white;color:var(--ink);border-radius:7px;padding:8px 13px;cursor:pointer;font-weight:600;font-size:13px;line-height:1.4;font-family:inherit}
+button:hover{background:#eaf3f1}button:focus-visible,a:focus-visible,pre:focus-visible{outline:3px solid #4eaa99;outline-offset:3px}
+button.primary{background:var(--accent);border-color:var(--accent);color:white;min-width:94px}button.primary:hover{background:#0a5447}
+.command-head{display:flex;align-items:center;justify-content:space-between;margin-top:22px;margin-bottom:9px}.command-head h3{margin:0}
+pre{margin:0;padding:18px;background:#152631;color:#e5f0f3;border-radius:9px;overflow-x:auto;font-size:13px;line-height:1.7;tab-size:2}
+blockquote{margin:0;border-left:3px solid #67a99b;background:#f0f7f5;padding:15px 18px;border-radius:0 8px 8px 0;font-size:18px;line-height:1.65}
+.muted{color:var(--muted)}#copy-status{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:4;background:#172b3a;color:white;padding:10px 20px;border-radius:9px;box-shadow:0 4px 18px #0002;max-width:90vw;text-align:center}#copy-status:empty{display:none}
+@media(max-width:640px){header,main{padding:20px 14px}h1{font-size:25px}section{padding:18px}h2{font-size:19px}.path-row{align-items:flex-start;flex-direction:column;gap:8px}blockquote{font-size:16px}.nav-inner{padding:10px 14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{nav,button,#copy-status{display:none}body{background:white}section{break-inside:avoid;box-shadow:none}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f3f6f7;color:#172b3a}}
+</style>
+</head>
+<body>
+<header><div class="eyebrow">LI_LINGHAO · CLM-8925</div><h1>60 秒负例录屏操作页</h1><p>按顺序点击“复制命令”，粘贴至同一个 Terminal 后执行。页面可离线使用；复制按钮不会执行命令。</p></header>
+<nav aria-label="步骤导航"><div class="nav-inner"><a href="#step-0">准备</a><a href="#step-1">步骤 1</a><a href="#step-2">步骤 2</a><a href="#step-3">步骤 3</a><a href="#step-4">步骤 4</a><a href="#step-5">步骤 5</a><a href="#step-6">步骤 6</a></div></nav>
+<main><section id="step-0" aria-labelledby="title-0">
+<h2 id="title-0">录屏前准备（不计入 60 秒）</h2>
+<h3>展示的文件路径</h3><p class="muted">无，仅展示 Terminal。</p>
+<div class="command-head"><h3>Terminal 操作</h3><button type="button" class="primary" data-copy="command-0">复制命令</button></div>
+<pre tabindex="0"><code id="command-0">cd /Users/llh/PycharmProjects/C-PE6201-Group-6-A2
+python3 --version
+jq --version</code></pre>
+<h3>英文配音文本</h3><blockquote lang="en">无需配音。</blockquote>
+</section>
+<section id="step-1" aria-labelledby="title-1">
+<h2 id="title-1">1. 00:00–00:08｜展示负例输入</h2>
+<h3>展示的文件路径</h3><div class="path-row"><code id="path-1-0">/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/integration/merged_A/data_A/claims.json</code><button type="button" data-copy="path-1-0" aria-label="复制文件路径 1-1">复制路径</button></div>
+<div class="command-head"><h3>Terminal 操作</h3><button type="button" class="primary" data-copy="command-1">复制命令</button></div>
+<pre tabindex="0"><code id="command-1">clear
+jq &#x27;.[] | select(.claim_id==&quot;CLM-8925&quot;) |
+  {claim_id, lines, claim_total: ([.lines[].amount] | add)}&#x27; \
+  &quot;/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/integration/merged_A/data_A/claims.json&quot;</code></pre>
+<h3>英文配音文本</h3><blockquote lang="en">This negative case contains three claim lines totalling eleven thousand four hundred.</blockquote>
+</section>
+<section id="step-2" aria-labelledby="title-2">
+<h2 id="title-2">2. 00:08–00:16｜现场执行 Harness</h2>
+<h3>展示的文件路径</h3><div class="path-row"><code id="path-2-0">/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/recorded_demo/run_scripted_acceptance.py</code><button type="button" data-copy="path-2-0" aria-label="复制文件路径 2-1">复制路径</button></div>
+<div class="command-head"><h3>Terminal 操作</h3><button type="button" class="primary" data-copy="command-2">复制命令</button></div>
+<pre tabindex="0"><code id="command-2">python3 &quot;/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/recorded_demo/run_scripted_acceptance.py&quot;</code></pre>
+<h3>英文配音文本</h3><blockquote lang="en">I am running our scripted harness now. It executes real local tools without an API key.</blockquote>
+</section>
+<section id="step-3" aria-labelledby="title-3">
+<h2 id="title-3">3. 00:16–00:27｜展示工具证据</h2>
+<h3>展示的文件路径</h3><div class="path-row"><code id="path-3-0">/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/CLM-8925-trial-1.json</code><button type="button" data-copy="path-3-0" aria-label="复制文件路径 3-1">复制路径</button></div>
+<div class="command-head"><h3>Terminal 操作</h3><button type="button" class="primary" data-copy="command-3">复制命令</button></div>
+<pre tabindex="0"><code id="command-3">clear
+jq &#x27;.trace[] | select(.tool==&quot;lookup_policy&quot;) |
+  {turn, tool, args, observation, status}&#x27; \
+  &quot;/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/CLM-8925-trial-1.json&quot;</code></pre>
+<h3>英文配音文本</h3><blockquote lang="en">The policy tool returns nine thousand two hundred remaining and confirms that the annual limit is exceeded.</blockquote>
+</section>
+<section id="step-4" aria-labelledby="title-4">
+<h2 id="title-4">4. 00:27–00:36｜展示触发条件与决定</h2>
+<h3>展示的文件路径</h3><div class="path-row"><code id="path-4-0">/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/CLM-8925-trial-1.json</code><button type="button" data-copy="path-4-0" aria-label="复制文件路径 4-1">复制路径</button></div>
+<div class="command-head"><h3>Terminal 操作</h3><button type="button" class="primary" data-copy="command-4">复制命令</button></div>
+<pre tabindex="0"><code id="command-4">clear
+jq &#x27;{decision, trigger, escalate_to, lines, approved_total, refused_total}&#x27; \
+  &quot;/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/CLM-8925-trial-1.json&quot;</code></pre>
+<h3>英文配音文本</h3><blockquote lang="en">The agent escalates to a human claims assessor, with one named trigger and no individual line pricing.</blockquote>
+</section>
+<section id="step-5" aria-labelledby="title-5">
+<h2 id="title-5">5. 00:36–00:47｜展示 Decision Log</h2>
+<h3>展示的文件路径</h3><div class="path-row"><code id="path-5-0">/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/decisions.jsonl</code><button type="button" data-copy="path-5-0" aria-label="复制文件路径 5-1">复制路径</button></div>
+<div class="command-head"><h3>Terminal 操作</h3><button type="button" class="primary" data-copy="command-5">复制命令</button></div>
+<pre tabindex="0"><code id="command-5">clear
+jq &#x27;{case_id, decision, trigger, evidence, autonomy, gate}&#x27; \
+  &quot;/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/decisions.jsonl&quot;
+printf &#x27;Actual decision-log records: &#x27;
+wc -l &lt; &quot;/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/decisions.jsonl&quot;</code></pre>
+<h3>英文配音文本</h3><blockquote lang="en">Here is the actual decision log: one write, supporting tool evidence, and the simulated operator confirmation.</blockquote>
+</section>
+<section id="step-6" aria-labelledby="title-6">
+<h2 id="title-6">6. 00:47–01:00｜展示 Harness CODE CHECK PASS</h2>
+<h3>展示的文件路径</h3><div class="path-row"><code id="path-6-0">/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/results.json</code><button type="button" data-copy="path-6-0" aria-label="复制文件路径 6-1">复制路径</button></div><div class="path-row"><code id="path-6-1">/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/summary.json</code><button type="button" data-copy="path-6-1" aria-label="复制文件路径 6-2">复制路径</button></div>
+<div class="command-head"><h3>Terminal 操作</h3><button type="button" class="primary" data-copy="command-6">复制命令</button></div>
+<pre tabindex="0"><code id="command-6">
+clear
+jq &#x27;.[] | select(.case_id==&quot;CLM-8925&quot; and .trial==1) |
+  {case_id, trial, code_passed, failures}&#x27; \
+  &quot;/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/results.json&quot;
+jq -r &#x27;
+  &quot;HARNESS CODE CHECK: &quot; +
+  (if .code_passed==.trials and .execution_errors==0 then &quot;PASS&quot; else &quot;FAIL&quot; end),
+  &quot;Code passes: \(.code_passed)/\(.trials)&quot;,
+  &quot;Negative trials: \(.negative.trials)&quot;,
+  &quot;Execution errors: \(.execution_errors)&quot;,
+  &quot;Step-cap hits: \(.step_cap_hits)&quot;,
+  &quot;Backend: \(.backend)&quot;
+&#x27; &quot;/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/summary.json&quot;</code></pre>
+<h3>英文配音文本</h3><blockquote lang="en">The harness passes all seventy-five code checks, including forty-five negative trials, with zero execution errors. This demonstrates reproducibility, not live-model accuracy.</blockquote>
+</section></main>
+<div id="copy-status" role="status" aria-live="polite"></div>
+<script>
+let statusTimer;
+function showStatus(message) {
+  const status = document.getElementById('copy-status');
+  clearTimeout(statusTimer);
+  status.textContent = message;
+  statusTimer = setTimeout(() => { status.textContent = ''; }, 4500);
+}
+function legacyCopy(text) {
+  const active = document.activeElement;
+  const field = document.createElement('textarea');
+  field.value = text;
+  field.readOnly = true;
+  field.style.cssText = 'position:fixed;left:-9999px;top:0;font-size:16px;';
+  document.body.appendChild(field);
+  let copied = false;
+  try {
+    field.focus({preventScroll:true});
+    field.select();
+    field.setSelectionRange(0, field.value.length);
+    copied = document.execCommand('copy');
+  } finally {
+    field.remove();
+    if (active) active.focus({preventScroll:true});
+  }
+  if (!copied) throw new Error('Clipboard unavailable');
+}
+document.querySelectorAll('button[data-copy]').forEach(button => {
+  button.addEventListener('click', async () => {
+    const target = document.getElementById(button.dataset.copy);
+    const text = target.textContent;
+    try {
+      let copied = false;
+      if (navigator.clipboard && window.isSecureContext) {
+        try { await navigator.clipboard.writeText(text); copied = true; } catch (_) {}
+      }
+      if (!copied) legacyCopy(text);
+      showStatus(button.dataset.copy.startsWith('command-') ? '命令已复制，粘贴至 Terminal 后执行。' : '文件路径已复制。');
+    } catch (_) {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(target);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      showStatus('自动复制不可用，已选中文本。请按 ⌘C（Windows：Ctrl+C）。');
+    }
+  });
+});
+</script>
+</body>
+</html>

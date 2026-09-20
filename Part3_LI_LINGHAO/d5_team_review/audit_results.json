@@ -1,0 +1,242 @@
+{
+  "commit": "cff4286b690844d95ea18ae77b74aaa83eedb71b",
+  "members": {
+    "LI_LINGHAO": {
+      "path": "Part3_LI_LINGHAO/d5_live_submissions/LI_LINGHAO/r1.1",
+      "findings": [],
+      "manifest_byte_identical": true,
+      "preflight": {
+        "trials": 6,
+        "code_passed": 5,
+        "statuses": {
+          "completed": 5,
+          "completed_with_tool_issues": 1
+        },
+        "transport_ok": true,
+        "cost": 0.026086838,
+        "projected": 0.5974100330000001
+      },
+      "full_present": true,
+      "release_note": "Revision 1.1 candidate C: six live diagnostic trials, five strict and independent judge passes, one de-duplication-blocked repeated get_claim retained as model failure. Shared schema/line grading/rubric regressions passed; no transport error or remaining public-contract mismatch observed. Estimated 75-trial agent total USD 0.5974; pre-existing key credit exceeds planned spend. All three development attempts retained. This receipt authorizes only this package and preflight; it is not a completed formal battery.",
+      "full": {
+        "trials": 75,
+        "cases": 45,
+        "code_passed": 72,
+        "execution_errors": 3,
+        "judgement_pending": 72,
+        "judgement_not_reviewable": 3,
+        "ordinary": {
+          "trials": 30,
+          "code_passed": 28,
+          "overall_passed": 0
+        },
+        "negative": {
+          "trials": 45,
+          "code_passed": 44,
+          "overall_passed": 0
+        },
+        "step_cap_hits": 0,
+        "cost_usd": {
+          "measured_trials": 75,
+          "total": 0.28286116999999994,
+          "median": 0.003642023,
+          "max": 0.005322515
+        },
+        "turns": {
+          "measured_trials": 75,
+          "total": 383,
+          "median": 5,
+          "max": 7
+        }
+      },
+      "statuses": {
+        "completed": 72,
+        "completed_with_tool_issues": 2,
+        "error": 1
+      },
+      "errors": {
+        "Model-generated Observation blocks are forbidden": 1
+      },
+      "provider_cost": 0.16901493299999998,
+      "responses": 383,
+      "unique_run_ids": 75
+    },
+    "CHEN_MINGSONG": {
+      "path": "Part3_LI_LINGHAO/d5_live_submissions/CHEN_MINGSONG/r1.1",
+      "findings": [],
+      "manifest_byte_identical": true,
+      "preflight": {
+        "trials": 6,
+        "code_passed": 0,
+        "statuses": {
+          "error": 3,
+          "stopped": 1,
+          "not_recorded": 2
+        },
+        "transport_ok": true,
+        "cost": 0.0133753,
+        "projected": 0.32179855
+      },
+      "full_present": true,
+      "release_note": "Coordinator LI_LINGHAO waived manual preflight review and instructed member to run full directly (transport_ok=true; projected spend USD 0.32 within USD 3 budget).",
+      "full": {
+        "trials": 75,
+        "cases": 45,
+        "code_passed": 3,
+        "execution_errors": 70,
+        "judgement_pending": 5,
+        "judgement_not_reviewable": 70,
+        "ordinary": {
+          "trials": 30,
+          "code_passed": 0,
+          "overall_passed": 0
+        },
+        "negative": {
+          "trials": 45,
+          "code_passed": 3,
+          "overall_passed": 0
+        },
+        "step_cap_hits": 4,
+        "cost_usd": {
+          "measured_trials": 75,
+          "total": 0.1471025,
+          "median": 0.0018909999999999999,
+          "max": 0.0029885
+        },
+        "turns": {
+          "measured_trials": 75,
+          "total": 460,
+          "median": 6,
+          "max": 8
+        }
+      },
+      "statuses": {
+        "error": 33,
+        "not_recorded": 32,
+        "stopped": 4,
+        "completed": 5,
+        "completed_with_tool_issues": 1
+      },
+      "errors": {
+        "Expecting value: line 1 column 409 (char 408)": 1,
+        "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)": 1,
+        "Actions and Final must be separate turns": 11,
+        "non-escalation requires every billed line and its disposition": 3,
+        "reason must be a non-empty string": 8,
+        "Expecting value: line 1 column 380 (char 379)": 1,
+        "Expecting value: line 1 column 253 (char 252)": 1,
+        "Expecting value: line 1 column 323 (char 322)": 1,
+        "Expecting value: line 1 column 369 (char 368)": 2,
+        "Expecting value: line 1 column 438 (char 437)": 1,
+        "response must contain Action lines or one JSON Final": 1,
+        "Expecting value: line 1 column 537 (char 536)": 1,
+        "Expecting value: line 1 column 1 (char 0)": 1
+      },
+      "provider_cost": 0.11973700999999996,
+      "responses": 460,
+      "unique_run_ids": 75
+    },
+    "ZHOU_SIHAN": {
+      "path": "Part3_LI_LINGHAO/d5_live_submissions/ZHOU_SIHAN/r1.1",
+      "findings": [],
+      "manifest_byte_identical": true,
+      "preflight": {
+        "trials": 6,
+        "code_passed": 5,
+        "statuses": {
+          "completed": 5,
+          "completed_with_tool_issues": 1
+        },
+        "transport_ok": true,
+        "cost": 0.02622079,
+        "projected": 0.6294009250000001
+      },
+      "full_present": true,
+      "release_note": "ok",
+      "full": {
+        "trials": 75,
+        "cases": 45,
+        "code_passed": 64,
+        "execution_errors": 11,
+        "judgement_pending": 64,
+        "judgement_not_reviewable": 11,
+        "ordinary": {
+          "trials": 30,
+          "code_passed": 25,
+          "overall_passed": 0
+        },
+        "negative": {
+          "trials": 45,
+          "code_passed": 39,
+          "overall_passed": 0
+        },
+        "step_cap_hits": 0,
+        "cost_usd": {
+          "measured_trials": 75,
+          "total": 0.291398606,
+          "median": 0.003647474,
+          "max": 0.005893820000000001
+        },
+        "turns": {
+          "measured_trials": 75,
+          "total": 398,
+          "median": 5,
+          "max": 7
+        }
+      },
+      "statuses": {
+        "completed_with_tool_issues": 9,
+        "completed": 64,
+        "error": 2
+      },
+      "errors": {
+        "Expecting value: line 1 column 692 (char 691)": 1,
+        "response must contain Action lines or one JSON Final": 1
+      },
+      "provider_cost": 0.08991852429999983,
+      "responses": 398,
+      "unique_run_ids": 75
+    },
+    "LU_XINZE": {
+      "path": "Part3_LI_LINGHAO/d5_live_submissions/LU_XINZE/r1.1",
+      "findings": [],
+      "manifest_byte_identical": true,
+      "preflight": {
+        "trials": 6,
+        "code_passed": 0,
+        "statuses": {
+          "error": 6
+        },
+        "transport_ok": true,
+        "cost": 0.005716199999999999,
+        "projected": 0.12504804375
+      },
+      "full_present": false
+    },
+    "WANG_YI": {
+      "path": "Part3_LI_LINGHAO/d5_live_submissions/WANG_YI/r1.1",
+      "findings": [],
+      "manifest_byte_identical": true,
+      "preflight": {
+        "trials": 6,
+        "code_passed": 1,
+        "statuses": {
+          "error": 4,
+          "not_recorded": 1,
+          "completed": 1
+        },
+        "transport_ok": true,
+        "cost": 0.007353874999999999,
+        "projected": 0.1685860625
+      },
+      "full_present": false
+    },
+    "DAI_MINFEI": {
+      "path": "Part4_DAI_MINFEI/d5_live_submissions/DAI_MINFEI/r1.1",
+      "findings": [],
+      "manifest_byte_identical": true,
+      "partial_preflight_results": 2,
+      "full_present": false
+    }
+  }
+}

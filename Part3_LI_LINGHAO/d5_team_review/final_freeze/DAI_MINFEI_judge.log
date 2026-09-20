@@ -1,0 +1,100 @@
+CLM-8861 trial 1: judge completed; spent/reserved $0.0013
+CLM-8874 trial 1: judge completed; spent/reserved $0.0023
+CLM-8925 trial 1: judge completed; spent/reserved $0.0035
+CLM-8925 trial 2: judge completed; spent/reserved $0.0047
+CLM-8925 trial 3: judge completed; spent/reserved $0.0060
+CLM-8960 trial 1: judge completed; spent/reserved $0.0074
+CLM-16001 trial 1: judge completed; spent/reserved $0.0090
+CLM-16003 trial 1: judge completed; spent/reserved $0.0101
+CLM-16004 trial 1: judge completed; spent/reserved $0.0117
+CLM-16005 trial 1: judge completed; spent/reserved $0.0128
+CLM-16005 trial 2: judge completed; spent/reserved $0.0140
+CLM-16005 trial 3: judge completed; spent/reserved $0.0151
+CLM-16101 trial 1: judge completed; spent/reserved $0.0164
+CLM-16103 trial 1: judge completed; spent/reserved $0.0176
+CLM-16104 trial 1: judge completed; spent/reserved $0.0193
+CLM-16105 trial 1: judge completed; spent/reserved $0.0205
+CLM-16105 trial 2: judge completed; spent/reserved $0.0218
+CLM-16105 trial 3: judge completed; spent/reserved $0.0230
+CLM-16201 trial 1: judge completed; spent/reserved $0.0241
+CLM-16202 trial 1: judge completed; spent/reserved $0.0252
+CLM-16203 trial 1: judge completed; spent/reserved $0.0264
+CLM-16302 trial 1: judge completed; spent/reserved $0.0277
+CLM-16305 trial 1: judge completed; spent/reserved $0.0287
+CLM-16305 trial 2: judge completed; spent/reserved $0.0297
+CLM-16305 trial 3: judge completed; spent/reserved $0.0308
+CLM-16404 trial 1: judge completed; spent/reserved $0.0326
+CLM-16405 trial 1: judge completed; spent/reserved $0.0338
+CLM-16405 trial 2: judge completed; spent/reserved $0.0349
+CLM-16405 trial 3: judge completed; spent/reserved $0.0360
+CLM-16501 trial 1: judge completed; spent/reserved $0.0374
+CLM-16503 trial 1: judge completed; spent/reserved $0.0387
+{
+  "trials": 75,
+  "cases": 45,
+  "code_passed": 28,
+  "execution_errors": 44,
+  "judgement_passed": 31,
+  "judgement_failed": 0,
+  "judgement_pending": 0,
+  "overall_passed": 28,
+  "ordinary": {
+    "trials": 30,
+    "code_passed": 16,
+    "overall_passed": 16
+  },
+  "negative": {
+    "trials": 45,
+    "code_passed": 12,
+    "overall_passed": 12
+  },
+  "turns": {
+    "measured_trials": 75,
+    "total": 342,
+    "median": 5,
+    "max": 7
+  },
+  "tokens_in": {
+    "measured_trials": 75,
+    "total": 949938,
+    "median": 13806,
+    "max": 20039
+  },
+  "tokens_out": {
+    "measured_trials": 75,
+    "total": 81259,
+    "median": 1057,
+    "max": 2093
+  },
+  "cost_usd": {
+    "measured_trials": 75,
+    "total": 1.3562330000000007,
+    "median": 0.019105,
+    "max": 0.027371
+  },
+  "step_cap_hits": 0,
+  "contract_revision": "d5-live-1.1",
+  "backend": "live",
+  "prompt_version": "v2",
+  "model": "anthropic/claude-haiku-4.5",
+  "created_at": "2026-09-18T13:26:40.490232+00:00",
+  "operator_confirmation": "simulated for local decision-log writes",
+  "cost_basis": "API usage times configured prices",
+  "judgement_policy": "second-model judge, every trial and criterion",
+  "judge_model": "openai/gpt-4.1-mini",
+  "judge_calls_completed": 31,
+  "judge_calls_error": 0,
+  "judge_calls_pending": 0,
+  "judge_cost_usd": 0.038666400000000004,
+  "judge_cost_includes_reservations": false,
+  "judge_budget_usd": 1.5,
+  "source_suite": "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/DAI_MINFEI/suite",
+  "judge_tokens_in": 64658,
+  "judge_tokens_out": 8002,
+  "judge_criteria": {
+    "pass": 121,
+    "fail": 0,
+    "uncertain": 0
+  },
+  "suite": "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/DAI_MINFEI/suite/llm_judge_cc6ec39749f7"
+}

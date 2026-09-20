@@ -1,0 +1,11 @@
+{
+  "commit": "cff4286b690844d95ea18ae77b74aaa83eedb71b",
+  "member": "DAI_MINFEI",
+  "audit": {
+    "path": "Part4_DAI_MINFEI/d5_live_submissions/DAI_MINFEI/r1.1",
+    "findings": [],
+    "manifest_byte_identical": true,
+    "partial_preflight_results": 2,
+    "full_present": false
+  }
+}

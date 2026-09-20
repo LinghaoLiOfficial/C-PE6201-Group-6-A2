@@ -1,0 +1,79 @@
+{
+  "commit": "cff4286b690844d95ea18ae77b74aaa83eedb71b",
+  "member": "CHEN_MINGSONG",
+  "audit": {
+    "path": "Part3_LI_LINGHAO/d5_live_submissions/CHEN_MINGSONG/r1.1",
+    "findings": [],
+    "manifest_byte_identical": true,
+    "preflight": {
+      "trials": 6,
+      "code_passed": 0,
+      "statuses": {
+        "error": 3,
+        "stopped": 1,
+        "not_recorded": 2
+      },
+      "transport_ok": true,
+      "cost": 0.0133753,
+      "projected": 0.32179855
+    },
+    "full_present": true,
+    "release_note": "Coordinator LI_LINGHAO waived manual preflight review and instructed member to run full directly (transport_ok=true; projected spend USD 0.32 within USD 3 budget).",
+    "full": {
+      "trials": 75,
+      "cases": 45,
+      "code_passed": 3,
+      "execution_errors": 70,
+      "judgement_pending": 5,
+      "judgement_not_reviewable": 70,
+      "ordinary": {
+        "trials": 30,
+        "code_passed": 0,
+        "overall_passed": 0
+      },
+      "negative": {
+        "trials": 45,
+        "code_passed": 3,
+        "overall_passed": 0
+      },
+      "step_cap_hits": 4,
+      "cost_usd": {
+        "measured_trials": 75,
+        "total": 0.1471025,
+        "median": 0.0018909999999999999,
+        "max": 0.0029885
+      },
+      "turns": {
+        "measured_trials": 75,
+        "total": 460,
+        "median": 6,
+        "max": 8
+      }
+    },
+    "statuses": {
+      "error": 33,
+      "not_recorded": 32,
+      "stopped": 4,
+      "completed": 5,
+      "completed_with_tool_issues": 1
+    },
+    "errors": {
+      "Expecting value: line 1 column 409 (char 408)": 1,
+      "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)": 1,
+      "Actions and Final must be separate turns": 11,
+      "non-escalation requires every billed line and its disposition": 3,
+      "reason must be a non-empty string": 8,
+      "Expecting value: line 1 column 380 (char 379)": 1,
+      "Expecting value: line 1 column 253 (char 252)": 1,
+      "Expecting value: line 1 column 323 (char 322)": 1,
+      "Expecting value: line 1 column 369 (char 368)": 2,
+      "Expecting value: line 1 column 438 (char 437)": 1,
+      "response must contain Action lines or one JSON Final": 1,
+      "Expecting value: line 1 column 537 (char 536)": 1,
+      "Expecting value: line 1 column 1 (char 0)": 1
+    },
+    "provider_cost": 0.11973700999999996,
+    "responses": 460,
+    "unique_run_ids": 75
+  }
+}

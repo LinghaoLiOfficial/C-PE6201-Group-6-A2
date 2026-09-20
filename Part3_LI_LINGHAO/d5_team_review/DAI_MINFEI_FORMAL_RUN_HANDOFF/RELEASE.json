@@ -1,0 +1,12 @@
+{
+  "package_sha256": "7686c348bdac62a1f9ee0362c9d90fa408c5b92d33aeb2e55744a53879244272",
+  "preflight_sha256": "b5c41b18057acc3baee51ed0e1d74a72394c67e00f8a9f5750883c3ebaba1e5f",
+  "preflight_cost_usd": 0.103667,
+  "projected_agent_total_usd": 2.5533095,
+  "reviewed_by": "LI_LINGHAO",
+  "contract_revision": "d5-live-1.1",
+  "model": "anthropic/claude-haiku-4.5",
+  "version": "v2",
+  "scope": "Authorize one formal 45-case/75-trial live battery using this exact package and preflight. Retain all failures in the denominator.",
+  "created_at": "2026-09-18"
+}

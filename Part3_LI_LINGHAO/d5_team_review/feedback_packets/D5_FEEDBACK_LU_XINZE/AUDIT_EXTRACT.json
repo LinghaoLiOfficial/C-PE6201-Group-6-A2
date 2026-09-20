@@ -1,0 +1,20 @@
+{
+  "commit": "cff4286b690844d95ea18ae77b74aaa83eedb71b",
+  "member": "LU_XINZE",
+  "audit": {
+    "path": "Part3_LI_LINGHAO/d5_live_submissions/LU_XINZE/r1.1",
+    "findings": [],
+    "manifest_byte_identical": true,
+    "preflight": {
+      "trials": 6,
+      "code_passed": 0,
+      "statuses": {
+        "error": 6
+      },
+      "transport_ok": true,
+      "cost": 0.005716199999999999,
+      "projected": 0.12504804375
+    },
+    "full_present": false
+  }
+}

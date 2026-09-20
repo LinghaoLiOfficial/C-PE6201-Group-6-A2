@@ -1,0 +1,141 @@
+CLM-8842 trial 1: judge completed; spent/reserved $0.0015
+CLM-8850 trial 1: judge completed; spent/reserved $0.0025
+CLM-8861 trial 1: judge completed; spent/reserved $0.0038
+CLM-8874 trial 1: judge completed; spent/reserved $0.0047
+CLM-8888 trial 1: judge completed; spent/reserved $0.0061
+CLM-8888 trial 2: judge completed; spent/reserved $0.0074
+CLM-8888 trial 3: judge completed; spent/reserved $0.0088
+CLM-8894 trial 1: judge completed; spent/reserved $0.0100
+CLM-8894 trial 2: judge completed; spent/reserved $0.0111
+CLM-8894 trial 3: judge completed; spent/reserved $0.0123
+CLM-8901 trial 1: judge completed; spent/reserved $0.0132
+CLM-8901 trial 2: judge completed; spent/reserved $0.0142
+CLM-8901 trial 3: judge completed; spent/reserved $0.0151
+CLM-8910 trial 1: judge completed; spent/reserved $0.0161
+CLM-8910 trial 2: judge completed; spent/reserved $0.0171
+CLM-8910 trial 3: judge completed; spent/reserved $0.0181
+CLM-8917 trial 1: judge completed; spent/reserved $0.0190
+CLM-8917 trial 2: judge completed; spent/reserved $0.0199
+CLM-8917 trial 3: judge completed; spent/reserved $0.0208
+CLM-8925 trial 1: judge completed; spent/reserved $0.0219
+CLM-8925 trial 2: judge completed; spent/reserved $0.0230
+CLM-8925 trial 3: judge completed; spent/reserved $0.0241
+CLM-8933 trial 1: judge completed; spent/reserved $0.0249
+CLM-8933 trial 2: judge completed; spent/reserved $0.0257
+CLM-8933 trial 3: judge completed; spent/reserved $0.0265
+CLM-8941 trial 1: judge completed; spent/reserved $0.0275
+CLM-8941 trial 2: judge completed; spent/reserved $0.0283
+CLM-8941 trial 3: judge completed; spent/reserved $0.0291
+CLM-8952 trial 1: judge completed; spent/reserved $0.0302
+CLM-8952 trial 2: judge completed; spent/reserved $0.0311
+CLM-8960 trial 1: judge completed; spent/reserved $0.0325
+CLM-8971 trial 1: judge completed; spent/reserved $0.0334
+CLM-16001 trial 1: judge completed; spent/reserved $0.0350
+CLM-16002 trial 1: judge completed; spent/reserved $0.0362
+CLM-16003 trial 1: judge completed; spent/reserved $0.0373
+CLM-16004 trial 1: judge completed; spent/reserved $0.0387
+CLM-16005 trial 1: judge completed; spent/reserved $0.0398
+CLM-16005 trial 2: judge completed; spent/reserved $0.0410
+CLM-16005 trial 3: judge completed; spent/reserved $0.0421
+CLM-16101 trial 1: judge completed; spent/reserved $0.0433
+CLM-16102 trial 1: judge completed; spent/reserved $0.0445
+CLM-16103 trial 1: judge completed; spent/reserved $0.0456
+CLM-16104 trial 1: judge completed; spent/reserved $0.0473
+CLM-16105 trial 1: judge completed; spent/reserved $0.0485
+CLM-16105 trial 2: judge completed; spent/reserved $0.0498
+CLM-16105 trial 3: judge completed; spent/reserved $0.0511
+CLM-16201 trial 1: judge completed; spent/reserved $0.0522
+CLM-16202 trial 1: judge completed; spent/reserved $0.0532
+CLM-16203 trial 1: judge completed; spent/reserved $0.0543
+CLM-16204 trial 1: judge completed; spent/reserved $0.0554
+CLM-16205 trial 1: judge completed; spent/reserved $0.0566
+CLM-16205 trial 2: judge completed; spent/reserved $0.0578
+CLM-16205 trial 3: judge completed; spent/reserved $0.0590
+CLM-16301 trial 1: judge completed; spent/reserved $0.0602
+CLM-16302 trial 1: judge completed; spent/reserved $0.0615
+CLM-16303 trial 1: judge completed; spent/reserved $0.0626
+CLM-16304 trial 1: judge completed; spent/reserved $0.0640
+CLM-16305 trial 1: judge completed; spent/reserved $0.0650
+CLM-16305 trial 2: judge completed; spent/reserved $0.0660
+CLM-16305 trial 3: judge completed; spent/reserved $0.0671
+CLM-16401 trial 1: judge completed; spent/reserved $0.0683
+CLM-16402 trial 1: judge completed; spent/reserved $0.0694
+CLM-16403 trial 1: judge completed; spent/reserved $0.0712
+CLM-16404 trial 1: judge completed; spent/reserved $0.0731
+CLM-16405 trial 1: judge completed; spent/reserved $0.0742
+CLM-16405 trial 2: judge completed; spent/reserved $0.0753
+CLM-16405 trial 3: judge completed; spent/reserved $0.0764
+CLM-16501 trial 1: judge completed; spent/reserved $0.0776
+CLM-16503 trial 1: judge completed; spent/reserved $0.0788
+CLM-16505 trial 1: judge completed; spent/reserved $0.0799
+CLM-16505 trial 2: judge completed; spent/reserved $0.0810
+CLM-16505 trial 3: judge completed; spent/reserved $0.0821
+{
+  "trials": 75,
+  "cases": 45,
+  "code_passed": 72,
+  "execution_errors": 3,
+  "judgement_passed": 71,
+  "judgement_failed": 0,
+  "judgement_pending": 1,
+  "overall_passed": 71,
+  "ordinary": {
+    "trials": 30,
+    "code_passed": 28,
+    "overall_passed": 28
+  },
+  "negative": {
+    "trials": 45,
+    "code_passed": 44,
+    "overall_passed": 43
+  },
+  "turns": {
+    "measured_trials": 75,
+    "total": 383,
+    "median": 5,
+    "max": 7
+  },
+  "tokens_in": {
+    "measured_trials": 75,
+    "total": 959130,
+    "median": 12464,
+    "max": 17935
+  },
+  "tokens_out": {
+    "measured_trials": 75,
+    "total": 62138,
+    "median": 751,
+    "max": 1510
+  },
+  "cost_usd": {
+    "measured_trials": 75,
+    "total": 0.28286116999999994,
+    "median": 0.003642023,
+    "max": 0.005322515
+  },
+  "step_cap_hits": 0,
+  "contract_revision": "d5-live-1.1",
+  "backend": "live",
+  "prompt_version": "v2",
+  "model": "deepseek/deepseek-v3.2",
+  "created_at": "2026-09-16T16:21:26.940373+00:00",
+  "operator_confirmation": "simulated for local decision-log writes",
+  "cost_basis": "API usage times configured prices",
+  "judgement_policy": "second-model judge, every trial and criterion",
+  "judge_model": "openai/gpt-4.1-mini",
+  "judge_calls_completed": 72,
+  "judge_calls_error": 0,
+  "judge_calls_pending": 0,
+  "judge_cost_usd": 0.08205080000000003,
+  "judge_cost_includes_reservations": false,
+  "judge_budget_usd": 1.5,
+  "source_suite": "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/LI_LINGHAO/suite",
+  "judge_tokens_in": 136159,
+  "judge_tokens_out": 17242,
+  "judge_criteria": {
+    "pass": 250,
+    "fail": 0,
+    "uncertain": 1
+  },
+  "suite": "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/LI_LINGHAO/suite/llm_judge_d85d3ccf6936"
+}

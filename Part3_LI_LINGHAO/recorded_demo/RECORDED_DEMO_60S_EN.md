@@ -1,73 +1,156 @@
-# Recorded Demonstration: 60-second negative-case run
+# LI_LINGHAO：60 秒负例录屏操作步骤
 
-**Owner:** LI_LINGHAO  
-**System:** Problem A claims first-response agent  
-**Case:** `CLM-8925` — annual-limit negative case  
-**Backend:** `scripted` (offline, deterministic, no API key)  
-**Target length:** approximately 60 seconds
+## 录屏前准备（不计入 60 秒）
 
-## Before recording
+**展示的文件路径：**
 
-1. Open a terminal in the repository root:
+无，仅展示 Terminal。
+
+**Terminal 操作：**
 
 ```bash
 cd /Users/llh/PycharmProjects/C-PE6201-Group-6-A2
+python3 --version
+jq --version
 ```
 
-2. Close unrelated windows. Do not show API keys, `.env` files, or private credentials.
+**英文配音文本：**
 
-## Recording checklist
+> 无需配音。
 
-| Time | Open or show | Console command | What must be visible |
-|---|---|---|---|
-| 0–6 s | Terminal | `rm -rf Part3_LI_LINGHAO/output/recorded_demo && python3 Part3_LI_LINGHAO/scripts/run_d4_harness.py --output-dir Part3_LI_LINGHAO/output/recorded_demo` | The harness starts with the repository path and completes without network/API-key prompts. |
-| 6–14 s | Terminal | `SUITE=$(find Part3_LI_LINGHAO/output/recorded_demo -maxdepth 1 -type d -name 'suite-*' \| sort \| tail -1); echo "$SUITE"` | The newly created `suite-*` directory. Keep this path for the next commands. |
-| 14–24 s | Editor or terminal | `jq '.[] \| select(.claim_id=="CLM-8925")' Part3_LI_LINGHAO/integration/merged_A/data_A/claims.json` | The input claim: three lines whose amounts total `11400`. |
-| 24–32 s | Editor or terminal | `jq '.[] \| select(.case_id=="CLM-8925")' Part3_LI_LINGHAO/integration/merged_A/expected_outcomes_A.json` | The label: `decision=escalate`, `trigger=annual_limit_exceeded`, and the criterion that lines were not individually priced. |
-| 32–46 s | Terminal | `jq '{status,decision,trigger,escalate_to,evidence,turns,tokens_in,tokens_out,cost_usd,action_count,limits}' "$SUITE/CLM-8925-trial-1.json"` | Actual result: escalation, correct trigger, human assessor, one gated write, step cap 8, and successful run. |
-| 46–54 s | Terminal | `jq '.trace[] \| {turn,tool,observation,status}' "$SUITE/CLM-8925-trial-1.json"` | Tool evidence: `get_claim`, `lookup_policy` showing `remaining_annual_limit=9200` and `annual_limit_status=exceeded`, then `issue_decision_letter`. |
-| 54–60 s | Terminal | `jq '{trials,cases,negative,code_passed,execution_errors,step_cap_hits,backend,prompt_version}' "$SUITE/summary.json"` | Full scripted run summary: `75` trials, `45` negative trials, `75/75` code passes, `0` execution errors, `0` step-cap hits, `backend=scripted`. |
+## 1. 00:00–00:08｜展示负例输入
 
-## Expected decision log
+**展示的文件路径：**
 
-The result JSON contains the absolute `decision_log` path. If there is time, show it with:
+```text
+/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/integration/merged_A/data_A/claims.json
+```
+
+**Terminal 操作：**
 
 ```bash
-jq '{decision_log,action_records}' "$SUITE/CLM-8925-trial-1.json"
+clear
+jq '.[] | select(.claim_id=="CLM-8925") |
+  {claim_id, lines, claim_total: ([.lines[].amount] | add)}' \
+  "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/integration/merged_A/data_A/claims.json"
 ```
 
-The decision log must show exactly one actual `issue_decision_letter` record with:
+**英文配音文本：**
 
-- `decision: escalate`
-- `trigger: annual_limit_exceeded`
-- `escalate_to: human claims assessor`
-- evidence citations that were actually observed
-- `gate: operator approved`
+> This negative case contains three claim lines totalling eleven thousand four hundred.
 
-## Important wording
+## 2. 00:08–00:16｜现场执行 Harness
 
-Say **“deterministic scripted harness code check passed”**. Do not say that the independent LLM judgement passed in this 60-second demonstration; the normal fresh D4 command leaves judgement pending. Do not call the 75 scripted trials a live-model accuracy score.
+**展示的文件路径：**
 
-## Fast recovery if the screen is crowded
+```text
+/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/recorded_demo/run_scripted_acceptance.py
+```
 
-Keep only the terminal visible and use the three most important commands:
+**Terminal 操作：**
 
 ```bash
-python3 Part3_LI_LINGHAO/scripts/run_d4_harness.py --output-dir Part3_LI_LINGHAO/output/recorded_demo
-SUITE=$(find Part3_LI_LINGHAO/output/recorded_demo -maxdepth 1 -type d -name 'suite-*' | sort | tail -1)
-jq '{status,decision,trigger,escalate_to,evidence,action_count,trace,limits}' "$SUITE/CLM-8925-trial-1.json"
-jq '{trials,negative,code_passed,execution_errors,step_cap_hits,backend}' "$SUITE/summary.json"
+python3 "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/recorded_demo/run_scripted_acceptance.py"
 ```
 
-## 60-second English speech
+**英文配音文本：**
 
-> This is negative case CLM-8925. The claim has three lines totalling 11,400, while the policy has only 9,200 remaining. The policy tool returns `annual_limit_status=exceeded`, so the agent stops before pricing individual lines. It escalates to a human claims assessor with the single trigger `annual_limit_exceeded`. The trace shows successful claim retrieval, duplicate and member checks, the policy observation, and one gated decision write. The decision log matches the final output. The deterministic scripted harness then reports 75 out of 75 code checks passed, with 45 negative trials, zero execution errors, and zero step-cap hits. This is an offline reproducible harness result, not a live-model accuracy score.
+> I am running our scripted harness now. It executes real local tools without an API key.
 
-## Files referenced
+## 3. 00:16–00:27｜展示工具证据
 
-- `Part3_LI_LINGHAO/scripts/run_d4_harness.py`
-- `Part3_LI_LINGHAO/integration/runner.py`
-- `Part3_LI_LINGHAO/integration/d4_harness.py`
-- `Part3_LI_LINGHAO/integration/merged_A/data_A/claims.json`
-- `Part3_LI_LINGHAO/integration/merged_A/expected_outcomes_A.json`
-- `Part3_LI_LINGHAO/integration/merged_A/case_audit.json`
+**展示的文件路径：**
+
+```text
+/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/CLM-8925-trial-1.json
+```
+
+**Terminal 操作：**
+
+```bash
+clear
+jq '.trace[] | select(.tool=="lookup_policy") |
+  {turn, tool, args, observation, status}' \
+  "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/CLM-8925-trial-1.json"
+```
+
+**英文配音文本：**
+
+> The policy tool returns nine thousand two hundred remaining and confirms that the annual limit is exceeded.
+
+## 4. 00:27–00:36｜展示触发条件与决定
+
+**展示的文件路径：**
+
+```text
+/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/CLM-8925-trial-1.json
+```
+
+**Terminal 操作：**
+
+```bash
+clear
+jq '{decision, trigger, escalate_to, lines, approved_total, refused_total}' \
+  "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/CLM-8925-trial-1.json"
+```
+
+**英文配音文本：**
+
+> The agent escalates to a human claims assessor, with one named trigger and no individual line pricing.
+
+## 5. 00:36–00:47｜展示 Decision Log
+
+**展示的文件路径：**
+
+```text
+/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/decisions.jsonl
+```
+
+**Terminal 操作：**
+
+```bash
+clear
+jq '{case_id, decision, trigger, evidence, autonomy, gate}' \
+  "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/decisions.jsonl"
+printf 'Actual decision-log records: '
+wc -l < "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/decisions.jsonl"
+```
+
+**英文配音文本：**
+
+> Here is the actual decision log: one write, supporting tool evidence, and the simulated operator confirmation.
+
+## 6. 00:47–01:00｜展示 Harness CODE CHECK PASS
+
+**展示的文件路径：**
+
+```text
+/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/results.json
+```
+
+```text
+/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/summary.json
+```
+
+**Terminal 操作：**
+
+```bash
+
+clear
+jq '.[] | select(.case_id=="CLM-8925" and .trial==1) |
+  {case_id, trial, code_passed, failures}' \
+  "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/results.json"
+jq -r '
+  "HARNESS CODE CHECK: " +
+  (if .code_passed==.trials and .execution_errors==0 then "PASS" else "FAIL" end),
+  "Code passes: \(.code_passed)/\(.trials)",
+  "Negative trials: \(.negative.trials)",
+  "Execution errors: \(.execution_errors)",
+  "Step-cap hits: \(.step_cap_hits)",
+  "Backend: \(.backend)"
+' "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/output/recorded_demo/demo-001/summary.json"
+```
+
+**英文配音文本：**
+
+> The harness passes all seventy-five code checks, including forty-five negative trials, with zero execution errors. This demonstrates reproducibility, not live-model accuracy.

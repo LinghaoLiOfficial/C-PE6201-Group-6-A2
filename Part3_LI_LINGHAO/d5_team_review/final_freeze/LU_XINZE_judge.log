@@ -1,0 +1,83 @@
+CLM-8842 trial 1: judge completed; spent/reserved $0.0015
+CLM-8850 trial 1: judge completed; spent/reserved $0.0026
+CLM-8861 trial 1: judge completed; spent/reserved $0.0037
+CLM-8874 trial 1: judge completed; spent/reserved $0.0047
+CLM-8894 trial 1: judge completed; spent/reserved $0.0058
+CLM-8933 trial 1: judge completed; spent/reserved $0.0066
+CLM-8933 trial 2: judge completed; spent/reserved $0.0075
+CLM-8941 trial 1: judge completed; spent/reserved $0.0084
+CLM-8941 trial 3: judge completed; spent/reserved $0.0092
+CLM-8952 trial 2: judge completed; spent/reserved $0.0103
+CLM-8952 trial 3: judge completed; spent/reserved $0.0114
+CLM-8960 trial 1: judge completed; spent/reserved $0.0127
+CLM-16002 trial 1: judge completed; spent/reserved $0.0140
+CLM-16505 trial 2: judge completed; spent/reserved $0.0150
+{
+  "trials": 75,
+  "cases": 45,
+  "code_passed": 11,
+  "execution_errors": 61,
+  "judgement_passed": 14,
+  "judgement_failed": 0,
+  "judgement_pending": 0,
+  "overall_passed": 11,
+  "ordinary": {
+    "trials": 30,
+    "code_passed": 6,
+    "overall_passed": 6
+  },
+  "negative": {
+    "trials": 45,
+    "code_passed": 5,
+    "overall_passed": 5
+  },
+  "turns": {
+    "measured_trials": 75,
+    "total": 260,
+    "median": 3,
+    "max": 6
+  },
+  "tokens_in": {
+    "measured_trials": 75,
+    "total": 613991,
+    "median": 6889,
+    "max": 15928
+  },
+  "tokens_out": {
+    "measured_trials": 75,
+    "total": 54714,
+    "median": 695,
+    "max": 1401
+  },
+  "cost_usd": {
+    "measured_trials": 75,
+    "total": 0.07287411249999999,
+    "median": 0.0008902249999999999,
+    "max": 0.0017997
+  },
+  "step_cap_hits": 0,
+  "contract_revision": "d5-live-1.1",
+  "backend": "live",
+  "prompt_version": "v2",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "created_at": "2026-09-18T10:30:34.775746+00:00",
+  "operator_confirmation": "simulated for local decision-log writes",
+  "cost_basis": "API usage times configured prices",
+  "judgement_policy": "second-model judge, every trial and criterion",
+  "judge_model": "openai/gpt-4.1-mini",
+  "judge_calls_completed": 14,
+  "judge_calls_error": 0,
+  "judge_calls_pending": 0,
+  "judge_cost_usd": 0.014962,
+  "judge_cost_includes_reservations": false,
+  "judge_budget_usd": 1.5,
+  "source_suite": "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/LU_XINZE/suite",
+  "judge_tokens_in": 25529,
+  "judge_tokens_out": 2969,
+  "judge_criteria": {
+    "pass": 39,
+    "fail": 0,
+    "uncertain": 0
+  },
+  "suite": "/Users/llh/PycharmProjects/C-PE6201-Group-6-A2/Part3_LI_LINGHAO/d5_team_review/final_freeze/suites/LU_XINZE/suite/llm_judge_0afe343b1754"
+}

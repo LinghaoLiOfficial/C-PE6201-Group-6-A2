@@ -1,0 +1,16 @@
+﻿review_id,case_id,trial,criterion,verdict,graded_by,comments,record_path,evidence_refs
+CLM-8901/2/1,CLM-8901,2,the document named,pass,model:openai/gpt-4.1-mini,理由中明确说明了该文件名为诊断性结肠镜检查（code=45378），且工具调用中claim的narrative和lines均对应该文件。,../CLM-8901-trial-2.json,reason; trace[0].observation; lines[0]
+CLM-8901/2/2,CLM-8901,2,the line it belongs to,pass,model:openai/gpt-4.1-mini,决策记录中lines字段明确包含code=45378的行，且该行状态为covered，金额1150，与理由和工具调用结果一致。,../CLM-8901-trial-2.json,reason; lines[0]
+CLM-16303/1/1,CLM-16303,1,15823 refused under EX-14 cosmetic dermatology,pass,model:openai/gpt-4.1-mini,决策理由明确指出15823号程序因EX-14美容皮肤科排除规则被拒绝，且拒绝行中标明该排除。,../CLM-16303-trial-1.json,reason; lines[0]
+CLM-16303/1/2,CLM-16303,1,the claim remains approve_in_principle because the single line is resolved,pass,model:openai/gpt-4.1-mini,决策为approve_in_principle，且仅有一行且该行已标记为not_covered，符合单行已解决的条件。,../CLM-16303-trial-1.json,decision; lines[0]
+CLM-16303/1/3,CLM-16303,1,approved_total 0,pass,model:openai/gpt-4.1-mini,approved_total字段为0，且决策中无批准金额，符合要求。,../CLM-16303-trial-1.json,approved_total
+CLM-16303/1/4,CLM-16303,1,refused_total 180,pass,model:openai/gpt-4.1-mini,refused_total字段为180，与拒绝行金额一致，决策中也反映拒绝金额为180。,../CLM-16303-trial-1.json,refused_total; lines[0]
+CLM-16305/1/1,CLM-16305,1,POL-6001 starts on 2026-06-01,pass,model:openai/gpt-4.1-mini,lookup_policy工具明确显示POL-6001的起始日期为2026-06-01，符合标准要求。,../CLM-16305-trial-1.json,trace[3].observation
+CLM-16305/1/2,CLM-16305,1,service date 2026-05-31 is outside the policy dates,pass,model:openai/gpt-4.1-mini,reason中说明服务日期2026-05-31早于保单起始日期2026-06-01，lookup_policy工具也确认服务日期不在保障范围内。,../CLM-16305-trial-1.json,reason; trace[3].observation
+CLM-16305/1/3,CLM-16305,1,escalate_to human claims assessor,pass,model:openai/gpt-4.1-mini,决策字段和escalate_to字段均指明将案件升级至human claims assessor，且reason中给出充分解释。,../CLM-16305-trial-1.json,decision; reason
+CLM-16305/2/1,CLM-16305,2,POL-6001 starts on 2026-06-01,pass,model:openai/gpt-4.1-mini,lookup_policy工具返回POL-6001的起始日期为2026-06-01，符合标准要求。,../CLM-16305-trial-2.json,trace[3].observation
+CLM-16305/2/2,CLM-16305,2,service date 2026-05-31 is outside the policy dates,pass,model:openai/gpt-4.1-mini,reason明确指出服务日期2026-05-31早于保单起始日期2026-06-01，且lookup_policy确认服务日期不在保障范围内。,../CLM-16305-trial-2.json,reason; trace[3].observation
+CLM-16305/2/3,CLM-16305,2,escalate_to human claims assessor,pass,model:openai/gpt-4.1-mini,决策字段为escalate，escalate_to字段明确指向human claims assessor，符合升级要求。,../CLM-16305-trial-2.json,decision; record.escalate_to
+CLM-16305/3/1,CLM-16305,3,POL-6001 starts on 2026-06-01,pass,model:openai/gpt-4.1-mini,lookup_policy工具返回POL-6001的起始日期为2026-06-01，符合标准要求。,../CLM-16305-trial-3.json,trace[3].observation; reason
+CLM-16305/3/2,CLM-16305,3,service date 2026-05-31 is outside the policy dates,pass,model:openai/gpt-4.1-mini,reason明确说明服务日期2026-05-31早于保单起始日期2026-06-01，lookup_policy确认服务日期不在保障范围内。,../CLM-16305-trial-3.json,reason; trace[3].observation
+CLM-16305/3/3,CLM-16305,3,escalate_to human claims assessor,pass,model:openai/gpt-4.1-mini,决策字段为escalate，且escalate_to字段明确指向human claims assessor，符合升级要求。,../CLM-16305-trial-3.json,decision; escalate_to; reason
